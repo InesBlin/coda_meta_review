@@ -5,6 +5,7 @@ server.R -> line 1031-> 1164
 Takes pre-selected data, and does some preprocessing for the meta-analysis
 """
 import click
+import pandas as pd
 from kglab.helpers.data_load import read_csv
 from src.helpers import select_observations
 
@@ -176,15 +177,16 @@ class DataPrep:
     @staticmethod
     def reverse_effect_size_estimate(data, order_match):
         """ Reverse effect size estimate """
-        data['match'] = order_match
-        data['effectSize'] = data.apply(lambda row: row['effectSize'] if row['match'] \
-            else -1 * row['effectSize'], axis=1)
-        data['LL'] = data['effectSizeLowerLimit'].copy()
-        data['UL'] = data['effectSizeUpperLimit'].copy()
-        data['effectSizeLowerLimit'] = data.apply(lambda row: row["LL"] if row['match'] \
-            else -1 * row["UL"], axis=1)
-        data['effectSizeUpperLimit'] = data.apply(lambda row: row["UL"] if row['match'] \
-            else -1 * row["LL"], axis=1)
+        with pd.option_context('mode.chained_assignment', None):
+            data['match'] = order_match
+            data['effectSize'] = data.apply(lambda row: row['effectSize'] if row['match'] \
+                else -1 * row['effectSize'], axis=1)
+            data['LL'] = data['effectSizeLowerLimit'].copy()
+            data['UL'] = data['effectSizeUpperLimit'].copy()
+            data['effectSizeLowerLimit'] = data.apply(lambda row: row["LL"] if row['match'] \
+                else -1 * row["UL"], axis=1)
+            data['effectSizeUpperLimit'] = data.apply(lambda row: row["UL"] if row['match'] \
+                else -1 * row["LL"], axis=1)
         return data.drop(columns=["match", "LL", "UL"])
 
     @staticmethod

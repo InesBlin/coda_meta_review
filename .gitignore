@@ -6,4 +6,4 @@ kglab/
 data/
 misc/
 notebooks
-**/__pycache__/** */
+**/__pycache__/**

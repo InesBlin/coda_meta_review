@@ -19,24 +19,33 @@ class Pipeline:
         self.data_prep = DataPrep(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=siv2)
         self.meta_analysis = MetaAnalysis(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=sivv2)
 
-    def __call__(self, data, type_rma: str = "uni", es_measure: str = "d",
-                 yi: str = "effectSize", method: str = "REML", vi: str = "variance"):
+    def get_data_meta_analysis(self, data):
+        """ self explanatory """
         data_run = self.data_selector(data=data)
         data_run = self.data_prep(filtered_data=data_run)
-        print(data_run.shape)
+        return data_run
+
+    def __call__(self, data, type_rma: str = "uni", es_measure: str = "d",
+                 yi: str = "effectSize", method: str = "REML", vi: str = "variance"):
+        data_run = self.get_data_meta_analysis(data=data)
         ma_res = self.meta_analysis(data=data_run,
             type_rma=type_rma, es_measure=es_measure, yi=yi, method=method, vi=vi)
         return ma_res
-        return None
 
 
 if __name__ == '__main__':
     DATA = read_csv("./data/observationData.csv")
+    # VALS = [
+    #     # (siv1, sivv1, siv2, sivv2)
+    #     ("punishment rule", "rank-based", "punishment rule", "contribution-based"),
+    #     ("reward incentive", "monetary", "reward incentive", "non-monetary material"),
+    #     ("individual difference", "concern for others", "individual difference", "narcissism")
+    # ]
     VALS = [
         # (siv1, sivv1, siv2, sivv2)
-        ("punishment rule", "rank-based", "punishment rule", "contribution-based"),
-        ("reward incentive", "monetary", "reward incentive", "non-monetary material"),
-        ("individual difference", "concern for others", "individual difference", "narcissism")
+        ("gender", "male", "gender", "female"),
+        ("group size level", "low", "group size level", "high"),
+        ("conflict level", "high", "conflict level", "low")
     ]
     for siv1, sivv1, siv2, sivv2 in VALS:
         PIPELINE = Pipeline(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=sivv2)

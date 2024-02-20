@@ -72,6 +72,8 @@ class MetaAnalysis:
 
         self.vars_multilevel_var = ["studyNameGeneral", "paperName"]
 
+        self.vars_res = ["k", "b", "se", "zval", "pval", "ci.lb", "ci.ub", "tau2"]
+
     def rma_uni(self, yi, vi, data, method, mods, slab):
         """ Simple model """
         if mods:
@@ -178,15 +180,18 @@ class MetaAnalysis:
         slab = StrVector(slab) if slab else StrVector([""]*data.shape[0])
 
         if type_rma == "uni":
-            return self.rma_uni(yi=input_r.rx2(yi), vi=input_r.rx2(vi), data=input_r,
-                                method=method, mods=mods, slab=slab)
-        # type_rma == "mv"
-        random = self.get_random(multilevel_variables=multilevel_variables)
-        return self.rma_mv(yi=input_r.rx2(yi), V=input_r.rx2(V), data=input_r, method=method,
-                           random=random, mods=mods, slab=slab)
+            res = self.rma_uni(yi=input_r.rx2(yi), vi=input_r.rx2(vi), data=input_r,
+                               method=method, mods=mods, slab=slab)
+        else:  # type_rma == "mv"
+            random = self.get_random(multilevel_variables=multilevel_variables)
+            res = self.rma_mv(yi=input_r.rx2(yi), V=input_r.rx2(V), data=input_r, method=method,
+                            random=random, mods=mods, slab=slab)
+        return {k: res.rx2[k][0] for k in self.vars_res}
+
 
 @click.command()
-@click.option("--input_data_path", help="Link to the processed data, .csv format")
+# Link to the processed data, .csv format
+@click.argument("input_data_path")
 def main(input_data_path):
     """ Main script to store obs data """
     meta_analysis = MetaAnalysis(
@@ -199,4 +204,5 @@ def main(input_data_path):
 
 
 if __name__ == '__main__':
+    # python src/meta_analysis.py data/observationData.csv
     main()
