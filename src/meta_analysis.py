@@ -12,6 +12,7 @@ from rpy2.robjects.vectors import StrVector
 import pandas as pd
 from kglab.helpers.data_load import read_csv
 from src.helpers import select_observations
+from src.moderator import bind_moderators
 
 def is_filled(val):
     """ Source: https://github.com/cooperationdatabank/ETL/blob/main/src/convert-indicators.py"""
@@ -163,21 +164,31 @@ class MetaAnalysis:
         data = data[~np.array(filter_, dtype=bool)]
         return data
 
-
+    @staticmethod
+    def format_mods(mods, start_mod):
+        return ListVector({None: f"[{start_mod+i+1}] " + mod for i, mod in enumerate(mods)})
 
     def __call__(self, type_rma: str, es_measure: str,
                  yi: str, data: pd.DataFrame, method: str, mods: Union[List[str], None] = None,
                  vi: Union[str, None] = None, V: Union[str, None] = None,
                  multilevel_variables: Union[List[str], None] = None):
         data = self.filter_data(data=data, es_measure=es_measure)
-        slab = list(data.citation.values)
-
-        input_r = convert_pd_to_rdata(input_df=data)
+        # start_mod = data.shape[1]
+        if mods:
+            data = bind_moderators(mod=mods, data=data)
+        slab = data.citation.astype(str).tolist()
         self._check_args(type_rma=type_rma, es_measure=es_measure, method=method, yi=yi,
                          data=data, mods=mods, slab=slab, vi=vi, V=V,
                          multilevel_variables=multilevel_variables)
 
+        # mods = self.format_mods(mods=mods, start_mod=start_mod)
+    
+        input_r = convert_pd_to_rdata(input_df=data)
+        # print(input_r.colnames[-2:])
+
         slab = StrVector(slab) if slab else StrVector([""]*data.shape[0])
+        if mods:
+            mods = input_r.colnames[-len(mods):]
 
         if type_rma == "uni":
             res = self.rma_uni(yi=input_r.rx2(yi), vi=input_r.rx2(vi), data=input_r,
@@ -186,6 +197,7 @@ class MetaAnalysis:
             random = self.get_random(multilevel_variables=multilevel_variables)
             res = self.rma_mv(yi=input_r.rx2(yi), V=input_r.rx2(V), data=input_r, method=method,
                             random=random, mods=mods, slab=slab)
+        print(res)
         return {k: res.rx2[k][0] for k in self.vars_res}
 
 
@@ -198,8 +210,10 @@ def main(input_data_path):
         siv1="punishment treatment", sivv1="1",
         siv2="punishment treatment", sivv2="-1")
     data = read_csv(input_data_path)
+    # mods = ["punishment incentive", "sequential punishment"]
+    mods = None
     results_rma = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
-                                method="REML", vi="variance")
+                                method="REML", vi="variance", mods=mods)
     print(results_rma)
 
 

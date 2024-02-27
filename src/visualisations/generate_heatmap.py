@@ -34,7 +34,7 @@ def main(data, save_html):
     curr_df = df_filter.copy()
     with pd.option_context('mode.chained_assignment', None):
         for i in ["1", "2"]:
-            curr_df[f"label{i}"] = curr_df[f"siv{i}"] + " : " + curr_df[f"sivv{i}"]
+            curr_df[f"label{i}"] = curr_df[f"generic{i}"] + " -> " + curr_df[f"siv{i}"] + " -> " + curr_df[f"sivv{i}"]
     curr_df = curr_df.sort_values(by=["label1", "label2"])
     labels1 = sorted(curr_df.label1.unique())
     labels1_to_index = {x: i for i, x in enumerate(labels1)}
