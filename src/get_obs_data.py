@@ -1,21 +1,10 @@
 # -*- coding: utf-8 -*-
 """ Gathering observation data """
 import re
-import io
 from copy import deepcopy
 import click
-import requests
 import pandas as pd
-
-
-def run_request(uri: str, headers: dict):
-    """ API call """
-    response = requests.get(uri, headers=headers, timeout=3600)
-
-    if "csv" in headers["Accept"]:
-        return pd.read_csv(io.StringIO(response.content.decode('utf-8')))
-    # Assuming json
-    return pd.read_json(io.StringIO(response.content.decode('utf-8')))
+from src.helpers import run_request
 
 
 class KGDataCall:
