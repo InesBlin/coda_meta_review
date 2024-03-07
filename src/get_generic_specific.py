@@ -42,7 +42,7 @@ def arrange_pair(pair):
         if pair[0][0] <= pair[1][0]:
             return (pair[0][0], pair[0][1], pair[1][0], pair[1][1])
         return (pair[1][0], pair[1][1], pair[0][0], pair[0][1])
-    
+
     # different gv
     if pair[0][1] <= pair[1][2]:
         return (pair[0][0], pair[0][1], pair[0][2], pair[1][0], pair[1][1], pair[1][2])
@@ -83,7 +83,8 @@ def get_df_out_pairs(data, option_grouping):
 
 def add_shape_data(row_, obs_data):
     """ Adding number of data points for statistical analysis """
-    pipeline = Pipeline(siv1=row_.siv1, sivv1=row_.sivv1, siv2=row_.siv2, sivv2=row_.sivv2)
+    pipeline = Pipeline(giv1=row_.generic1, siv1=row_.siv1, sivv1=row_.sivv1,
+                        giv2=row_.generic2, siv2=row_.siv2, sivv2=row_.sivv2)
     data = pipeline.get_data_meta_analysis(data=obs_data)
     row_["nb"] = data.shape[0]
     return row_
@@ -117,7 +118,8 @@ def main(generic_specific, obs_data, option_grouping):
         df_out = df_out[df_out.nb >= 10]
         res = []
         for _, row_ in tqdm(df_out.iterrows(), total=len(df_out)):
-            pipeline = Pipeline(siv1=row_.siv1, sivv1=row_.sivv1, siv2=row_.siv2, sivv2=row_.sivv2)
+            pipeline = Pipeline(giv1=row_.generic1, siv1=row_.siv1, sivv1=row_.sivv1,
+                                giv2=row_.generic2, siv2=row_.siv2, sivv2=row_.sivv2)
             try:
                 res.append(pipeline(data=obs_data))
             except Exception as _:

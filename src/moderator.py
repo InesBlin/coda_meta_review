@@ -187,7 +187,7 @@ class ModeratorComponent:
         moderators_simple = moderators[~moderators.p.str.startswith(start_filter)]
         moderators_complex = moderators[moderators.p.str.startswith(start_filter)]
         return moderators, moderators_simple, moderators_complex
-    
+
     def add_country_moderator_unique(self, data, c_mod):
         """ Retrieve values to add in `data` for country moderator `c_mod`"""
         predicate = self.country_moderators[self.country_moderators.pLabel.str.lower() == c_mod].p.values[0]
@@ -198,7 +198,7 @@ class ModeratorComponent:
         else:  # c_mod in self.country_mod_complex.pLabel.str.lower().values
             query = self.query_cmod_complex.replace("predicate_replace", predicate) \
                 .replace("<p_alt_name_replace>", pred_alt_name)
-        
+
         query_result = run_query(query=query, sparql_endpoint=self.sparql_endpoint, headers=HEADERS_CSV)
         query_result['country'] = list(map(remove_url, query_result['country']))
 
@@ -209,16 +209,17 @@ class ModeratorComponent:
         else:
             query_result['year'] = query_result['year'].astype(int)
             query_result.columns = ['country', 'year', c_mod]
+
         data["country"] = data['country'].astype(str)
         query_result["country"] = query_result['country'].astype(str)
         return data.merge(query_result, on='country')
     
     def add_country_mods(self, data, mods):
+        """ Add country moderator """
         for mod in mods:
-            print(mod)
             data = self.add_country_moderator_unique(data=data, c_mod=mod)
         return data
-        
+
 
 
 if __name__ == '__main__':
@@ -231,7 +232,6 @@ if __name__ == '__main__':
     # PIPELINE = Pipeline(siv1="punishment treatment", sivv1="1", siv2="punishment treatment", sivv2="-1")
     # DF = PIPELINE.get_data_meta_analysis(data=OBS_DATA)
     # DF = bind_moderators(mod=MOD, data=DF)
-    # DF.to_csv("test.csv")
     
     from rdflib import Namespace
     from kglab.helpers.data_load import read_csv
