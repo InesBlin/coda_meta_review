@@ -3,6 +3,7 @@
 Running diverse set of experiments
 """
 import pickle
+import time
 from tqdm import tqdm
 from kglab.helpers.data_load import read_csv
 from kglab.helpers.kg_query import run_query
@@ -37,7 +38,7 @@ def update_grouping(row):
     return row
 
 
-def run_meta_analysis_with_moderators(grouping_path, data):
+def run_meta_analysis_with_moderators(grouping_path, data,  cached_moderator):
     """ Run meta-analysis on T1 vs. T2 with moderators 
     ATM: study moderators """
     groupings = read_csv(grouping_path)
@@ -57,31 +58,31 @@ def run_meta_analysis_with_moderators(grouping_path, data):
             "giv2": row_.giv2_id, "siv2": row_.siv2, "sivv2": row_.sivv2,
             "meta_analyses": {}
         }
-        if index < 1:
-            pipeline = Pipeline(
-                giv1=row_.giv1_id, siv1=row_.siv1, sivv1=row_.sivv1,
-                giv2=row_.giv2_id, siv2=row_.siv2, sivv2=row_.sivv2)
-            data_run = pipeline.get_data_meta_analysis(data=data)
+        
+        pipeline = Pipeline(
+            giv1=row_.giv1_id, siv1=row_.siv1, sivv1=row_.sivv1,
+            giv2=row_.giv2_id, siv2=row_.siv2, sivv2=row_.sivv2, 
+            **cached_moderator)
+        data_run = pipeline.get_data_meta_analysis(data=data)
 
-            var_moderators = pipeline.meta_analysis.moderator \
-                .get_variable_moderators(
-                    data=data_run, info={"giv1": pipeline.giv1, "giv2": pipeline.giv2,
-                                         "siv1": row_.siv1_id, "siv2": row_.siv2_id})
-            for index_mod, mod in enumerate(var_moderators):
-                try:
-                    results_rma = pipeline.meta_analysis(
-                        type_rma="uni", es_measure="d", yi="effectSize", data=data_run,
-                        method="REML", vi="variance", mods={"variable": [mod]})
-                    print(test)
-                    res[index]["meta_analyses"][index_mod] = {
-                        "moderator": mod,
-                        "result_rma": {k: v for k, v in results_rma.items() if k != "data"}
-                    }
-                except Exception as _:
-                    res[index]["meta_analyses"][index_mod] = {
-                        "moderator": mod,
-                        # "result_rma": e
-                    }
+        var_moderators = pipeline.meta_analysis.moderator \
+            .get_variable_moderators(
+                data=data_run, info={"giv1": pipeline.giv1, "giv2": pipeline.giv2,
+                                        "siv1": row_.siv1_id, "siv2": row_.siv2_id})
+        for index_mod, mod in enumerate(var_moderators):
+            try:
+                results_rma = pipeline.meta_analysis(
+                    type_rma="uni", es_measure="d", yi="effectSize", data=data_run,
+                    method="REML", vi="variance", mods={"variable": [mod]})
+                res[index]["meta_analyses"][index_mod] = {
+                    "moderator": mod,
+                    "result_rma": {k: v for k, v in results_rma.items() if k != "data"}
+                }
+            except Exception as _:
+                res[index]["meta_analyses"][index_mod] = {
+                    "moderator": mod,
+                    # "result_rma": e
+                }
     return res
 
 
@@ -89,7 +90,15 @@ if __name__ == '__main__':
     GROUPING_PATH = "./data/same_gv_different_siv_treat_1_2_with_ids.csv"
     DATA = read_csv("./data/observationData.csv")
     SAVE_PATH = "meta_analyses_with_moderators.pkl"
-    RES = run_meta_analysis_with_moderators(grouping_path=GROUPING_PATH, data=DATA)
-
+    CACHED = {
+        "study_moderators": "./data/moderators/study_moderators.csv",
+        "country_moderators": "./data/moderators/country_moderators.csv",
+        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    }
+    RES = run_meta_analysis_with_moderators(grouping_path=GROUPING_PATH, data=DATA,
+                                            cached_moderator=CACHED)
     with open(SAVE_PATH, "wb") as file:
         pickle.dump(RES, file)
+

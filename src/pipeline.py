@@ -17,7 +17,7 @@ def helper_siv(siv):
 
 class Pipeline:
     """ From data selection to meta-analysis output """
-    def __init__(self, giv1, siv1, sivv1, giv2, siv2, sivv2):
+    def __init__(self, giv1, siv1, sivv1, giv2, siv2, sivv2, **cached_moderator):
         self.giv1 = giv1
         self.siv1 = siv1
         self.sivv1 = sivv1
@@ -27,7 +27,7 @@ class Pipeline:
 
         self.data_selector = DataSelector(siv1=siv1, siv2=siv2, sivv1=sivv1, sivv2=sivv2)
         self.data_prep = DataPrep(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=siv2)
-        self.meta_analysis = MetaAnalysis(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=sivv2)
+        self.meta_analysis = MetaAnalysis(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=sivv2, **cached_moderator)
 
     def get_data_meta_analysis(self, data):
         """ self explanatory """

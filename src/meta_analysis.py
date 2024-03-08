@@ -34,11 +34,13 @@ def convert_pd_to_rdata(input_df: pd.DataFrame):
         output = ro.conversion.get_conversion().py2rpy(input_df)
     return output
 
+
 def convert_rdata_to_pd(rdata):
     """ Convert R data to pandas dataframe"""
     with (ro.default_converter + pandas2ri.converter).context():
         res = ro.conversion.get_conversion().rpy2py(rdata)
     return res
+
 
 def convert_to_numeric(x):
     """ Convert to numeric if possible, else return x """
@@ -46,6 +48,7 @@ def convert_to_numeric(x):
         return pd.to_numeric(x)
     except Exception as _:
         return x
+
 
 def convert_r_results_to_python(results):
     """ Converting results in R from meta-analysis to Python """
@@ -86,9 +89,12 @@ def enrich_results_ma(results_rma):
     results_rma["estimate"] = results_rma["b"]
 
     # Retrieving info treatment from call string
-    info = results_rma["call"].split("Model Results:\n\n")[1]
-    info = info.split("\n")[1:nb_analysis+1]
-    results_rma["info_treatment"] = [extract_name_from_line(x) for x in info]
+    if nb_analysis > 1:
+        info = results_rma["call"].split("Model Results:\n\n")[1]
+        info = info.split("\n")[1:nb_analysis+1]
+        results_rma["info_treatment"] = [extract_name_from_line(x) for x in info]
+    else:
+        results_rma["info_treatment"] = ["all"]
 
     # Adding df with main results
     info_df = {"info_treatment": results_rma["info_treatment"]}
@@ -105,7 +111,7 @@ class MetaAnalysis:
     https://github.com/cooperationdatabank/rshiny-app
     - R meta-analysis with metafor/rma + rpy2 
     - metafor documentation: https://cran.r-project.org/web/packages/metafor/metafor.pdf"""
-    def __init__(self, siv1, sivv1, siv2, sivv2):
+    def __init__(self, siv1, sivv1, siv2, sivv2, **cached_moderator):
         """
         Effect size measure
         - Standardised Mean Difference -> `d`
@@ -139,7 +145,7 @@ class MetaAnalysis:
 
         self.vars_res = ["k", "b", "se", "zval", "pval", "ci.lb", "ci.ub", "tau2"]
 
-        self.moderator = ModeratorComponent()
+        self.moderator = ModeratorComponent(**cached_moderator)
 
     def rma_uni(self, yi, vi, data, method, mods, slab):
         """ Simple model """
@@ -286,9 +292,16 @@ class MetaAnalysis:
 @click.argument("input_data_path")
 def main(input_data_path):
     """ Main script to store obs data """
+    CACHED = {
+        "study_moderators": "./data/moderators/study_moderators.csv",
+        "country_moderators": "./data/moderators/country_moderators.csv",
+        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    }
     meta_analysis = MetaAnalysis(
         siv1="punishment treatment", sivv1="1",
-        siv2="punishment treatment", sivv2="-1")
+        siv2="punishment treatment", sivv2="-1", **CACHED)
     data = read_csv(input_data_path)
     # mods = ["punishment incentive", "sequential punishment"]
     mods = None

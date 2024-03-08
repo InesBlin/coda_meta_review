@@ -5,6 +5,7 @@ All related to moderators (fetching, for meta-analysis)
 import re
 from collections import defaultdict
 import pandas as pd
+from kglab.helpers.data_load import read_csv
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_CSV
 from src.helpers import run_request, remove_url
@@ -65,7 +66,13 @@ class ModeratorComponent:
         (2) specific independent variables for which each study has a value
     """
     def __init__(self,  api: str = "https://api.odissei.triply.cc/queries/coda-dev/",
-                 sparql_endpoint: str = "http://localhost:7200/repositories/coda"):
+                 sparql_endpoint: str = "http://localhost:7200/repositories/coda",
+                 **cached):
+        """
+        cached: any cached data from SPARQL queries to avoid running them repeatedly
+        - Useful if: running a lot of experiments, to avoid GraphDB heap memory errors
+        """
+        self.cached = cached if cached else {}
         self.api = api
         self.study_moderator_query = api + "moderators/1/run"
         self.study_moderators = self.get_study_moderators()
@@ -110,7 +117,7 @@ class ModeratorComponent:
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX cdo: <https://data.cooperationdatabank.org/vocab/class/>
         PREFIX cdp: <https://data.cooperationdatabank.org/vocab/prop/>
-        SELECT DISTINCT ?siv ?siv_label
+        SELECT ?siv ?siv_label
         WHERE {start}
             ?siv rdfs:subPropertyOf ?giv ;
                 rdfs:label ?siv_label .
@@ -136,9 +143,19 @@ class ModeratorComponent:
     
     def var_mods_one_treatment(self, data, siv1, siv2, giv, id_treatment):
         """ Variable treatment for one treatment"""
-        query = self.variable_moderator_candidate_template.replace("<giv>", giv) \
-            .replace("<siv1>", siv1).replace("<siv2>", siv2)
-        candidates = run_query(query=query, sparql_endpoint=self.sparql_endpoint, headers=HEADERS_CSV)
+
+        if self.cached.get('variable_moderators'):
+            candidates = read_csv(self.cached.get('variable_moderators'))
+            candidates = candidates[(
+                (candidates.giv == "https://data.cooperationdatabank.org/vocab/prop/" + giv) & \
+                    (~candidates.siv.isin([f"https://data.cooperationdatabank.org/vocab/prop/{siv}" \
+                        for siv in [siv1, siv2]])))]
+            candidates = candidates[["siv", "siv_label"]]
+        else:
+            query = self.variable_moderator_candidate_template.replace("<giv>", giv) \
+                .replace("<siv1>", siv1).replace("<siv2>", siv2)
+            candidates = run_query(query=query, sparql_endpoint=self.sparql_endpoint, headers=HEADERS_CSV)
+        candidates = candidates.drop_duplicates()
         candidates = {x.lower() for x in candidates.siv_label.unique()}
         t_val_count = self.get_count(data=data, id_treatment=id_treatment, candidates=candidates)
         candidates = candidates.intersection(t_val_count)
@@ -165,8 +182,11 @@ class ModeratorComponent:
         """
         Study moderators: server.R l140->l145
         """
-        mod_from_kg = run_request(
-            self.study_moderator_query, headers={"Accept": "text/csv"})
+        if self.cached.get('study_moderators'):
+            mod_from_kg = read_csv(self.cached.get('study_moderators'))
+        else:
+            mod_from_kg = run_request(
+                self.study_moderator_query, headers={"Accept": "text/csv"})
         moderators = {"ageLow": "Age Low", "ageHigh": "Age High",
                       "choiceLow": "Lowest number of choices" ,
                       "choiceHigh": "Highest number of choices"}
@@ -181,8 +201,13 @@ class ModeratorComponent:
         """
         Country moderators: server.R lx -> ly
         """
-        moderators = run_query(query=self.country_prop_query, sparql_endpoint=self.sparql_endpoint,
-                               headers=HEADERS_CSV)
+        if self.cached.get('country_moderators'):
+            moderators = read_csv(self.cached.get('country_moderators'))
+        else:
+            moderators = run_query(
+                query=self.country_prop_query,
+                sparql_endpoint=self.sparql_endpoint, 
+                headers={"Accept": "text/csv"})
         start_filter = "https://data.cooperationdatabank.org/"
         moderators_simple = moderators[~moderators.p.str.startswith(start_filter)]
         moderators_complex = moderators[moderators.p.str.startswith(start_filter)]
@@ -192,14 +217,29 @@ class ModeratorComponent:
         """ Retrieve values to add in `data` for country moderator `c_mod`"""
         predicate = self.country_moderators[self.country_moderators.pLabel.str.lower() == c_mod].p.values[0]
         pred_alt_name = "_".join(c_mod.split())
-        if c_mod in self.country_mod_simple.pLabel.str.lower().values:
-            query = self.query_cmod_simple.replace("predicate_replace", predicate) \
-                .replace("<p_alt_name_replace>", pred_alt_name)
-        else:  # c_mod in self.country_mod_complex.pLabel.str.lower().values
-            query = self.query_cmod_complex.replace("predicate_replace", predicate) \
-                .replace("<p_alt_name_replace>", pred_alt_name)
 
-        query_result = run_query(query=query, sparql_endpoint=self.sparql_endpoint, headers=HEADERS_CSV)
+        if c_mod in self.country_mod_simple.pLabel.str.lower().values:
+            if self.cached.get('simple_country_moderators'):
+                query_result = read_csv(self.cached.get('simple_country_moderators'))
+                query_result = query_result[query_result.processedLabel == pred_alt_name]
+                query_result = query_result[["country", "value"]]
+                query_result.columns = ["country", pred_alt_name]
+            else:
+                query = self.query_cmod_simple.replace("predicate_replace", predicate) \
+                    .replace("<p_alt_name_replace>", pred_alt_name)
+                query_result = run_query(query=query, sparql_endpoint=self.sparql_endpoint,
+                                         headers=HEADERS_CSV)
+        else:  # c_mod in self.country_mod_complex.pLabel.str.lower().values
+            if self.cached.get('complex_country_moderators'):
+                query_result = read_csv(self.cached.get('complex_country_moderators'))
+                query_result = query_result[query_result.processedLabel == pred_alt_name]
+                query_result = query_result[["country", "year", "value"]]
+                query_result.columns = ["country", "year", pred_alt_name]
+            else:
+                query = self.query_cmod_complex.replace("predicate_replace", predicate) \
+                    .replace("<p_alt_name_replace>", pred_alt_name)
+                query_result = run_query(query=query, sparql_endpoint=self.sparql_endpoint, headers=HEADERS_CSV)
+
         query_result['country'] = list(map(remove_url, query_result['country']))
 
         if c_mod in self.country_mod_simple.pLabel.str.lower().values:
@@ -235,14 +275,23 @@ if __name__ == '__main__':
     
     from rdflib import Namespace
     from kglab.helpers.data_load import read_csv
-    MODERATOR_C = ModeratorComponent()
+    CACHED = {
+        "study_moderators": "./data/moderators/study_moderators.csv",
+        "country_moderators": "./data/moderators/country_moderators.csv",
+        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    }
+    MODERATOR_C = ModeratorComponent(**CACHED)
     NS_CDO = Namespace("https://data.cooperationdatabank.org/vocab/class/")
-    DATA = read_csv("./test.csv")
+    DATA = read_csv("./data/observationData.csv")
     CM = MODERATOR_C.get_variable_moderators(
         data=DATA, info={"siv1": "punishmentTreatment", "siv2": "rewardIncentive",
                          "giv1": "PunishmentVariable", "giv2": "RewardVariable"})
-    # print(MODERATOR_C.country_moderators)
-    # print(CM, len(CM))
+    print(MODERATOR_C.country_moderators)
+    print(CM, len(CM))
+    print(MODERATOR_C.cached)
+    
 
     DATA = MODERATOR_C.add_country_mods(data=DATA, mods=["airports", "eastern church exposure"])
     # print(DATA)
