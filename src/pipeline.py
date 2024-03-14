@@ -49,25 +49,10 @@ class Pipeline:
                  mods: Union[List[str], None] = None):
         data_run = self.get_data_meta_analysis(data=data)
 
-        # if not mods:
-        #     add_mods = input("You have not entered any moderator, do you want to add some? ")
-        #     if add_mods == '1':
-        #         mods = {}
-        #         variable_mods = list(self.meta_analysis.moderator.get_variable_moderators(
-        #             data=data_run, info={"giv1": helper_giv(self.giv1), "siv1": helper_siv(self.siv1),
-        #                                  "giv2": helper_giv(self.giv2), "siv2": helper_siv(self.siv2)}))
-        #         for type_m, options in [
-        #             ("variable", variable_mods),
-        #             ("study", self.meta_analysis.moderator.study_moderators),
-        #             ("country", self.meta_analysis.moderator.country_moderators)]:
-        #             res = self.add_moderator(type_m=type_m, options=options)
-        #             if res:
-        #                 mods[type_m] = res
-
-        ma_res = self.meta_analysis(data=data_run,
+        ma_res, refs = self.meta_analysis(data=data_run,
             type_rma=type_rma, es_measure=es_measure, yi=yi, method=method, vi=vi,
             mods=mods)
-        return ma_res
+        return ma_res, refs
 
 
 if __name__ == '__main__':
@@ -85,8 +70,15 @@ if __name__ == '__main__':
         # ("conflict level", "high", "conflict level", "low")
         ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
     ]
+    CACHED = {
+        "study_moderators": "./data/moderators/study_moderators.csv",
+        "country_moderators": "./data/moderators/country_moderators.csv",
+        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    }
     for giv1, siv1, sivv1, giv2, siv2, sivv2 in VALS:
-        PIPELINE = Pipeline(giv1=giv1, siv1=siv1, sivv1=sivv1, giv2=giv2, siv2=siv2, sivv2=sivv2)
+        PIPELINE = Pipeline(giv1=giv1, siv1=siv1, sivv1=sivv1, giv2=giv2, siv2=siv2, sivv2=sivv2, **CACHED)
         MODS = ["punishment incentive", "sequential punishment"]
         MODS = {
             "variable": ["punishment incentive"]

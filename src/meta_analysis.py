@@ -67,7 +67,8 @@ def convert_r_results_to_python(results):
             pass
     return res
 
-def extract_name_from_line(text_input):
+
+def extract_name_from_line_variable(text_input):
     """ Extract name of treatment from `call` results """
     text_input = text_input.strip()
     last_index, last_seen = -1, "-"
@@ -77,7 +78,19 @@ def extract_name_from_line(text_input):
 
     return text_input[:last_index].strip()
 
-def enrich_results_ma(results_rma):
+
+def extract_name_from_line_study(text_input):
+    """ Extract name of treatment from `call` results """
+    text_input = text_input.strip()
+    last_index, last_seen = 0, "-"
+    while last_seen != " ":
+        last_index += 1
+        last_seen = text_input[last_index]
+
+    return text_input[:last_index].strip()
+
+
+def enrich_results_ma(results_rma, mods):
     """ Add additional information from output of R meta-analysis """
     nb_analysis = results_rma["b"].shape[0]
     shapes = [(nb_analysis, 1), (nb_analysis, )]
@@ -92,7 +105,10 @@ def enrich_results_ma(results_rma):
     if nb_analysis > 1:
         info = results_rma["call"].split("Model Results:\n\n")[1]
         info = info.split("\n")[1:nb_analysis+1]
-        results_rma["info_treatment"] = [extract_name_from_line(x) for x in info]
+        if "variable" in mods:
+            results_rma["info_treatment"] = [extract_name_from_line_variable(x) for x in info]
+        if "study" in mods:
+            results_rma["info_treatment"] = [extract_name_from_line_study(x) for x in info]
     else:
         results_rma["info_treatment"] = ["all"]
 
@@ -104,6 +120,14 @@ def enrich_results_ma(results_rma):
     return results_rma
 
 
+def get_reference_level(data, mods):
+    res = {}
+    if mods:
+        for k, v in mods.items():
+            for mod in v:
+                res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str)])[0]
+    return res
+            
 
 class MetaAnalysis:
     """ Main class for meta-analysis.
@@ -283,8 +307,9 @@ class MetaAnalysis:
         # print(res)
         # return {k: res.rx2[k][0] for k in self.vars_res}
         results_rma = convert_r_results_to_python(res)
-        results_rma = enrich_results_ma(results_rma=results_rma)
-        return results_rma
+        references = get_reference_level(data=data, mods=mods)
+        results_rma = enrich_results_ma(results_rma=results_rma, mods=mods)
+        return results_rma, references
 
 
 @click.command()
@@ -309,9 +334,10 @@ def main(input_data_path):
             # "study": ["ageHigh"],
             # "country": ["eastern church exposure"]
             }
-    results_rma = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
+    results_rma, refs = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
                                 method="REML", vi="variance", mods=mods)
     print(results_rma)
+    print(refs)
 
 
 if __name__ == '__main__':
