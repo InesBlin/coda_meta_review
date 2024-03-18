@@ -56,6 +56,7 @@ class Pipeline:
 
 
 if __name__ == '__main__':
+    import numpy as np
     DATA = read_csv("./data/observationData.csv")
     # VALS = [
     #     # (siv1, sivv1, siv2, sivv2)
@@ -68,7 +69,10 @@ if __name__ == '__main__':
         # ("gender", "male", "gender", "female"),
         # ("group size level", "low", "group size level", "high"),
         # ("conflict level", "high", "conflict level", "low")
-        ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
+        # ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
+        # ("acquaintance", "relationship with the partner", "friend", "acquaintance", "relationship with the partner", "stranger")
+        # ("acquaintance", "relationship with the partner", "spouse", "acquaintance", "relationship with the partner","acquaintance"),
+        ("punishment", "punishment distribution rule", "deductive", "punishment", "punishment distribution rule", "redistributive")
     ]
     CACHED = {
         "study_moderators": "./data/moderators/study_moderators.csv",
@@ -83,7 +87,8 @@ if __name__ == '__main__':
         MODS = {
             "variable": ["punishment incentive"]
         }
-        curr_res = PIPELINE(data=DATA, mods=MODS)
+        MODS = None
+        curr_res, refs = PIPELINE(data=DATA, mods=MODS)
         print(f"{siv1} : {sivv1} || {siv2} : {sivv2}")
-        print(curr_res)
+        print([curr_res[x].reshape((1,))[0] for x in ["b", "k", "pval"]])
         print("====================")

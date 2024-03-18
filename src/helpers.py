@@ -34,3 +34,10 @@ def run_request(uri: str, headers: dict):
 def remove_url(url):
     return str(url).split('/')[-1]
 
+
+def rdflib_to_pd(graph):
+    """ Rdflib graph to pandas df with columns ["subject", "predicate", "object"] """
+    df = pd.DataFrame(columns=['subject', 'predicate', 'object'])
+    for subj, pred, obj in graph:
+        df.loc[df.shape[0]] = [str(subj), str(pred), str(obj)]
+    return df

@@ -296,6 +296,8 @@ class MetaAnalysis:
             all_mods = [x for _, v in mods.items() for x in v]
             mods_ma = StrVector(all_mods)
             # mods = input_r.colnames[-len(mods):]
+        else:
+            mods_ma = None
 
         if type_rma == "uni":
             res = self.rma_uni(yi=input_r.rx2(yi), vi=input_r.rx2(vi), data=input_r,
