@@ -146,19 +146,69 @@ PARAMS_2 = {
 
 PARAMS_ONTOLOGY_BASED = {
     "punishment": [
+        {"giv1": "punishment", "siv1": "punishment rule", "sivv1": "outcome-based",
+         "giv2": "punishment", "siv2": "punishment rule", "sivv2": 'other',},
         {"giv1": "punishment", "siv1": "punishment sequential", "sivv1": "sequential leadership-by-example",
          "giv2": "punishment", "siv2": "punishment sequential", "sivv2": "simultaneous",},
-        {"giv1": "punishment", "siv1": "punishment incentive", "sivv1": "monetary",
-         "giv2": "punishment", "siv2": "punishment incentive", "sivv2": "non-monetary material",},
-        {"giv1": "punishment", "siv1": "punishment agent", "sivv1": "institution",
-         "giv2": "punishment", "siv2": "punishment agent", "sivv2": "peer",},
-        {"giv1": "punishment", "siv1": "punishment rule", "sivv1": "none",
-         "giv2": "punishment", "siv2": "punishment rule", "sivv2": 'random',},
-        {"giv1": "punishment", "siv1": "punishment distribution rule", "sivv1": "deductive",
+         {"giv1": "punishment", "siv1": "punishment agent", "sivv1": "institution",
+         "giv2": "punishment", "siv2": "punishment agent", "sivv2": "computer",},
+         {"giv1": "punishment", "siv1": "punishment distribution rule", "sivv1": "deductive",
          "giv2": "punishment", "siv2": "punishment distribution rule", "sivv2": "redistributive",},
+        {"giv1": "punishment", "siv1": "punishment incentive", "sivv1": "hypothetical",
+         "giv2": "punishment", "siv2": "punishment incentive", "sivv2": "non-monetary social",},
     ],
+    "personality": [
+        {"giv1": "personality", "siv1": "altruism", "sivv1": "high",
+         "giv2": "personality", "siv2": "altruism", "sivv2": 'medium',},
+        {"giv1": "personality", "siv1": "machiavellianism", "sivv1": "low",
+         "giv2": "personality", "siv2": "machiavellianism", "sivv2": 'high',},
+        {"giv1": "personality", "siv1": "emotional intelligence", "sivv1": "low",
+         "giv2": "personality", "siv2": "emotional intelligence", "sivv2": 'high',},
+        {"giv1": "personality", "siv1": "trust propensity", "sivv1": "high",
+         "giv2": "personality", "siv2": "trust propensity", "sivv2": 'low',},
+        {"giv1": "personality", "siv1": "conscientiousness", "sivv1": "low",
+         "giv2": "personality", "siv2": "conscientiousness", "sivv2": 'high',},
+    ],
+    "communication": [
+        {"giv1": "communication", "siv1": "communication occurrence", "sivv1": "one-shot",
+         "giv2": "communication", "siv2": "communication occurrence", "sivv2": 'ongoing',},
+        {"giv1": "communication", "siv1": "communication content", "sivv1": "threat",
+         "giv2": "communication", "siv2": "communication content", "sivv2": 'request',},
+        {"giv1": "communication", "siv1": "communication type", "sivv1": "written",
+         "giv2": "communication", "siv2": "communication type", "sivv2": 'verbal',},
+        {"giv1": "communication", "siv1": "communication content", "sivv1": "irrelevant",
+         "giv2": "communication", "siv2": "communication content", "sivv2": 'other',},
+        {"giv1": "communication", "siv1": "communication type", "sivv1": "nonverbal",
+         "giv2": "communication", "siv2": "communication type", "sivv2": 'verbal',},
+    ],
+    "reward": [
+        {"giv1": "reward", "siv1": "reward agent", "sivv1": "comptuter",
+         "giv2": "reward", "siv2": "reward agent", "sivv2": 'peer',},
+        {"giv1": "reward", "siv1": "reward sequential", "sivv1": "sequential leadership-by-example",
+         "giv2": "reward", "siv2": "reward sequential", "sivv2": "simultaneous",},
+        {"giv1": "reward", "siv1": "reward incentive", "sivv1": "monetary",
+         "giv2": "reward", "siv2": "reward incentive", "sivv2": "non-monetary material",},
+         {"giv1": "reward", "siv1": "reward rule", "sivv1": "outcome-based",
+         "giv2": "reward", "siv2": "reward rule", "sivv2": "rank-based",},
+         {"giv1": "reward", "siv1": "reward treatment", "sivv1": "-1",
+         "giv2": "reward", "siv2": "reward treatment", "sivv2": "0",},
+    ],
+    "identification": [
+        {"giv1": "identification", "siv1": "identification level", "sivv1": "medium",
+         "giv2": "identification", "siv2": "identification level", "sivv2": 'low',},
+        {"giv1": "identification", "siv1": "group type", "sivv1": "natural group",
+         "giv2": "identification", "siv2": "group type", "sivv2": 'experimentally induced group',},
+        {"giv1": "identification", "siv1": "target membership", "sivv1": "stranger",
+         "giv2": "identification", "siv2": "target membership", "sivv2": 'outgroup',},
+        {"giv1": "identification", "siv1": "knowledge of membership", "sivv1": "common",
+         "giv2": "identification", "siv2": "knowledge of membership", "sivv2": 'unknown',},
+        {"giv1": "identification", "siv1": "entitativity level", "sivv1": "high",
+         "giv2": "identification", "siv2": "entitativity level", "sivv2": 'medium',},
+    ]
 }
 
+# {"giv1": "", "siv1": "", "sivv1": "",
+#  "giv2": "", "siv2": "", "sivv2": '',},
 
 def print_params():
     """ Print params to transfer to excel """
@@ -178,7 +228,7 @@ def run_meta_analysis():
                 try:
                     pipeline = Pipeline(
                         giv1=p['giv1'], siv1=p['siv1'], sivv1=p['sivv1'],
-                        giv2=p['giv2'], siv2=p['siv2'], sivv2=p['sivv2'])
+                        giv2=p['giv2'], siv2=p['siv2'], sivv2=p['sivv2'], **CACHED)
                     curr_res, _ = pipeline(data=DATA, mods=None)
                     metrics = ",".join([str(curr_res[x].reshape((1,))[0]) for x in ["k", "b", "pval"]])
                     final_info.append(get_param_description(k=k, p=p) + "," + metrics)
