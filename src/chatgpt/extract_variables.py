@@ -229,7 +229,8 @@ def run_meta_analysis():
                     pipeline = Pipeline(
                         giv1=p['giv1'], siv1=p['siv1'], sivv1=p['sivv1'],
                         giv2=p['giv2'], siv2=p['siv2'], sivv2=p['sivv2'], **CACHED)
-                    curr_res, _ = pipeline(data=DATA, mods=None)
+                    output = pipeline(data=DATA, mods=None)
+                    curr_res = output["results_rma"]
                     metrics = ",".join([str(curr_res[x].reshape((1,))[0]) for x in ["k", "b", "pval"]])
                     final_info.append(get_param_description(k=k, p=p) + "," + metrics)
                 except Exception as e:

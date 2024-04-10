@@ -49,10 +49,10 @@ class Pipeline:
                  mods: Union[List[str], None] = None):
         data_run = self.get_data_meta_analysis(data=data)
 
-        ma_res, refs = self.meta_analysis(data=data_run,
+        output = self.meta_analysis(data=data_run,
             type_rma=type_rma, es_measure=es_measure, yi=yi, method=method, vi=vi,
             mods=mods)
-        return ma_res, refs
+        return output
 
 
 if __name__ == '__main__':
@@ -88,7 +88,8 @@ if __name__ == '__main__':
             "variable": ["punishment incentive"]
         }
         MODS = None
-        curr_res, refs = PIPELINE(data=DATA, mods=MODS)
+        output = PIPELINE(data=DATA, mods=MODS)
+        curr_res = output["results_rma"]
         print(f"{siv1} : {sivv1} || {siv2} : {sivv2}")
         print([curr_res[x].reshape((1,))[0] for x in ["b", "k", "pval"]])
         print("====================")

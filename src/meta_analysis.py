@@ -311,7 +311,9 @@ class MetaAnalysis:
         results_rma = convert_r_results_to_python(res)
         references = get_reference_level(data=data, mods=mods)
         results_rma = enrich_results_ma(results_rma=results_rma, mods=mods)
-        return results_rma, references
+        return {
+            "data": data, "results_rma": results_rma, "refs": references
+        }
 
 
 @click.command()
@@ -336,8 +338,9 @@ def main(input_data_path):
             # "study": ["ageHigh"],
             # "country": ["eastern church exposure"]
             }
-    results_rma, refs = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
+    output = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
                                 method="REML", vi="variance", mods=mods)
+    results_rma, refs = output["results_rma"], output["refs"]
     print(results_rma)
     print(refs)
 

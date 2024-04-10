@@ -117,9 +117,10 @@ def run_meta_analysis_with_moderators(groupings: pd.DataFrame, data: pd.DataFram
         # moderators = moderators[:2]
         for index_mod, mod in enumerate(moderators):
             try:
-                results_rma, refs = pipeline.meta_analysis(
+                output = pipeline.meta_analysis(
                     type_rma="uni", es_measure="d", yi="effectSize", data=data_run,
                     method="REML", vi="variance", mods={type_mod: [mod]})
+                results_rma, refs = output["results_rma"], output["refs"]
                 res[index]["meta_analyses"][index_mod] = {
                     "ref": refs[mod],
                     "moderator": mod,

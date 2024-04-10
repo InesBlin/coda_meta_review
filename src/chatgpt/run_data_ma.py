@@ -63,7 +63,8 @@ def run_meta_analyses(params):
                 pipeline = Pipeline(
                     giv1=p['giv1'], siv1=p['siv1'], sivv1=p['sivv1'],
                     giv2=p['giv2'], siv2=p['siv2'], sivv2=p['sivv2'], **CACHED)
-                curr_res, _ = pipeline(data=DATA, mods=None)
+                output = pipeline(data=DATA, mods=None)
+                curr_res = output["results_rma"]
                 # metrics = ";".join([str(curr_res[x].reshape((1,))[0]).replace(".", ",") for x in ["k", "b", "pval"]])
                 metrics = [int(curr_res["k"].reshape((1,))[0]), float(curr_res["b"].reshape((1,))[0]), float(curr_res["pval"].reshape((1,))[0])]
                 # final_info.append(get_param_description(p=p) + ";" + metrics)

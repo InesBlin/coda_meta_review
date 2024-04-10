@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        pre {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .iframe-container {
+            width: 800px; /* Set the width of the container */
+            height: 600px; /* Set the height of the container */
+        }
+        .tab-buttons {
+            margin-bottom: 20px;
+        }
+        .tablink {
+            background-color: #f2f2f2;
+            border: none;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .tablink:hover {
+            background-color: #ddd;
+        }
+        .tab {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <span style="color: red;">Add introductory paragraph about CoDa + meta-analysis?</span>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <p>The objective of this meta-review is to explore a starting hypothesis on differences in cooperation, and investigate whether the CoDa databank supports this hypothesis or not.</p>
+    <p>Hypothesis explored: {{ hypothesis }}</p>
+    <p>Treatment 1: GIV = {{ name }}, SIV = {{ info['siv1'] }}, SIVV = {{ info['sivv1'] }}</p>
+    <p>Treatment 2: GIV = {{ name }}, SIV = {{ info['siv2'] }}, SIVV = {{ info['sivv2'] }}</p>
+    <span style="color: red;">Add 1-sentence explanation of how studies are retrieved for the meta-analysis</span>
+    <p>How many observations are retrieved? In total, they are {{ data_ma_shape }}.</p>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <span style="color: red;">Generic description of the studies</span>
+    <h2>Where do the observations come from?</h2>
+    <iframe src="fig_map.html" width="800" height="600"></iframe>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <h2>When were the observations taken?</h2>
+    <iframe src="fig_hist_year.html" width="800" height="600"></iframe>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <h2>Table 1: Effect Size Annotation</h2>
+    <div class="container mt-5">
+        <div class="table-responsive">
+            <table id="dataTable" class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        {% for column in data_ma.columns %}
+                        <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in data_ma.iterrows() %}
+                    <tr>
+                        {% for value in row %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <h2>Run a Meta-analysis</h2>
+    <pre><code>{{ ma_res_call }}</code></pre>
+    <p>The overall meta-analytic effect size is {{ es }}. This effect can be considered {{ categorize_es }}. The pvalue is {{ pval }}. It is {{ categorize_pval }}.</p>
+    <div style="margin-bottom: 20px;"></div>
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc;"></div>
+    <h2>Was the starting hypothesis correct?</h2>
+    <p>{{ conclude_hypothesis }}</p>
+    <span style="color: red;">Add more detailed analysis of the results?</span>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<!-- Include Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#dataTable').DataTable();
+  });
+</script>
+
+</body>
+</html>
