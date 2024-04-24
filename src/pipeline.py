@@ -2,7 +2,7 @@
 """
 Whole pipeline
 """
-from typing import Union, List
+from typing import Union, Dict
 from src.data_selection import DataSelector
 from src.data_prep import DataPrep
 from src.meta_analysis import MetaAnalysis
@@ -46,7 +46,7 @@ class Pipeline:
 
     def __call__(self, data, type_rma: str = "uni", es_measure: str = "d",
                  yi: str = "effectSize", method: str = "REML", vi: str = "variance",
-                 mods: Union[List[str], None] = None):
+                 mods: Union[Dict, None] = None):
         data_run = self.get_data_meta_analysis(data=data)
 
         output = self.meta_analysis(data=data_run,

@@ -1,34 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Meta-review generation in Python
+"""
 import os
 import re
-import yaml
 import json
-import pandas as pd
-import numpy as np
+import math
 from copy import deepcopy
-from src.pipeline import Pipeline
-import plotly.graph_objs as go
+import yaml
+import click
+import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 import plotly.express as px
+from src.pipeline import Pipeline
 
-fig1 = go.Figure(data=go.Scatter(x=[1, 2, 3], y=[4, 1, 2]))
-fig1.update_layout(title='Figure 1')
-
-fig2 = go.Figure(data=go.Bar(x=[1, 2, 3], y=[4, 1, 2]))
-fig2.update_layout(title='Figure 2')
-
-fig3 = go.Figure(data=go.Pie(labels=['A', 'B', 'C'], values=[4, 3, 2]))
-fig3.update_layout(title='Figure 3')
 
 def custom_enumerate(iterable, start=1):
+    """ Custom enumerate for HTML """
     return enumerate(iterable, start)
 
 def load_yaml_file(filename):
-    with open(filename, 'r') as file:
+    """ Self explanatory """
+    with open(filename, 'r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     return data
 
 def load_json_file(filename):
-    with open(filename, 'r') as file:
+    """ Self explanatory """
+    with open(filename, 'r', encoding='utf-8') as file:
         data = json.load(file)
     return data
 
@@ -41,12 +40,13 @@ def categorize_es(x):
     return "null"
 
 def categorize_pval(x):
-    """ categorize effect size """
+    """ categorize pvalue """
     if x < 0.05:
         return "statistically significant"
     return "not statistically significant"
 
 def replace_cite_id(input_text, dico):
+    """ In text, replace ~\cite{} with [nb] """
     pattern = r'<cite (.*?)>'
     def replace_with_dict(match):
         key = match.group(1) 
@@ -74,8 +74,8 @@ class MetaReview:
     Hypothesis is in dictionary format
     1-, 2-, and 3- all contain `siv1`, `sivv1`, `siv2` and `sivv2` as keys 
     1- contains `reg_qualifier` as key
-    2- contains `num_qualifier`, `mod_qualifier`, `mod` as keys
-    3- contains `mod1`, `mod`, `cat_qualifier`, `mod2`as keys
+    2- contains `num_qualifier`, `mod_qualifier`, `mod`,  `type_mod` as keys
+    3- contains `mod1`, `mod`, `cat_qualifier`, `mod2`, `type_mod` as keys
 
     [NB]: for now focus on 1-
     """
@@ -109,9 +109,12 @@ class MetaReview:
             giv2=self.h['giv2'], siv2=self.h['siv2'], sivv2=self.h['sivv2'], **args.get("cached"))
         self.columns = ["studyName", "effectSize", "effectSizeSampleSize"]
 
-        env = Environment(loader=FileSystemLoader('.'))
+        env = Environment(loader=FileSystemLoader(args['template_folder']))
         env.filters['custom_enumerate'] = custom_enumerate
         self.template = env.get_template(args["report_template"])
+
+        self.i2_threshold = 25
+        self.tau2_threshold = 0.5
 
     def get_type_hypothesis(self):
         """ From hypothesis dict, get the type of hypothesis """
@@ -170,7 +173,7 @@ class MetaReview:
 
         return f"""
         The effect size is non-informative. 
-        The original hypothesis was: {self.text_h}.
+        The original hypothesis was: "{self.text_h}"
         This hypothesis is not validated.
         """
 
@@ -219,19 +222,39 @@ class MetaReview:
         fig_hist_year = px.histogram(data, x="paperYearDOI", nbins=50)
         return {"fig_study_provenance": fig_map.to_html(), "fig_study_year": fig_hist_year.to_html()}
     
+    def get_i2_description(self, i2):
+        """ Describe heterogeneity across studies """
+        if i2 >= self.i2_threshold:
+            return f"There is a high heterogeneity across studies (I2 = {round(i2, 2)}%), which means that the studies cannot be considered studies of the same population. We suggest that a finer-grained subgroup analysis might be worthwhile."
+        return f"There is a low heterogeneity across studies (I2 = {round(i2, 2)}%), which means that the studies can be considered studies of the same population. "
+    
+    def get_tau2_description(self, tau2):
+        """ Describe dispersion of time effect sizes """
+        how = "low" if tau2 <= self.tau2_threshold else "high"
+        return f"There is a {how} dispersion of time effect sizes (tau = {round(math.sqrt(tau2), 2)}, T2 = {round(tau2, 2)})."
+    
+    def format_moderator(self):
+        """ Format moderator for meta-analysis """
+        if self.type_h == 'regular':
+            return None
+        return {self.h['type_mod']: [self.h['mod']]}
+    
     def __call__(self, save_folder):
         """ Run meta-analysis and produce meta-review """
         data_ma = self.pipeline.get_data_meta_analysis(self.data)
         data_ma.to_csv(os.path.join(save_folder, "data_ma_init.csv"))
-        output = self.pipeline(data=self.data, es_measure=self.config["es_measure"], method=self.config["method_mv"])
+        output = self.pipeline(data=self.data, es_measure=self.config["es_measure"], method=self.config["method_mv"], mods=self.format_moderator())
         ma_res, refs = output["results_rma"], output["refs"]
         output["data"].to_csv(os.path.join(save_folder, "data_ma_pre_ma.csv"))
-        es, pval = ma_res['b'][0][0], ma_res["pval"][0]
+        es, pval, i2 = ma_res['b'][-1][0], ma_res["pval"][-1], ma_res['I2'][-1]
+        ci_lb, ci_ub = ma_res["ci.lb"][-1], ma_res["ci.ub"][-1]
+        tau2 = ma_res['tau2'][-1]
 
         conclude_hypothesis = self.verify_hypothesis(es=es, pval=pval)
 
         type_es = "standardized mean difference" if self.config["es_measure"] == "d" else "raw correlation coefficient"
         name_es = "Cohen" if self.config["es_measure"] == "d" else "Pearson"
+        ex_mod_read = [x for x in ma_res['df_info'].info_treatment.values if x != 'intrcpt'][0]
 
         args = dict(
             hypothesis=self.text_h, name=self.h['giv1'], info=self.h,
@@ -239,12 +262,22 @@ class MetaReview:
             data_ma_es_nb=format(output["data"].shape[0], ','),
             data_ma_study_nb=format(output["data"].study.unique().shape[0], ','),
             data_ma_country_nb=format(output["data"].country.unique().shape[0], ','),
-            columns=self.columns, data_ma=output["data"][self.columns], ma_res_call=ma_res["call"],
+            columns=self.columns, data_ma_id='data_ma_id', data_ma=output["data"][self.columns], ma_res_call=ma_res["call"],
             es=round(es, 2), categorize_es=categorize_es(es), 
-            pval=pval, categorize_pval=categorize_pval(pval),
+            pval=round(pval, 3), categorize_pval=categorize_pval(pval),
             conclude_hypothesis=conclude_hypothesis,
             references=self.references,
-            type_es=type_es, name_es=name_es)
+            type_es=type_es, name_es=name_es,
+            i2_description=self.get_i2_description(i2=i2),
+            tau2_description=self.get_tau2_description(tau2=tau2),
+            ci_lb=round(ci_lb, 3), ci_ub=round(ci_ub, 3),
+            df_info_id="df_info_id", df_info=ma_res['df_info'],
+            type_h=self.type_h, mod=self.h.get('mod'),
+            type_mod=self.type_h.split('_', maxsplit=1)[0],
+            ref_mod=refs[self.h.get('mod')],
+            ex_mod_read=ex_mod_read,
+            ex_mod_val=ex_mod_read.replace(self.h.get('mod'), '') 
+            )
         args.update(self.config)
         args.update(self.structure)
         args.update(self.get_figures(data=output["data"]))
@@ -254,9 +287,10 @@ class MetaReview:
             file.write(html_review)
 
 ARGS = {
+    'template_folder': 'meta_review/templates',
     'config': 'meta_review/config.yaml',
-    'structure': 'meta_review/structure.yaml',
-    'references': 'meta_review/references.json',
+    'structure': 'meta_review/templates/structure.yaml',
+    'references': 'meta_review/templates/references.json',
     "data": pd.read_csv("./data/observationData.csv", index_col=0),
     "cached": {
         "study_moderators": "./data/moderators/study_moderators.csv",
@@ -265,21 +299,40 @@ ARGS = {
         "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
         "variable_moderators": "./data/moderators/variable_moderators.csv"
     },
-    "report_template": 'meta_review/report_template.html',
+    "report_template": 'report_template.html',
+    # REGULAR hypothesis
     # "hypothesis": {
-    #     "giv1": "group_size", "siv1": "decision maker", "sivv1": "individual",
-    #     "giv2": "group_size", "siv2": "group size level", "sivv2": "high",
+    #     "giv1": "gender", "siv1": "gender", "sivv1": "female",
+    #     "giv2": "gender", "siv2": "gender", "sivv2": "male",
     #     'reg_qualifier': 'higher'
+    # },
+    # NUMERICAL hypothesis
+    # "hypothesis": {
+    #     "giv1": "gender", "siv1": "gender", "sivv1": "female",
+    #     "giv2": "gender", "siv2": "gender", "sivv2": "male",
+    #     'num_qualifier': 'higher', 'mod_qualifier': 'higher',
+    #     'mod': 'studyKindex', 'type_mod': 'study'
     # }
+    # CATEGORICAL hypothesis
     "hypothesis": {
         "giv1": "gender", "siv1": "gender", "sivv1": "female",
         "giv2": "gender", "siv2": "gender", "sivv2": "male",
-        'reg_qualifier': 'higher'
+        'cat_qualifier': 'higher', 'mod_qualifier': 'higher',
+        # 'mod': 'studyOneShot', 'type_mod': 'study',
+        # 'mod1': 'Repeated', 'mod2': 'One-shot'
+        'mod': 'country', 'type_mod': 'study',
+        'mod1': 'FRA', 'mod2': 'KOR'
     }
 }
 
 
-if __name__ == '__main__':
-    META_REVIEW = MetaReview(**ARGS)
-    META_REVIEW(save_folder="meta_review")
+@click.command()
+@click.argument("save_folder")
+def main(save_folder):
+    """ Main meta review generation """
+    meta_review = MetaReview(**ARGS)
+    meta_review(save_folder=save_folder)
 
+
+if __name__ == '__main__':
+    main()

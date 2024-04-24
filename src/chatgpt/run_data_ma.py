@@ -53,7 +53,7 @@ def get_param_description(p):
 
 def run_meta_analyses(params):
     """ Meta-analyses for all """
-    df = pd.DataFrame(columns=["Name", "Templated Hypothesis", "Higher/Lower", "GIV1", "SIV1", "SIVV1", "GIV2", "SIV2", "SIVV2", "k", "b", "pval"])
+    df = pd.DataFrame(columns=["name", "templated_h", "reg_qualifier", "giv1", "siv1", "sivv1", "giv2", "siv2", "sivv2", "k", "b", "pval"])
     keys = list(sorted(params.keys()))
     for key in tqdm(keys):
         info = params[key]

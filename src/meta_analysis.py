@@ -125,7 +125,9 @@ def get_reference_level(data, mods):
     if mods:
         for k, v in mods.items():
             for mod in v:
-                res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str)])[0]
+                # print(data[mod].unique())
+                # print([type(x) for x in data[mod].unique()])
+                res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str) or (isinstance(x, float) and not np.isnan(x))])[0]
     return res
             
 
@@ -158,7 +160,7 @@ class MetaAnalysis:
         self.method_mv = ["ML", "REML"]
 
         """  character string to specify whether an equal- or a random-effects model 
-        should be fitted. An equal-effects model is fitted when using method="EE". 
+        should be fitted. An equal-effects model is fitted when using method="EE". -> in practice rarely met
         A random- effects model is fitted by setting method equal to one of the following: 
         "DL", "HE", "HS", "HSk", "SJ", "ML", "REML", "EB", "PM", "GENQ", "PMM", or "GENQM". 
         The default is "REML". See ‘Details’. """
@@ -314,6 +316,7 @@ class MetaAnalysis:
         return {
             "data": data, "results_rma": results_rma, "refs": references
         }
+        return
 
 
 @click.command()
@@ -328,14 +331,17 @@ def main(input_data_path):
         "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
         "variable_moderators": "./data/moderators/variable_moderators.csv"
     }
+    # meta_analysis = MetaAnalysis(
+    #     siv1="punishment treatment", sivv1="1",
+    #     siv2="punishment treatment", sivv2="-1", **CACHED)
     meta_analysis = MetaAnalysis(
-        siv1="punishment treatment", sivv1="1",
-        siv2="punishment treatment", sivv2="-1", **CACHED)
+        siv1="gender", sivv1="female",
+        siv2="gender", sivv2="male", **CACHED)
     data = read_csv(input_data_path)
     # mods = ["punishment incentive", "sequential punishment"]
     mods = None
-    mods = {"variable": ["punishment incentive", "sequential punishment"],
-            # "study": ["ageHigh"],
+    mods = {# "variable": ["one-shot vs repeated"],
+            "study": ["studyOneShot"],
             # "country": ["eastern church exposure"]
             }
     output = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
