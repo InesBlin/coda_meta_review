@@ -215,6 +215,7 @@ class HypothesesBuilder:
             logger.info("Categorizing effect sizes")
             observations = self.bin_effect_size(obs=observations)
             observations.to_csv("observations_iv.csv")
+            observations[["cat_t1", "cat_t2", "iv_new"]].drop_duplicates().to_csv("hypotheses_readable.csv")
 
         print("observations: ", observations.shape)
 
@@ -222,7 +223,7 @@ class HypothesesBuilder:
             triples = pd.read_csv(triples, index_col=0)
         else:
             logger.info("Constructing KG")
-            triples = self.construct_effect_kg(obs=observations.sample(3000),
+            triples = self.construct_effect_kg(obs=observations.sample(10000),
                                                sparql_endpoint=sparql_endpoint)
             triples.to_csv(f"triples_{triples.shape[0]}.csv")
 
