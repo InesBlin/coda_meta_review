@@ -7,3 +7,7 @@ data/
 misc/
 notebooks
 **/__pycache__/**
+.vscode
+meta_review/regular
+meta_review/numerical
+meta_review/categorical
