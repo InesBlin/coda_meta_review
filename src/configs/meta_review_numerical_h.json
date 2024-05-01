@@ -1,0 +1,21 @@
+{
+    "template_folder": "meta_review/templates",
+    "config": "meta_review/config.yaml",
+    "structure": "meta_review/templates/structure.yaml",
+    "references": "meta_review/templates/references.json",
+    "data": "./data/observationData.csv",
+    "cached": {
+        "study_moderators": "./data/moderators/study_moderators.csv",
+        "country_moderators": "./data/moderators/country_moderators.csv",
+        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    },
+    "report_template": "report_template.html",
+    "hypothesis": {
+        "giv1": "gender", "siv1": "gender", "sivv1": "female",
+        "giv2": "gender", "siv2": "gender", "sivv2": "male",
+        "num_qualifier": "higher", "mod_qualifier": "higher",
+        "mod": "studyKindex", "type_mod": "study"
+    }
+}

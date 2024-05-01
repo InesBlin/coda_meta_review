@@ -157,11 +157,11 @@ class MetaReview:
     def get_comparison_hypothesis(self, type_h):
         """ compare hypothesis to data """
         if type_h == "verified":
-            return f"The hypothesis is verified: {self.text_h}"
+            return type_h, f"The hypothesis is verified: {self.text_h}"
 
         if type_h == "verified_not_sig":
             hyp = self.get_text_hypothesis(templates=self.h_template_not_stat_sig, hyp=self.h)
-            return f"""
+            return type_h, f"""
                 Although the effect size is small to large, the meta-analysis was not statistically significant.
                 The original hypothesis was: {self.text_h}
                 A more accurate hypothesis would be: {hyp}"""
@@ -170,7 +170,7 @@ class MetaReview:
             qualifier = "higher" if self.h[self.key_qualifier] == "lower" else "lower"
             hyp = deepcopy(self.h)
             hyp[self.key_qualifier] = qualifier
-            return f"""
+            return type_h, f"""
                 The hypothesis is incorrect.
                 The original hypothesis was: {self.text_h}
                 The correct hypothesis is: {self.get_text_hypothesis(templates=self.h_template, hyp=hyp)}
@@ -181,13 +181,13 @@ class MetaReview:
             hyp = deepcopy(self.h)
             hyp[self.key_qualifier] = qualifier
             hyp = self.get_text_hypothesis(templates=self.h_template_not_stat_sig, hyp=hyp)
-            return f"""
+            return type_h, f"""
                 The hypothesis seems to be incorrect but is not statistically significant.
                 The original hypothesis was: {self.text_h}
                 A more accurate hypothesis would be: {hyp}
                 """
 
-        return f"""
+        return type_h, f"""
         The effect size is non-informative. 
         The original hypothesis was: "{self.text_h}"
         This hypothesis is not validated.
@@ -275,6 +275,7 @@ class MetaReview:
             if self.config["es_measure"] == "d" else "raw correlation coefficient"
         name_es = "Cohen" if self.config["es_measure"] == "d" else "Pearson"
         ex_mod_read = [x for x in ma_res['df_info'].info_treatment.values if x != 'intrcpt'][0]
+        type_h, conclude_h = self.verify_hypothesis(es=es, pval=pval)
 
         args = {
             "hypothesis": self.text_h, "name": self.h['giv1'], "info": self.h,
@@ -286,7 +287,7 @@ class MetaReview:
             "data_ma": output["data"][self.columns], "ma_res_call": ma_res["call"],
             "es": round(es, 2), "categorize_es": categorize_es(es),
             "pval": round(pval, 3), "categorize_pval": categorize_pval(pval),
-            "conclude_hypothesis": self.verify_hypothesis(es=es, pval=pval),
+            "conclude_hypothesis": conclude_h,
             "references": self.references,
             "type_es": type_es, "name_es": name_es,
             "i2_description": self.get_i2_description(i2=i2),
@@ -306,6 +307,8 @@ class MetaReview:
         html_review = self.generate_html_review(**args)
         with open(os.path.join(save_folder, "report.html"), "w", encoding="utf-8") as file:
             file.write(html_review)
+        with open(os.path.join(save_folder, "type_h.txt"), "w", encoding="utf-8") as file:
+            file.write(type_h)
 
 
 @click.command()
@@ -318,4 +321,5 @@ def main(config, save_folder):
 
 
 if __name__ == '__main__':
+    # python src/meta_review.py src/configs/meta_review_categorical_h.json meta_review/regular
     main()

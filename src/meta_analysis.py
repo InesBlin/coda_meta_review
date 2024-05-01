@@ -8,11 +8,13 @@ import numpy as np
 import pandas as pd
 import rpy2.robjects as ro
 from rpy2.robjects import pandas2ri, Formula, NULL, ListVector
+from rpy2.robjects.conversion import localconverter
 from rpy2.robjects.packages import importr
 from rpy2.robjects.vectors import StrVector
 from kglab.helpers.data_load import read_csv
 from src.helpers import select_observations
 from src.moderator import bind_moderators, ModeratorComponent
+
 
 def is_filled(val):
     """ Source: https://github.com/cooperationdatabank/ETL/blob/main/src/convert-indicators.py"""
