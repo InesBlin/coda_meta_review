@@ -1,0 +1,4 @@
+Cooperation is significantly higher when feedback target is group, compared to when feedback target is other.
+Cooperation is significantly higher when feedback content is choice, compared to when feedback target is individual.
+Cooperation is significantly lower when feedback content is rank, compared to when feedback target is absent.
+Cooperation is significantly higher when feedback content is earnings, compared to when feedback target is individual.

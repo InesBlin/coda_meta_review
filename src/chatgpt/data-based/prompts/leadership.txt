@@ -1,0 +1,73 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to leadership variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+endogenous leadership,exogenous,leadership role,follower
+leader's characteristic,weak,leader's characteristic,strong
+endogenous leadership,exogenous,leadership assignment rule,authority
+leader's characteristic,weak,leadership assignment rule,random appointment
+endogenous leadership,endogenous,leadership assignment rule,other
+leadership role,leader ,leadership role,follower
+leadership assignment rule,random appointment,leadership role,leader 
+leadership assignment rule,other,leadership role,leader 
+leader's characteristic,weak,leadership assignment rule,elected
+endogenous leadership,exogenous,leader's characteristic,strong
+leader's behavior,cooperative,leader's behavior,noncooperative
+leader's characteristic,male,leadership assignment rule,elected
+endogenous leadership,exogenous,leader's characteristic,weak
+leadership assignment rule,fixed ,leadership assignment rule,random appointment
+leader's characteristic,strong,leadership assignment rule,fixed 
+leadership assignment rule,authority,leadership assignment rule,random appointment
+leadership assignment rule,authority,leadership role,follower
+leadership assignment rule,random appointment,leadership assignment rule,elected
+leadership assignment rule,random appointment,leadership assignment rule,volunteer
+leader's characteristic,strong,leadership assignment rule,elected
+endogenous leadership,endogenous,leader's characteristic,strong
+leader's characteristic,strong,leadership assignment rule,volunteer
+endogenous leadership,endogenous,leader's characteristic,female
+endogenous leadership,exogenous,leadership role,leader 
+leader's behavior,noncooperative,leadership assignment rule,random appointment
+endogenous leadership,endogenous,leader's characteristic,weak
+leader's characteristic,male,leader's characteristic,female
+endogenous leadership,exogenous,leader's behavior,noncooperative
+endogenous leadership,endogenous,leadership assignment rule,random appointment
+endogenous leadership,endogenous,leadership role,follower
+endogenous leadership,exogenous,leadership assignment rule,random appointment
+leader's behavior,cooperative,leadership assignment rule,random appointment
+endogenous leadership,endogenous,leadership assignment rule,elected
+endogenous leadership,exogenous,leadership assignment rule,fixed 
+endogenous leadership,endogenous,leadership assignment rule,volunteer
+endogenous leadership,endogenous,leadership role,leader 
+endogenous leadership,exogenous,leadership assignment rule,elected
+leadership assignment rule,authority,leadership assignment rule,fixed 
+endogenous leadership,exogenous,leadership assignment rule,volunteer
+endogenous leadership,exogenous,leader's behavior,cooperative
+leadership assignment rule,authority,leadership assignment rule,elected
+leadership assignment rule,fixed ,leadership assignment rule,volunteer
+leader's characteristic,female,leadership assignment rule,elected
+leadership assignment rule,authority,leadership role,leader 
+leadership assignment rule,random appointment,leadership role,follower
+leadership assignment rule,other,leadership role,follower
+endogenous leadership,endogenous,leadership assignment rule,fixed 
+endogenous leadership,exogenous,endogenous leadership,endogenous
+leader's characteristic,outgroup,leader's characteristic,ingroup
+leadership assignment rule,elected,leadership role,leader 
+endogenous leadership,endogenous,leader's characteristic,male
+endogenous leadership,endogenous,leadership assignment rule,authority
+leader's characteristic,strong,leadership assignment rule,random appointment
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

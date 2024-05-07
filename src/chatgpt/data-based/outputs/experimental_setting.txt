@@ -1,0 +1,3 @@
+Cooperation is significantly lower when experimental setting is lab, compared to when experimental setting is online.
+Cooperation is significantly higher when experimental setting is lab, compared to when experimental setting is field.
+Cooperation is significantly higher when experimental setting is lab in the field, compared to when experimental setting is lab.

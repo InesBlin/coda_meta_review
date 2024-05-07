@@ -1,0 +1,3 @@
+Cooperation is significantly lower when ethnicity (us) is black or african american, compared to when ethnicity (us) is white.
+Cooperation is significantly higher when ethnicity (us) is white, compared to when ethnicity (us) is other.
+Cooperation is significantly higher when ethnicity (us) is white, compared to when ethnicity (us) is asian.

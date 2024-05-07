@@ -1,0 +1,6 @@
+Cooperation is significantly higher when replenishment rate level is high, compared to when replenishment rate level is low.
+Cooperation is significantly lower when resource size level is high, compared to when resource size level is medium.
+Cooperation is significantly higher when resource size level is low, compared to when resource size level is medium.
+Cooperation is significantly higher when replenishment rate level is high, compared to when replenishment rate level is medium.
+Cooperation is significantly lower when replenishment rate level is medium, compared to when replenishment rate level is low.
+Cooperation is significantly lower when resource size level is low, compared to when resource size level is high.

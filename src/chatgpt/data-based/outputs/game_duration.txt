@@ -1,0 +1,5 @@
+Cooperation is significantly lower when number of trials level is low, compared to when one-shot vs repeated is repeated.
+Cooperation is significantly higher when continuation probability level is low, compared to when continuation probability level is high.
+Cooperation is significantly higher when number of trials level is high, compared to when number of trials level is medium.
+Cooperation is significantly lower when number of trials level is high, compared to when number of trials level is low.
+Cooperation is significantly higher when one-shot vs repeated is one-shot, compared to when one-shot vs repeated is repeated.

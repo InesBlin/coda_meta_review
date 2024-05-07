@@ -1,0 +1,81 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to reward variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+reward agent,peer,reward incentive,non-monetary social
+reward rule,rank-based,reward treatment,1
+reward rule,contribution-based,reward treatment,1
+reward agent,institution,reward rule,contribution-based
+reward agent,experimenter,reward treatment,-1
+reward rule,contribution-based,reward treatment,0
+reward agent,peer,sequential reward,simultaneous
+reward rule,rank-based,sequential reward,simultaneous
+reward agent,third party,reward treatment,0
+reward rule,contribution-based,sequential reward,simultaneous
+reward agent,peer,reward incentive,monetary
+reward rule,rank-based,reward treatment,0
+reward treatment,1,sequential reward,simultaneous
+reward incentive,non-monetary social,reward treatment,1
+reward agent,institution,reward incentive,hypothetical
+reward agent,institution,sequential reward,simultaneous
+reward incentive,hypothetical,reward treatment,1
+reward agent,institution,reward incentive,monetary
+reward incentive,non-monetary social,reward treatment,0
+reward treatment,-1,sequential reward,simultaneous
+reward rule,contribution-based,reward treatment,-1
+reward agent,institution,reward treatment,1
+reward rule,random,reward treatment,-1
+reward treatment,1,reward treatment,0
+reward agent,peer,reward treatment,1
+reward agent,institution,reward treatment,0
+reward incentive,monetary,reward treatment,1
+reward agent,leader,reward treatment,1
+reward agent,peer,reward rule,contribution-based
+reward incentive,non-monetary social,sequential reward,simultaneous
+reward incentive,monetary,reward rule,contribution-based
+reward agent,third party,reward treatment,-1
+reward incentive,hypothetical,sequential reward,simultaneous
+reward agent,peer,reward treatment,0
+reward treatment,-1,reward treatment,0
+reward incentive,monetary,reward treatment,0
+reward agent,leader,reward treatment,0
+reward rule,rank-based,reward rule,contribution-based
+reward incentive,monetary,reward rule,rank-based
+reward agent,other,reward treatment,1
+reward rule,rank-based,reward treatment,-1
+reward incentive,monetary,sequential reward,simultaneous
+reward agent,leader,sequential reward,simultaneous
+reward incentive,hypothetical,reward treatment,0
+reward agent,experimenter,reward treatment,0
+reward incentive,hypothetical,reward rule,contribution-based
+reward agent,leader,reward incentive,monetary
+reward incentive,non-monetary social,reward treatment,-1
+reward incentive,hypothetical,reward rule,rank-based
+reward agent,institution,reward rule,rank-based
+reward agent,other,reward incentive,hypothetical
+reward agent,other,sequential reward,simultaneous
+reward treatment,1,reward treatment,-1
+reward agent,institution,reward treatment,-1
+reward treatment,0,sequential reward,simultaneous
+reward agent,institution,reward incentive,non-monetary social
+reward incentive,non-monetary social,reward rule,contribution-based
+reward agent,other,reward rule,contribution-based
+reward agent,peer,reward treatment,-1
+reward incentive,monetary,reward treatment,-1
+reward agent,leader,reward treatment,-1
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

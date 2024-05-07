@@ -1,0 +1,10 @@
+Cooperation is significantly higher when individual difference level is low, compared to when individual difference level is medium.
+Cooperation is significantly higher when svo type is prosocial, compared to when svo type is altruist.
+Cooperation is significantly higher when individual difference is self-efficacy, compared to when individual difference level is low.
+Cooperation is significantly higher when individual difference is trust propensity, compared to when individual difference level is low.
+Cooperation is significantly higher when individual difference is cognitive ability, compared to when individual difference level is low.
+Cooperation is significantly higher when individual difference is altruism, compared to when individual difference level is low.
+Cooperation is significantly lower when individual difference is machiavellianism, compared to when individual difference level is low.
+Cooperation is significantly higher when individual difference is right-wing authoritarianism, compared to when individual difference level is low.
+Cooperation is significantly higher when individual difference is self-esteem, compared to when individual difference level is low.
+Cooperation is significantly higher when svo type is prosocial, compared to when svo type is competitor.

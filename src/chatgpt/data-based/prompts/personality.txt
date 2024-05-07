@@ -1,0 +1,71 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to personality variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+individual difference level,low,individual difference level,medium
+svo type,prosocial,svo type,altruist
+individual difference,social desirability,individual difference level,high
+individual difference,social desirability,individual difference level,low
+individual difference,self-efficacy,individual difference level,high
+individual difference,self-efficacy,individual difference level,low
+svo type,unclassified,svo type,altruist
+svo type,individualist,svo type,unclassified
+individual difference,social value orientation,svo type,individualist
+psychopathology,control,psychopathology,depression
+individual difference,achievement,individual difference level,high
+svo type,prosocial,svo type,proself
+individual difference,trust propensity,individual difference level,high
+psychopathology,control,psychopathology,autism spectrum disorders
+individual difference,trust propensity,individual difference level,low
+individual difference,machiavellianism,individual difference level,high
+individual difference,machiavellianism,individual difference level,low
+individual difference,social value orientation,svo type,competitor
+individual difference,trust propensity,individual difference level,medium
+individual difference,social value orientation,svo type,prosocial
+individual difference,cognitive ability,individual difference level,high
+individual difference,social value orientation,svo type,altruist
+individual difference,cognitive ability,individual difference level,low
+individual difference,achievement,individual difference level,low
+individual difference,svo consistency,individual difference level,high
+individual difference,locus of control,individual difference level,high
+individual difference,individualism,individual difference level,high
+individual difference,svo consistency,individual difference level,low
+individual difference,locus of control,individual difference level,low
+individual difference,individualism,individual difference level,low
+individual difference,altruism,individual difference level,high
+individual difference,social value orientation,svo type,unclassified
+individual difference,altruism,individual difference level,low
+individual difference,right-wing authoritatianism,individual difference level,high
+individual difference,cognitive ability,individual difference level,medium
+svo type,prosocial,svo type,individualist
+svo type,individualist,svo type,altruist
+individual difference,right-wing authoritatianism,individual difference level,low
+individual difference level,high,individual difference level,low
+individual difference,social value orientation,svo type,proself
+individual difference,risk-taking,individual difference,risk-taking (behavioral measure)
+psychopathology,schizophrenia,psychopathology,control
+individual difference,self-esteem,individual difference level,high
+individual difference,self-esteem,individual difference level,low
+svo type,altruist,svo type,competitor
+individual difference,right-wing authoritatianism,individual difference level,medium
+individual difference level,high,individual difference level,medium
+individual difference,self-presentation,individual difference level,high
+svo type,individualist,svo type,competitor
+individual difference,self-presentation,individual difference level,low
+svo type,prosocial,svo type,competitor
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

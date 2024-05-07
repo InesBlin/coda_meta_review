@@ -1,0 +1,6 @@
+Cooperation is significantly lower when step return level is low, compared to when step return level is medium.
+Cooperation is significantly lower when step return level is low, compared to when step return level is high.
+Cooperation is significantly higher when threshold level is medium, compared to when threshold level is low.
+Cooperation is significantly higher when threshold level is medium, compared to when threshold level is high.
+Cooperation is significantly lower when threshold level is high, compared to when threshold level is low.
+Cooperation is significantly higher when step return level is high, compared to when step return level is medium.

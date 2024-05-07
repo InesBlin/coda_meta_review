@@ -1,0 +1,7 @@
+Cooperation is significantly higher when anonymity manipulation is high, compared to when anonymity manipulation is medium.
+Cooperation is significantly higher when anonymity manipulation is high, compared to when anonymity manipulation is low.
+Cooperation is significantly higher when gossip is absent, compared to when gossip is present.
+Cooperation is significantly higher when knowledge of partner's prior behavior is absent, compared to when knowledge of partner's prior behavior is present.
+Cooperation is significantly higher when gossip is present and knowledge of partner's prior behavior is present, compared to when gossip is absent.
+Cooperation is significantly higher when knowledge of partner's prior behavior is cooperative, compared to when knowledge of partner's prior behavior is noncooperative.
+Cooperation is significantly higher when partner selection is absent, compared to when partner selection is present.

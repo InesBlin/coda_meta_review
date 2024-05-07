@@ -1,0 +1,2 @@
+Cooperation is significantly higher when anchor is low cooperation, compared to when anchor is absent.
+Cooperation is significantly lower when anchor is high cooperation, compared to when anchor is absent.

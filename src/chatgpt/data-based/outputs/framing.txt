@@ -1,0 +1,5 @@
+Cooperation is significantly higher when context frame is competitive, compared to when context frame is moral.
+Cooperation is significantly higher when gain-loss frame is gain, compared to when gain-loss frame is loss.
+Cooperation is significantly higher when public good-bad frame is public good, compared to when public good-bad frame is public bad.
+Cooperation is significantly higher when context frame is cooperative, compared to when context frame is competitive.
+Cooperation is significantly higher when give-take frame is give-some, compared to when give-take frame is take-some.

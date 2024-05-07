@@ -1,0 +1,10 @@
+Cooperation is significantly lower when punishment incentive is hypothetical, compared to when punishment treatment is 1.
+Cooperation is significantly higher when punishment incentive is non-monetary social, compared to when punishment treatment is -1.
+Cooperation is significantly lower when punishment rule is rank-based, compared to when punishment treatment is -1.
+Cooperation is significantly higher when sequential punishment is simultaneous, compared to when punishment agent is institution.
+Cooperation is significantly higher when punishment agent is peer, compared to when punishment distribution rule is deductive.
+Cooperation is significantly lower when punishment incentive is non-monetary social, compared to when punishment incentive is monetary.
+Cooperation is significantly higher when punishment agent is institution, compared to when punishment distribution rule is deductive.
+Cooperation is significantly lower when punishment agent is institution, compared to when punishment rule is outcome-based.
+Cooperation is significantly lower when punishment incentive is hypothetical, compared to when punishment agent is leader.
+Cooperation is significantly higher when punishment distribution rule is redistributive, compared to when punishment incentive is monetary.

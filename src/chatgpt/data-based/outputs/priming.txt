@@ -1,0 +1,7 @@
+Cooperation is significantly higher when primed construct is neutral, compared to when primed construct is morality.
+Cooperation is significantly higher when primed construct is neutral, compared to when primed construct is religion.
+Cooperation is significantly lower when primed construct is competition, compared to when primed construct is cooperation.
+Cooperation is significantly higher when primed construct is neutral, compared to when primed construct is power.
+Cooperation is significantly higher when primed construct is neutral, compared to when primed construct is other.
+Cooperation is significantly lower when primed construct is morality, compared to when primed construct is power.
+Cooperation is significantly lower when primed construct is neutral, compared to when primed construct is competition.

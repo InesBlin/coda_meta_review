@@ -1,0 +1,62 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to emotions variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+emotion,anger,partner's emotion,neutral
+emotion valence,negative,emotion valence,neutral
+emotion,happiness,partner's emotion display,facial
+emotion,neutral,emotion,disappointment
+emotion,anger,partner's emotion display,facial
+partner's emotion,neutral,partner's emotion display,other
+partner's emotion,happiness,partner's emotion,anger
+emotion valence,negative,emotion valence,positive
+emotion,neutral,partner's emotion display,other
+partner's emotion,happiness,partner's emotion display,facial
+partner's emotion,anger,partner's emotion display,other
+partner's emotion display,facial,partner's emotion valence,negative
+partner's emotion display,facial,partner's emotion valence,positive
+emotion valence,positive,partner's emotion display,facial
+emotion,anger,partner's emotion display,other
+emotion,anger,partner's emotion,happiness
+emotion,happiness,emotion,anger
+emotion,fear,emotion,neutral
+emotion,neutral,emotion,anger
+emotion,happiness,partner's emotion,anger
+emotion,neutral,emotion,other emotion
+emotion,sadness,emotion,anger
+emotion valence,positive,emotion valence,neutral
+partner's emotion,disappointment,partner's emotion display,other
+emotion,empathy,emotion intensity,high
+emotion,happiness,emotion,sadness
+emotion,anger,emotion,disgust
+partner's emotion,neutral,partner's emotion,anger
+emotion valence,negative,partner's emotion display,facial
+emotion,disappointment,partner's emotion display,other
+emotion,sadness,emotion,neutral
+emotion,fear,emotion,guilt
+emotion,empathy,emotion intensity,low
+emotion intensity,low,emotion intensity,high
+emotion,happiness,emotion,neutral
+emotion,neutral,partner's emotion,anger
+emotion,neutral,emotion,disgust
+emotion,neutral,emotion,guilt
+emotion,neutral,emotion,shame
+emotion,sadness,emotion,disgust
+partner's emotion,anger,partner's emotion display,facial
+emotion,guilt,emotion,other emotion
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

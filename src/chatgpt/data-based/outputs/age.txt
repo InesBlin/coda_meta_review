@@ -1,0 +1,2 @@
+Cooperation is significantly higher when age cohort is old, compared to when age cohort is middle.
+Cooperation is significantly lower when age cohort is young, compared to when age cohort is middle.

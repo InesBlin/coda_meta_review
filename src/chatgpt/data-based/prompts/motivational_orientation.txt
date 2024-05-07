@@ -1,0 +1,27 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to motivational_orientation variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+motivational orientation,cooperative,motivational orientation,individualistic
+motivational orientation,cooperative,motivational orientation,competitive
+endogenous motivational orientation,individualistic,motivational orientation,individualistic
+endogenous motivational orientation,individualistic,motivational orientation,cooperative
+endogenous motivational orientation,cooperative,endogenous motivational orientation,individualistic
+motivational orientation,competitive,motivational orientation,individualistic
+endogenous motivational orientation,cooperative,motivational orientation,individualistic
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

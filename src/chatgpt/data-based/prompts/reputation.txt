@@ -1,0 +1,32 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to reputation variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+anonymity manipulation,high,anonymity manipulation,medium
+anonymity manipulation,high,anonymity manipulation,low
+gossip,absent,gossip,present
+knowledge of partner's prior behavior,absent,knowledge of partner's prior behavior,present
+gossip,present,knowledge of partner's prior behavior,present
+knowledge of partner's prior behavior,cooperative,knowledge of partner's prior behavior,noncooperative
+knowledge of partner's prior behavior,present,partner selection,absent
+partner selection,absent,partner selection,present
+knowledge of partner's prior behavior,absent,knowledge of partner's prior behavior,cooperative
+knowledge of partner's prior behavior,absent,knowledge of partner's prior behavior,noncooperative
+anonymity manipulation,low,anonymity manipulation,medium
+gossip,present,knowledge of partner's prior behavior,absent
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

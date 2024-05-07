@@ -1,0 +1,4 @@
+Cooperation is significantly lower when emotion is anger, compared to when partner's emotion is neutral.
+Cooperation is significantly lower when emotion valence is negative, compared to when emotion valence is neutral.
+Cooperation is significantly higher when emotion is happiness, compared to when partner's emotion display is facial.
+Cooperation is significantly lower when emotion is neutral, compared to when emotion is disappointment.

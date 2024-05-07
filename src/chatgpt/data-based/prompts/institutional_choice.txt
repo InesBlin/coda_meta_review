@@ -1,0 +1,79 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to institutional_choice variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+institutional choice,exogenous,institutional choice mechanism,migration
+institution type,taxation,vote outcome,no vote
+institution type,reward,institutional choice,exogenous
+institutional choice,exogenous,vote target,other
+institutional choice mechanism,vote,vote target,remove
+institution type,leadership,institutional choice,exogenous
+institutional choice mechanism,vote,vote outcome,no vote
+institution type,leadership,institution type,ostracism
+institution type,taxation,institutional choice,endogenous
+institution type,punishment,institution type,reward
+institutional choice,endogenous,vote outcome,yes vote
+institutional choice,exogenous,vote target,establish
+institution type,other,vote outcome,yes vote
+institutional choice,exogenous,institutional choice,endogenous
+institution type,punishment,institutional choice,endogenous
+institutional choice,exogenous,institutional choice mechanism,vote
+institution type,punishment,vote target,establish
+institution type,taxation,institutional choice,exogenous
+institution type,punishment,vote outcome,yes vote
+institutional choice,exogenous,institutional choice mechanism,choice
+institution type,punishment,institutional choice,exogenous
+institutional choice,endogenous,vote target,establish
+institutional choice,endogenous,institutional choice mechanism,vote
+institutional choice mechanism,vote,vote target,other
+institutional choice mechanism,vote,vote outcome,yes vote
+institution type,other,vote target,other
+institutional choice,endogenous,institutional choice mechanism,choice
+institution type,ostracism,vote target,remove
+vote outcome,yes vote,vote target,establish
+institution type,punishment,institutional choice mechanism,vote
+institutional choice,endogenous,vote target,remove
+institutional choice mechanism,choice,vote target,establish
+institution type,reward,vote target,establish
+institutional choice,exogenous,vote target,remove
+institution type,punishment,institutional choice mechanism,choice
+institution type,reward,vote outcome,yes vote
+institution type,other,institutional choice mechanism,vote
+institution type,taxation,vote outcome,yes vote
+institution type,punishment,vote outcome,no vote
+institution type,reward,institution type,leadership
+institution type,leadership,institutional choice mechanism,vote
+institution type,other,institutional choice,endogenous
+vote outcome,yes vote,vote outcome,no vote
+vote outcome,no vote,vote target,establish
+institution type,reward,vote target,remove
+institutional choice,endogenous,vote outcome,no vote
+institution type,leadership,vote target,remove
+institution type,other,institutional choice,exogenous
+institution type,reward,institutional choice,endogenous
+institution type,reward,institutional choice mechanism,vote
+institution type,ostracism,institutional choice,endogenous
+institution type,taxation,vote target,establish
+institution type,ostracism,institutional choice mechanism,vote
+institution type,taxation,institutional choice mechanism,vote
+institutional choice mechanism,vote,vote target,establish
+institution type,leadership,institutional choice,endogenous
+institution type,other,vote target,establish
+institutional choice,endogenous,vote target,other
+institution type,reward,institution type,other
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

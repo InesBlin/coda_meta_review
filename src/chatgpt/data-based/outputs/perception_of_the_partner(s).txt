@@ -1,0 +1,9 @@
+Cooperation is significantly higher when partner perception is proself/untrustworthy, compared to when partner perception level is high.
+Cooperation is significantly higher when partner perception is moral, compared to when partner perception level is control.
+Cooperation is significantly higher when partner perception is prosocial/trustworthy, compared to when partner perception level is high.
+Cooperation is significantly lower when partner perception is competent, compared to when partner perception level is low.
+Cooperation is significantly higher when partner perception is liking, compared to when partner perception level is low.
+Cooperation is significantly lower when partner perception is attractive, compared to when partner perception level is low.
+Cooperation is significantly higher when partner perception is liking, compared to when partner perception level is high.
+Cooperation is significantly higher when partner perception is attractive, compared to when partner perception level is high.
+Cooperation is significantly lower when partner perception is status, compared to when partner perception level is control.

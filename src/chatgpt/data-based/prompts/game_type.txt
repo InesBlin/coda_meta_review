@@ -1,0 +1,27 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to game_type variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+game type,stag hunt,game type,chicken game
+game type,prisoner's dilemma game,game type,other game
+game type,continuous public goods game,game type,step-level public goods game
+game type,prisoner's dilemma game,game type,stag hunt
+game type,other game,game type,chicken game
+game type,prisoner's dilemma game,game type,chicken game
+game type,other game,game type,resource dilemma
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

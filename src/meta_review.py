@@ -321,5 +321,7 @@ def main(config, save_folder):
 
 
 if __name__ == '__main__':
-    # python src/meta_review.py src/configs/meta_review_categorical_h.json meta_review/regular
+    # python src/meta_review.py src/configs/meta_review_regular_h.json meta_review/regular
+    # python src/meta_review.py src/configs/meta_review_categorical_h.json meta_review/categorical
+    # python src/meta_review.py src/configs/meta_review_numerical_h.json meta_review/numerical
     main()

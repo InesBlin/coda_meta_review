@@ -1,0 +1,60 @@
+
+In this task, we are interested in formulating hypotheses on how humans cooperate, and particularly related to identification variables. There are constraints on how you can generate the hypotheses. 
+
+[DATA][csv format]
+```
+siv1,sivv1,siv2,sivv2
+knowledge of group membership,common,partner's group membership,ingroup
+partner's group membership,ingroup,partner's group membership,ingroup and outgroup
+group type,experimentally induced group,partner's group membership,outgroup
+group type,experimentally induced group,group type,natural group
+group type,natural group,partner's group membership,outgroup
+group type,natural group,knowledge of group membership,unknown
+partner's group membership,stranger,partner's group membership,ingroup and outgroup
+knowledge of group membership,common,partner's group membership,ingroup and outgroup
+group type,natural group,knowledge of group membership,unilateral
+group type,experimentally induced group,knowledge of group membership,common
+group type,natural group,partner's group membership,ingroup
+group type,natural group,knowledge of group membership,common
+knowledge of group membership,unilateral,partner's group membership,outgroup
+knowledge of group membership,unknown,knowledge of group membership,unilateral
+group type,natural group,partner's group membership,stranger
+group type,natural group,identification level,high
+knowledge of group membership,common,knowledge of group membership,unilateral
+group type,experimentally induced group,knowledge of group membership,unknown
+knowledge of group membership,common,partner's group membership,stranger
+group type,natural group,partner's group membership,ingroup and outgroup
+group type,experimentally induced group,knowledge of group membership,unilateral
+identification level,low,knowledge of group membership,common
+group type,experimentally induced group,partner's group membership,ingroup
+identification level,high,knowledge of group membership,common
+group type,experimentally induced group,partner's group membership,stranger
+knowledge of group membership,unknown,partner's group membership,outgroup
+partner's group membership,ingroup,partner's group membership,outgroup
+group type,experimentally induced group,partner's group membership,ingroup and outgroup
+knowledge of group membership,unknown,partner's group membership,ingroup
+knowledge of group membership,unilateral,partner's group membership,ingroup
+identification level,low,partner's group membership,ingroup
+knowledge of group membership,unknown,partner's group membership,stranger
+knowledge of group membership,unilateral,partner's group membership,stranger
+partner's group membership,outgroup,partner's group membership,stranger
+identification level,low,identification level,high
+group type,natural group,identification level,low
+identification level,high,partner's group membership,stranger
+knowledge of group membership,common,partner's group membership,outgroup
+knowledge of group membership,common,knowledge of group membership,unknown
+partner's group membership,ingroup,partner's group membership,stranger
+```
+
+[HYPOTHESES]
+A valid hypothesis should be in the format
+```
+Cooperation is significantly <higher/lower> when `siv1` is `sivv1`, compared to when `siv2` is `sivv2`
+```
+or 
+```
+Cooperation is significantly <higher/lower> when `siv2` is `sivv2`, compared to when `siv1` is `sivv1`
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses. When generating the hypothesis, keep the bracket and the original names from the csv. In your response, only list the hypotheses.

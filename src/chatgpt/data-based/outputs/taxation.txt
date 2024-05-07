@@ -1,0 +1,3 @@
+Cooperation is significantly lower when minimum contribution is mandatory minimum, compared to when minimum contribution level is high.
+Cooperation is significantly higher when minimum contribution level is low, compared to when minimum contribution is mandatory minimum.
+Cooperation is significantly higher when minimum contribution level is low, compared to when minimum contribution level is medium.

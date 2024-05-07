@@ -1,0 +1,7 @@
+Cooperation is significantly higher when game type is stag hunt, compared to when game type is chicken game.
+Cooperation is significantly higher when game type is prisoner's dilemma game, compared to when game type is other game.
+Cooperation is significantly higher when game type is continuous public goods game, compared to when game type is step-level public goods game.
+Cooperation is significantly higher when game type is prisoner's dilemma game, compared to when game type is stag hunt.
+Cooperation is significantly higher when game type is other game, compared to when game type is chicken game.
+Cooperation is significantly lower when game type is prisoner's dilemma game, compared to when game type is chicken game.
+Cooperation is significantly higher when game type is other game, compared to when game type is resource dilemma.

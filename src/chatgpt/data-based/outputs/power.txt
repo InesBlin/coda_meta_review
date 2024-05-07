@@ -1,0 +1,6 @@
+Cooperation is significantly higher when power level is high, compared to when power level is low.
+Cooperation is significantly higher when power manipulation method is benefit, compared to when power manipulation method is recall.
+Cooperation is significantly higher when power type is experiential, compared to when power type is structural.
+Cooperation is significantly lower when power level is low, compared to when power level is high.
+Cooperation is significantly lower when power manipulation method is punishment, compared to when power manipulation method is recall.
+Cooperation is significantly lower when power type is structural, compared to when power type is experiential.

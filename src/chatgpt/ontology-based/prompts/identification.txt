@@ -1,0 +1,39 @@
+
+In this task, you need to generate triples based on an ontology. There are constraints on how you can generate the hypotheses.
+
+[ONTOLOGY]
+```
+(cdo:IdentificationLevel, rdfs:subClassOf, cdo:IdentificationVariable)
+(cdo:GroupType, rdfs:subClassOf, cdo:IdentificationVariable)
+(cdo:TargetMembership, rdfs:subClassOf, cdo:IdentificationVariable)
+(cdo:KnowledgeOfMembership, rdfs:subClassOf, cdo:IdentificationVariable)
+(cdo:EntitativityLevel, rdfs:subClassOf, cdo:IdentificationVariable)
+(cdo:low, rdf:type, cdo:EntitativityLevel)
+(cdo:medium, rdf:type, cdo:IdentificationLevel)
+(cdo:natural_group, rdf:type, cdo:GroupType)
+(cdo:high, rdf:type, cdo:IdentificationLevel)
+(cdo:stranger, rdf:type, cdo:TargetMembership)
+(cdo:outgroup, rdf:type, cdo:TargetMembership)
+(cdo:common, rdf:type, cdo:KnowledgeOfMembership)
+(cdo:unknown, rdf:type, cdo:KnowledgeOfMembership)
+(cdo:low, rdf:type, cdo:IdentificationLevel)
+(cdo:unilateral, rdf:type, cdo:KnowledgeOfMembership)
+(cdo:medium, rdf:type, cdo:EntitativityLevel)
+(cdo:ingroup_and_outgroup, rdf:type, cdo:TargetMembership)
+(cdo:experimentally_induced_group, rdf:type, cdo:GroupType)
+(cdo:ingroup, rdf:type, cdo:TargetMembership)
+(cdo:high, rdf:type, cdo:EntitativityLevel)
+```
+
+[TASK]
+You need to generate the most sensible and coherent hypotheses in the form:
+```
+Cooperation is significantly <higher OR lower> when `SIV1` is `SIVV1`, compared to when `SIV2` is `SIVV2`.
+```
+
+[CONSTRAINTS]
+1 - SIV1 and SIV2 must be SIV from the ontology, and SIVV1 and SIVV2 SIVV from the ontology. Entities of type  `SIV` are subjects of triples from the ontology with predicate `rdfs:subClassOf`.  Entities of type `SIVV` are subjects of triples from the ontology with predicate `rdf:type`.
+2 - The hypothesis must be sensible and coherent.
+3 - When generating the hypothesis, keep the bracket and the original names in the ontology.
+
+Can you generate up to 5 sensible and coherent hypotheses?  You need to respect constraint 1 AND 2 AND 3.
