@@ -1,6 +1,5 @@
 {
     "template_folder": "meta_review/templates",
-    "config": "meta_review/config.yaml",
     "structure": "meta_review/templates/structure.yaml",
     "references": "meta_review/templates/references.json",
     "data": "./data/observationData.csv",
@@ -11,5 +10,8 @@
         "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
         "variable_moderators": "./data/moderators/variable_moderators.csv"
     },
-    "report_template": "report_template.html"
+    "report_template": "report_template.html",
+    "introduction": "[ADD INTRO]",
+    "inclusion_criteria_1": "Studies included in the analyses were retrieved through the Cooperation Databank (CoDa) <cite spadaro2022cooperation>. Details of the systematic search that led to the annotation of the studies are reported in full in Spadaro et al. <cite spadaro2022cooperation>.",
+    "inclusion_criteria_2": "For studies to be included in the meta-analysis, the following criteria had to be fulfilled:"
 }

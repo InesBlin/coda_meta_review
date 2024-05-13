@@ -99,7 +99,16 @@ class MetaReview:
 
         self.data = config["data"]
         self.h = config["hypothesis"]
-        self.config = load_yaml_file(config["config"])
+
+        if "config" in config:
+            self.config = load_yaml_file(config["config"])
+        else:
+            keys_config = [
+                "title", "authors", "introduction", "inclusion_criteria_1",
+                "inclusion_criteria_2", "inclusion_criteria_3", "es_measure",
+                "coding_variables", "method_mv"]
+            self.config = {k: config.get(k) for k in keys_config}
+
         self.references = load_json_file(config["references"])
         self.id_ref_to_nb = {x["id"]: i+1 for i, x in enumerate(self.references)}
         self.config = {k: replace_cite_id(v, self.id_ref_to_nb) \
@@ -131,6 +140,7 @@ class MetaReview:
 
         self.i2_threshold = 25
         self.tau2_threshold = 0.5
+        self.custom_content = {k: v for k, v in config.items() if k.endswith("custom")}
 
     def get_type_hypothesis(self):
         """ From hypothesis dict, get the type of hypothesis """
@@ -302,6 +312,7 @@ class MetaReview:
             }
         args.update(self.config)
         args.update(self.structure)
+        args.update(self.custom_content)
         args.update(self.get_figures(data=output["data"]))
 
         html_review = self.generate_html_review(**args)

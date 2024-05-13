@@ -48,6 +48,7 @@ class Pipeline:
                  yi: str = "effectSize", method: str = "REML", vi: str = "variance",
                  mods: Union[Dict, None] = None):
         data_run = self.get_data_meta_analysis(data=data)
+        data_run.to_csv('data_run.csv')
 
         output = self.meta_analysis(data=data_run,
             type_rma=type_rma, es_measure=es_measure, yi=yi, method=method, vi=vi,
@@ -69,10 +70,10 @@ if __name__ == '__main__':
         # ("gender", "male", "gender", "female"),
         # ("group size level", "low", "group size level", "high"),
         # ("conflict level", "high", "conflict level", "low")
-        # ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
+        ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
         # ("acquaintance", "relationship with the partner", "friend", "acquaintance", "relationship with the partner", "stranger")
         # ("acquaintance", "relationship with the partner", "spouse", "acquaintance", "relationship with the partner","acquaintance"),
-        ("punishment", "punishment distribution rule", "deductive", "punishment", "punishment distribution rule", "redistributive")
+        # ("punishment", "punishment distribution rule", "deductive", "punishment", "punishment distribution rule", "redistributive")
     ]
     CACHED = {
         "study_moderators": "./data/moderators/study_moderators.csv",

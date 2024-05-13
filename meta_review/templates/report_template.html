@@ -138,6 +138,7 @@
     <div class="separator"></div>
     <h2 style="color: green;">{{ introduction_ }}</h2>
     <span>{{ introduction }}</span>
+    <p><span>{{ introduction_custom }}</span></p>
     <div class="separator"></div>
     <h2 style="color: green;">{{ hypothesis_ }}</h2>
     <p>The objective of this meta-review is to explore a starting hypothesis on differences in cooperation, and investigate whether the CoDa databank supports this hypothesis or not.</p>
@@ -147,15 +148,17 @@
     {% if type_h != "regular" %}
         <p>This meta-analysis include the following moderator: {{ mod }}. It is a {{ type_mod }} moderator.</p>
     {% endif %}
+    <p><span>{{ hypothesis_custom }}</span></p>
     <div class="separator"></div>
     <h2 style="color: green;">{{ methods_ }}</h2><br>
+    <p><span>{{ methods_custom }}</span></p>
     <h3 style="color: green;">{{ inclusion_criteria_ }}</h3>
     <div class="half_separator"></div><br>
     <p><span>{{ inclusion_criteria_1 }}</span></p>
     <p><span>{{ inclusion_criteria_2 }}</span></p>
     <ul>
-    {% for item in inclusion_criteria_3 %}
-        <li>{{ loop.index }}. {{ item }}</li>
+    {% for key, value in inclusion_criteria_3.items() %}
+        <li>{{ key }}: {{ value }}</li>
     {% endfor %}
     </ul>
     <p>These criteria resulted in the inclusion of {{ data_ma_es_nb }} effect sizes extracted from {{ data_ma_study_nb }} studies conducted across {{data_ma_country_nb}} industrialized societies. </p>
@@ -185,15 +188,19 @@
         {% endblock %}
     </div>
     <br><br>
+    <p><span>{{ inclusion_criteria_custom }}</span></p>
     <h3 style="color: green;">{{ coding_effect_sizes_ }}</h3>
     <div class="half_separator"></div><br>
     <p><span>To capture {{ type_es  }}, we used {{ name_es }}'s {{ es_measure }}.</span></p>
+    <p><span>{{ coding_effect_sizes_custom }}</span></p>
     <h3 style="color: green;">{{ coding_variables_ }}</h3>
     <div class="half_separator"></div><br>
     <span>{{ coding_variables }}</span><br><br>
+    <p><span>{{ coding_variables_custom }}</span></p>
     <h3 style="color: green;">{{ analytic_strategy_ }}</h3>
     <div class="half_separator"></div><br>
     <p><span>We used {{ name_es }}'s {{ es_measure }} with {{ method_mv }} estimation.</span></p>
+    <p><span>{{ analytic_strategy_custom }}</span></p>
 
     <div class="separator"></div>
     <h2 style="color: green;">{{ results_ }}</h2>
@@ -243,10 +250,12 @@
         <li>{{ i2_description }}</li>
         <li>{{ tau2_description }}</li>
     </ul>
+    <p><span>{{ results_custom }}</span></p>
     <h2 style="color: green;">{{ discussion_ }}</h2>
     <div class="separator"></div>
     <h2>Was the starting hypothesis correct?</h2>
     <p>{{ conclude_hypothesis }}</p>
+    <p><span>{{ discussion_custom }}</span></p>
     
 
     <!-- down here -->
