@@ -17,20 +17,6 @@ Treatment 2
 - Generic Independent Variable
 - Specific Independent Variable
 - Specific Independent Variable value
-
-
-Other filtering that can be done in the app
-server.R file from line 687 to 1017
-- authors -> str regex on citation
-- language -> str regex on observation name
-- sample size -> range filter on overallN
-- publication status -> value filter on publicationStatus
-- deception, study symmetric, study known end game, study dilemna type, study continuous PGG, 
-study experimental setting, study one shot, study one shot repeated, study matching protocol, 
-study show up fee, study game incentive, discussion, participant decision, study real partner, 
-study acquaintance, sanction, study number of choices, study choice low, study choice high, 
-study kindex, study mpcr, study group size, replenishment rate, study pdgthreshold, etc
-
 """
 import click
 import numpy as np
@@ -55,13 +41,20 @@ class DataSelector:
     """  Selecting/Filtering/Preparing data for meta-analysis
     For now based on the all_data_coda_app.csv file 
     Later: directly from SPARQL """
-    def __init__(self, siv1, sivv1, siv2, sivv2):
+    def __init__(self, siv1: str, sivv1: str, siv2: str, sivv2: str):
+        """
+        - `siv1`, `sivv1`, `siv2` and `sivv2`: literals representing the two treatments 
+        - `inclusion_criteria`: if not null, a dict with the following possible keys
+            for the inclusion criteria -> `sample`, `study`, `quantitative`, and/or `metadata`
+        """
         self.siv1 = siv1
         self.sivv1 = sivv1
         self.siv2 = siv2
         self.sivv2 = sivv2
 
     def __call__(self, data):
+
+        """ Filter based on T1/T2 values """
         so1_1 = select_observations(data, siv=self.siv1, sivv=self.sivv1, treatment_number=1)
         so1_2 = select_observations(data, siv=self.siv2, sivv=self.sivv2, treatment_number=2)
         so1 = np.array(so1_1) & np.array(so1_2)
@@ -71,14 +64,15 @@ class DataSelector:
         so2 = np.bitwise_and(so2_1, so2_2)
 
         filter_ = np.bitwise_or(so1, so2)
-
         data = data[np.array(filter_, dtype=bool)]
         return data
 
 
 @click.command()
-@click.option("--obs_data_path", help="Link to all observation data, .csv format")
-@click.option("--save_path", help="path to save selected data")
+# "Link to all observation data, .csv format"
+@click.argument("obs_data_path")
+# path to save selected data
+@click.argument("save_path")
 def main(obs_data_path, save_path):
     """ Main script to store obs data """
     data_selector = DataSelector(siv1="punishment treatment", sivv1="1",

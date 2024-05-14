@@ -1,23 +1,36 @@
 # -*- coding: utf-8 -*-
 """
 Whole pipeline
+
+Data Selection
+(1) based on treatment (DataSelector)
+(2) data preparation (DataPrep)
+(3) based on inclusion criteria (InclusionCriteria)
 """
 from typing import Union, Dict
 from src.data_selection import DataSelector
 from src.data_prep import DataPrep
+from src.inclusion_criteria import InclusionCriteria
 from src.meta_analysis import MetaAnalysis
 from kglab.helpers.data_load import read_csv
 
+
 def helper_giv(giv):
+    """ string to string mapping  """
     return f"{giv.capitalize()}Variable"
 
+
 def helper_siv(siv):
+    """ string to string mapping  """
     siv = siv.split()
     return siv[0] + "".join([x.capitalize() for x in siv[1:]])
 
+
 class Pipeline:
     """ From data selection to meta-analysis output """
-    def __init__(self, giv1, siv1, sivv1, giv2, siv2, sivv2, **cached_moderator):
+    def __init__(self, giv1, siv1, sivv1, giv2, siv2, sivv2,
+                 inclusion_criteria: Union[Dict, None] = None,
+                 **cached_moderator):
         self.giv1 = giv1
         self.siv1 = siv1
         self.sivv1 = sivv1
@@ -27,16 +40,23 @@ class Pipeline:
 
         self.data_selector = DataSelector(siv1=siv1, siv2=siv2, sivv1=sivv1, sivv2=sivv2)
         self.data_prep = DataPrep(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=siv2)
-        self.meta_analysis = MetaAnalysis(siv1=siv1, sivv1=sivv1, siv2=siv2, sivv2=sivv2, **cached_moderator)
+        self.inclusion_criteria = InclusionCriteria(**inclusion_criteria) \
+            if inclusion_criteria else None
+        self.meta_analysis = \
+            MetaAnalysis(siv1=siv1, sivv1=sivv1,
+                         siv2=siv2, sivv2=sivv2, **cached_moderator)
 
     def get_data_meta_analysis(self, data):
         """ self explanatory """
         data_run = self.data_selector(data=data)
         data_run = self.data_prep(filtered_data=data_run)
+        if self.inclusion_criteria is not None:
+            data_run = self.inclusion_criteria(data=data_run)
         return data_run
 
     @staticmethod
     def add_moderator(type_m, options):
+        """ Adding moderator from the terminal """
         add_mod = input(f"Do you want to add {type_m} moderators? ")
         if add_mod == "1":
             mods = input(f"Enter all the options you want, separated by ',' from this list: {options} \n")
@@ -57,24 +77,16 @@ class Pipeline:
 
 
 if __name__ == '__main__':
-    import numpy as np
     DATA = read_csv("./data/observationData.csv")
-    # VALS = [
-    #     # (siv1, sivv1, siv2, sivv2)
-    #     ("punishment rule", "rank-based", "punishment rule", "contribution-based"),
-    #     ("reward incentive", "monetary", "reward incentive", "non-monetary material"),
-    #     ("individual difference", "concern for others", "individual difference", "narcissism")
-    # ]
     VALS = [
-        # (siv1, sivv1, siv2, sivv2)
-        # ("gender", "male", "gender", "female"),
-        # ("group size level", "low", "group size level", "high"),
-        # ("conflict level", "high", "conflict level", "low")
         ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
-        # ("acquaintance", "relationship with the partner", "friend", "acquaintance", "relationship with the partner", "stranger")
-        # ("acquaintance", "relationship with the partner", "spouse", "acquaintance", "relationship with the partner","acquaintance"),
-        # ("punishment", "punishment distribution rule", "deductive", "punishment", "punishment distribution rule", "redistributive")
     ]
+    INCLUSION_CRITERIA = {
+        "sample": {"yearOfDataCollection": (1900, 2100)},
+        "metadata": {"lang": ["ENG"]},
+        "quantitative": {"numberOfObservations": (200, 1000)},
+        "study": {"deception": ["FALSE"]},
+    }
     CACHED = {
         "study_moderators": "./data/moderators/study_moderators.csv",
         "country_moderators": "./data/moderators/country_moderators.csv",
@@ -82,15 +94,17 @@ if __name__ == '__main__':
         "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
         "variable_moderators": "./data/moderators/variable_moderators.csv"
     }
-    for giv1, siv1, sivv1, giv2, siv2, sivv2 in VALS:
-        PIPELINE = Pipeline(giv1=giv1, siv1=siv1, sivv1=sivv1, giv2=giv2, siv2=siv2, sivv2=sivv2, **CACHED)
-        MODS = ["punishment incentive", "sequential punishment"]
-        MODS = {
-            "variable": ["punishment incentive"]
-        }
-        MODS = None
-        output = PIPELINE(data=DATA, mods=MODS)
-        curr_res = output["results_rma"]
-        print(f"{siv1} : {sivv1} || {siv2} : {sivv2}")
-        print([curr_res[x].reshape((1,))[0] for x in ["b", "k", "pval"]])
-        print("====================")
+    for GIV1, SIV1, SIVV1, GIV2, SIV2, SIVV2 in VALS:
+        PIPELINE = Pipeline(giv1=GIV1, siv1=SIV1, sivv1=SIVV1, giv2=GIV2, siv2=SIV2, sivv2=SIVV2, inclusion_criteria=INCLUSION_CRITERIA, **CACHED)
+        CURR_DATA = PIPELINE.get_data_meta_analysis(data=DATA)
+        print(CURR_DATA.shape)
+        # MODS = ["punishment incentive", "sequential punishment"]
+        # MODS = {
+        #     "variable": ["punishment incentive"]
+        # }
+        # MODS = None
+        # OUTPUT = PIPELINE(data=DATA, mods=MODS)
+        # curr_res = OUTPUT["results_rma"]
+        # print(f"{SIV1} : {SIVV1} || {SIV2} : {SIVV2}")
+        # print([curr_res[x].reshape((1,))[0] for x in ["b", "k", "pval"]])
+        # print("====================")
