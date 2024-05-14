@@ -24,9 +24,9 @@ def build_config(hypothesis):
 
     # Update inclusion criteria
     if st.session_state.inclusion_criteria:
-        config.update({"inclusion_criteria_3": st.session_state["inclusion_criteria"]})
+        config.update({"inclusion_criteria": st.session_state["inclusion_criteria"]})
     else:
-        config.update({"inclusion_criteria_3": {}})
+        config.update({"inclusion_criteria": {}})
 
     # Update variables
     if st.session_state.mr_variables:

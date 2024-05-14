@@ -66,14 +66,14 @@ def main():
                 )
             if st.form_submit_button(f"Save {tic} inclusion criteria"):
                 st.session_state[f"submit_ic_{tic}"] = True
-    
+
     params_non_null = {}
     for k1, v1 in params.items():
         params_non_null[k1] = {k2: v2 for k2, v2 in v1.items() if v2}
-    
+
     if st.button("Confirm my inclusion criteria"):
         st.session_state["inclusion_criteria"] = params_non_null
-
+        st.success("Inclusion Criteria saved for the meta-review", icon="🔥")
 
 if __name__ == '__main__':
     main()

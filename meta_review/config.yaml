@@ -3,9 +3,9 @@ authors: "Giuliana Spadaro, Shuxian Jin and Daniel Balliet"
 introduction: "[ADD INTRO]"
 inclusion_criteria_1: "Studies included in the analyses were retrieved through the Cooperation Databank (CoDa) <cite spadaro2022cooperation>. Details of the systematic search that led to the annotation of the studies are reported in full in Spadaro et al. <cite spadaro2022cooperation>."
 inclusion_criteria_2: "For studies to be included in the meta-analysis, the following criteria had to be fulfilled:"
-inclusion_criteria_3: [
-  "[ADD CRITERIA]"
-]
+inclusion_criteria: 
+  metadata:
+    lang: ["ENG"]
 es_measure: "d"
 coding_variables: "[ADD CODING VARIABLES (description of each variable)]"
 method_mv: "REML"

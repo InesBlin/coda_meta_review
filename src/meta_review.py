@@ -105,7 +105,7 @@ class MetaReview:
         else:
             keys_config = [
                 "title", "authors", "introduction", "inclusion_criteria_1",
-                "inclusion_criteria_2", "inclusion_criteria_3", "es_measure",
+                "inclusion_criteria_2", "inclusion_criteria", "es_measure",
                 "coding_variables", "method_mv"]
             self.config = {k: config.get(k) for k in keys_config}
 
@@ -128,10 +128,13 @@ class MetaReview:
         self.h_template_not_stat_sig = {k: v.replace("significantly", "") \
             for k, v in self.h_template.items()}
         self.text_h = self.get_text_hypothesis(templates=self.h_template, hyp=self.h)
+        self.inclusion_criteria = config.get("inclusion_criteria")
 
         self.pipeline = Pipeline(
             giv1=self.h['giv1'], siv1=self.h['siv1'], sivv1=self.h['sivv1'],
-            giv2=self.h['giv2'], siv2=self.h['siv2'], sivv2=self.h['sivv2'], **config.get("cached"))
+            giv2=self.h['giv2'], siv2=self.h['siv2'], sivv2=self.h['sivv2'],
+            inclusion_criteria=self.inclusion_criteria,
+            **config.get("cached"))
         self.columns = ["studyName", "effectSize", "effectSizeSampleSize"]
 
         env = Environment(loader=FileSystemLoader(config['template_folder']))

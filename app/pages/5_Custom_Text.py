@@ -42,6 +42,7 @@ def main():
         if st.form_submit_button("Save custom content"):
             st.session_state["submit_custom_content"] = True
             st.session_state["custom_content"] = custom_text
+            st.success("Custom content saved for the meta-review", icon="🔥")
 
     path = os.path.join("meta_review/templates", "report_template.html")
     source_code = get_source_code(html_path=path)
