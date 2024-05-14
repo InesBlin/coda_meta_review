@@ -147,9 +147,11 @@ class KGEmbedder:
             }
         else:
             model_kwargs = {}
-        output = pipeline(model=model, random_seed=random_seed,
-                            training=self.sh_train, testing=self.sh_test,
-                            model_kwargs=model_kwargs)
+        output = pipeline(
+            model=model, random_seed=random_seed,
+            training=self.sh_train, testing=self.sh_test,
+            model_kwargs=model_kwargs,
+            training_kwargs=dict(batch_size=8))
         # pipeline.save_to_directory('folder_pipeline')
         # model in .pkl file, then model.entity_representations
         return output
@@ -162,6 +164,10 @@ if __name__ == '__main__':
     # DF_NODES = KG_EMB.get_description(KG_EMB.sh_train.entity_id_to_label)
     # DF_NODES.to_csv("sh_train.csv")
 
-    DF_NODES = pd.read_csv("sh_train.csv", index_col=0)
-    KG_EMB.get_embeddings(df_description=DF_NODES, save_path="coda_entity_embeddings.pt")
+    # DF_NODES = pd.read_csv("sh_train.csv", index_col=0)
+    # KG_EMB.get_embeddings(df_description=DF_NODES, save_path="coda_entity_embeddings.pt")
+
+    EMBEDDINGS = torch.load("coda_entity_embeddings.pt")
+    PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
+    PIPELINE.save_to_directory('models/test')
 
