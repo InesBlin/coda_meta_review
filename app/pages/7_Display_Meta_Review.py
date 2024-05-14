@@ -12,6 +12,8 @@ def get_source_code(html_path: str) -> str:
 
 def main():
     """ Main """
+    if "submit_h" not in st.session_state:
+        st.session_state["submit_h"] = False
     mrs = sorted([x for x in os.listdir("app/meta_review") if x[0].isdigit()])
     if mrs and st.session_state.submit_h:
         path = os.path.join("app/meta_review", mrs[-1], "report.html")

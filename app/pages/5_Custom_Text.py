@@ -26,9 +26,6 @@ def main():
     st.title("Adding Custom Text")
     st.write("#")
 
-    if not (st.session_state["submit_as"] and st.session_state["method_mv"] and st.session_state["es_measure"]):
-        st.warning("You haven't chosen your analytic strategy. Please do so in the `Analytic Strategy` section.", icon="🚨")
-
     st.write("At the end of this page, you can find the HTML template of the meta-review that will be generated.")
     st.write("If you want, you can add content at the end of each section.")
 

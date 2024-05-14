@@ -38,11 +38,7 @@ def main():
     st.title("Inclusion Criteria")
     st.write("#")
 
-    if not st.session_state["hypotheses"]:
-        st.warning("You haven't selected a hypothesis/several hypotheses yet. Please enter one in the `Select a hypothesis` section.", icon="🚨")
-
     st.write("You can now choose additional inclusion criteria.")
-    st.write("If you don't want to add inclusion criteria, please click the button `Confirm my inclusion criteria` directly.")
     type_ic = st.multiselect(
         "Which inclusion criteria would you like to add?",
         IC_TYPES

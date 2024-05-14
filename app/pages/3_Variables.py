@@ -35,9 +35,6 @@ def main():
     st.title("Variables")
     st.title("#")
 
-    if not isinstance(st.session_state["inclusion_criteria"], dict):
-        st.warning("You haven't confirmed your inclusion criteria. Please do so in the `Inclusion criteria` section.", icon="🚨")
-
     st.write("Choose your variables for the meta-review")
 
     variables = get_variables(data=DATA)

@@ -14,14 +14,11 @@ METHODS = {
 
 def main():
     """ Main """
-    for val in ["submit_type_rma", "submit_as", "submit_as_whole"]:
+    for val in ["submit_type_rma", "submit_as", "submit_as_whole", "submit_mr_variables"]:
         if val not in st.session_state:
             st.session_state[val] = False
     st.title("Analytic Strategy")
     st.write("#")
-
-    if not st.session_state["submit_mr_variables"]:
-        st.warning("You haven't chosen your variables for the meta-review. Please do so in the `Variables` section.", icon="🚨")
 
     st.write("Please choose your analytic strategy for the meta-review")
 

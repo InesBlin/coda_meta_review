@@ -7,10 +7,12 @@ from datetime import datetime
 import streamlit as st
 from src.meta_review import load_json_file
 
+
 def save_json(filepath, data):
     """ self explanatory """
     with open(filepath, "w", encoding="utf-8") as openfile:
         json.dump(data, openfile, indent=4)
+
 
 def build_config(hypothesis):
     """ Build config file to generate meta-analysis """
@@ -45,20 +47,45 @@ def build_config(hypothesis):
     save_json(json_path, config)
     return folder_name
 
+
+def check_meta_review():
+    """ Check various cached parameters to see if the 
+    meta-review can be generated
+    - warning -> mandatory for the MR
+    - info -> informative, can be added """
+    if not st.session_state["hypotheses"]:
+        st.error("You need to choose at least one hypothesis. " + \
+            "Please refer to the 'Select a hypothesis' Section.", icon="🚨")
+    for (sskey, val, section) in [
+        ("inclusion_criteria", "inclusion criteria", "Inclusion Criteria"),
+        ("mr_variables", "control variables", "Variables")
+    ]:
+        if not st.session_state[sskey]:
+            st.info(f"You haven't added any {val}. " + \
+                f"If you want to add some, please refer to the '{section}' Section.")
+    if not (st.session_state["method_mv"] and \
+        st.session_state["es_measure"] and \
+            st.session_state["type_rma"]):
+        st.error("You need to choose an analytic strategy. " + \
+            "Please refer to the 'Analytic Strategy' Section.", icon="🚨")
+    if not st.session_state["submit_custom_content"]:
+        st.info("You haven't added any custom content. " + \
+            "If you want to add some (at least a title+authors), " + \
+                "please refer to the 'Custom Text' Section.")
+
 def main():
     """ Main """
-    for k in ["hypotheses", "submit_custom_content"]:
+    for k in ["submit_custom_content", "inclusion_criteria",
+              "mr_variables", "method_mv", "es_measure", "type_rma"]:
         if k not in st.session_state:
             st.session_state[k] = False
+    for k in ["hypotheses"]:
+        if k not in st.session_state:
+            st.session_state[k] = []
     st.title("Generate Meta Review")
     st.write("#")
 
-    if not st.session_state["hypotheses"]:
-        st.error("You need to choose at least one hypotheses. Please refer to page `Select a hypothesis`.")
-    if not st.session_state["submit_custom_content"]:
-        st.warning("You haven't updated any custom content. Please do so in the `Custom Text` section.", icon="🚨")
-
-
+    check_meta_review()
     if st.session_state.hypotheses:
         hypothesis = st.session_state.hypotheses[0]
         folder_name = build_config(hypothesis=hypothesis)
