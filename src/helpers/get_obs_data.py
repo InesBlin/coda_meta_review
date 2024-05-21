@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 import click
 import pandas as pd
-from src.helpers import run_request
+from src.helpers.helpers import run_request
 
 
 class KGDataCall:

@@ -6,7 +6,7 @@ import click
 from rdflib import Graph
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_RDF_XML
-from src.helpers import rdflib_to_pd
+from src.helpers.helpers import rdflib_to_pd
 
 SPARQL_ENDPOINT = "http://localhost:7200/repositories/coda"
 PRED_TO_ABBR = {

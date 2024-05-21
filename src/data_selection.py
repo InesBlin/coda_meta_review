@@ -20,7 +20,7 @@ Treatment 2
 """
 import click
 import numpy as np
-from src.helpers import select_observations
+from src.helpers.helpers import select_observations
 from kglab.helpers.data_load import read_csv
 
 def filter_sivv(row, col_name, val_1, val_2):

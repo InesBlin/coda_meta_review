@@ -7,7 +7,7 @@ Takes pre-selected data, and does some preprocessing for the meta-analysis
 import click
 import pandas as pd
 from kglab.helpers.data_load import read_csv
-from src.helpers import select_observations
+from src.helpers.helpers import select_observations
 
 class DataPrep:
     """ Post-processing observation to be used for meta-analysis 

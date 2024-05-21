@@ -8,8 +8,8 @@ import pandas as pd
 from kglab.helpers.data_load import read_csv
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_CSV
-from src.helpers import run_request, remove_url
-from src.variables import NS_CDO, NS_CDP
+from src.helpers.helpers import run_request, remove_url
+from src.helpers.variables import NS_CDO, NS_CDP
 
 def get_value_name(var, value_name):
     def extract_value(x):

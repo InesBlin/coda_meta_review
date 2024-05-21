@@ -6,9 +6,9 @@ import os
 import click
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_CSV
-from src.helpers import run_request
+from src.helpers.helpers import run_request
 from src.moderator import ModeratorComponent
-from src.sparql_queries import SIMPLE_COUNTRY_MOD_QUERY, COMPLEX_COUNTRY_MOD_QUERY, VARIABLE_MOD_QUERY
+from src.helpers.sparql_queries import SIMPLE_COUNTRY_MOD_QUERY, COMPLEX_COUNTRY_MOD_QUERY, VARIABLE_MOD_QUERY
 
 MODERATOR_C = ModeratorComponent()
 

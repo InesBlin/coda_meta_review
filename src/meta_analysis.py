@@ -12,7 +12,7 @@ from rpy2.robjects.conversion import localconverter
 from rpy2.robjects.packages import importr
 from rpy2.robjects.vectors import StrVector
 from kglab.helpers.data_load import read_csv
-from src.helpers import select_observations
+from src.helpers.helpers import select_observations
 from src.moderator import bind_moderators, ModeratorComponent
 
 
