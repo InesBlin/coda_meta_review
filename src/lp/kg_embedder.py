@@ -8,6 +8,7 @@ import pandas as pd
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
 from pykeen.pipeline import pipeline
+from pykeen.hpo import hpo_pipeline
 from pykeen.triples import TriplesFactory
 from pykeen.nn.init import PretrainedInitializer
 
@@ -107,12 +108,13 @@ class KGEmbedder:
         self.df = df
 
         # TO-REMOVE: sampling
-        self.df = self.df.sample(n=50000, random_state=23)
+        # self.df = self.df.sample(n=50000, random_state=23)
 
         self.sh = TriplesFactory.from_labeled_triples(
             self.df[spo_cols].values,
             create_inverse_triples=False)
         self.sh_train, self.sh_test = self.sh.split([0.9, 0.1], random_state=23)
+        self.model = None
 
     def get_description(self, entity_id_to_label):
         """ Retrieve, when possible, the description """
@@ -136,6 +138,15 @@ class KGEmbedder:
         embeddings = embed_descriptions(descriptions=descriptions)
         if save_path:
             torch.save(embeddings, save_path)
+        
+    def search_hpo(self, model_kwargs_ranges: dict, model: str = "rgcn"):
+        """ Hyperparameter search """
+        output = hpo_pipeline(
+            model=model,
+            training=self.sh_train, testing=self.sh_test,
+            model_kwargs_ranges=model_kwargs_ranges
+        )
+        return output
 
     def init_pipeline(self, model: str = "transe", random_seed: int = 23,
                       embeddings: Union[torch.Tensor, None] = None):
@@ -151,7 +162,9 @@ class KGEmbedder:
             model=model, random_seed=random_seed,
             training=self.sh_train, testing=self.sh_test,
             model_kwargs=model_kwargs,
-            training_kwargs=dict(batch_size=8))
+            training_loop='sLCWA',
+            training_kwargs=dict(batch_size=64, learning_rate=0.1, epochs=250))
+        self.model = output.model
         # pipeline.save_to_directory('folder_pipeline')
         # model in .pkl file, then model.entity_representations
         return output
@@ -162,12 +175,12 @@ if __name__ == '__main__':
     KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
 
     # DF_NODES = KG_EMB.get_description(KG_EMB.sh_train.entity_id_to_label)
-    # DF_NODES.to_csv("sh_train.csv")
+    # DF_NODES.to_csv("sh_entities.csv")
 
-    # DF_NODES = pd.read_csv("sh_train.csv", index_col=0)
+    # DF_NODES = pd.read_csv("sh_entities.csv", index_col=0)
     # KG_EMB.get_embeddings(df_description=DF_NODES, save_path="coda_entity_embeddings.pt")
 
     EMBEDDINGS = torch.load("coda_entity_embeddings.pt")
     PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
-    PIPELINE.save_to_directory('models/test')
+    PIPELINE.save_to_directory('models/test_slcwa')
 
