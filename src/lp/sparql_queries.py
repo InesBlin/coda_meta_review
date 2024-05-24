@@ -12,12 +12,29 @@ PREFIX id: <https://data.cooperationdatabank.org/id/>
 PREFIX class: <https://data.cooperationdatabank.org/vocab/class/>
 """
 
-TREATMENT_VALS_T = """
-SELECT ?t1 ?t2 ?p ?o1 ?o2 WHERE {
+TREATMENT_VALS_T_REGULAR = """
+SELECT ?t1 ?t2 ?giv_prop ?p ?o1 ?o2 WHERE {
     ?t1 ?p ?o1 .
     ?t2 ?p ?o2 .
+    ?p rdfs:subPropertyOf ?giv_prop .
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
+}
+"""
+
+TREATMENT_VALS_T_VAR_MOD = """
+SELECT ?t1 ?t2 ?giv_prop ?p ?o1 ?o2 ?mod ?mod_t1 ?mod_t2 WHERE {
+    ?t1 ?p ?o1 ;
+        ?mod ?mod_t1 .
+    ?t2 ?p ?o2 ;
+        ?mod ?mod_t2 .
+    ?p rdfs:subPropertyOf ?giv_prop .
+    ?mod rdfs:subPropertyOf ?giv_prop .
+    VALUES ?t1 {<[iri1]>}
+    VALUES ?t2 {<[iri2]>}
+    FILTER(?p != ?mod)
+    FILTER(?o1 != ?o2)
+    FILTER(?mod_t1 != ?mod_t2)
 }
 """
 
@@ -56,6 +73,46 @@ SELECT * WHERE {
 } 
 """
 
+HB_STUDY_T = PREFIXES + """
+SELECT * WHERE {
+  
+  ?obs rdf:type class:Observation .
+  ?obs cp:eSmeasure <https://data.cooperationdatabank.org/id/esmeasure/[es_measure]> . 
+  ?obs cp:dependentVariable ?dependent . 
+  ?obs cp:eSEstimate ?ES .
+  ?obs cp:effectSizeSampleSize ?N . 
+
+  ?obs cp:treatment ?t1, ?t2 . 
+  ?study cp:reportsEffect ?obs ;
+         ?mod ?mod_val .
+  ?t1 cp:betweenOrWithinParticipantsDesign ?design . 
+
+
+  OPTIONAL {
+    ?t1 cp:nCondition ?n1 . 
+    ?t2 cp:nCondition ?n2 .
+
+    ?t1 cp:sDforCondition ?sd1 . 
+    ?t2 cp:sDforCondition ?sd2 .
+    } 
+
+  OPTIONAL { 
+    ?obs cp:effectSizeLowerLimit ?ESLower . 
+    ?obs cp:effectSizeUpperLimit ?ESUpper .  
+    }
+
+  OPTIONAL {
+    ?paper cp:study ?study . 
+    ?paper cp:doi ?doi . }
+    
+  FILTER (STR(?t1) < STR(?t2)) 
+  FILTER (?mod NOT IN (rdf:type, rdfs:label, cp:comments, cp:descriptionIV,
+        			   cp:otherVariables, cp:reportsEffect,  cp:studyOtherDilemmaType,
+        			   cp:studySequentiality))
+
+} 
+"""
+
 EFFECT_CONSTRUCT_T = PREFIXES + """
 CONSTRUCT {
   ?study cp:reportsEffect <[obs]> . 
@@ -89,5 +146,16 @@ CONSTRUCT {
     ?superClass rdfs:subClassOf class:IndependentVariable . 
   }
 FILTER (STR(?t1) < STR(?t2)) 
+}
+"""
+
+ONTOLOGY_QUERY = PREFIXES + """
+SELECT ?s ?p ?o
+#FROM NAMED <https://data.cooperationdatabank.org/countryVocab>
+FROM NAMED <https://data.cooperationdatabank.org/Vocab>
+WHERE {
+    GRAPH ?graph {
+        ?s ?p ?o .
+    }
 }
 """

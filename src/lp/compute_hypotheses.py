@@ -20,7 +20,8 @@ from loguru import logger
 from validator_collection import checkers
 from kglab.helpers.variables import HEADERS_CSV, HEADERS_RDF_XML
 from kglab.helpers.kg_query import run_query
-from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T, EFFECT_CONSTRUCT_T
+from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T_REGULAR, EFFECT_CONSTRUCT_T, \
+    TREATMENT_VALS_T_VAR_MOD, HB_STUDY_T
 
 def type_of_effect(effect_size, lower, upper):
     """ Categorize effect based on its signifiance """
@@ -49,7 +50,8 @@ class HypothesesBuilder:
 
         """
 
-        type_h_o = ['regular', 'numerical', 'categorical']
+        # type_h_o = ['regular', 'numerical', 'categorical']
+        type_h_o = ['regular', 'var_mod', 'study_mod']
         if type_h not in type_h_o:
             raise ValueError(f"Parameter `type_h` must be in {type_h_o}")
         self.type_h = type_h
@@ -60,7 +62,26 @@ class HypothesesBuilder:
         self.es_measure = es_measure
 
         self.type_h_to_query = {
-            'regular': HB_REGULAR_T.replace("[es_measure]", es_measure)
+            'regular': HB_REGULAR_T.replace("[es_measure]", es_measure),
+            'var_mod': HB_REGULAR_T.replace("[es_measure]", es_measure),
+            'study_mod': HB_STUDY_T.replace("[es_measure]", es_measure),
+        }
+        self.type_h_to_treat_vals = {
+            'regular': TREATMENT_VALS_T_REGULAR,
+            'var_mod': TREATMENT_VALS_T_VAR_MOD,
+            'study_mod': TREATMENT_VALS_T_REGULAR,
+        }
+        self.type_h_to_make_blank_h = {
+            'regular': self.make_final_iv,
+            'var_mod': self.make_final_iv,
+            'study_mod': self.make_final_iv,
+        }
+        self.type_h_to_iv_and_cats_cols = {
+            'regular': ['iv', 'cat_t1', 'cat_t2', 'number_iv'],
+            'var_mod': ['iv', 'cat_t1', 'cat_t2', 'number_iv',
+                        'mod', 'mod_t1', 'mod_t2', 'number_mod'],
+            'study_mod': ['iv', 'cat_t1', 'cat_t2', 'number_iv',
+                          'mod', 'mod_val', 'number_mod'],
         }
 
         self.treat_prop_filter_out = [
@@ -89,35 +110,38 @@ class HypothesesBuilder:
         df_treat = pd.DataFrame(columns=["t1", "t2", "p", "o1", "o2"])
         for _, row in tqdm(t1_t2.iterrows(), total=len(t1_t2)):
             curr_treat = run_query(
-                query=TREATMENT_VALS_T.replace("[iri1]", row.t1).replace("[iri2]", row.t2),
+                query=self.type_h_to_treat_vals[self.type_h].replace("[iri1]", row.t1).replace("[iri2]", row.t2),
                 sparql_endpoint=sparql_endpoint,
                 headers=HEADERS_CSV)
             # Filter out some values: (1) same treatment values 
             # (2) certain properties (3) literal objects
-            curr_treat = curr_treat[(curr_treat.o1 != curr_treat.o2) & \
-                (~curr_treat.p.isin(self.treat_prop_filter_out))]
-            curr_treat = curr_treat[(curr_treat.o1.str.startswith('http')) & \
-                (curr_treat.o2.str.startswith('http'))]
+            for (pred, col1, col2) in [("p", "o1", "o2"), ("mod", "mod_t1", "mod_t2")]:
+                if all(x in curr_treat.columns for x in (pred, col1, col2)):
+                    curr_treat[col1] = curr_treat[col1].astype("string")
+                    curr_treat[col2] = curr_treat[col2].astype("string")
+                    curr_treat = curr_treat[(curr_treat[col1] != curr_treat[col2]) & \
+                        (~curr_treat.p.isin(self.treat_prop_filter_out))]
+                    curr_treat = curr_treat[(curr_treat[col1].str.startswith('http')) & \
+                        (curr_treat[col2].str.startswith('http'))]
             df_treat = pd.concat([df_treat, curr_treat])
-        df_treat.to_csv("df_treat.csv")
 
         logger.info("Merging treatment info with original info + post-processing")
         observations = pd.merge(observations, df_treat, on=['t1', 't2'], how='left')
         observations = observations.rename(columns={
-            "p": "independentProperties", "o1": "cat_t1", "o2": "cat_t2"})
+            "p": "iv", "o1": "cat_t1", "o2": "cat_t2"})
         observations = observations.dropna(subset=['cat_t1', 'cat_t2']) \
             .reset_index(drop=True)
 
         return observations
 
     @staticmethod
-    def make_final_iv(obs):
+    def make_final_iv_regular(obs):
         """ Count hypothesis number """
         sets, lists = [], []
         ivs_and_cats = pd.DataFrame(columns=['iv', 'cat_t1', 'cat_t2', 'number'])
 
         for i, row in tqdm(obs.iterrows(), total=len(obs)):
-            iv = row['independentProperties']
+            iv = row['iv']
             cat_t1, cat_t2 = row['cat_t1'], row['cat_t2']
             es, es_up, es_lo = row['ES'], row['ESUpper'], row['ESLower']
 
@@ -157,6 +181,135 @@ class HypothesesBuilder:
                 obs.at[i, 'iv_new'] = iv + str('_H') + str(index.values[0])
 
         return obs
+    
+    @staticmethod
+    def get_num_hypothesis_three(obs, row, i, cols, ivs_and_cats):
+        """ Get num of hypothesis for a set of cols
+        cols: [pred, val1, val2]
+        works both for moderators and regular variables 
+        
+        cols:
+        - ['iv', 'cat_t1', 'cat_t2']
+        - ['mod', 'mod_t1', 'mod_t2'] """
+        pred, val1, val2 = row[cols[0]], row[cols[1]], row[cols[2]]
+        update_ivs_and_cats = False
+
+        filtered = ivs_and_cats[
+            (ivs_and_cats[cols[0]] == pred) & \
+                (ivs_and_cats[cols[1]] == val1) & \
+                    (ivs_and_cats[cols[2]] == val2)
+        ]
+        filtered_reverse = ivs_and_cats[
+            (ivs_and_cats[cols[0]] == pred) & \
+                (ivs_and_cats[cols[1]] == val2) & \
+                    (ivs_and_cats[cols[2]] == val1)
+        ]
+        f_shape, fr_shape = filtered.shape[0], filtered_reverse.shape[0]
+
+        if (f_shape == 0) and (fr_shape == 0):
+
+            try:
+                num = ivs_and_cats[cols[0]].value_counts()[pred]+1
+            except:
+                num = 1
+            update_ivs_and_cats = True
+
+        elif f_shape > 0:
+            num = ivs_and_cats.loc[(ivs_and_cats[cols[0]] == pred) & \
+                                   (ivs_and_cats[cols[1]] == val1) & \
+                                   (ivs_and_cats[cols[2]] == val2)][cols[3]].values[0]
+
+        else:  # fr_shape > 0
+            obs.at[i, cols[1]] = val2
+            obs.at[i, cols[2]] = val1
+            if cols[0] == 'iv':
+                obs.at[i, 'ES'] = row['ES'] * -1
+                obs.at[i, 'ESUpper'] = row['ESUpper'] * -1
+                obs.at[i, 'ESLower'] = row['ESLower'] * -1
+
+            num = ivs_and_cats.loc[(ivs_and_cats[cols[0]] == pred) & \
+                                   (ivs_and_cats[cols[1]] == val2) & \
+                                   (ivs_and_cats[cols[2]] == val1)][cols[3]].values[0]
+        
+        return num, obs, ivs_and_cats, update_ivs_and_cats
+    
+    @staticmethod
+    def get_num_hypothesis_two(obs, row, i, cols, ivs_and_cats):
+        """ Get num of hypothesis for a set of cols of length 2
+        cols: [pred, val]
+        
+        cols:
+        - ['mod', 'mod_val', 'number_mod'] """
+        pred, val = row[cols[0]], row[cols[1]]
+        update_ivs_and_cats = False
+
+        filtered = ivs_and_cats[
+            (ivs_and_cats[cols[0]] == pred) & \
+                (ivs_and_cats[cols[1]] == val)
+        ]
+        f_shape = filtered.shape[0]
+
+
+        if f_shape == 0:
+
+            try:
+                num = ivs_and_cats[cols[0]].value_counts()[pred]+1
+            except:
+                num = 1
+            update_ivs_and_cats = True
+
+        else:
+            num = ivs_and_cats.loc[(ivs_and_cats[cols[0]] == pred) & \
+                                   (ivs_and_cats[cols[1]] == val)][cols[2]].values[0]
+
+        return num, obs, ivs_and_cats, update_ivs_and_cats
+
+    def make_final_iv(self, obs):
+        """ Count hypothesis number """
+        ivs_and_cats = pd.DataFrame(columns=self.type_h_to_iv_and_cats_cols[self.type_h])
+
+        for i, row in tqdm(obs.iterrows(), total=len(obs)):
+            if self.type_h == "regular":
+                num, obs, ivs_and_cats, update_reg = self.get_num_hypothesis_three(
+                    obs=obs, row=row, i=i, cols=['iv', 'cat_t1', 'cat_t2', 'number_iv'],
+                    ivs_and_cats=ivs_and_cats)
+                if update_reg:
+                    df_row = pd.DataFrame([[row['iv'], row['cat_t1'], row['cat_t2'], num]],
+                                            columns=self.type_h_to_iv_and_cats_cols[self.type_h])
+                    ivs_and_cats = pd.concat([ivs_and_cats, df_row])
+                obs.at[i, 'iv_new'] = row['iv'] + str('_H') + str(num)
+
+            if self.type_h == "var_mod":
+                num_1, obs, ivs_and_cats, update_reg = self.get_num_hypothesis_three(
+                    obs=obs, row=row, i=i, cols=['iv', 'cat_t1', 'cat_t2', 'number_iv'],
+                    ivs_and_cats=ivs_and_cats)
+                num_2, obs, ivs_and_cats, update_var_mod = self.get_num_hypothesis_three(
+                    obs=obs, row=row, i=i, cols=['mod', 'mod_t1', 'mod_t2', 'number_mod'],
+                    ivs_and_cats=ivs_and_cats)
+                if (update_reg or update_var_mod):
+                    df_row = pd.DataFrame([[
+                        row['iv'], row['cat_t1'], row['cat_t2'], num_1,
+                        row['mod'], row['mod_t1'], row['mod_t2'], num_2]],
+                        columns=self.type_h_to_iv_and_cats_cols[self.type_h])
+                    ivs_and_cats = pd.concat([ivs_and_cats, df_row])
+                obs.at[i, 'iv_new'] = row['iv'] + "_" + row["mod"] + str('_H') + str(num_1) + "_" + str(num_2)
+            
+            if self.type_h == "study_mod":
+                num_1, obs, ivs_and_cats, update_reg = self.get_num_hypothesis_three(
+                    obs=obs, row=row, i=i, cols=['iv', 'cat_t1', 'cat_t2', 'number_iv'],
+                    ivs_and_cats=ivs_and_cats)
+                num_2, obs, ivs_and_cats, update_var_mod = self.get_num_hypothesis_two(
+                    obs=obs, row=row, i=i, cols=['mod', 'mod_val', 'number_mod'],
+                    ivs_and_cats=ivs_and_cats)
+                if (update_reg or update_var_mod):
+                    df_row = pd.DataFrame([[
+                        row['iv'], row['cat_t1'], row['cat_t2'], num_1,
+                        row['mod'], row['mod_val'], num_2]],
+                        columns=self.type_h_to_iv_and_cats_cols[self.type_h])
+                    ivs_and_cats = pd.concat([ivs_and_cats, df_row])
+                obs.at[i, 'iv_new'] = row['iv'] + "_" + row["mod"] + str('_H') + str(num_1) + "_" + str(num_2)
+
+        return obs
 
     def bin_effect_size(self, obs):
         """ Categorizing effect sizes """
@@ -167,11 +320,11 @@ class HypothesesBuilder:
     def instantiate_effect_query(self, row):
         """ Replace templated content from  EFFECT_CONSTRUCT_T with real values """
         if checkers.is_url(row.cat_t1) and checkers.is_url(row.cat_t2): 
-            line_t1 = '?t1 <' + row.independentProperties + '> <' + row.cat_t1 + '> . '
-            line_t2 = '?t2 <' + row.independentProperties + '> <' + row.cat_t2 + '> . '
+            line_t1 = '?t1 <' + row.iv + '> <' + row.cat_t1 + '> . '
+            line_t2 = '?t2 <' + row.iv + '> <' + row.cat_t2 + '> . '
         else:         
-            line_t1 = '?t1 <' + row.independentProperties + '> "' + str(row.cat_t1) + '" .'
-            line_t2 = '?t2 <' + row.independentProperties + '> "' + str(row.cat_t2) + '" .'
+            line_t1 = '?t1 <' + row.iv + '> "' + str(row.cat_t1) + '" .'
+            line_t2 = '?t2 <' + row.iv + '> "' + str(row.cat_t2) + '" .'
 
         effect = type_of_effect(row.ES, row.ESLower, row.ESUpper)
         if effect == 'positive':
@@ -188,7 +341,7 @@ class HypothesesBuilder:
                     .replace("[obs]", row.obs) \
                         .replace("[line_t1]", line_t1) \
                             .replace("[line_t2]", line_t2) \
-                                .replace("[iv]", row.independentProperties) \
+                                .replace("[iv]", row.iv) \
                                     .replace("[es_type]", row.ESType)
 
     def construct_effect_kg(self, obs, sparql_endpoint):
@@ -211,29 +364,31 @@ class HypothesesBuilder:
         else:
             observations = self.get_observations(sparql_endpoint=sparql_endpoint)
             logger.info("Adding hypotheses as blank nodes")
-            observations = self.make_final_iv(observations)
+            observations = self.type_h_to_make_blank_h[self.type_h](observations)
             logger.info("Categorizing effect sizes")
             observations = self.bin_effect_size(obs=observations)
-            observations.to_csv("observations_iv.csv")
-            observations[["cat_t1", "cat_t2", "iv_new"]].drop_duplicates().to_csv("hypotheses_readable.csv")
 
-        print("observations: ", observations.shape)
+        return observations
 
-        if triples:
-            triples = pd.read_csv(triples, index_col=0)
-        else:
-            logger.info("Constructing KG")
-            triples = self.construct_effect_kg(obs=observations.sample(10000),
-                                               sparql_endpoint=sparql_endpoint)
-            triples.to_csv(f"triples_{triples.shape[0]}.csv")
+        # if triples:
+        #     triples = pd.read_csv(triples, index_col=0)
+        # else:
+        #     logger.info("Constructing KG")
+        #     triples = self.construct_effect_kg(obs=observations.sample(10000),
+        #                                        sparql_endpoint=sparql_endpoint)
+        #     triples.to_csv(f"triples_{triples.shape[0]}.csv")
 
-        return triples
+        # return triples
 
 
 if __name__ == '__main__':
     SPARQL_ENDPOINT = "http://localhost:7200/repositories/coda"
-    # OBSERVATIONS = "observations_iv.csv"
     # TRIPLES = "./triples_32072.csv"
     OBSERVATIONS, TRIPLES = None, None
-    HB = HypothesesBuilder(type_h='regular', es_measure='d')
-    HB(sparql_endpoint=SPARQL_ENDPOINT, observations=OBSERVATIONS, triples=TRIPLES)
+    OBSERVATIONS = "obs_var_mod.csv"
+    HB = HypothesesBuilder(type_h='study_mod', es_measure='d')
+    # HB(sparql_endpoint=SPARQL_ENDPOINT, triples=TRIPLES)
+    OBS_VAR_MOD = HB(sparql_endpoint=SPARQL_ENDPOINT)
+    OBS_VAR_MOD.to_csv("obs_study_mod.csv")
+
+    # OBS = HB.get_observations(sparql_endpoint=SPARQL_ENDPOINT)
