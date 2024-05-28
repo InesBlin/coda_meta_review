@@ -13,23 +13,32 @@ PREFIX class: <https://data.cooperationdatabank.org/vocab/class/>
 """
 
 TREATMENT_VALS_T_REGULAR = """
-SELECT ?t1 ?t2 ?giv_prop ?p ?o1 ?o2 WHERE {
+SELECT * WHERE {
     ?t1 ?p ?o1 .
     ?t2 ?p ?o2 .
-    ?p rdfs:subPropertyOf ?giv_prop .
+    ?p rdfs:subPropertyOf ?giv_prop ;
+       rdfs:range ?range_class_iv .
+    ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
+    ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .  
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
 }
 """
 
 TREATMENT_VALS_T_VAR_MOD = """
-SELECT ?t1 ?t2 ?giv_prop ?p ?o1 ?o2 ?mod ?mod_t1 ?mod_t2 WHERE {
+SELECT * WHERE {
     ?t1 ?p ?o1 ;
         ?mod ?mod_t1 .
     ?t2 ?p ?o2 ;
         ?mod ?mod_t2 .
-    ?p rdfs:subPropertyOf ?giv_prop .
-    ?mod rdfs:subPropertyOf ?giv_prop .
+    ?p rdfs:subPropertyOf ?giv_prop ;
+       rdfs:range ?range_class_iv .
+    ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
+    ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .  
+    ?mod rdfs:subPropertyOf ?giv_prop ;
+         rdfs:range ?range_class_mod .
+    ?range_class_mod rdfs:subClassOf ?range_superclass_mod .
+    ?range_superclass_mod rdfs:subClassOf class:IndependentVariable .  
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
     FILTER(?p != ?mod)

@@ -20,7 +20,7 @@ from loguru import logger
 from validator_collection import checkers
 from kglab.helpers.variables import HEADERS_CSV, HEADERS_RDF_XML
 from kglab.helpers.kg_query import run_query
-from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T_REGULAR, EFFECT_CONSTRUCT_T, \
+from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T_REGULAR, \
     TREATMENT_VALS_T_VAR_MOD, HB_STUDY_T
 
 def type_of_effect(effect_size, lower, upper):
@@ -32,13 +32,6 @@ def type_of_effect(effect_size, lower, upper):
     if lower <= 0 <= upper:
         return 'noEffect'
     return 'positive'  if float(effect_size) > 0 else 'negative'
-
-def rdflib_to_pd(graph):
-    """ Rdflib graph to pandas df with columns ["subject", "predicate", "object"] """
-    df = pd.DataFrame(columns=['subject', 'predicate', 'object'])
-    for subj, pred, obj in graph:
-        df.loc[df.shape[0]] = [str(subj), str(pred), str(obj)]
-    return df
 
 
 class HypothesesBuilder:
@@ -138,53 +131,6 @@ class HypothesesBuilder:
 
         return observations
 
-    @staticmethod
-    def make_final_iv_regular(obs):
-        """ Count hypothesis number """
-        sets, lists = [], []
-        ivs_and_cats = pd.DataFrame(columns=['iv', 'cat_t1', 'cat_t2', 'number'])
-
-        for i, row in tqdm(obs.iterrows(), total=len(obs)):
-            iv = row['iv']
-            cat_t1, cat_t2 = row['cat_t1'], row['cat_t2']
-            es, es_up, es_lo = row['ES'], row['ESUpper'], row['ESLower']
-
-            check_list = [iv, cat_t1, cat_t2]
-            check_set = set(check_list)
-
-            if check_set not in sets and check_list not in lists:
-                lists.append(check_list)
-                sets.append(check_set)
-
-                try:
-                    num = ivs_and_cats['iv'].value_counts()[iv]+1
-                except:
-                    num = 1
-                df_row = pd.DataFrame([[iv, cat_t1, cat_t2, num]],
-                                      columns = ['iv', 'cat_t1', 'cat_t2', 'number'])
-                ivs_and_cats = pd.concat([ivs_and_cats, df_row])
-
-                obs.at[i, 'iv_new'] = iv + str('_H') + str(num) 
-
-            elif check_set in sets and check_list in lists: 
-                index = ivs_and_cats.loc[(ivs_and_cats['iv'] == iv) & 
-                                        (ivs_and_cats['cat_t1'] == cat_t1) &
-                                        (ivs_and_cats['cat_t2'] == cat_t2)]['number']
-                obs.at[i, 'iv_new'] = iv + str('_H') + str(index.values[0])  
-
-            else:
-                obs.at[i, 'cat_t1'] = cat_t2
-                obs.at[i, 'cat_t2'] = cat_t1
-                obs.at[i, 'ES'] = es * -1
-                obs.at[i, 'ESUpper'] = es_up * -1
-                obs.at[i, 'ESLower'] = es_lo * -1
-
-                index = ivs_and_cats.loc[(ivs_and_cats['iv'] == iv) & 
-                                         (ivs_and_cats['cat_t1'] == cat_t2) &
-                                         (ivs_and_cats['cat_t2'] == cat_t1)]['number']
-                obs.at[i, 'iv_new'] = iv + str('_H') + str(index.values[0])
-
-        return obs
     
     @staticmethod
     def get_num_hypothesis_three(obs, row, i, cols, ivs_and_cats):
@@ -321,45 +267,7 @@ class HypothesesBuilder:
         obs['ESType'] = categories
         return obs
 
-    def instantiate_effect_query(self, row):
-        """ Replace templated content from  EFFECT_CONSTRUCT_T with real values """
-        if checkers.is_url(row.cat_t1) and checkers.is_url(row.cat_t2): 
-            line_t1 = '?t1 <' + row.iv + '> <' + row.cat_t1 + '> . '
-            line_t2 = '?t2 <' + row.iv + '> <' + row.cat_t2 + '> . '
-        else:         
-            line_t1 = '?t1 <' + row.iv + '> "' + str(row.cat_t1) + '" .'
-            line_t2 = '?t2 <' + row.iv + '> "' + str(row.cat_t2) + '" .'
-
-        effect = type_of_effect(row.ES, row.ESLower, row.ESUpper)
-        if effect == 'positive':
-            effect_prop = 'hasPositiveEffectOn'
-        elif effect == 'negative':
-            effect_prop = 'hasNegativeEffectOn'
-        else:
-            effect_prop = 'hasNoEffectOn'
-        cp_effect = '<' + row.iv_new + '>' + ' cp:' + effect_prop + ' ?dependentVariable .'
-
-        return EFFECT_CONSTRUCT_T.replace("[cp_effect]", cp_effect) \
-            .replace("[iv_h]", row.iv_new) \
-                .replace("[es_measure]", self.es_measure) \
-                    .replace("[obs]", row.obs) \
-                        .replace("[line_t1]", line_t1) \
-                            .replace("[line_t2]", line_t2) \
-                                .replace("[iv]", row.iv) \
-                                    .replace("[es_type]", row.ESType)
-
-    def construct_effect_kg(self, obs, sparql_endpoint):
-        """ Construct KG with n-ary hypotheses """
-        triples = pd.DataFrame(columns=['subject', 'predicate', 'object'])
-        for _, row in tqdm(obs.iterrows(), total=len(obs)):
-            query = self.instantiate_effect_query(row=row)
-            graph = Graph()
-            response = run_query(query=query,
-                                    sparql_endpoint=sparql_endpoint,
-                                    headers=HEADERS_RDF_XML)
-            graph.parse(data=response.text, format='xml')
-            triples = pd.concat([triples, rdflib_to_pd(graph=graph)])
-        return triples
+    
 
     def __call__(self, sparql_endpoint, observations: Union[str, None] = None,
                  triples: Union[str, None] = None):
