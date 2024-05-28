@@ -131,6 +131,10 @@ class HypothesesBuilder:
             "p": "iv", "o1": "cat_t1", "o2": "cat_t2"})
         observations = observations.dropna(subset=['cat_t1', 'cat_t2']) \
             .reset_index(drop=True)
+        
+        # Removing blank nodes with info
+        for col in [x for x in observations.columns if x.startswith("mod")]:
+            observations = observations[~observations[col].str.contains(".well-known")]
 
         return observations
 
