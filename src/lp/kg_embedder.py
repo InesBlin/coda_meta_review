@@ -149,6 +149,8 @@ class KGEmbedder:
         return output
 
     def init_pipeline(self, model: str = "transe", random_seed: int = 23,
+                      epochs: int = 250, embedding_dim: int = 256,
+                      lr: float = 0.01, num_negs_per_pos: int = 50,
                       embeddings: Union[torch.Tensor, None] = None):
         """ Init pykeen pipeline """
         if isinstance(embeddings, torch.Tensor):
@@ -157,22 +159,26 @@ class KGEmbedder:
                 "entity_initializer": PretrainedInitializer(tensor=embeddings)
             }
         else:
-            model_kwargs = {}
+            model_kwargs = {"embedding_dim": embedding_dim}
         output = pipeline(
             model=model, random_seed=random_seed,
             training=self.sh_train, testing=self.sh_test,
             model_kwargs=model_kwargs,
-            training_loop='sLCWA',
-            training_kwargs=dict(batch_size=64, learning_rate=0.1, epochs=250))
+            optimizer_kwargs={"lr": lr},
+            negative_sampler_kwargs={"num_negs_per_pos": num_negs_per_pos},
+            epochs=epochs
+            # training_loop='sLCWA',
+            # training_kwargs=dict(batch_size=64, learning_rate=0.1, epochs=epochs)
+            )
         self.model = output.model
         # pipeline.save_to_directory('folder_pipeline')
         # model in .pkl file, then model.entity_representations
         return output
 
 if __name__ == '__main__':
-    DATA_PATH = "./data/coda_kg.csv"
-    SPO_COLS = ['subject', 'predicate', 'object']
-    KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
+    # DATA_PATH = "./data/coda_kg.csv"
+    # SPO_COLS = ['subject', 'predicate', 'object']
+    # KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
 
     # DF_NODES = KG_EMB.get_description(KG_EMB.sh_train.entity_id_to_label)
     # DF_NODES.to_csv("sh_entities.csv")
@@ -180,7 +186,18 @@ if __name__ == '__main__':
     # DF_NODES = pd.read_csv("sh_entities.csv", index_col=0)
     # KG_EMB.get_embeddings(df_description=DF_NODES, save_path="coda_entity_embeddings.pt")
 
-    EMBEDDINGS = torch.load("coda_entity_embeddings.pt")
-    PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
-    PIPELINE.save_to_directory('models/test_slcwa')
+    # EMBEDDINGS = torch.load("coda_entity_embeddings.pt")
+    # PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
+    # PIPELINE.save_to_directory('models/test_slcwa')
 
+    DATA_PATH="./data/vocab.csv"
+    SPO_COLS=["s","p","o"]
+    KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
+    PIPELINE = KG_EMB.init_pipeline(
+        model="rgcn", random_seed=23, epochs=300, embedding_dim=256,
+        lr=0.01, num_negs_per_pos=50
+    )
+    for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
+        print(f"{key}: {PIPELINE.metric_results.get_metric(key)}")
+
+ 
