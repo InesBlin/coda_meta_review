@@ -23,16 +23,6 @@ from kglab.helpers.kg_query import run_query
 from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T_REGULAR, \
     TREATMENT_VALS_T_VAR_MOD, HB_STUDY_T
 
-def type_of_effect(effect_size, lower, upper):
-    """ Categorize effect based on its signifiance """
-    if math.isnan(lower) or math.isnan(upper):
-        if effect_size > -0.2 and effect_size < 0.2:
-            return 'noEffect'
-        return 'positive' if effect_size >= 0.2 else 'negative'
-    if lower <= 0 <= upper:
-        return 'noEffect'
-    return 'positive'  if float(effect_size) > 0 else 'negative'
-
 
 class HypothesesBuilder:
     """ Main class to build n-ary hypotheses from CoDa Databank """

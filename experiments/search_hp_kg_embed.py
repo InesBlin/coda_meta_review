@@ -14,12 +14,12 @@ from src.lp.kg_embedder import KGEmbedder
 METRICS = ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']
 
 PARAM_GRID = {
-    # "embedding_dim": [x*16 for x in range(1, 33)],
-    "embedding_dim": [64, 128, 256, 512],
-    # "lr": [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1],
-    "lr": [0.001, 0.01, 0.1],
-    # "num_negs_per_pos": [1] + [10*x for x in range(1, 11)],
-    "num_negs_per_pos": [30, 50, 80],
+    "embedding_dim": [x*16 for x in range(1, 33)],
+    # "embedding_dim": [64, 128, 256, 512],
+    "lr": [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1],
+    # "lr": [0.001, 0.01, 0.1],
+    "num_negs_per_pos": [1] + [10*x for x in range(1, 11)],
+    # "num_negs_per_pos": [30, 50, 80],
     "epochs": [100*x for x in range(1, 6)],
     "model": ["rgcn", "distmult"]
 }
@@ -43,6 +43,8 @@ def main(data, subject_col, predicate_col, object_col, results_path, results_csv
         results = []
     exp_run = [{k: x[k] for k in PARAM_GRID.keys()} for x in results]
     params = [x for x in PARAMS if x not in exp_run]
+    print(f"{len(PARAMS)} experiments to run in total")
+    print(f"{len(params)} to run | {len(exp_run)} already run")
     kg_emb = KGEmbedder(
         data_path=data,
         spo_cols=[subject_col, predicate_col, object_col])
