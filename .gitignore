@@ -12,3 +12,4 @@ meta_review/regular
 meta_review/numerical
 meta_review/categorical
 app/meta_review/
+wandb/

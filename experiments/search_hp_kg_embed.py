@@ -5,6 +5,7 @@ Search hyperparameters for KG embeddings
 import os
 import json
 import click
+import random
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
@@ -21,9 +22,13 @@ PARAM_GRID = {
     "num_negs_per_pos": [1] + [10*x for x in range(1, 11)],
     # "num_negs_per_pos": [30, 50, 80],
     "epochs": [100*x for x in range(1, 6)],
-    "model": ["rgcn", "distmult"]
+    "model": ["rgcn", "distmult", "complex", "transe"]
 }
 PARAMS = list(ParameterGrid(PARAM_GRID))
+# Randomly sampling n sets of params
+N = 500
+random.seed(23)
+PARAMS = random.sample(PARAMS, N)
 COLUMNS = list(sorted(PARAM_GRID.keys())) + METRICS
 
 
