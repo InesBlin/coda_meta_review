@@ -36,7 +36,7 @@ def type_of_effect(effect_size, lower, upper):
 
 class HypothesesBuilder:
     """ Main class to build n-ary hypotheses from CoDa Databank """
-    def __init__(self, type_h: str, es_measure: str):
+    def __init__(self, type_h: str, es_measure: str, mod_to_category: Union[dict, None] = None):
         """ Init main variables 
         - `type_h` is the type of hypothesis to extract, either `regular`,
         `numerical` or `categorical` 
@@ -89,6 +89,11 @@ class HypothesesBuilder:
         self.es_labels = ['LargeMediumNegativeES', 'SmallNegativeES', 'NullFinding',
                           'SmallPositiveES', 'LargeMediumPositiveES']
 
+        if mod_to_category:
+            self.mod_filter_out = [mod for mod, val in mod_to_category.items() if val == "numerical"]
+        else:
+            self.mod_filter_out = []
+
     def get_observations(self, sparql_endpoint):
         """ Get observations to build the n-ary hypotheses """
         logger.info("Retrieving treatments")
@@ -100,7 +105,7 @@ class HypothesesBuilder:
 
         logger.info("Retrieving info about treatments")
         t1_t2 = observations[['t1', 't2']].drop_duplicates()
-        df_treat = pd.DataFrame(columns=["t1", "t2", "p", "o1", "o2"])
+        df_treat = pd.DataFrame(columns=["t1", "t2", "iv", "o1", "o2"])
         for _, row in tqdm(t1_t2.iterrows(), total=len(t1_t2)):
             curr_treat = run_query(
                 query=self.type_h_to_treat_vals[self.type_h].replace("[iri1]", row.t1).replace("[iri2]", row.t2),
@@ -108,30 +113,33 @@ class HypothesesBuilder:
                 headers=HEADERS_CSV)
             # Filter out some values: (1) same treatment values 
             # (2) certain properties (3) literal objects
-            for (pred, col1, col2) in [("p", "o1", "o2"), ("mod", "mod_t1", "mod_t2")]:
+            for (pred, col1, col2) in [("iv", "o1", "o2"), ("mod", "mod_t1", "mod_t2")]:
                 if all(x in curr_treat.columns for x in (pred, col1, col2)):
                     curr_treat[col1] = curr_treat[col1].astype("string")
                     curr_treat[col2] = curr_treat[col2].astype("string")
                     curr_treat = curr_treat[(curr_treat[col1] != curr_treat[col2]) & \
-                        (~curr_treat.p.isin(self.treat_prop_filter_out))]
+                        (~curr_treat.iv.isin(self.treat_prop_filter_out))]
                     curr_treat = curr_treat[(curr_treat[col1].str.startswith('http')) & \
                         (curr_treat[col2].str.startswith('http'))]
+
             df_treat = pd.concat([df_treat, curr_treat])
 
         logger.info("Merging treatment info with original info + post-processing")
         observations = pd.merge(observations, df_treat, on=['t1', 't2'], how='left')
-        observations = observations.rename(columns={
-            "p": "iv", "o1": "cat_t1", "o2": "cat_t2"})
         observations = observations.dropna(subset=['cat_t1', 'cat_t2']) \
             .reset_index(drop=True)
-        
+
         # Removing blank nodes with info
         for col in [x for x in observations.columns if x.startswith("mod")]:
-            observations = observations[~observations[col].str.contains(".well-known")]
+            observations = observations[observations[col].notna()]
+            observations = observations[~observations[col].str.contains(".well-known", na=False)]
+        
+        # Keeping only categorical moderators for now
+        if "mod" in observations.columns:
+            observations = observations[~observations["mod"].isin(self.mod_filter_out)]
 
         return observations
 
-    
     @staticmethod
     def get_num_hypothesis_three(obs, row, i, cols, ivs_and_cats):
         """ Get num of hypothesis for a set of cols
@@ -182,7 +190,7 @@ class HypothesesBuilder:
                                    (ivs_and_cats[cols[2]] == val1)][cols[3]].values[0]
         
         return num, obs, ivs_and_cats, update_ivs_and_cats
-    
+
     @staticmethod
     def get_num_hypothesis_two(obs, row, i, cols, ivs_and_cats):
         """ Get num of hypothesis for a set of cols of length 2
@@ -267,8 +275,6 @@ class HypothesesBuilder:
         obs['ESType'] = categories
         return obs
 
-    
-
     def __call__(self, sparql_endpoint, observations: Union[str, None] = None,
                  triples: Union[str, None] = None):
         if observations:
@@ -281,16 +287,6 @@ class HypothesesBuilder:
             observations = self.bin_effect_size(obs=observations)
 
         return observations
-
-        # if triples:
-        #     triples = pd.read_csv(triples, index_col=0)
-        # else:
-        #     logger.info("Constructing KG")
-        #     triples = self.construct_effect_kg(obs=observations.sample(10000),
-        #                                        sparql_endpoint=sparql_endpoint)
-        #     triples.to_csv(f"triples_{triples.shape[0]}.csv")
-
-        # return triples
 
 
 if __name__ == '__main__':

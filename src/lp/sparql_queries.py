@@ -12,37 +12,56 @@ PREFIX id: <https://data.cooperationdatabank.org/id/>
 PREFIX class: <https://data.cooperationdatabank.org/vocab/class/>
 """
 
-TREATMENT_VALS_T_REGULAR = """
+TREATMENT_VALS_T_REGULAR = PREFIXES + """
 SELECT * WHERE {
-    ?t1 ?p ?o1 .
-    ?t2 ?p ?o2 .
-    ?p rdfs:subPropertyOf ?giv_prop ;
-       rdfs:range ?range_class_iv .
-    ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
-    ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .  
+    ?t1 ?iv ?cat_t1 .
+    ?t2 ?iv ?cat_t2 .
+    ?iv rdfs:subPropertyOf ?giv_prop .
+    OPTIONAL {
+      ?iv rdfs:range ?range_class_iv .
+      ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
+      ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .
+    }
+    OPTIONAL {?iv rdfs:label ?iv_label .}
+    OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
+    OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
+    FILTER(?iv != ?giv_prop)
+    FILTER(?cat_t1 != ?cat_t2)
 }
 """
 
-TREATMENT_VALS_T_VAR_MOD = """
+TREATMENT_VALS_T_VAR_MOD = PREFIXES + """
 SELECT * WHERE {
-    ?t1 ?p ?o1 ;
+    ?t1 ?iv ?cat_t1 ;
         ?mod ?mod_t1 .
-    ?t2 ?p ?o2 ;
+    ?t2 ?iv ?cat_t2 ;
         ?mod ?mod_t2 .
-    ?p rdfs:subPropertyOf ?giv_prop ;
-       rdfs:range ?range_class_iv .
-    ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
-    ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .  
-    ?mod rdfs:subPropertyOf ?giv_prop ;
-         rdfs:range ?range_class_mod .
-    ?range_class_mod rdfs:subClassOf ?range_superclass_mod .
-    ?range_superclass_mod rdfs:subClassOf class:IndependentVariable .  
+    ?iv rdfs:subPropertyOf ?giv_prop .
+    ?mod rdfs:subPropertyOf ?giv_prop .  
+    OPTIONAL {
+      ?iv rdfs:range ?range_class_iv .
+      ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
+      ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .
+    }
+    OPTIONAL {?iv rdfs:label ?iv_label .}
+    OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
+    OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
+    OPTIONAL {?mod rdfs:label ?mod_label .}
+    OPTIONAL {?mod_t1 rdfs:label ?mod_t1_label .}
+    OPTIONAL {?mod_t2 rdfs:label ?mod_t2_label .}
+    OPTIONAL {
+      ?mod rdfs:range ?range_class_mod .
+      ?range_class_mod rdfs:subClassOf ?range_superclass_mod .
+      ?range_superclass_mod rdfs:subClassOf class:IndependentVariable .  
+    }
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
-    FILTER(?p != ?mod)
-    FILTER(?o1 != ?o2)
+    FILTER(?iv != ?mod)
+    FILTER(?iv != ?giv_prop)
+    FILTER(?mod != ?giv_prop)
+    FILTER(?cat_t1 != ?cat_t2)
     FILTER(?mod_t1 != ?mod_t2)
 }
 """
@@ -113,6 +132,9 @@ SELECT * WHERE {
   OPTIONAL {
     ?paper cp:study ?study . 
     ?paper cp:doi ?doi . }
+  
+  OPTIONAL {?mod rdfs:label ?mod_label .}
+  OPTIONAL {?mod_val rdfs:label ?mod_val_label .}
     
   FILTER (STR(?t1) < STR(?t2)) 
   FILTER (?mod NOT IN (rdf:type, rdfs:label, cp:comments, cp:descriptionIV,
