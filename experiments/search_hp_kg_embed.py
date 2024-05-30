@@ -16,17 +16,22 @@ METRICS = ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']
 
 PARAM_GRID = {
     "embedding_dim": [x*16 for x in range(1, 33)],
-    # "embedding_dim": [64, 128, 256, 512],
     "lr": [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1],
-    # "lr": [0.001, 0.01, 0.1],
     "num_negs_per_pos": [1] + [10*x for x in range(1, 11)],
-    # "num_negs_per_pos": [30, 50, 80],
     "epochs": [100*x for x in range(1, 6)],
     "model": ["rgcn", "distmult", "complex", "transe"]
 }
+PARAM_GRID = {
+    "embedding_dim": [x*16 for x in range(1, 33) if x*16>176],
+    "lr": [0.001],
+    "num_negs_per_pos": [1] + [10*x for x in range(1, 6)],
+    "epochs": [100*x for x in range(3, 6)],
+    "model": ["distmult"]
+}
 PARAMS = list(ParameterGrid(PARAM_GRID))
 # Randomly sampling n sets of params
-N = 500
+# N = 500
+N = 378
 random.seed(23)
 PARAMS = random.sample(PARAMS, N)
 COLUMNS = list(sorted(PARAM_GRID.keys())) + METRICS
@@ -70,5 +75,6 @@ def main(data, subject_col, predicate_col, object_col, results_path, results_csv
 
 
 if __name__ == '__main__':
-    # python experiments/search_hyperparameters.py ./data/vocab.csv s p o experiments/results_kg_embedding_hp.json experiments/results_kg_embedding_hp.csv
+    # python experiments/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/results_kg_embedding_hp_500.json experiments/results_kg_embedding_hp_500.csv
+    # python experiments/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/results_kg_embedding_hp_378.json experiments/results_kg_embedding_hp_378.csv
     main()
