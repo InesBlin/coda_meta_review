@@ -24,11 +24,12 @@ def main(folder_in, folder_out, vocab):
     for th in TYPE_HYPOTHESIS:
         for esm in ES_MEASURE: 
             logger.info(f"Building KG for hypothesis `{th}` with effect size measure `{esm}`")
-            save_path = os.path.join(folder_out, f"h_{th}_es_{esm}.csv")
-            if not os.path.exists(save_path):
+            save_path = os.path.join(folder_out, f"h_{th}_es_{esm}")
+            if not os.path.exists(f"{save_path}_random.csv"):
                 data = pd.read_csv(os.path.join(folder_in, f"h_{th}_es_{esm}.csv"), index_col=0)
-                output = BHKGB(data=data, vocab=vocab)
-                output.to_csv(save_path)
+                output_random, output_effect = BHKGB(data=data, vocab=vocab)
+                output_random.to_csv(f"{save_path}_random.csv")
+                output_effect.to_csv(f"{save_path}_effect.csv")
 
 
 if __name__ == '__main__':
