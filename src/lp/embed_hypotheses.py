@@ -39,7 +39,7 @@ class HypothesesEmbedder:
     def get_embedding(self, index, val):
         """ Retrieve embedding """
         if self.type_columns[index] == "entity":
-            return self.model.entity_representations[0]()[self.entity_to_id[val],:].cpu().numpy()
+            return self.model.entity_representations[0]().detach()[self.entity_to_id[val],:].cpu().numpy()
         # self.type_columns[index] == "relation":
         return self.model.entity_representations[0]().detach()[self.entity_to_id[val],:].cpu().numpy()
     

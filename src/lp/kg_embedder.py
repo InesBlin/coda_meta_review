@@ -196,7 +196,7 @@ def main(data, subject_col, predicate_col, object_col, model,
     )
     for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
         print(f"{key}: {pipeline.metric_results.get_metric(key)}")
-    pipeline.save_model(save)
+    pipeline.save_to_directory(save)
 
 
 

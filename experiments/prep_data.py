@@ -40,6 +40,9 @@ def prep_data_classification(data: pd.DataFrame, th: str):
     tqdm.pandas()
     data["effect"] = data.progress_apply(type_of_effect, axis=1)
     cols = columns[th] + ["dependent", "effect"]
+
+    for col in columns[th]:
+        data = data[data[col].str.startswith("http")]
     
     return data[cols]
 
