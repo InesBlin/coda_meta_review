@@ -2,6 +2,7 @@
 """
 KG Embedder
 """
+import click
 from typing import List, Union, Dict
 import torch
 import pandas as pd
@@ -53,7 +54,7 @@ class KGEmbedder:
     - Embedding KG nodes
     - Possibility to initialise from pre-trained embeddings
     """
-    def __init__(self, data_path: str, spo_cols: List[str]):
+    def __init__(self, data_path: str, spo_cols: List[str], create_inverse_triples: bool = False):
         """
         - data_path: .csv path with data
         - spo_cols: names of subject, predicate, object cols
@@ -112,7 +113,7 @@ class KGEmbedder:
 
         self.sh = TriplesFactory.from_labeled_triples(
             self.df[spo_cols].values,
-            create_inverse_triples=False)
+            create_inverse_triples=create_inverse_triples)
         self.sh_train, self.sh_test = self.sh.split([0.9, 0.1], random_state=23)
         self.model = None
 
@@ -174,8 +175,33 @@ class KGEmbedder:
         # pipeline.save_to_directory('folder_pipeline')
         # model in .pkl file, then model.entity_representations
         return output
+    
+@click.command()
+@click.argument("data")
+@click.argument("subject_col")
+@click.argument("predicate_col")
+@click.argument("object_col")
+@click.argument("model")
+@click.argument("epochs")
+@click.argument("embedding_dim")
+@click.argument("lr")
+@click.argument("num_negs_per_pos")
+@click.argument("save")
+def main(data, subject_col, predicate_col, object_col, model,
+         epochs, embedding_dim, lr, num_negs_per_pos, save):
+    kg_emb = KGEmbedder(data_path=data, spo_cols=[subject_col, predicate_col, object_col], create_inverse_triples=False)
+    pipeline = kg_emb.init_pipeline(
+        model=model, random_seed=23, epochs=int(epochs), embedding_dim=int(embedding_dim),
+        lr=float(lr), num_negs_per_pos=int(num_negs_per_pos)
+    )
+    for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
+        print(f"{key}: {pipeline.metric_results.get_metric(key)}")
+    pipeline.save_model(save)
+
+
 
 if __name__ == '__main__':
+    # python src/lp/kg_embedder.py ./data/vocab.csv s p o distmult 500 336 0.001 1 models/coda_ontology
     # DATA_PATH = "./data/coda_kg.csv"
     # SPO_COLS = ['subject', 'predicate', 'object']
     # KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
@@ -190,14 +216,15 @@ if __name__ == '__main__':
     # PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
     # PIPELINE.save_to_directory('models/test_slcwa')
 
-    DATA_PATH="./data/vocab.csv"
-    SPO_COLS=["s","p","o"]
-    KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
-    PIPELINE = KG_EMB.init_pipeline(
-        model="rgcn", random_seed=23, epochs=300, embedding_dim=256,
-        lr=0.01, num_negs_per_pos=50
-    )
-    for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
-        print(f"{key}: {PIPELINE.metric_results.get_metric(key)}")
+    # DATA_PATH="./data/vocab.csv"
+    # SPO_COLS=["s","p","o"]
+    # KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS, create_inverse_triples=False)
+    # PIPELINE = KG_EMB.init_pipeline(
+    #     model="distmult", random_seed=23, epochs=500, embedding_dim=336,
+    #     lr=0.001, num_negs_per_pos=1
+    # )
+    # for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
+    #     print(f"{key}: {PIPELINE.metric_results.get_metric(key)}")
+    main()
 
  

@@ -11,21 +11,22 @@ CLIENT = OpenAI(api_key=API_KEY_GPT)
 MODEL = "gpt-3.5-turbo-0125"
 
 
-def run_gpt(prompt: str, content: str):
+def run_gpt(prompt: str, content: str, model: str):
     """ Get answer from GPT from prompt + content """
     messages = [
         {"role": "system", "content": prompt},
         {"role": "user", "content": content}
     ]
     completion = CLIENT.chat.completions.create(
-        model=MODEL,
+        model=model,
         messages=messages,
         temperature=0)
     return completion.choices[0].message.content
 
 class LLMHypothesisGeneration:
     """ LLM-based hypothesis generation """
-    def __init__(self, type_hypothesis):
+    def __init__(self, type_hypothesis, model: str = MODEL):
+        self.model = model
         self.th = type_hypothesis
         self.prompt_template = """
         You will be given data in .csv format, where each line can be read as a hypothesis on how humans cooperate. The csv has the following columns: [columns].
@@ -84,9 +85,9 @@ class LLMHypothesisGeneration:
         """ Generate readable hypothesis from a pandas row """
         hypothesis = self.custom_content[self.th]["[templated_h]"]
         for col in self.cols[self.th]:
-            hypothesis = hypothesis.replace("`{"+col+"}`", row[col])
+            hypothesis = hypothesis.replace("`{"+str(col)+"}`", str(row[col]))
         return hypothesis
     
     def __call__(self, data):
         """ Prompt with data """
-        return run_gpt(prompt=self.prompt, content=data)
+        return run_gpt(prompt=self.prompt, content=data, model=self.model)

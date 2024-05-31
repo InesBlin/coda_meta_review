@@ -5,23 +5,51 @@ Prep data for automated hypothesis generation
 - LLM: `data` to feed (ie tuples of values that form a hypothesis)
 """
 import os
+import math
 import click
 from tqdm import tqdm
 import pandas as pd
 
-def prep_data_llm(data: pd.DataFrame, type_data: str):
+def type_of_effect(row):
+    """ Categorize effect based on its signifiance """
+    if math.isnan(row.ESLower) or math.isnan(row.ESUpper):
+        if row.ES > -0.2 and row.ES < 0.2:
+            return 'noEffect'
+        return 'positive' if row.ES >= 0.2 else 'negative'
+    if row.ESLower <= 0 <= row.ESUpper:
+        return 'noEffect'
+    return 'positive'  if float(row.ES) > 0 else 'negative'
+
+def prep_data_llm(data: pd.DataFrame, th: str):
     """ Prep data for LLM prompting """
     columns = {
         "regular": ["giv_prop", "iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", ],
         "var_mod": ["giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_t1", "mod_t1_label", "mod_t2", "mod_t2_label", ],
         "study_mod": ["giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_val", "mod_val_label", ]
     }
-    return data.groupby(columns[type_data]).agg({"obs": "count"}).reset_index()
+    return data.groupby(columns[th]).agg({"obs": "count"}).reset_index()
 
-def prep_data(data: pd.DataFrame, type_method: str, type_data: str):
+
+def prep_data_classification(data: pd.DataFrame, th: str):
+    """ Prep data for classification (mostly: adding target to predict)"""
+    columns = {
+        "regular": ["iv", "cat_t1", "iv", "cat_t2"],
+        "var_mod": ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2"],
+        "study_mod": ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val"]
+    }
+    tqdm.pandas()
+    data["effect"] = data.progress_apply(type_of_effect, axis=1)
+    cols = columns[th] + ["dependent", "effect"]
+    
+    return data[cols]
+
+def prep_data(data: pd.DataFrame, type_method: str, th: str):
     """ Preparing data to be used for automated hypothesis generation """
     if type_method == "llm":
-        return prep_data_llm(data=data, type_data=type_data)
+        return prep_data_llm(data=data, th=th)
+    
+    if type_method == "classification":
+        return prep_data_classification(data=data, th=th)
 
 
 @click.command()
@@ -37,13 +65,14 @@ def main(folder_in, folder_out, type_method):
     for file in tqdm(files):
         save_path = os.path.join(folder_out, file)
         if not os.path.exists(save_path):
-            type_data = file.replace("h_", "").split("_es")[0]
+            th = file.replace("h_", "").split("_es")[0]
             data = pd.read_csv(os.path.join(folder_in, file), index_col=0)
-            output = prep_data(data=data, type_method=type_method,
-                               type_data=type_data)
+            output = prep_data(data=data, th=th, type_method=type_method)
             output.to_csv(save_path)
+
 
 
 if __name__ == '__main__':
     # python experiments/prep_data.py data/hypotheses/entry/ data/hypotheses/llm llm
+    # python experiments/prep_data.py data/hypotheses/entry/ data/hypotheses/classification classification
     main()
