@@ -33,9 +33,9 @@ def prep_data_llm(data: pd.DataFrame, th: str):
 def prep_data_classification(data: pd.DataFrame, th: str):
     """ Prep data for classification (mostly: adding target to predict)"""
     columns = {
-        "regular": ["iv", "cat_t1", "iv", "cat_t2"],
-        "var_mod": ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2"],
-        "study_mod": ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val"]
+        "regular": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2"],
+        "var_mod": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2"],
+        "study_mod": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val"]
     }
     tqdm.pandas()
     data["effect"] = data.progress_apply(type_of_effect, axis=1)

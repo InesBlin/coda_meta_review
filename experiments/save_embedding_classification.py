@@ -12,9 +12,9 @@ from src.lp.embed_hypotheses import HypothesesEmbedder
 ES_MEASURES = ["d", "r"]
 LABELS = ["regular", "var_mod", "study_mod"]
 COLUMNS = [
-    ["iv", "cat_t1", "iv", "cat_t2", "dependent"],
-    ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2", "dependent"],
-    ["iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val", "dependent"]
+    ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "dependent"],
+    ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2", "dependent"],
+    ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val", "dependent"]
 ]
 TYPE_COLUMNS = [["entity" for y in x] for x in COLUMNS]
 TARGET = "effect"

@@ -60,15 +60,56 @@ def get_metrics(clf, X, y, td):
             results.update({f"{label}_{avg}_{td}": metric(y, y_pred, average=avg)})
     return results
 
+def split_data(df_data, X, y):
+    """ Custom split data. Even distribution across train/val/test per GIV """
+    col_td = ["train", "val", "test"]
+    splitted_data = {
+        x: {"X": [], "y": []} for x in ["train", "val", "test"]
+    }
+    for giv in df_data.giv_prop.unique():
+        indexes = df_data[df_data.giv_prop == giv].index
+        curr_X = X[indexes]
+        curr_y = y[indexes]
+        if curr_X.shape[0] < 3:  # random across train/val/test
+            random.seed(23)
+            shuffled_td = random.sample(col_td, len(col_td))
+            random.seed(23)
+            sampled = random.sample(shuffled_td, curr_X.shape[0])
+            for i, td in enumerate(sampled):
+                splitted_data[td]["X"].append(curr_X[i].reshape(1, curr_X[i].shape[0]))
+                splitted_data[td]["y"].append(curr_y[i])
+        elif curr_X.shape[0] == 3:  # one in each
+            random.seed(23)
+            shuffled_td = random.sample(col_td, len(col_td))
+            for i, td in enumerate(shuffled_td):
+                splitted_data[td]["X"].append(curr_X[i].reshape(1, curr_X[i].shape[0]))
+                splitted_data[td]["y"].append(curr_y[i])
+        else:
+            test_size = 0.2 if curr_X.shape[0] >= 5 else 0.5
+            curr_X_train, curr_X_, curr_y_train, curr_y_ = \
+                train_test_split(curr_X, curr_y, test_size=test_size, random_state=23)
+            curr_X_val, _, curr_y_val, _ = \
+                train_test_split(curr_X_, curr_y_, test_size=0.5, random_state=23)
+            splitted_data["train"]["X"].append(curr_X_train)
+            if len(curr_X_val.shape) == 1:  # only one sample
+                splitted_data["val"]["X"].append(curr_X_val.reshape(1, curr_X[i].shape[0]))
+            else:
+                splitted_data["val"]["X"].append(curr_X_val)
+            splitted_data["train"]["y"] += curr_y_train.tolist()
+            splitted_data["val"]["y"] += curr_y_val.tolist()
+    return np.concatenate(splitted_data["train"]["X"]), np.concatenate(splitted_data["val"]["X"]), \
+        splitted_data["train"]["y"], splitted_data["val"]["y"]
 
-def run_one_config(folder, file, config):
+
+
+def run_one_config(folder_data, folder_embed, file, config):
     """ Run for one data + one config """
-    X = np.load(os.path.join(folder, f"{file}_x.npy"))
-    y = np.load(os.path.join(folder, f"{file}_y.npy"))
+    df_data = pd.read_csv(os.path.join(folder_data, f"{file}.csv"))
+    X = np.load(os.path.join(folder_embed, f"{file}_x.npy"))
+    y = np.load(os.path.join(folder_embed, f"{file}_y.npy"))
     y = y.reshape(y.shape[1])
 
-    X_train, X_, y_train, y_ = train_test_split(X, y, test_size=0.2, random_state=23)
-    X_val, _, y_val, _ = train_test_split(X_, y_, test_size=0.5, random_state=23)
+    X_train, X_val, y_train, y_val = split_data(df_data=df_data, X=X, y=y)
     clf = run_one_tree(X_train, y_train, config)
 
     results = {}
@@ -78,10 +119,13 @@ def run_one_config(folder, file, config):
 
 
 @click.command()
-@click.argument('folder_in')
+@click.argument('folder_data')
+@click.argument('folder_embed')
 @click.argument('folder_out')
-def main(folder_in, folder_out):
-    files = list(set('_'.join(x.split('_')[:-1]) for x in os.listdir(folder_in)))
+def main(folder_data, folder_embed, folder_out):
+    files = [x.replace(".csv", "") for x in os.listdir(folder_data)]
+    # to-remove
+    files = [x for x in files if 'study_mod' not in x]
     
     if not os.path.exists(folder_out):
         os.makedirs(folder_out)
@@ -100,7 +144,7 @@ def main(folder_in, folder_out):
         logger.info(f"{len(PARAMS)} experiments to run in total")
         logger.info(f"{len(params)} to run | {len(exp_run)} already run")
         for config in tqdm(params):
-            metrics = run_one_config(folder=folder_in, file=file, config=config)
+            metrics = run_one_config(folder_data=folder_data, folder_embed=folder_embed, file=file, config=config)
             config.update(metrics)
             results.append(config)
 
@@ -113,4 +157,5 @@ def main(folder_in, folder_out):
 
 
 if __name__ == '__main__':
+    # python experiments/search_hp_classification.py ./data/hypotheses/classification/ ./data/hypotheses/embeds ./experiments/classification
     main()
