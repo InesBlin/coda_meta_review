@@ -33,16 +33,17 @@ def prep_data_llm(data: pd.DataFrame, th: str):
 def prep_data_classification(data: pd.DataFrame, th: str):
     """ Prep data for classification (mostly: adding target to predict)"""
     columns = {
-        "regular": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2"],
-        "var_mod": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_t1", "mod_t2"],
-        "study_mod": ["giv_prop", "iv", "cat_t1", "iv", "cat_t2", "mod", "mod_val"]
+        "regular": ["giv_prop", "iv", "iv_label", "cat_t1", "cat_t1_label", "iv", "iv_label", "cat_t2", "cat_t2_label"],
+        "var_mod": ["giv_prop", "iv",  "iv_label", "cat_t1", "cat_t1_label", "iv", "iv_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_t1", "mod_t1_label", "mod_t2", "mod_t2_label"],
+        "study_mod": ["giv_prop", "iv", "iv_label", "cat_t1", "cat_t1_label", "iv", "iv_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_val", "mod_val_label"]
     }
     tqdm.pandas()
     data["effect"] = data.progress_apply(type_of_effect, axis=1)
     cols = columns[th] + ["dependent", "effect"]
 
     for col in columns[th]:
-        data = data[data[col].str.startswith("http")]
+        if not col.endswith("_label"):
+            data = data[data[col].str.startswith("http")]
     
     return data[cols]
 

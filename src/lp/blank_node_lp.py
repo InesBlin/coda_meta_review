@@ -2,10 +2,12 @@
 """
 Link Prediction for Blank Node
 """
+import torch
 import random
 from typing import Union, Tuple
 import pandas as pd
 from tqdm import tqdm
+from pykeen.pipeline import pipeline
 from pykeen.triples import TriplesFactory
 
 def check_tvt_prop(tvt_split: Tuple[int, int, int]):
@@ -32,9 +34,11 @@ def distribute(indexes, train, val, test):
     """ Extract `train`, `val`and `test` elements from the list of `indexes``
     such that their sum equals the indexes
     """
+    random.seed(23)
     train_l = random.sample(indexes, train)
     remaining = list(set(indexes).difference(set(train_l)))
 
+    random.seed(23)
     val_l = random.sample(remaining, val)
     test_l = list(set(remaining).difference(set(val_l)))
     
@@ -69,9 +73,9 @@ def split_effect_triples(data: pd.DataFrame, tvt_split: Tuple[int, int, int], th
         curr_data = data_no_reps[(data_no_reps.predicate==row.predicate) & (data_no_reps.h_id==row.h_id)]
         curr_data = curr_data[cols_triples].reset_index()
         if row.nb < 3:
-            # random.seed(23)
+            random.seed(23)
             shuffled_td = random.sample(col_td, len(col_td))
-            # random.seed(23)
+            random.seed(23)
             sampled = random.sample(shuffled_td, row.nb)
             for index, row_curr_data in curr_data.iterrows():
                 td = sampled[index]
@@ -81,7 +85,7 @@ def split_effect_triples(data: pd.DataFrame, tvt_split: Tuple[int, int, int], th
                 res[td] = pd.concat([res[td], data[filter_data]])
         
         elif row.nb == 3:
-            # random.seed(23)
+            random.seed(23)
             sampled = random.sample(col_td, len(col_td))
             for index, row_curr_data in curr_data.iterrows():
                 td = sampled[index]
@@ -119,6 +123,28 @@ def custom_split(data_reg: pd.DataFrame, data_effect: pd.DataFrame, tvt_split: T
         "test": pd.concat([pd.DataFrame(sh_test.triples, columns=spo_cols), custom_split["test"]]),
     }
     return {x: TriplesFactory.from_labeled_triples(val[spo_cols].values) for x, val in res.items()}
+
+
+class BNLinkPredictor:
+    """ LP for blank node hypotheses """
+    def __init__(self, dr: str, de: str, th: str, tvt: Tuple[int, int, int] = [0.8, 0.1, 0.1]):
+        self.dr = pd.read_csv(dr, index_col=0).dropna()
+        self.de = pd.read_csv(de, index_col=0).dropna()
+
+        self.triples = custom_split(
+            data_reg=self.dr, data_effect=self.de, tvt_split=tvt, th=th)
+    
+    def init_hp_pipeline(self, model: str = "transe", random_seed: int = 23,
+                      epochs: int = 250, embedding_dim: int = 256,
+                      lr: float = 0.01, num_negs_per_pos: int = 50):
+        output = pipeline(
+            model=model, random_seed=random_seed,
+            training=self.triples["train"], testing=self.triples["val"],
+            model_kwargs={"embedding_dim": embedding_dim},
+            optimizer_kwargs={"lr": lr},
+            negative_sampler_kwargs={"num_negs_per_pos": num_negs_per_pos},
+            epochs=epochs)
+        return output
 
 # to concatenate triplesfactory datasets, go back to df representations and concatenate
 # kg1_train, kg1_val, kg1_test = kg1_factory.split([0.8, 0.1, 0.1])

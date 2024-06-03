@@ -14,3 +14,5 @@ meta_review/categorical
 app/meta_review/
 wandb/
 experiments/llm_zero_shot_prompting/
+LightGBM/
+experiments/classification
