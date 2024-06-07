@@ -66,6 +66,24 @@ BEST_PARAMS = {
         "criterion": 'gini',  # default (no strong corr found)
         "min_samples_leaf": 1,  # default (no strong corr found)
         "random_state": 23  # reproducibility
+    },
+    "h_study_mod_es_r": {
+        "splitter": 'best',
+        "max_depth": 15,
+        "min_samples_split": 2,  # (no strong corr found)
+        "max_features": 0.7,
+        "criterion": 'gini',  # default (no strong corr found)
+        "min_samples_leaf": 1,  # default (no strong corr found)
+        "random_state": 23  # reproducibility
+    },
+    "h_study_mod_es_d": {
+        "splitter": 'best',
+        "max_depth": 15,
+        "min_samples_split": 2,  # (no strong corr found)
+        "max_features": 0.7,
+        "criterion": 'gini',  # default (no strong corr found)
+        "min_samples_leaf": 1,  # default (no strong corr found)
+        "random_state": 23  # reproducibility
     }
 }
 
@@ -181,5 +199,5 @@ def main(folder_in, folder_embed, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
+    # python experiments/classification/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
     main()
