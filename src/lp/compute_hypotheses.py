@@ -21,7 +21,7 @@ from validator_collection import checkers
 from kglab.helpers.variables import HEADERS_CSV, HEADERS_RDF_XML
 from kglab.helpers.kg_query import run_query
 from src.lp.sparql_queries import HB_REGULAR_T, TREATMENT_VALS_T_REGULAR, \
-    TREATMENT_VALS_T_VAR_MOD, HB_STUDY_T
+    TREATMENT_VALS_T_VAR_MOD, HB_STUDY_T, LABELS_QUERY
 
 
 class HypothesesBuilder:
@@ -83,6 +83,8 @@ class HypothesesBuilder:
             self.mod_filter_out = [mod for mod, val in mod_to_category.items() if val == "numerical"]
         else:
             self.mod_filter_out = []
+        
+        self.labels_query = LABELS_QUERY
 
     def get_observations(self, sparql_endpoint):
         """ Get observations to build the n-ary hypotheses """
@@ -95,7 +97,8 @@ class HypothesesBuilder:
 
         logger.info("Retrieving info about treatments")
         t1_t2 = observations[['t1', 't2']].drop_duplicates()
-        df_treat = pd.DataFrame(columns=["t1", "t2", "iv", "o1", "o2"])
+
+        df_treat = None
         for _, row in tqdm(t1_t2.iterrows(), total=len(t1_t2)):
             curr_treat = run_query(
                 query=self.type_h_to_treat_vals[self.type_h].replace("[iri1]", row.t1).replace("[iri2]", row.t2),
@@ -112,7 +115,10 @@ class HypothesesBuilder:
                     curr_treat = curr_treat[(curr_treat[col1].str.startswith('http')) & \
                         (curr_treat[col2].str.startswith('http'))]
 
-            df_treat = pd.concat([df_treat, curr_treat])
+            if isinstance(df_treat, pd.DataFrame):
+                df_treat = pd.concat([df_treat, curr_treat])
+            else:
+                df_treat = curr_treat
 
         logger.info("Merging treatment info with original info + post-processing")
         observations = pd.merge(observations, df_treat, on=['t1', 't2'], how='left')
@@ -265,6 +271,18 @@ class HypothesesBuilder:
         obs['ESType'] = categories
         return obs
 
+    def add_labels(self, obs, sparql_endpoint):
+        """ Adding labels """
+        labels = run_query(
+            query=self.labels_query,
+            sparql_endpoint=sparql_endpoint,
+            headers=HEADERS_CSV
+        ).set_index("n")['nl'].to_dict()
+        for col in ["iv", "cat_t1", "cat_t2", "mod", "mod_t1", "mod_t2", "mod_val"]:
+            if col in obs.columns:
+                obs[f"{col}_label"] = obs[col].apply(lambda x: labels.get(x, "na"))
+        return obs
+
     def __call__(self, sparql_endpoint, observations: Union[str, None] = None,
                  triples: Union[str, None] = None):
         if observations:
@@ -275,6 +293,8 @@ class HypothesesBuilder:
             observations = self.type_h_to_make_blank_h[self.type_h](observations)
             logger.info("Categorizing effect sizes")
             observations = self.bin_effect_size(obs=observations)
+            logger.info("Adding labels")
+            observations = self.add_labels(obs=observations, sparql_endpoint=sparql_endpoint)
 
         return observations
 
@@ -284,7 +304,7 @@ if __name__ == '__main__':
     # TRIPLES = "./triples_32072.csv"
     OBSERVATIONS, TRIPLES = None, None
     OBSERVATIONS = "obs_var_mod.csv"
-    HB = HypothesesBuilder(type_h='study_mod', es_measure='d')
+    HB = HypothesesBuilder(type_h='regular', es_measure='d')
     # HB(sparql_endpoint=SPARQL_ENDPOINT, triples=TRIPLES)
     OBS_VAR_MOD = HB(sparql_endpoint=SPARQL_ENDPOINT)
     OBS_VAR_MOD.to_csv("obs_study_mod.csv")

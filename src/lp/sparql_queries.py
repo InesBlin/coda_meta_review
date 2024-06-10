@@ -22,9 +22,9 @@ SELECT * WHERE {
       ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
       ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .
     }
-    OPTIONAL {?iv rdfs:label ?iv_label .}
-    OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
-    OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
+    #OPTIONAL {?iv rdfs:label ?iv_label .}
+    #OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
+    #OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
     VALUES ?t1 {<[iri1]>}
     VALUES ?t2 {<[iri2]>}
     FILTER(?iv != ?giv_prop)
@@ -45,12 +45,12 @@ SELECT * WHERE {
       ?range_class_iv rdfs:subClassOf ?range_superclass_iv .
       ?range_superclass_iv rdfs:subClassOf class:IndependentVariable .
     }
-    OPTIONAL {?iv rdfs:label ?iv_label .}
-    OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
-    OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
-    OPTIONAL {?mod rdfs:label ?mod_label .}
-    OPTIONAL {?mod_t1 rdfs:label ?mod_t1_label .}
-    OPTIONAL {?mod_t2 rdfs:label ?mod_t2_label .}
+    #OPTIONAL {?iv rdfs:label ?iv_label .}
+    #OPTIONAL {?cat_t1 rdfs:label ?cat_t1_label .}
+    #OPTIONAL {?cat_t2 rdfs:label ?cat_t2_label .}
+    #OPTIONAL {?mod rdfs:label ?mod_label .}
+    #OPTIONAL {?mod_t1 rdfs:label ?mod_t1_label .}
+    #OPTIONAL {?mod_t2 rdfs:label ?mod_t2_label .}
     OPTIONAL {
       ?mod rdfs:range ?range_class_mod .
       ?range_class_mod rdfs:subClassOf ?range_superclass_mod .
@@ -133,8 +133,8 @@ SELECT * WHERE {
     ?paper cp:study ?study . 
     ?paper cp:doi ?doi . }
   
-  OPTIONAL {?mod rdfs:label ?mod_label .}
-  OPTIONAL {?mod_val rdfs:label ?mod_val_label .}
+  #OPTIONAL {?mod rdfs:label ?mod_label .}
+  #OPTIONAL {?mod_val rdfs:label ?mod_val_label .}
     
   FILTER (STR(?t1) < STR(?t2)) 
   FILTER (?mod NOT IN (rdf:type, rdfs:label, cp:comments, cp:descriptionIV,
@@ -188,5 +188,11 @@ WHERE {
     GRAPH ?graph {
         ?s ?p ?o .
     }
+}
+"""
+
+LABELS_QUERY = PREFIXES + """
+SELECT ?n ?nl WHERE {
+  ?n rdfs:label ?nl .
 }
 """

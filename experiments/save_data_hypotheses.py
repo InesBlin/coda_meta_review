@@ -26,6 +26,8 @@ def main(sparql_endpoint, mod_to_category, save_folder):
     """ Retrieving data for all hypothesis type and es measures """
     with open(mod_to_category, 'r', encoding="utf-8") as openfile:
         mod_to_category = json.load(openfile)
+    if not os.path.exists(save_folder):
+        os.makedirs(save_folder)
     for th in TYPE_HYPOTHESIS:
         for esm in ES_MEASURE:
             hb = HypothesesBuilder(type_h=th, es_measure=esm, mod_to_category=mod_to_category)
