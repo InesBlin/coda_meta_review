@@ -11,18 +11,17 @@ import numpy as np
 from tqdm import tqdm
 from loguru import logger
 from sklearn.tree import DecisionTreeClassifier
-# from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import ParameterGrid, train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-CV = 5
 PARAM_GRID = {
-    'criterion': ['gini', 'entropy', 'log_loss'],
+    'criterion': ['gini', 'entropy'],
     'splitter': ['best', 'random'],
-    'max_depth': [None, 5, 10, 15],
+    'max_depth': [None, 5, 15, 20],
     'min_samples_split': [2, 5, 10],
     'min_samples_leaf': [1, 2, 4],
-    'max_features': ['sqrt', 'log2', 0.5, 0.7],
+    'max_features': [None, 'sqrt', 'log2', 0.5, 0.7],
+    'max_leaf_nodes': [None, 10, 30],
     'random_state': [23]
 }
 PARAMS = list(ParameterGrid(PARAM_GRID))
@@ -91,7 +90,8 @@ def split_data(df_data, X, y):
                 splitted_data[td]["y"].append(curr_y[i])
                 df_data.loc[indexes[i], "td"] = td  # update type of data in df
         else:
-            test_size = 0.2 if curr_X.shape[0] >= 5 else 0.5
+            test_size = 0.2 if curr_X.shape[0] >= 10 else 0.5
+            print(curr_X.shape[0])
             curr_X_train, curr_X_, curr_y_train, curr_y_, indexes_train, indexes_ = \
                 train_test_split(curr_X, curr_y, indexes,  test_size=test_size, random_state=23)
             curr_X_val, _, curr_y_val, _, indexes_val, indexes_test = \
@@ -130,7 +130,7 @@ def run_one_config(X_train, y_train, X_val, y_val, config):
 def main(folder_data, folder_embed, folder_out):
     files = [x.replace(".csv", "") for x in os.listdir(folder_data)]
     # to-remove
-    # files = [x for x in files if 'study_mod' not in x]
+    files = [x for x in files if 'study_mod' not in x]
     
     if not os.path.exists(folder_out):
         os.makedirs(folder_out)

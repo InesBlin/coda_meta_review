@@ -39,6 +39,8 @@ def prep_data_classification(data: pd.DataFrame, th: str):
     }
     tqdm.pandas()
     data["effect"] = data.progress_apply(type_of_effect, axis=1)
+    # Only keeping data with positive/negative effect
+    data = data[data.effect != "noEffect"]
     cols = columns[th] + ["dependent", "effect"]
 
     for col in columns[th]:

@@ -33,6 +33,8 @@ CLASSES_TO_ID = {
 @click.argument("save_folder")
 def main(save_folder):
     """ Retrieving data for all hypothesis type and es measures """
+    if not os.path.exists(save_folder):
+        os.makedirs(save_folder)
     for i, cols in enumerate(COLUMNS):
         he = HypothesesEmbedder(
             columns=cols, type_columns=TYPE_COLUMNS[i], target=TARGET, model_path=MODEL_PATH,

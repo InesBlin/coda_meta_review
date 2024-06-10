@@ -1,5 +1,34 @@
 # CoDa Narratives
 
+## Experiments
+
+`experiments` folder
+
+1. Extract data to use
+* save_data_hypotheses.py
+
+2. Prep data
+* prep_data.py
+
+3. Models
+
+* Classification
+    * search_hp_kg_embed.py: search hyperparams for kg embeddings
+    * save_embedding_classification.py: saving embeddding to train models
+    * search_hp_classification.py: search hyperparams for classification
+    * run_final_classification.py: run final models for classification task + readable output
+* LLM
+    * run_zero_shot_llm_prompt.py: run prompting for ontology-based prompts
+* LP
+    * search_hp_bn_lp.py: search hyperparams for link prediction
+    * save_data_bn.py: build KG for LP task
+
+
+Folders:
+* classification: results of classification models
+* hp_kg_embed: results of hyperparameter search for kg embeddings (ontology)
+* llm_zero_shot_prompting: results of llm 
+
 ## Adapting the R shiny app
 
 Aim = transfer the R code to Python, to make it easily runnable

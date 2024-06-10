@@ -64,17 +64,21 @@ class RAGBasedLP:
         all_nodes = self.df.subject.unique()
         self.metrics.update({"nb_nodes": all_nodes.shape[0]})
 
+        nodes = []
         llama_nodes = []
         logger.info("Adding nodes")
         for node in tqdm(all_nodes):
             text = get_node_text(node, self.df, self.pred_labels)
             llama_nodes.append(Node(text=text, id_=node))
-        return all_nodes, llama_nodes
+            nodes.append((node, text))
+        df = pd.DataFrame(nodes, columns=["id_", "text"])
+        return all_nodes, llama_nodes, df
     
     def __call__(self, save_dir):
         """ Save index """
-        all_nodes, llama_nodes = self.get_nodes()
-        logging.info("Building index")
+        all_nodes, llama_nodes, df = self.get_nodes()
+        df.to_csv(os.path.join(save_dir, "node_text.csv"))
+        logger.info("Building index")
         index = KnowledgeGraphIndex(nodes=llama_nodes)
         index.storage_context.persist(save_dir)
         for _, row in self.df[(self.df.subject.isin(all_nodes)) & \

@@ -121,14 +121,16 @@ def get_metrics(clf, X, y, td):
     return results
 
 
-def enrich_data(df, clf, th, X, y):
+def enrich_data(df, clf, th, X, y, unique_y):
     """ Add various columns to the original data """
     df["pred_num"] = clf.predict(X)
     df["pred_readable"] = df["pred_num"].apply(lambda x: ID_TO_CLASSES[x])
     df["comparative"] = df["pred_readable"].apply(lambda x: CLASSES_TO_COMPARATIVE[x])
     df["pred_true"] = y
-    df[[f"score_{x}" for x in [0, 1, 2]]] = clf.predict_proba(X)
-    df['max_score'] = df[[f"score_{x}" for x in [0, 1, 2]]].max(axis=1)
+    df[[f"score_{x}" for x in unique_y]] = clf.predict_proba(X)
+    df['max_score'] = df[[f"score_{x}" for x in unique_y]].max(axis=1)
+
+    df = df[df.effect != 'noEffect']
     df = df.apply(lambda row: generate_hypothesis(row, th), axis=1)
     return df
 
@@ -171,10 +173,10 @@ def main(folder_in, folder_embed, folder_out):
             y = np.load(os.path.join(folder_embed, f"{thd}_y.npy"))
             y = y.reshape(y.shape[1])
 
-            X_train = X[list(df[df.td == "train"].index)]
-            y_train = [y[i] for i in list(df[df.td == "train"].index)]
-            X_test = X[list(df[df.td == "test"].index)]
-            y_test = [y[i] for i in list(df[df.td == "test"].index)]
+            X_train = X[list(df[(df.td == "train") & (df.effect != 'noEffect')].index)]
+            y_train = [y[i] for i in list(df[(df.td == "train") & (df.effect != 'noEffect')].index)]
+            X_test = X[list(df[(df.td == "test") & (df.effect != 'noEffect')].index)]
+            y_test = [y[i] for i in list(df[(df.td == "test") & (df.effect != 'noEffect')].index)]
 
             clf = DecisionTreeClassifier(
                 criterion=config['criterion'],
@@ -192,12 +194,13 @@ def main(folder_in, folder_embed, folder_out):
             with open(os.path.join(save_f, "results.json"), 'w', encoding='utf-8') as openfile:
                 json.dump(results, openfile, indent=4)
 
-            df = enrich_data(df, clf, th, X, y)
+            df = enrich_data(df, clf, th, X, y, set(y_train))
             df.to_csv(os.path.join(save_f, "data.csv"))
             save_top_hypothesis(df=df, folder_save=os.path.join(save_f, "outputs"), top_n=5)
 
 
 
 if __name__ == '__main__':
-    # python experiments/classification/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
+    # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
+    # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final_positive_negative
     main()
