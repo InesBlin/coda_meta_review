@@ -91,3 +91,9 @@ class LLMHypothesisGeneration:
     def __call__(self, data):
         """ Prompt with data """
         return run_gpt(prompt=self.prompt, content=data, model=self.model)
+
+
+if __name__ == '__main__':
+    for th in ['regular', 'var_mod', 'study_mod']:
+        LLMHG = LLMHypothesisGeneration(type_hypothesis=th)
+        print(f"TH: {th}\n{LLMHG.prompt}\n=====\n")

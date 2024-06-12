@@ -3,14 +3,33 @@
 Save data for blank node hypotheses over KG
 """
 import os
+import math
 import click
 import pandas as pd
+from tqdm import tqdm
 from loguru import logger
 from src.lp.build_blank_h_kg import BlankHypothesesKGBuilder
 
 TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
 ES_MEASURE = ['d', 'r']
 BHKGB = BlankHypothesesKGBuilder()
+
+def type_of_effect(row):
+    """ Categorize effect based on its signifiance """
+    if math.isnan(row.ESLower) or math.isnan(row.ESUpper):
+        if row.ES > -0.2 and row.ES < 0.2:
+            return 'noEffect'
+        return 'positive' if row.ES >= 0.2 else 'negative'
+    if row.ESLower <= 0 <= row.ESUpper:
+        return 'noEffect'
+    return 'positive'  if float(row.ES) > 0 else 'negative'
+
+def get_data(folder_in, th, esm):
+    """ Get data with positive/negative effect only """
+    data = pd.read_csv(os.path.join(folder_in, f"h_{th}_es_{esm}.csv"), index_col=0)
+    tqdm.pandas()
+    data["effect"] = data.progress_apply(type_of_effect, axis=1)
+    return data[data.effect != "noEffect"]
 
 @click.command()
 @click.argument("folder_in")
@@ -26,7 +45,7 @@ def main(folder_in, folder_out, vocab):
             logger.info(f"Building KG for hypothesis `{th}` with effect size measure `{esm}`")
             save_path = os.path.join(folder_out, f"h_{th}_es_{esm}")
             if not os.path.exists(f"{save_path}_random.csv"):
-                data = pd.read_csv(os.path.join(folder_in, f"h_{th}_es_{esm}.csv"), index_col=0)
+                data = get_data(folder_in, th, esm)
                 output_random, output_effect = BHKGB(data=data, vocab=vocab)
                 output_random.to_csv(f"{save_path}_random.csv")
                 output_effect.to_csv(f"{save_path}_effect.csv")

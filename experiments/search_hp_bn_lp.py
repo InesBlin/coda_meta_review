@@ -15,7 +15,7 @@ from src.lp.blank_node_lp import BNLinkPredictor
 
 METRICS = ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']
 ES_MEASURES = ["d", "r"]
-LABELS = ["regular", "var_mod", "study_mod"]
+LABELS = ["regular", "var_mod"] #, "study_mod"]
 PARAM_GRID = {
     "embedding_dim": [x*16 for x in range(1, 33)],
     "lr": [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1],

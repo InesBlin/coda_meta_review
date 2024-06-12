@@ -32,57 +32,57 @@ CLASSES_TO_COMPARATIVE = {
 
 BEST_PARAMS = {
     "h_regular_es_d": {
-        "splitter": 'best',
-        "max_depth": 15,
-        "min_samples_split": 2,
-        "max_features": 0.7,
-        "criterion": 'gini',  # default (no strong corr found)
-        "min_samples_leaf": 1,  # default (no strong corr found)
+        "criterion": 'gini',
+        "splitter": 'random',
+        "max_depth": 20,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,  
+        "max_features": 'sqrt',
         "random_state": 23  # reproducibility
     },
     "h_regular_es_r": {
-        "splitter": 'best',
+        "criterion": 'entropy',
+        "splitter": 'random',
         "max_depth": 15,
         "min_samples_split": 2,
-        "max_features": 0.7,
-        "criterion": 'gini',
-        "min_samples_leaf": 1,
+        "min_samples_leaf": 2,  
+        "max_features": 0.5,
         "random_state": 23  # reproducibility
     },
     "h_var_mod_es_d": {
-        "splitter": 'best',
-        "max_depth": 15,
+        "criterion": 'gini',
+        "splitter": 'random',
+        "max_depth": 5,
         "min_samples_split": 2,
-        "max_features": 0.7,
-        "criterion": 'gini',  # default (no strong corr found)
-        "min_samples_leaf": 1,  # default (no strong corr found)
+        "min_samples_leaf": 2,  
+        "max_features": 0.5,
         "random_state": 23  # reproducibility
     },
     "h_var_mod_es_r": {
+        "criterion": 'entropy',
         "splitter": 'best',
-        "max_depth": 15,
-        "min_samples_split": 2,
-        "max_features": 0.7,
-        "criterion": 'gini',  # default (no strong corr found)
-        "min_samples_leaf": 1,  # default (no strong corr found)
+        "max_depth": 5,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,  
+        "max_features": 'sqrt',
         "random_state": 23  # reproducibility
     },
     "h_study_mod_es_r": {
+        "criterion": 'entropy',
         "splitter": 'best',
         "max_depth": 15,
-        "min_samples_split": 2,  # (no strong corr found)
-        "max_features": 0.7,
-        "criterion": 'gini',  # default (no strong corr found)
-        "min_samples_leaf": 1,  # default (no strong corr found)
+        "min_samples_split": 2,
+        "min_samples_leaf": 2,  
+        "max_features": "sqrt",
         "random_state": 23  # reproducibility
     },
     "h_study_mod_es_d": {
-        "splitter": 'best',
+        "criterion": 'entropy',
+        "splitter": 'random',
         "max_depth": 15,
-        "min_samples_split": 2,  # (no strong corr found)
-        "max_features": 0.7,
-        "criterion": 'gini',  # default (no strong corr found)
-        "min_samples_leaf": 1,  # default (no strong corr found)
+        "min_samples_split": 10,
+        "min_samples_leaf": 2,  
+        "max_features": None,
         "random_state": 23  # reproducibility
     }
 }
@@ -202,5 +202,4 @@ def main(folder_in, folder_embed, folder_out):
 
 if __name__ == '__main__':
     # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
-    # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final_positive_negative
     main()
