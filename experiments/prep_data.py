@@ -7,6 +7,7 @@ Prep data for automated hypothesis generation
 import os
 import math
 import click
+from collections import defaultdict
 from tqdm import tqdm
 import pandas as pd
 
@@ -19,6 +20,7 @@ def type_of_effect(row):
     if row.ESLower <= 0 <= row.ESUpper:
         return 'noEffect'
     return 'positive'  if float(row.ES) > 0 else 'negative'
+
 
 def prep_data_llm(data: pd.DataFrame, th: str):
     """ Prep data for LLM prompting """
@@ -49,6 +51,17 @@ def prep_data_classification(data: pd.DataFrame, th: str):
     
     return data[cols]
 
+
+def prep_data_lp(data: pd.DataFrame, th:str):
+    """ Prep data LP """
+    counting = defaultdict(int)
+    iv_new_unique = []
+    for val in tqdm(data.iv_new.values):
+        counting[val] += 1
+        iv_new_unique.append(f"{val}_{str(counting[val])}")
+    data["iv_new_unique"] = iv_new_unique
+    return data
+
 def prep_data(data: pd.DataFrame, type_method: str, th: str):
     """ Preparing data to be used for automated hypothesis generation """
     if type_method == "llm":
@@ -56,6 +69,9 @@ def prep_data(data: pd.DataFrame, type_method: str, th: str):
     
     if type_method == "classification":
         return prep_data_classification(data=data, th=th)
+    
+    if type_method == "lp":
+        return prep_data_lp(data=data, th=th)
 
 
 @click.command()
@@ -81,4 +97,5 @@ def main(folder_in, folder_out, type_method):
 if __name__ == '__main__':
     # python experiments/prep_data.py data/hypotheses/entry/ data/hypotheses/llm llm
     # python experiments/prep_data.py data/hypotheses/entry/ data/hypotheses/classification classification
+    # python experiments/prep_data.py data/hypotheses/entry/ data/hypotheses/lp lp
     main()

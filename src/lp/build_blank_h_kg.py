@@ -46,31 +46,33 @@ class BlankHypothesesKGBuilder:
         self.triples_cols = ["subject", "predicate", "object"]
 
         self.triples_info = [
-            # Original data in the graph
-            ("study", f"{self.prefixes['cp']}reportsEffect", "obs", {}),
-            ("obs", f"{self.prefixes['cp']}ESType", "dependent", {}),
-            ("obs", f"{self.prefixes['cp']}ESType", "ESType", {"ESType": self.prefixes['class']}),
-            ("obs", f"{self.prefixes['cp']}treatment", "t1", {}),
-            ("obs", f"{self.prefixes['cp']}treatment", "t2", {}),
-            ("iv", f"{self.prefixes['rdfs']}subPropertyOf", "giv_prop", {}),
-            ("mod", f"{self.prefixes['rdfs']}subPropertyOf", "giv_prop", {}),
-            ("t1", "iv", "cat_t1", {}),
-            ("t2", "iv", "cat_t2", {}),
-            ("t1", "mod", "mod_t1", {}),
-            ("t2", "mod", "mod_t2", {}),
-            ("study", "mod", "mod_val", {}),
-            ("iv", f"{self.prefixes['rdfs']}range", "range_class_iv", {}),
-            ("class_iv", f"{self.prefixes['rdfs']}subClassOf", "range_superclass_iv", {}),
-            ("mod", f"{self.prefixes['rdfs']}range", "range_class_mod", {}),
-            ("range_class_mod", f"{self.prefixes['rdfs']}subClassOf", "range_superclass_mod", {}),
+            # Original data in the graph > derived in the blank node hypothesis
+            # ("study", f"{self.prefixes['cp']}reportsEffect", "obs", {}),
+            # ("obs", f"{self.prefixes['cp']}dependentVariable", "dependent", {}),
+            # ("obs", f"{self.prefixes['cp']}ESType", "ESType", {"ESType": self.prefixes['class']}),
+            # ("obs", f"{self.prefixes['cp']}treatment", "t1", {}),
+            # ("obs", f"{self.prefixes['cp']}treatment", "t2", {}),
+            # ("t1", "iv", "cat_t1", {}),
+            # ("t2", "iv", "cat_t2", {}),
+            # ("t1", "mod", "mod_t1", {}),
+            # ("t2", "mod", "mod_t2", {}),
+            # ("study", "mod", "mod_val", {}),
+
+            # Ontology-related > directly in the vocabulary
+            # ("iv", f"{self.prefixes['rdfs']}subPropertyOf", "giv_prop", {}),
+            # ("mod", f"{self.prefixes['rdfs']}subPropertyOf", "giv_prop", {}),
+            # ("iv", f"{self.prefixes['rdfs']}range", "range_class_iv", {}),
+            # ("class_iv", f"{self.prefixes['rdfs']}subClassOf", "range_superclass_iv", {}),
+            # ("mod", f"{self.prefixes['rdfs']}range", "range_class_mod", {}),
+            # ("range_class_mod", f"{self.prefixes['rdfs']}subClassOf", "range_superclass_mod", {}),
 
             # Newly added data with hypotheses
-            ("iv_new", f"{self.prefixes['rdfs']}subPropertyOf", "iv", {}),
-            ("iv_new", f"{self.prefixes['cp']}sivv1", "cat_t1", {}),
-            ("iv_new", f"{self.prefixes['cp']}sivv2", "cat_t2", {}),
-            ("iv_new", f"{self.prefixes['cp']}mod1", "mod_t1", {}),
-            ("iv_new", f"{self.prefixes['cp']}mod2", "mod_t2", {}),
-            ("iv_new", f"{self.prefixes['cp']}mod", "mod", {}),
+            ("iv_new_unique", f"{self.prefixes['rdfs']}subPropertyOf", "iv", {}),
+            ("iv_new_unique", f"{self.prefixes['cp']}sivv1", "cat_t1", {}),
+            ("iv_new_unique", f"{self.prefixes['cp']}sivv2", "cat_t2", {}),
+            ("iv_new_unique", f"{self.prefixes['cp']}mod1", "mod_t1", {}),
+            ("iv_new_unique", f"{self.prefixes['cp']}mod2", "mod_t2", {}),
+            ("iv_new_unique", f"{self.prefixes['cp']}mod", "mod", {}),
         ]
         self.cols_range_superclass = ["range_superclass_iv", "range_superclass_mod"]
 
@@ -99,11 +101,11 @@ class BlankHypothesesKGBuilder:
     
     def add_effect(self, data: pd.DataFrame):
         """ Characterise effect size based on confidence intervals """
-        columns = ["iv_new", "ES", "ESLower", "ESUpper", "dependent"]
+        columns = ["iv_new_unique", "ES", "ESLower", "ESUpper", "dependent"]
         df = data[columns].drop_duplicates()
         tqdm.pandas()
         df["effect"] = df.progress_apply(type_of_effect, axis=1)
-        values = [(row.iv_new, self.effect_to_prop[row.effect], row.dependent) for _, row in df.iterrows()]
+        values = [(row.iv_new_unique, self.effect_to_prop[row.effect], row.dependent) for _, row in df.iterrows()]
         return pd.DataFrame(values, columns=self.triples_cols)
     
     def add_range_superclass(self, data, col_name):
@@ -133,10 +135,10 @@ class BlankHypothesesKGBuilder:
             effect_prop = 'hasNegativeEffectOn'
         else:
             effect_prop = 'hasNoEffectOn'
-        cp_effect = '<' + row.iv_new + '>' + ' cp:' + effect_prop + ' ?dependentVariable .'
+        cp_effect = '<' + row.iv_new_unique + '>' + ' cp:' + effect_prop + ' ?dependentVariable .'
 
         return EFFECT_CONSTRUCT_T.replace("[cp_effect]", cp_effect) \
-            .replace("[iv_h]", row.iv_new) \
+            .replace("[iv_h]", row.iv_new_unique) \
                 .replace("[es_measure]", self.es_measure) \
                     .replace("[obs]", row.obs) \
                         .replace("[line_t1]", line_t1) \
@@ -169,13 +171,13 @@ class BlankHypothesesKGBuilder:
             curr_df = self.build_triples(data=data, subj=subj, pred=pred, obj=obj, **prefixes)
             output = pd.concat([output, curr_df])
         
-        for col_name in tqdm(self.cols_range_superclass):
-            curr_df = self.add_range_superclass(data=data, col_name=col_name)
-            output = pd.concat([output, curr_df])
+        # for col_name in tqdm(self.cols_range_superclass):
+        #     curr_df = self.add_range_superclass(data=data, col_name=col_name)
+        #     output = pd.concat([output, curr_df])
 
         # Add vocab if applicable
         if isinstance(vocab, pd.DataFrame) and all(x in vocab.columns for x in self.triples_cols):
-            df_vocab = pd.DataFrame([row[col] for col in self.triples_cols] for _, row in vocab.iterrows())
+            df_vocab = pd.DataFrame([[row[col] for col in self.triples_cols] for _, row in vocab.iterrows()], columns=self.triples_cols)
             output = pd.concat([output, df_vocab])
         
         # Add effect
@@ -184,9 +186,16 @@ class BlankHypothesesKGBuilder:
         return output.drop_duplicates(), df_effect
 
 if __name__ == "__main__":
+    FILE_NAME = "h_regular_es_d"
     BHKGB = BlankHypothesesKGBuilder()
-    DATA = pd.read_csv("./data/hypotheses/entry/h_study_mod_es_d.csv", index_col=0)
-    VOCAB = pd.read_csv("./data/vocab.csv", index_col=0)
-    RES, _ = BHKGB(data=DATA, vocab=VOCAB)
-    RES.to_csv("res.csv")
+    DATA = pd.read_csv(f"./data/hypotheses/lp/{FILE_NAME}.csv", index_col=0)
+    VOCAB = pd.read_csv("./data/vocab.csv").fillna("")
+    VOCAB.columns = ["subject", "predicate", "object"]
+    for col in VOCAB.columns:
+        VOCAB = VOCAB[VOCAB[col].str.startswith("http")]
+    # VOCAB = None
+    REG, EFFECT = BHKGB(data=DATA, vocab=VOCAB)
+    REG.to_csv(f"./test_bnlp/{FILE_NAME}_random.csv")
+    EFFECT = EFFECT[~EFFECT.predicate.str.endswith("hasNoEffectOn")]
+    EFFECT.to_csv(f"./test_bnlp/{FILE_NAME}_effect.csv")
 

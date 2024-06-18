@@ -2,6 +2,7 @@
 """
 Link Prediction for Blank Node
 """
+import os
 import torch
 import random
 from typing import Union, Tuple
@@ -9,6 +10,9 @@ import pandas as pd
 from tqdm import tqdm
 from pykeen.pipeline import pipeline
 from pykeen.triples import TriplesFactory
+from pykeen.sampling import BasicNegativeSampler
+
+torch.cuda.empty_cache()
 
 def check_tvt_prop(tvt_split: Tuple[int, int, int]):
     """ Check that coherent, eg. sum = 1 """
@@ -110,52 +114,93 @@ def split_effect_triples(data: pd.DataFrame, tvt_split: Tuple[int, int, int], th
     return res
 
 
-def custom_split(data_reg: pd.DataFrame, data_effect: pd.DataFrame, tvt_split: Tuple[int, int, int], th: str):
-    check_tvt_prop(tvt_split=tvt_split)
+def custom_split(data_reg: pd.DataFrame, data_effect: pd.DataFrame, tvt_split_reg: Tuple[int, int, int], tvt_split_effect: Tuple[int, int, int], th: str):
+    check_tvt_prop(tvt_split=tvt_split_reg)
+    check_tvt_prop(tvt_split=tvt_split_effect)
     spo_cols = ["subject", "predicate", "object"]
     sh = TriplesFactory.from_labeled_triples(data_reg[spo_cols].values)
-    sh_train, sh_val, sh_test = sh.split(tvt_split, random_state=23)
-    custom_split = split_effect_triples(data=data_effect, tvt_split=tvt_split, th=th)
+    # sh_train, sh_val, sh_test = sh.split(tvt_split_reg, random_state=23)
+    c_split = split_effect_triples(data=data_effect, tvt_split=tvt_split_effect, th=th)
 
+    # res = {
+    #     "train": pd.concat([pd.DataFrame(sh_train.triples, columns=spo_cols), c_split["train"]]),
+    #     "val": pd.concat([pd.DataFrame(sh_val.triples, columns=spo_cols), c_split["val"]]),
+    #     "test": pd.concat([pd.DataFrame(sh_test.triples, columns=spo_cols), c_split["test"]]),
+    # }
     res = {
-        "train": pd.concat([pd.DataFrame(sh_train.triples, columns=spo_cols), custom_split["train"]]),
-        "val": pd.concat([pd.DataFrame(sh_val.triples, columns=spo_cols), custom_split["val"]]),
-        "test": pd.concat([pd.DataFrame(sh_test.triples, columns=spo_cols), custom_split["test"]]),
+        "train": pd.concat([pd.DataFrame(sh.triples, columns=spo_cols), c_split["train"]]),
+        "val": c_split["val"],
+        "test": c_split["test"],
     }
+    # res = {
+    #     "train": c_split["train"],
+    #     "val": c_split["val"],
+    #     "test": c_split["test"],
+    # }
     return {x: TriplesFactory.from_labeled_triples(val[spo_cols].values) for x, val in res.items()}
 
 
 class BNLinkPredictor:
     """ LP for blank node hypotheses """
-    def __init__(self, dr: str, de: str, th: str, tvt: Tuple[int, int, int] = [0.8, 0.1, 0.1]):
+    def __init__(self, dr: str, de: str, th: str,
+                 tvt_reg: Tuple[int, int, int] = [0.8, 0.1, 0.1],
+                 tvt_effect: Tuple[int, int, int] = [0.8, 0.1, 0.1]):
         self.dr = pd.read_csv(dr, index_col=0).dropna()
         self.de = pd.read_csv(de, index_col=0).dropna()
 
         self.triples = custom_split(
-            data_reg=self.dr, data_effect=self.de, tvt_split=tvt, th=th)
+            data_reg=self.dr, data_effect=self.de,
+            tvt_split_reg=tvt_reg, tvt_split_effect=tvt_effect, th=th)
+        print({k: v.num_triples for k, v in self.triples.items()})
     
     def init_hp_pipeline(self, model: str = "transe", random_seed: int = 23,
                       epochs: int = 250, embedding_dim: int = 256,
                       lr: float = 0.01, num_negs_per_pos: int = 50):
+        cdp = "https://data.cooperationdatabank.org/vocab/prop/"
         output = pipeline(
             model=model, random_seed=random_seed,
             training=self.triples["train"], testing=self.triples["val"],
             model_kwargs={"embedding_dim": embedding_dim},
             optimizer_kwargs={"lr": lr},
-            negative_sampler_kwargs={"num_negs_per_pos": num_negs_per_pos},
-            epochs=epochs)
+            negative_sampler='basic',
+            negative_sampler_kwargs = {
+                "num_negs_per_pos": num_negs_per_pos,
+            },
+            epochs=epochs,
+            device="cuda:1",
+            )
         return output
 
-# to concatenate triplesfactory datasets, go back to df representations and concatenate
-# kg1_train, kg1_val, kg1_test = kg1_factory.split([0.8, 0.1, 0.1])
 
 if __name__ == '__main__':
-    TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
-    ES_MEASURE = ['d', 'r']
-    for th in TYPE_HYPOTHESIS:
-        for es in ES_MEASURE:
-            DATA_REG = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_random.csv", index_col=0).dropna()
-            DATA_EFFECT = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_effect.csv", index_col=0).dropna()
-            TVT = [0.8, 0.1, 0.1]
-            OUTPUT = custom_split(data_reg=DATA_REG, data_effect=DATA_EFFECT, tvt_split=TVT, th=th)
-            print(OUTPUT)
+    # TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
+    # ES_MEASURE = ['d', 'r']
+    # for th in TYPE_HYPOTHESIS:
+    #     for es in ES_MEASURE:
+    #         DATA_REG = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_random.csv", index_col=0).dropna()
+    #         DATA_EFFECT = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_effect.csv", index_col=0).dropna()
+    #         TVT_REG = [0.8, 0.1, 0.1]
+    #         TVT_EFFECT = [0.6, 0.2, 0.2]
+    #         OUTPUT = custom_split(data_reg=DATA_REG, data_effect=DATA_EFFECT, tvt_split_reg=TVT_REG, tvt_split_reg=TVT_EFFECT, th=th)
+    #         print(OUTPUT)
+
+    FOLDER_IN = "./test_bnlp"
+    TH, ES = "regular", "d"
+    BN_LP = BNLinkPredictor(dr=os.path.join(FOLDER_IN, f"h_{TH}_es_{ES}_random.csv"),
+                            de=os.path.join(FOLDER_IN, f"h_{TH}_es_{ES}_effect.csv"),
+                            th=TH,
+                            tvt_reg=[0.8, 0.1, 0.1],
+                            tvt_effect=[0.8, 0.1, 0.1],
+                            )
+    PIPELINE = BN_LP.init_hp_pipeline(
+                    model='complex',
+                    # random_seed=23,
+                    epochs=300,
+                    embedding_dim=208,
+                    lr=0.002,
+                    num_negs_per_pos=31
+                    )
+    METRICS = ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']
+    for M in METRICS:
+        print(f"{M}: {PIPELINE.metric_results.get_metric(M)}")
+    PIPELINE.save_to_directory("./test_bnlp/model")
