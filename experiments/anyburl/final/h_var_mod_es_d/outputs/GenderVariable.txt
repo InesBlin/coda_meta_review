@@ -1,0 +1,4 @@
+When comparing studies where partner's gender is known is false and studies where partner's gender is known is true, effect sizes from studies involving male as gender are significantly lower than effect sizes based on female as gender.
+When comparing studies where heterogeneous gender is false and studies where heterogeneous gender is true, effect sizes from studies involving male as gender are significantly lower than effect sizes based on female as gender.
+When comparing studies where partner's gender is known is false and studies where partner's gender is known is true, effect sizes from studies involving male as gender are significantly higher than effect sizes based on female as gender.
+When comparing studies where heterogeneous gender is false and studies where heterogeneous gender is true, effect sizes from studies involving male as gender are significantly higher than effect sizes based on female as gender.

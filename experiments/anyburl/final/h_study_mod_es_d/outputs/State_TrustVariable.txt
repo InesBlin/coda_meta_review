@@ -1,0 +1,1 @@
+When comparing studies where state trust level is low and studies where state trust level is medium, cooperation is significantly lower when symmetry is true compared to when symmetry has another value.

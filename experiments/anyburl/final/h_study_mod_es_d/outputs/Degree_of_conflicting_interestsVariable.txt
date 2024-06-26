@@ -1,0 +1,5 @@
+When comparing studies where conflict level is medium and studies where conflict level is low, cooperation is significantly lower when academic discipline is mixed compared to when academic discipline has another value.
+When comparing studies where conflict level is medium and studies where conflict level is low, cooperation is significantly lower when student sample is true compared to when student sample has another value.
+When comparing studies where conflict level is high and studies where conflict level is medium, cooperation is significantly higher when sanction is false compared to when sanction has another value.
+When comparing studies where conflict level is high and studies where conflict level is medium, cooperation is significantly higher when symmetry is true compared to when symmetry has another value.
+When comparing studies where conflict level is high and studies where conflict level is medium, cooperation is significantly higher when source of year of data collection is published compared to when source of year of data collection has another value.

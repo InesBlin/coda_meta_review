@@ -1,0 +1,5 @@
+When comparing studies where symmetric endowment is false and studies where symmetric endowment is true, cooperation is significantly higher when has country is gbr compared to when has country has another value.
+When comparing studies where symmetric endowment is false and studies where symmetric endowment is true, cooperation is significantly higher when source of country or region is specified country compared to when source of country or region has another value.
+When comparing studies where symmetric endowment is false and studies where symmetric endowment is true, cooperation is significantly higher when deception is false compared to when deception has another value.
+When comparing studies where symmetric endowment is false and studies where symmetric endowment is true, cooperation is significantly higher when discussion is absent compared to when discussion has another value.
+When comparing studies where symmetric endowment is false and studies where symmetric endowment is true, cooperation is significantly higher when published is published article compared to when published has another value.

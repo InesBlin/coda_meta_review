@@ -18,3 +18,4 @@ LightGBM/
 experiments/classification
 experiments/old
 experiments/hp_bn_lp
+test_bnlp

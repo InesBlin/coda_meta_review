@@ -1,0 +1,5 @@
+When comparing studies where anonymity manipulation is high and studies where anonymity manipulation is low, cooperation is significantly lower when recruitment method is participant pool compared to when recruitment method has another value.
+When comparing studies where partner selection is present and studies where partner selection is absent, cooperation is significantly lower when has country is nld compared to when has country has another value.
+When comparing studies where partner selection is present and studies where partner selection is absent, cooperation is significantly lower when source of country or region is specified country compared to when source of country or region has another value.
+When comparing studies where partner selection is present and studies where partner selection is absent, cooperation is significantly lower when deception is false compared to when deception has another value.
+When comparing studies where partner selection is present and studies where partner selection is absent, cooperation is significantly lower when discussion is absent compared to when discussion has another value.

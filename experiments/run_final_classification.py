@@ -3,25 +3,14 @@
 Final classification model + hypothesis generation
 """
 import os
-import re
 import json
 import click
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from src.knowledge import generate_hypothesis
 
-HYPOTHESES = {
-    "regular": "{dependent} is significantly {comparative} when {iv_label} is {cat_t1_label} compared to when {iv_label} is {cat_t2_label}.",
-    "var_mod": "When comparing studies where {iv_label} is {cat_t1_label} and studies where {iv_label} is {cat_t2_label}, effect sizes from studies involving {mod_t1_label} as {mod_label} are significantly {comparative} than effect sizes based on {mod_t2_label} as {mod_label}.",
-    "study_mod": "When comparing studies where {iv_label} is {cat_t1_label} and studies where {iv_label} is {cat_t2_label}, cooperation is significantly {comparative} when {mod_label} is {mod_val_label}.",
-}
-
-NE_HYPOTHESES = {
-    "regular": "There is no significant difference in {dependent} when comparing studies where {iv_label} is {cat_t1_label} and studies where {iv_label} is {cat_t2_label}.",
-    "var_mod": "When comparing studies where {iv_label} is {cat_t1_label} and studies where {iv_label} is {cat_t2_label}, there is no significant differences in effect sizes between studies involving {mod_t1_label} as {mod_label} and studies involving {mod_t2_label} as {mod_label}.",
-    "study_mod": "When comparing studies where {iv_label} is {cat_t1_label} and studies where {iv_label} is {cat_t2_label}, there is no significant difference when {mod_label} is {mod_val_label}.",
-}
 
 ID_TO_CLASSES = {
     0: 'negative', 1: 'noEffect', 2: 'positive'
@@ -87,25 +76,6 @@ BEST_PARAMS = {
     }
 }
 
-def generate_hypothesis(row, th):
-    """ Generate human-readable hypothesis """
-    if row.comparative in ['higher', 'lower']:
-        template = HYPOTHESES[th]
-    else:  # no predicted effect
-        template = NE_HYPOTHESES[th]
-    pattern = r'\{(.*?)\}'
-    matches = re.findall(pattern, template)
-    for col in matches:
-        if col == "dependent":
-            if row[col].endswith("s"):
-                replace = row[col][:-1].split('/')[-1]
-            else:
-                replace = row[col].split('/')[-1]
-            template = template.replace("{" + col + "}", replace)
-        else:
-            template = template.replace("{" + col + "}", row[col].split("/")[-1])
-    row["hypothesis"] = template.capitalize()
-    return row
 
 
 def get_metrics(clf, X, y, td):

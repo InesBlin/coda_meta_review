@@ -1,0 +1,5 @@
+Withdrawal is significantly lower when leadership assignment rule is authority compared to when leadership assignment rule is fixed .
+Contribution is significantly higher when leader's behavior is cooperative compared to when leader's behavior is noncooperative.
+Contribution is significantly higher when leadership role is leader  compared to when leadership role is follower.
+Contribution is significantly lower when leader's characteristic is weak compared to when leader's characteristic is strong.
+Contribution is significantly lower when endogenous leadership is exogenous compared to when endogenous leadership is endogenous.

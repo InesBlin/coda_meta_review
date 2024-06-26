@@ -1,0 +1,5 @@
+Cooperation is significantly lower when symmetry is true compared to when symmetry is false.
+Contribution is significantly lower when symmetry is false compared to when symmetry is true.
+Contribution is significantly higher when symmetry is false compared to when symmetry is true.
+Cooperation is significantly lower when symmetry is false compared to when symmetry is true.
+Cooperation is significantly lower when symmetry is true compared to when symmetry is false.

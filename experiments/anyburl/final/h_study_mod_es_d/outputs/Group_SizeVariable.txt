@@ -1,0 +1,5 @@
+When comparing studies where group size level is low and studies where group size level is high, cooperation is significantly higher when continuous vs step-level public goods is step-level compared to when continuous vs step-level public goods has another value.
+When comparing studies where group size level is low and studies where group size level is high, cooperation is significantly lower when show-up fee is paid compared to when show-up fee has another value.
+When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when has country is aus compared to when has country has another value.
+When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when source of country or region is specified country compared to when source of country or region has another value.
+When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when deception is false compared to when deception has another value.

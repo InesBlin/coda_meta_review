@@ -1,0 +1,5 @@
+When comparing studies where partner's group membership is ingroup and studies where partner's group membership is outgroup, cooperation is significantly higher when academic discipline is mixed compared to when academic discipline has another value.
+When comparing studies where partner's group membership is ingroup and studies where partner's group membership is outgroup, cooperation is significantly higher when has country is usa compared to when has country has another value.
+When comparing studies where partner's group membership is stranger and studies where partner's group membership is ingroup, cooperation is significantly higher when discussion is absent compared to when discussion has another value.
+When comparing studies where partner's group membership is stranger and studies where partner's group membership is ingroup, cooperation is significantly higher when sanction is false compared to when sanction has another value.
+When comparing studies where partner's group membership is stranger and studies where partner's group membership is ingroup, cooperation is significantly lower when deception is false compared to when deception has another value.

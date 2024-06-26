@@ -1,0 +1,3 @@
+When comparing studies where number of choices level is low and studies where number of choices level is high, cooperation is significantly higher when resource dilemma game-related independent variables is 1.03e0 compared to when resource dilemma game-related independent variables has another value.
+When comparing studies where number of choices level is low and studies where number of choices level is high, cooperation is significantly higher when has country is jpn compared to when has country has another value.
+When comparing studies where number of choices level is low and studies where number of choices level is high, cooperation is significantly higher when show-up fee is paid compared to when show-up fee has another value.

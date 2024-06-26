@@ -1,0 +1,2 @@
+Cooperation is significantly higher when student sample is true compared to when student sample is false.
+Cooperation is significantly lower when student sample is false compared to when student sample is true.

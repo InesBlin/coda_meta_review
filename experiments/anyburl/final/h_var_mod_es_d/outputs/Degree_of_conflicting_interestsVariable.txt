@@ -1,0 +1,5 @@
+When comparing studies where conflict index is k index and studies where conflict index is g index, effect sizes from studies involving high as conflict level are significantly higher than effect sizes based on low as conflict level.
+When comparing studies where conflict level is high and studies where conflict level is medium, effect sizes from studies involving k index as conflict index are significantly lower than effect sizes based on g index as conflict index.
+When comparing studies where conflict index is k index and studies where conflict index is g index, effect sizes from studies involving high as conflict level are significantly lower than effect sizes based on medium as conflict level.
+When comparing studies where conflict level is high and studies where conflict level is low, effect sizes from studies involving k index as conflict index are significantly lower than effect sizes based on g index as conflict index.
+When comparing studies where conflict index is k index and studies where conflict index is g index, effect sizes from studies involving high as conflict level are significantly higher than effect sizes based on medium as conflict level.

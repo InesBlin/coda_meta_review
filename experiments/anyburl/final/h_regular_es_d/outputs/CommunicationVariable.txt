@@ -1,0 +1,5 @@
+Contribution is significantly higher when communication treatment is true compared to when communication treatment is false.
+Cooperation is significantly lower when communication treatment is true compared to when communication treatment is false.
+Cooperation is significantly higher when restricted communication is false compared to when restricted communication is true.
+Contribution is significantly higher when communication treatment is true compared to when communication treatment is false.
+Contribution is significantly higher when communication treatment is true compared to when communication treatment is false.

@@ -1,0 +1,2 @@
+When comparing studies where focal point frame is true and studies where focal point frame is false, effect sizes from studies involving cooperative as context frame are significantly lower than effect sizes based on generic as context frame.
+When comparing studies where focal point frame is true and studies where focal point frame is false, effect sizes from studies involving cooperative as context frame are significantly higher than effect sizes based on generic as context frame.

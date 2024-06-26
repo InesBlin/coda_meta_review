@@ -1,0 +1,5 @@
+Contribution is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
+Contribution is significantly lower when reward treatment is 1 compared to when reward treatment is -1.
+Contribution is significantly lower when reward treatment is 1 compared to when reward treatment is 0.
+Cooperation is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
+Contribution is significantly lower when reward treatment is -1 compared to when reward treatment is 0.

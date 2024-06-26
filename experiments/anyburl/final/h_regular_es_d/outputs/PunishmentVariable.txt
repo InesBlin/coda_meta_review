@@ -1,0 +1,5 @@
+Contribution is significantly higher when punishment treatment is 1 compared to when punishment treatment is -1.
+Contribution is significantly higher when punishment treatment is 1 compared to when punishment treatment is -1.
+Contribution is significantly higher when punishment agent is leader compared to when punishment agent is network.
+Contribution is significantly higher when punishment incentive is monetary compared to when punishment incentive is non-monetary social.
+Contribution is significantly higher when punishment treatment is 1 compared to when punishment treatment is -1.

@@ -1,0 +1,3 @@
+When comparing studies where rebate vs refund is absent and studies where rebate vs refund is full refund, cooperation is significantly lower when discussion is bi-directional compared to when discussion has another value.
+When comparing studies where rebate vs refund is absent and studies where rebate vs refund is full refund, cooperation is significantly lower when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.
+When comparing studies where rebate vs refund is absent and studies where rebate vs refund is full refund, cooperation is significantly lower when matching is partner compared to when matching has another value.

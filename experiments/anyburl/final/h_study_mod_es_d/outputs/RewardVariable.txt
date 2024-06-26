@@ -1,0 +1,5 @@
+When comparing studies where reward treatment is 1 and studies where reward treatment is 0, cooperation is significantly higher when game incentive is monetary compared to when game incentive has another value.
+When comparing studies where reward treatment is 1 and studies where reward treatment is 0, cooperation is significantly higher when student sample is true compared to when student sample has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, cooperation is significantly higher when sanction is true compared to when sanction has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, cooperation is significantly higher when continuous vs step-level public goods is continuous compared to when continuous vs step-level public goods has another value.
+When comparing studies where reward treatment is 1 and studies where reward treatment is 0, cooperation is significantly higher when sanction is true compared to when sanction has another value.

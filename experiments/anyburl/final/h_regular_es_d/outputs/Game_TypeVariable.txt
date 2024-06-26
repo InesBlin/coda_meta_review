@@ -1,0 +1,2 @@
+Cooperation is significantly lower when game type is prisoner's dilemma game compared to when game type is chicken game.
+Contribution is significantly higher when game type is prisoner's dilemma game compared to when game type is dictator game.

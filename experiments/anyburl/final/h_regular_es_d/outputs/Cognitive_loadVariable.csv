@@ -1,0 +1,2 @@
+,dependent,iv,cat_t1,cat_t2,giv_prop,iv_label,cat_t1_label,cat_t2_label,comparative,hypothesis
+1616,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/cognitiveLoadTreatment,True,False,https://data.cooperationdatabank.org/vocab/prop/Cognitive_loadVariable,Cognitive load treatment,na,na,higher,Cooperation is significantly higher when cognitive load treatment is true compared to when cognitive load treatment is false.

@@ -1,0 +1,5 @@
+When comparing studies where svo type is prosocial and studies where svo type is proself, cooperation is significantly higher when resource dilemma game-related independent variables is 1.2e0 compared to when resource dilemma game-related independent variables has another value.
+When comparing studies where svo type is prosocial and studies where svo type is proself, cooperation is significantly higher when sanction is false compared to when sanction has another value.
+When comparing studies where svo type is prosocial and studies where svo type is proself, cooperation is significantly higher when game incentive is non-monetary compared to when game incentive has another value.
+When comparing studies where svo type is prosocial and studies where svo type is proself, cooperation is significantly higher when has country is chn compared to when has country has another value.
+When comparing studies where svo type is prosocial and studies where svo type is proself, cooperation is significantly higher when source of country or region is specified country compared to when source of country or region has another value.

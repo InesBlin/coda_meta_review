@@ -1,0 +1,2 @@
+When comparing studies where feedback content is choice and studies where feedback content is earnings, effect sizes from studies involving group as feedback target are significantly lower than effect sizes based on individual as feedback target.
+When comparing studies where feedback target is group and studies where feedback target is individual, effect sizes from studies involving choice as feedback content are significantly lower than effect sizes based on earnings as feedback content.

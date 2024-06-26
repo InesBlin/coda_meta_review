@@ -1,0 +1,3 @@
+,dependent,iv,cat_t1,cat_t2,giv_prop,iv_label,cat_t1_label,cat_t2_label,comparative,hypothesis
+516,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/student,True,False,https://data.cooperationdatabank.org/vocab/prop/EducationVariable,Student sample,na,na,higher,Cooperation is significantly higher when student sample is true compared to when student sample is false.
+4215,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/student,false,true,https://data.cooperationdatabank.org/vocab/prop/EducationVariable,Student sample,na,na,lower,Cooperation is significantly lower when student sample is false compared to when student sample is true.
