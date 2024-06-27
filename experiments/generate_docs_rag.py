@@ -117,7 +117,7 @@ def main(folder_in, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/generate_docs.py data/hypotheses/entry/ data/rag/documents
+    # python experiments/generate_docs_rag.py data/hypotheses/entry/ data/rag/documents
     main()
 
 
