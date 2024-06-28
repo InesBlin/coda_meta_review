@@ -1,0 +1,5 @@
+When comparing studies where Time pressure is time pressure and studies where Time pressure is time delay, cooperation is significantly higher when Experimental setting is Online.
+When comparing studies where Time pressure is time pressure and studies where Time pressure is time delay, cooperation is significantly higher when Matching is Stranger.
+When comparing studies where Time pressure is time pressure and studies where Time pressure is time delay, cooperation is significantly higher when Recruitment method is MTurk.
+When comparing studies where Time pressure is time pressure and studies where Time pressure is time delay, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Time pressure is time pressure and studies where Time pressure is time delay, cooperation is significantly higher when Show-up fee is Paid.

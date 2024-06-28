@@ -1,0 +1,5 @@
+cooperation  is significantly higher when Partner perception level is high compared to when Partner perception level is low.
+cooperation  is significantly higher when Partner perception level is high compared to when Partner perception level is control.
+cooperation  is significantly higher when Similarity level is High compared to when Similarity level is Low.
+contributions  is significantly higher when Partner perception level is high compared to when Partner perception level is low.
+contributions  is significantly higher when Partner perception is Attractive compared to when Partner perception is Unattractive.

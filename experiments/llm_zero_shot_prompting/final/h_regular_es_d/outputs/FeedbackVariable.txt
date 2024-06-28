@@ -1,0 +1,5 @@
+cooperation  is significantly higher when Feedback target is Network compared to when Feedback target is Individual.
+cooperation  is significantly higher when Feedback target is Individual compared to when Feedback target is Absent.
+cooperation  is significantly higher when Noise is na compared to when Noise is na.
+cooperation  is significantly higher when Feedback content is Success compared to when Feedback content is Failure.
+cooperation  is significantly higher when Feedback target is Individual compared to when Feedback target is Group.

@@ -1,0 +1,5 @@
+cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Asian.
+cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Black or African American.
+cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Other.
+contributions  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Black or African American.
+contributions  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Other.

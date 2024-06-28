@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,knownEndGame,Known endgame,true,na,false,na,sanction,Sanction,false,na,higher
+1,cooperation,continuationProbabilityLevel,Continuation probability level,high,High,low,Low,country,has country,USA,USA,lower
+2,cooperation,knownEndGame,Known endgame,true,na,false,na,countrySource,Source of country or region,1,Specified country,higher
+3,cooperation,oneShotVsRepeated,One-shot vs repeated,repeated,Repeated,one-shot,One-shot,discussion,Discussion,0,Absent,higher
+4,cooperation,continuationProbabilityLevel,Continuation probability level,high,High,low,Low,studyRealPartner,Real partner,1,Real,higher

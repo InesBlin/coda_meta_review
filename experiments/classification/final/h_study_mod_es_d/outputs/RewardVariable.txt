@@ -1,0 +1,5 @@
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, contribution is significantly lower when has country is deu compared to when has country has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, contribution is significantly lower when game incentive is monetary compared to when game incentive has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, contribution is significantly lower when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, contribution is significantly lower when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where reward treatment is -1 and studies where reward treatment is 0, contribution is significantly lower when continuous vs step-level public goods is continuous compared to when continuous vs step-level public goods has another value.

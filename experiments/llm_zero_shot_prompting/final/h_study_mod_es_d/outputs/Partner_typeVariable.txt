@@ -1,0 +1,5 @@
+When comparing studies where Partner type is Stranger and studies where Partner type is Computer, cooperation is significantly higher when Published is Doctoral Dissertation.
+When comparing studies where Partner type is Stranger and studies where Partner type is Computer, cooperation is significantly higher when Source of year of data collection is Published.
+When comparing studies where Partner type is Stranger and studies where Partner type is Computer, cooperation is significantly higher when Source of year of data collection is Accepted.
+When comparing studies where Partner type is Stranger and studies where Partner type is Computer, cooperation is significantly higher when Source of year of data collection is Submitted.
+When comparing studies where Partner type is Stranger and studies where Partner type is Computer, cooperation is significantly higher when Source of year of data collection is Conducted.

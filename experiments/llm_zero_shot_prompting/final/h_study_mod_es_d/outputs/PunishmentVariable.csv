@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyExperimentalSetting,Experimental setting,2,Lab,higher
+1,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyDilemmaType,Game type,2,Public Goods Game,higher
+2,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyKnownEndgame,Known endgame,true,na,higher
+3,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,publicationStatus,Published,1,Published Article,higher
+4,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyStudentSample,Student sample,false,na,higher

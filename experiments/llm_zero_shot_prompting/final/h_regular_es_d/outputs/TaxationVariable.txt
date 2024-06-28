@@ -1,0 +1,3 @@
+contributions  is significantly higher when Minimum contribution level is Low compared to when Minimum contribution level is High.
+contributions  is significantly higher when Minimum contribution level is Low compared to when Minimum contribution level is Medium.
+contributions  is significantly higher when Minimum contribution level is Medium compared to when Minimum contribution level is High.

@@ -1,0 +1,5 @@
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly higher when Continuous vs step-level public goods is Continuous.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Matching is Stranger.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.

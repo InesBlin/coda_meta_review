@@ -1,0 +1,3 @@
+contributions  is significantly higher when Matching is Partner compared to when Matching is Stranger.
+cooperation  is significantly higher when Matching is Partner compared to when Matching is Stranger.
+contributions  is significantly higher when Partner choice is Endogenous compared to when Partner choice is Exogenous.

@@ -1,0 +1,5 @@
+Cooperation is significantly higher when anonymity manipulation is low compared to when anonymity manipulation is medium.
+Contribution is significantly lower when knowledge of partner's prior behavior is absent compared to when knowledge of partner's prior behavior is present.
+Cooperation is significantly lower when anonymity manipulation is high compared to when anonymity manipulation is medium.
+Cooperation is significantly higher when knowledge of partner's prior behavior is cooperative compared to when knowledge of partner's prior behavior is noncooperative.
+Contribution is significantly lower when anonymity manipulation is high compared to when anonymity manipulation is medium.

@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,synchrony,Synchrony,True,na,False,na,studyKnownEndgame,Known endgame,true,na,higher
+1,cooperation,synchrony,Synchrony,True,na,False,na,studyRealPartner,Real partner,1,Real,higher
+2,cooperation,synchrony,Synchrony,True,na,False,na,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
+3,cooperation,synchrony,Synchrony,True,na,False,na,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
+4,cooperation,synchrony,Synchrony,True,na,False,na,studyOneShot,One-shot vs repeated,0,Repeated,higher

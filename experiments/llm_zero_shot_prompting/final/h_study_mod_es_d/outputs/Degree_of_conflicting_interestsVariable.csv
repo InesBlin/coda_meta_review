@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,conflictIndexLevel,Conflict level,high,High,low,Low,studyShowUpFee,Show-up fee,0,Absent,lower
+1,cooperation,conflictIndexLevel,Conflict level,medium,Medium,low,Low,yearSource,Source of year of data collection,1,Conducted,higher
+2,cooperation,conflictIndexLevel,Conflict level,high,High,medium,Medium,recruitmentMethod,Recruitment method,1,Participant pool,higher
+3,cooperation,conflictIndexLevel,Conflict level,high,High,medium,Medium,studyMatchingProtocol,Matching,2,Partner,higher
+4,cooperation,conflictIndexLevel,Conflict level,high,High,medium,Medium,studyTrialOfCooperation,Trial of cooperation,5,Other trials,higher

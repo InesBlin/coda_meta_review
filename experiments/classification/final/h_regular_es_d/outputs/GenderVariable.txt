@@ -1,0 +1,5 @@
+Withdrawal is significantly lower when gender is female compared to when gender is male.
+Cooperation is significantly lower when gender is female compared to when gender is male.
+Cooperation is significantly lower when gender is female compared to when gender is male.
+Cooperation is significantly lower when gender is female compared to when gender is male.
+Cooperation is significantly lower when gender is female compared to when gender is male.

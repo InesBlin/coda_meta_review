@@ -1,0 +1,5 @@
+When comparing studies where Endowment level is Low and studies where Endowment level is High, cooperation from studies involving Low as MPCR level are significantly higher than effect sizes based on High as MPCR level.
+When comparing studies where Endowment level is Low and studies where Endowment level is High, cooperation from studies involving High as MPCR level are significantly lower than effect sizes based on Low as MPCR level.
+When comparing studies where MPCR level is High and studies where MPCR level is Medium, cooperation from studies involving Low as Endowment level are significantly higher than effect sizes based on Medium as Endowment level.
+When comparing studies where Endowment level is Low and studies where Endowment level is Medium, cooperation from studies involving High as MPCR level are significantly higher than effect sizes based on Medium as MPCR level.
+When comparing studies where MPCR level is High and studies where MPCR level is Low, cooperation from studies involving Low as Endowment level are significantly higher than effect sizes based on High as Endowment level.

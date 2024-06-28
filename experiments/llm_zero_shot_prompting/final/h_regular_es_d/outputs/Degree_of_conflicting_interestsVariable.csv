@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,contributions,conflictIndexLevel,Conflict level,high,High,low,Low,higher
+1,cooperation,conflictIndexLevel,Conflict level,high,High,medium,Medium,higher
+2,withdrawals,conflictIndexLevel,Conflict level,medium,Medium,low,Low,higher
+3,withdrawals,conflictIndexLevel,Conflict level,high,High,low,Low,higher
+4,cooperation,conflictIndexLevel,Conflict level,high,High,low,Low,higher

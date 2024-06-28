@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,relationshipWithFocalAgent,Relationship with the partner,acquaintance,acquaintance,stranger,stranger,studyOneShotRepeated,Repeated one-shot game,false,na,higher
+1,cooperation,relationshipWithFocalAgent,Relationship with the partner,acquaintance,acquaintance,stranger,stranger,deception,Deception,true,na,higher
+2,cooperation,relationshipWithFocalAgent,Relationship with the partner,acquaintance,acquaintance,stranger,stranger,studyGameIncentive,Game incentive,0,Hypothetical,higher
+3,cooperation,relationshipWithFocalAgent,Relationship with the partner,acquaintance,acquaintance,stranger,stranger,studyRealPartner,Real partner,1,Real,higher
+4,cooperation,relationshipWithFocalAgent,Relationship with the partner,acquaintance,acquaintance,stranger,stranger,studyOneShot,One-shot vs repeated,1,One-shot,higher

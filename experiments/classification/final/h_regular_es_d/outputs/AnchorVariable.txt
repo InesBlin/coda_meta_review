@@ -1,0 +1,2 @@
+Contribution is significantly lower when anchor is low cooperation compared to when anchor is high cooperation .
+Contribution is significantly lower when anchor is low cooperation compared to when anchor is absent.

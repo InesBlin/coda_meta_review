@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,ageCohort,Age cohort,old,old,young,young,studyGameIncentive,Game incentive,1,Monetary,higher
+1,cooperation,ageCohort,Age cohort,old,old,young,young,studyRealPartner,Real partner,1,Real,higher
+2,contributions,ageCohort,Age cohort,old,old,young,young,studyDilemmaType,Game type,2,Public Goods Game,higher
+3,cooperation,ageCohort,Age cohort,old,old,young,young,studyExperimentalSetting,Experimental setting,5,Lab in the field,higher
+4,contributions,ageCohort,Age cohort,old,old,young,young,studyOneShot,One-shot vs repeated,1,One-shot,higher

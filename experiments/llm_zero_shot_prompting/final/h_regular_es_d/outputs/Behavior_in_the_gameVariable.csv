@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,contributions,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,higher
+1,contributions,othersBehaviorLevel,Partner's behavior level,high,High,low,Low,lower
+2,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,higher
+3,contributions,ownBehaviorLevel,Participant's behavior level,high,High,medium,Medium,higher
+4,contributions,ownBehaviorLevel,Participant's behavior level,medium,Medium,low,Low,higher

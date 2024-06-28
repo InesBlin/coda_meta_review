@@ -1,0 +1,5 @@
+When comparing studies where Iterated strategy is Tit-for-Tat and studies where Iterated strategy is Real Partner, cooperation is significantly higher when Trial of cooperation is All trials.
+When comparing studies where Iterated pre-programmed cooperation rate level is High and studies where Iterated pre-programmed cooperation rate level is Low, cooperation is significantly higher when has country is CAN.
+When comparing studies where Iterated strategy is Extortionate Zero Determinant and studies where Iterated strategy is Generous Zero Determinant, cooperation is significantly lower when Source of year of data collection is Conducted.
+When comparing studies where Iterated pre-programmed cooperation rate level is High and studies where Iterated pre-programmed cooperation rate level is Low, contributions is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Iterated strategy is Tit-for-Tat and studies where Iterated strategy is Real Partner, cooperation is significantly higher when Published is Published Article.

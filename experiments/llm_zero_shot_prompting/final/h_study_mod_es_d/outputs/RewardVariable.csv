@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,studySymmetric,Symmetry,True,na,higher
+1,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,studySymmetric,Symmetry,False,na,higher
+2,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,studySymmetric,Symmetry,False,na,higher
+3,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,studySymmetric,Symmetry,False,na,higher
+4,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,studySymmetric,Symmetry,True,na,higher

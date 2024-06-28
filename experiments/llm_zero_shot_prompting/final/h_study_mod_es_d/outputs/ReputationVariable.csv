@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyOneShotRepeated,Repeated one-shot game,true,na,higher
+1,contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,studyExperimentalSetting,Experimental setting,2,Lab,higher
+2,cooperation,anonymityManipul,Anonymity manipulation,high,High,medium,Medium,publicationStatus,Published,1,Published Article,higher
+3,contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,studyRealPartner,Real partner,1,Real,higher
+4,cooperation,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyRealPartner,Real partner,2,Deception,lower

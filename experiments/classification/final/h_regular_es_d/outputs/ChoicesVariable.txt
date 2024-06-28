@@ -1,0 +1,1 @@
+Withdrawal is significantly lower when number of choices level is low compared to when number of choices level is high.

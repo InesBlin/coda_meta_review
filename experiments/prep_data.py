@@ -25,9 +25,9 @@ def type_of_effect(row):
 def prep_data_llm(data: pd.DataFrame, th: str):
     """ Prep data for LLM prompting """
     columns = {
-        "regular": ["giv_prop", "iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", ],
-        "var_mod": ["giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_t1", "mod_t1_label", "mod_t2", "mod_t2_label", ],
-        "study_mod": ["giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_val", "mod_val_label", ]
+        "regular": ["dependent", "giv_prop", "iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", ],
+        "var_mod": ["dependent", "giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_t1", "mod_t1_label", "mod_t2", "mod_t2_label", ],
+        "study_mod": ["dependent", "giv_prop","iv", "iv_label", "cat_t1", "cat_t1_label", "cat_t2", "cat_t2_label", "mod", "mod_label", "mod_val", "mod_val_label", ]
     }
     return data.groupby(columns[th]).agg({"obs": "count"}).reset_index()
 

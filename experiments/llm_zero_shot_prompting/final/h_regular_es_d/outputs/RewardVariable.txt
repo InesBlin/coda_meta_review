@@ -1,0 +1,5 @@
+contributions  is significantly higher when Reward treatment is 1 compared to when Reward treatment is 0.
+contributions  is significantly higher when Reward treatment is 1 compared to when Reward treatment is -1.
+contributions  is significantly higher when Reward treatment is -1 compared to when Reward treatment is 0.
+cooperation  is significantly higher when Reward treatment is 1 compared to when Reward treatment is -1.
+cooperation  is significantly lower when Reward agent is Peer compared to when Reward agent is Experimenter.

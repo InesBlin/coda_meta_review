@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,thresholdLevel,Threshold level,medium,Medium,high,High,sanction,Sanction,false,na,lower
+1,cooperation,stepReturnLevel,Step return level,low,Low,high,High,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
+2,cooperation,thresholdLevel,Threshold level,medium,Medium,low,Low,studyMatchingProtocol,Matching,1,Stranger,higher
+3,contributions,thresholdLevel,Threshold level,medium,Medium,low,Low,studyDilemmaType,Game type,2,Public Goods Game,higher
+4,cooperation,thresholdLevel,Threshold level,medium,Medium,high,High,studyStudentSample,Student sample,true,na,lower

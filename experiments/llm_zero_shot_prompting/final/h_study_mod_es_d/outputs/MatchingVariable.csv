@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,matching,Matching,stranger,Stranger,partner,Partner,studySymmetric,Symmetry,true,na,higher
+1,cooperation,matching,Matching,stranger,Stranger,partner,Partner,studyAcquaintance,Acquaintance,0,Strangers,lower
+2,cooperation,matching,Matching,stranger,Stranger,partner,Partner,studyShowUpFee,Show-up fee,1,Paid,higher
+3,cooperation,matching,Matching,stranger,Stranger,partner,Partner,studyMatchingProtocol,Matching,2,Partner,higher
+4,cooperation,matching,Matching,stranger,Stranger,partner,Partner,studyOneShot,One-shot vs repeated,0,Repeated,lower

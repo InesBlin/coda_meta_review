@@ -1,0 +1,5 @@
+Contribution is significantly higher when leadership assignment rule is random appointment compared to when leadership assignment rule is elected.
+Withdrawal is significantly lower when leadership role is leader  compared to when leadership role is follower.
+Contribution is significantly higher when leadership assignment rule is fixed  compared to when leadership assignment rule is random appointment.
+Contribution is significantly lower when leadership assignment rule is fixed  compared to when leadership assignment rule is volunteer.
+Contribution is significantly lower when endogenous leadership is exogenous compared to when endogenous leadership is endogenous.

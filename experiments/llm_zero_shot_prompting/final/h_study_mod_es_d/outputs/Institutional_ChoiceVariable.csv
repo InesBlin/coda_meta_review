@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyContinuousPGG,Continuous vs step-level public goods,1,Continuous,higher
+1,contributions,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyMatchingProtocol,Matching,1,Stranger,lower
+2,contributions,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,0,Strangers,lower
+3,contributions,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,0,Strangers,lower
+4,contributions,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,0,Strangers,lower

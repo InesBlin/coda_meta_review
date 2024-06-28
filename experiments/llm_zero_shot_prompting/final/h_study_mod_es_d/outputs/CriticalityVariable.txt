@@ -1,0 +1,5 @@
+When comparing studies where Criticality level is Low and studies where Criticality level is High, contributions is significantly lower when Real partner is Hypothetical.
+When comparing studies where Criticality level is Low and studies where Criticality level is High, contributions is significantly higher when Symmetry is na.
+When comparing studies where Criticality level is Low and studies where Criticality level is High, contributions is significantly higher when Symmetry is na.
+When comparing studies where Criticality level is Low and studies where Criticality level is High, contributions is significantly higher when One-shot vs repeated is One-shot.
+When comparing studies where Criticality level is Low and studies where Criticality level is High, contributions is significantly higher when One-shot vs repeated is One-shot.

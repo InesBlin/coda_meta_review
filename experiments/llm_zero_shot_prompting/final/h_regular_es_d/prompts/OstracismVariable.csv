@@ -1,0 +1,5 @@
+,dependent,giv_prop,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,obs
+130,https://data.cooperationdatabank.org/id/dependentvariable/contributions,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,https://data.cooperationdatabank.org/vocab/prop/ostracism,Ostracism,False,na,True,na,3
+131,https://data.cooperationdatabank.org/id/dependentvariable/contributions,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,https://data.cooperationdatabank.org/vocab/prop/ostracism,Ostracism,false,na,true,na,5
+355,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,https://data.cooperationdatabank.org/vocab/prop/ostracism,Ostracism,False,na,True,na,14
+502,https://data.cooperationdatabank.org/id/dependentvariable/withdrawals,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,https://data.cooperationdatabank.org/vocab/prop/ostracism,Ostracism,False,na,True,na,1

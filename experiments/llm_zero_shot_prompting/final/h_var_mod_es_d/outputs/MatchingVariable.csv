@@ -1,0 +1,3 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
+0,contributions,partnerChoice,Partner choice,exogenous,Exogenous,endogenous,Endogenous,matching,Matching,partner,Partner,partner's_choice,Partner's choice,higher
+1,contributions,matching,Matching,partner,Partner,partner's_choice,Partner's choice,partnerChoice,Partner choice,exogenous,Exogenous,endogenous,Endogenous,higher

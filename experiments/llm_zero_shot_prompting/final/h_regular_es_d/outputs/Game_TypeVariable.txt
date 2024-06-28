@@ -1,0 +1,5 @@
+contributions  is significantly higher when Game type is Continuous Public Goods Game compared to when Game type is Resource Dilemma.
+contributions  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Dictator Game.
+contributions  is significantly higher when Game type is Other Game compared to when Game type is Resource Dilemma.
+cooperation  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Chicken Game.
+cooperation  is significantly higher when Game type is Chicken Game compared to when Game type is Stag Hunt.

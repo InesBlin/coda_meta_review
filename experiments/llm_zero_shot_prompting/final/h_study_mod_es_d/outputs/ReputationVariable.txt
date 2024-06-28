@@ -1,0 +1,5 @@
+When comparing studies where Anonymity manipulation is High and studies where Anonymity manipulation is Low, contributions is significantly higher when Repeated one-shot game is na.
+When comparing studies where Knowledge of partner's prior behavior is absent and studies where Knowledge of partner's prior behavior is present, contributions is significantly higher when Experimental setting is Lab.
+When comparing studies where Anonymity manipulation is High and studies where Anonymity manipulation is Medium, cooperation is significantly higher when Published is Published Article.
+When comparing studies where Knowledge of partner's prior behavior is absent and studies where Knowledge of partner's prior behavior is present, contributions is significantly higher when Real partner is Real.
+When comparing studies where Anonymity manipulation is High and studies where Anonymity manipulation is Low, cooperation is significantly lower when Real partner is Deception.

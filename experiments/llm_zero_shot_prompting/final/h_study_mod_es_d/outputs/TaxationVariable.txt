@@ -1,0 +1,5 @@
+When comparing studies where Minimum contribution level is Low and studies where Minimum contribution level is High, contributions is significantly higher when has country is CHN.
+When comparing studies where Minimum contribution level is Low and studies where Minimum contribution level is Medium, contributions is significantly higher when Student sample is na.
+When comparing studies where Minimum contribution level is Medium and studies where Minimum contribution level is High, contributions is significantly higher when Known endgame is na.
+When comparing studies where Minimum contribution level is Medium and studies where Minimum contribution level is High, contributions is significantly higher when Published is Published Article.
+When comparing studies where Minimum contribution level is Medium and studies where Minimum contribution level is High, contributions is significantly higher when Experimental setting is Lab.

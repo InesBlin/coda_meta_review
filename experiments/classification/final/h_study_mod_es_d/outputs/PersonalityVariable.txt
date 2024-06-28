@@ -1,0 +1,5 @@
+When comparing studies where svo type is prosocial and studies where svo type is competitor, cooperation is significantly higher when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where svo type is individualist and studies where svo type is prosocial, cooperation is significantly lower when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where svo type is individualist and studies where svo type is prosocial, cooperation is significantly lower when game type is prisoner's dilemma game compared to when game type has another value.
+When comparing studies where svo type is individualist and studies where svo type is prosocial, cooperation is significantly lower when real partner is hypothetical compared to when real partner has another value.
+When comparing studies where svo type is individualist and studies where svo type is prosocial, cooperation is significantly lower when recruitment method is participant pool compared to when recruitment method has another value.

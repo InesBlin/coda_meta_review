@@ -70,6 +70,5 @@ def main(folder_in, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/search_hp_bn_lp.py data/hypotheses/bn/with_vocab/ experiments/hp_bn_lp/with_vocab/
-    # python experiments/search_hp_bn_lp.py data/hypotheses/bn/without_vocab/ experiments/hp_bn_lp/without_vocab/
+    # python experiments/search_hp_bn_lp.py data/hypotheses/bn/ experiments/hp_bn_lp/
     main()

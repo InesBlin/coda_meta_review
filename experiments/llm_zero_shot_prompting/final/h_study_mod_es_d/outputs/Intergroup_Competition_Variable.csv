@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,publicationStatus,Published,1,Published Article,higher
+1,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,studyRealPartner,Real partner,2,Deception,higher
+2,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,studyMatchingProtocol,Matching,2,Partner,higher
+3,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
+4,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,studyGameIncentive,Game incentive,2,Monetary lottery,higher

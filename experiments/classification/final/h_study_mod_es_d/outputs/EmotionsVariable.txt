@@ -1,0 +1,5 @@
+When comparing studies where emotion is sadness and studies where emotion is neutral, contribution is significantly higher when discussion is absent compared to when discussion has another value.
+When comparing studies where emotion is sadness and studies where emotion is neutral, contribution is significantly higher when experimental setting is lab compared to when experimental setting has another value.
+When comparing studies where emotion is happiness and studies where emotion is sadness, contribution is significantly lower when experimental setting is lab compared to when experimental setting has another value.
+When comparing studies where emotion is happiness and studies where emotion is neutral, contribution is significantly lower when discussion is absent compared to when discussion has another value.
+When comparing studies where emotion is happiness and studies where emotion is neutral, contribution is significantly lower when published is masterâs thesis compared to when published has another value.

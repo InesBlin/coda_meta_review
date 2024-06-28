@@ -1,0 +1,5 @@
+Cooperation is significantly lower when feedback content is success compared to when feedback content is failure.
+Contribution is significantly lower when feedback content is choice compared to when feedback content is others.
+Contribution is significantly higher when feedback content is choice compared to when feedback content is rank.
+Cooperation is significantly lower when feedback target is individual compared to when feedback target is other.
+Contribution is significantly lower when feedback target is individual compared to when feedback target is other.

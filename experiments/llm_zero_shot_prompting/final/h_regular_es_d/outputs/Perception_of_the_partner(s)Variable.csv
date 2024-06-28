@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,higher
+1,cooperation,partnerPerceptionLevel,Partner perception level,high,high,control,control,higher
+2,cooperation,similarityLevel,Similarity level,high,High,low,Low,higher
+3,contributions,partnerPerceptionLevel,Partner perception level,high,high,low,low,higher
+4,contributions,partnerPerception,Partner perception,attractive,Attractive,unattractive,Unattractive,higher

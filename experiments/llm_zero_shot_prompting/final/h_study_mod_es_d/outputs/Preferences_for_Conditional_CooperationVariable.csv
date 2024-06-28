@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyOneShotRepeated,Repeated one-shot game,false,na,higher
+1,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,yearSource,Source of year of data collection,4,Submitted,higher
+2,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyContinuousPGG,Continuous vs step-level public goods,1,Continuous,higher
+3,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyGameIncentive,Game incentive,1,Monetary,higher
+4,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher

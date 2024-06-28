@@ -1,5 +1,5 @@
-When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.
+When comparing studies where matching is stranger and studies where matching is partner, contribution is significantly lower when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.
 When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when matching is partner compared to when matching has another value.
 When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when matching is partner compared to when matching has another value.
-When comparing studies where matching is partner and studies where matching is partner's choice, cooperation is significantly lower when sanction is false compared to when sanction has another value.
-When comparing studies where matching is partner and studies where matching is partner's choice, cooperation is significantly lower when student sample is true compared to when student sample has another value.
+When comparing studies where matching is partner and studies where matching is partner's choice, contribution is significantly lower when sanction is false compared to when sanction has another value.
+When comparing studies where matching is partner and studies where matching is partner's choice, contribution is significantly lower when student sample is true compared to when student sample has another value.

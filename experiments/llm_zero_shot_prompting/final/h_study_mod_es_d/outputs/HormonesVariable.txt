@@ -1,0 +1,5 @@
+When comparing studies where Hormones administration is Oxytocin and studies where Hormones administration is Vasopressin, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Hormones administration is Oxytocin and studies where Hormones administration is Vasopressin, cooperation is significantly higher when Game incentive is Monetary.
+When comparing studies where Hormones administration is Oxytocin and studies where Hormones administration is Placebo, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Hormones administration is Oxytocin and studies where Hormones administration is Vasopressin, cooperation is significantly higher when Trial of cooperation is Other trials.
+When comparing studies where Hormones administration is Oxytocin and studies where Hormones administration is Vasopressin, cooperation is significantly higher when Real partner is Deception.

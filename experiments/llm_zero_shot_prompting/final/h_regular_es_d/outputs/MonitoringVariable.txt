@@ -1,0 +1,5 @@
+contributions  is significantly higher when Monitoring cost is Low compared to when Monitoring cost is High.
+cooperation  is significantly higher when Monitoring cost is Medium compared to when Monitoring cost is High.
+contributions  is significantly higher when Monitoring cost is Medium compared to when Monitoring cost is High.
+contributions  is significantly higher when Monitoring cost is Low compared to when Monitoring cost is Medium.
+contributions  is significantly higher when Costly monitoring is na compared to when Costly monitoring is na.

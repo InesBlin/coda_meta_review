@@ -1,0 +1,4 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation,higher
+1,contributions,anchor,Anchor,low_cooperation,low cooperation,absent,Absent,higher
+2,contributions,anchor,Anchor,high_cooperation,high cooperation ,absent,Absent,higher

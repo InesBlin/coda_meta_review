@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
+0,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unilateral,Unilateral,targetMembership,Partner's group membership,outgroup,Outgroup,stranger,Stranger,higher
+1,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,higher
+2,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,targetMembership,Partner's group membership,ingroup,Ingroup,stranger,Stranger,higher
+3,cooperation,knowledgeOfMembership,Knowledge of group membership,unilateral,Unilateral,unknown,Unknown,targetMembership,Partner's group membership,outgroup,Outgroup,stranger,Stranger,higher
+4,cooperation,knowledgeOfMembership,Knowledge of group membership,unilateral,Unilateral,common,Common,targetMembership,Partner's group membership,ingroup,Ingroup,stranger,Stranger,higher

@@ -1,0 +1,5 @@
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Show-up fee is Course credit.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly lower when One-shot vs repeated is Repeated.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Deception is na.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.

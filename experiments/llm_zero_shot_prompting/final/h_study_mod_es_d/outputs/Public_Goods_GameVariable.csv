@@ -1,0 +1,6 @@
+dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+cooperation,mPCRlevel,MPCR level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher
+contributions,endowmentLevel,Endowment level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher
+cooperation,endowmentLevel,Endowment level,medium,Medium,high,High,studyKnownEndgame,Known endgame,true,na,higher
+contributions,mPCRlevel,MPCR level,low,Low,high,High,studyKnownEndgame,Known endgame,true,na,higher
+cooperation,endowmentLevel,Endowment level,low,Low,high,High,studyKnownEndgame,Known endgame,true,na,higher

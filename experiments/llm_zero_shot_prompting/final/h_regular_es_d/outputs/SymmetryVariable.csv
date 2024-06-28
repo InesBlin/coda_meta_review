@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,cooperation,symmetric,Symmetry,true,True,false,False,higher
+1,cooperation,symmetric,Symmetry,false,False,true,True,lower
+2,withdrawals,symmetric,Symmetry,True,True,False,False,lower
+3,withdrawals,symmetryTarget,Symmetry target,access_to_the_resource,Access to the resource,other,Other,higher
+4,contributions,symmetric,Symmetry,true,True,false,False,higher

@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,psychopathology,Psychopathology,borderline,Borderline,control,Control,studyStudentSample,Student sample,false,na,higher
+1,cooperation,psychopathology,Psychopathology,autism_spectrum_disorders,Autism spectrum disorders,control,Control,studyRealPartner,Real partner,2,Deception,lower
+2,cooperation,psychopathology,Psychopathology,depression,Depression,control,Control,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
+3,cooperation,psychopathology,Psychopathology,non-suicidal_self-injury,Non-suicidal self-injury,suicide_attempt,Suicide attempt,studyRealPartner,Real partner,2,Deception,lower
+4,cooperation,psychopathology,Psychopathology,bipolar,Bipolar,control,Control,studyStudentSample,Student sample,false,na,higher

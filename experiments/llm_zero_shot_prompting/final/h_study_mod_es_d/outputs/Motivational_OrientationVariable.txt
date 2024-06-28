@@ -1,0 +1,5 @@
+When comparing studies where Motivational orientation is Competitive and studies where Motivational orientation is Individualistic, cooperation is significantly higher when Deception is na.
+When comparing studies where Motivational orientation is Cooperative and studies where Motivational orientation is Competitive, cooperation is significantly higher when Real partner is Real.
+When comparing studies where Motivational orientation is Cooperative and studies where Motivational orientation is Individualistic, cooperation is significantly higher when Game incentive is Non-monetary lottery.
+When comparing studies where Motivational orientation is Cooperative and studies where Motivational orientation is Individualistic, cooperation is significantly higher when Show-up fee is Paid.
+When comparing studies where Motivational orientation is Cooperative and studies where Motivational orientation is Competitive, cooperation is significantly higher when Game incentive is Hypothetical.

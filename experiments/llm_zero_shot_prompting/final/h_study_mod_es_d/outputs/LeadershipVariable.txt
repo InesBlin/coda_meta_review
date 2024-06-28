@@ -1,0 +1,5 @@
+When comparing studies where Leader's behavior is Cooperative and studies where Leader's behavior is Noncooperative, contributions is significantly higher when Source of year of data collection is Available online.
+When comparing studies where Leader's behavior is Cooperative and studies where Leader's behavior is Noncooperative, withdrawals is significantly lower when One-shot vs repeated is One-shot.
+When comparing studies where Leadership assignment rule is Fixed  and studies where Leadership assignment rule is Rotating, contributions is significantly higher when One-shot vs repeated is Repeated.
+When comparing studies where Leadership assignment rule is Authority and studies where Leadership assignment rule is Elected, contributions is significantly higher when Source of year of data collection is Submitted.
+When comparing studies where Leader's characteristic is Male and studies where Leader's characteristic is Female, contributions is significantly higher when Repeated one-shot game is na.

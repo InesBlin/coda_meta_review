@@ -4,6 +4,7 @@ Running zero-shot prompting with LLM for automated hypothesis generation
 """
 import os
 import click
+import time
 from io import StringIO
 from tqdm import tqdm
 from datetime import datetime
@@ -38,7 +39,7 @@ def format_data_for_prompt(df: pd.DataFrame) -> str:
 
 
 TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
-ES_MEASURE = ['r', 'd']
+ES_MEASURE = ['d']
 
 @click.command()
 @click.argument("folder_in")
@@ -61,7 +62,7 @@ def main(folder_in, folder_out):
 
             for giv in tqdm(data.giv_prop.unique()):
                 name = giv.split('/')[-1]
-                output_f = os.path.join(folder, "outputs", f"{name}_readable.txt")
+                output_f = os.path.join(folder, "outputs", f"{name}.txt")
                 nb_prompt += 1
                 if not os.path.exists(output_f):
                     df = data[data.giv_prop == giv]
@@ -75,14 +76,14 @@ def main(folder_in, folder_out):
                             output = llmhg(data=data_prompt)
                             df_output = output.replace("```csv", "").replace("```", "")
                             df_output = pd.read_csv(StringIO(df_output))
-                            df_output.to_csv(os.path.join(folder, "outputs", f"{name}_csv.csv"))
+                            df_output.to_csv(os.path.join(folder, "outputs", f"{name}.csv"))
                             write_readable_h(output_f, df_output, llmhg)
                         except:  # if context window too big -> switching models
                             llmhg = LLMHypothesisGeneration(type_hypothesis=th, model=MODEL_4)
                             output = llmhg(data=data_prompt)
                             df_output = output.replace("```csv", "").replace("```", "")
                             df_output = pd.read_csv(StringIO(df_output))
-                            df_output.to_csv(os.path.join(folder, "outputs", f"{name}_csv.csv"))
+                            df_output.to_csv(os.path.join(folder, "outputs", f"{name}.csv"))
                             write_readable_h(output_f, df_output, llmhg)
                     
                     except Exception as e:
@@ -90,12 +91,12 @@ def main(folder_in, folder_out):
                         f_errors.write(f"GIV: {giv}\t ({name})\n")
                         f_errors.write(str(e)+"\n=========\n\n")
                     
-                    # Else doing with
+                    # time.sleep(15)
     
     f_errors.close()
     print(f"# of prompts: {nb_prompt}")
 
 
 if __name__ == '__main__':
-    # python experiments/run_zero_shot_llm_prompt.py data/hypotheses/llm experiments/llm_zero_shot_prompting
+    # python experiments/run_zero_shot_llm_prompt.py data/hypotheses/llm experiments/llm_zero_shot_prompting/final
     main()

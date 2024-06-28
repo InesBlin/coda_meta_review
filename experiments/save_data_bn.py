@@ -42,25 +42,17 @@ def main(folder_in, folder_out, vocab):
     for col in vocab.columns:
         vocab = vocab[vocab[col].str.startswith("http")]
 
-    for f in [folder_out, os.path.join(folder_out, "with_vocab"),
-              os.path.join(folder_out, "without_vocab")]:
-        if not os.path.exists(f):
-            os.makedirs(f)
+    if not os.path.exists(folder_out):
+        os.makedirs(folder_out)
     for th in TYPE_HYPOTHESIS:
         for esm in ES_MEASURE: 
             logger.info(f"Building KG for hypothesis `{th}` with effect size measure `{esm}`")
-            save_path_with = os.path.join(folder_out, "with_vocab", f"h_{th}_es_{esm}")
-            save_path_without = os.path.join(folder_out, "without_vocab", f"h_{th}_es_{esm}")
+            save_path_with = os.path.join(folder_out, f"h_{th}_es_{esm}")
             if not os.path.exists(f"{save_path_with}_random.csv"):
                 data = get_data(folder_in, th, esm)
                 output_random, output_effect = BHKGB(data=data, vocab=vocab)
                 output_random.to_csv(f"{save_path_with}_random.csv")
                 output_effect.to_csv(f"{save_path_with}_effect.csv")
-            if not os.path.exists(f"{save_path_without}_random.csv"):
-                data = get_data(folder_in, th, esm)
-                output_random, output_effect = BHKGB(data=data)
-                output_random.to_csv(f"{save_path_without}_random.csv")
-                output_effect.to_csv(f"{save_path_without}_effect.csv")
 
 
 if __name__ == '__main__':

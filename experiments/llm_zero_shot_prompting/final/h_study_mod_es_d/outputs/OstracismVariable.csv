@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,ostracism,Ostracism,False,na,True,na,publicationStatus,Published,1,Published Article,higher
+1,contributions,ostracism,Ostracism,False,na,True,na,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
+2,contributions,ostracism,Ostracism,False,na,True,na,studyRealPartner,Real partner,2,Deception,higher
+3,contributions,ostracism,Ostracism,False,na,True,na,countrySource,Source of country or region,1,Specified country,higher
+4,cooperation,ostracism,Ostracism,False,na,True,na,studyDilemmaType,Game type,2,Public Goods Game,higher

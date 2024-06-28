@@ -1,0 +1,5 @@
+When comparing studies where Conflict level is High and studies where Conflict level is Low, cooperation is significantly lower when Show-up fee is Absent.
+When comparing studies where Conflict level is Medium and studies where Conflict level is Low, cooperation is significantly higher when Source of year of data collection is Conducted.
+When comparing studies where Conflict level is High and studies where Conflict level is Medium, cooperation is significantly higher when Recruitment method is Participant pool.
+When comparing studies where Conflict level is High and studies where Conflict level is Medium, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Conflict level is High and studies where Conflict level is Medium, cooperation is significantly higher when Trial of cooperation is Other trials.

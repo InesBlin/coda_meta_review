@@ -45,30 +45,30 @@ class LLMHypothesisGeneration:
         ```
         """
         self.cols = {
-            "regular": ['iv_label', 'cat_t1_label', 'cat_t2_label', 'comparative'],
-            "var_mod": ['iv_label', 'cat_t1_label', 'cat_t2_label', 'mod_label', 'mod_t1_label', 'mod_t2_label', 'comparative'],
-            "study_mod": ['iv_label', 'cat_t1_label', 'cat_t2_label', 'mod_label', 'mod_val_label', 'comparative']
+            "regular": ['dependent', 'iv_label', 'cat_t1_label', 'cat_t2_label', 'comparative'],
+            "var_mod": ['dependent', 'iv_label', 'cat_t1_label', 'cat_t2_label', 'mod_label', 'mod_t1_label', 'mod_t2_label', 'comparative'],
+            "study_mod": ['dependent', 'iv_label', 'cat_t1_label', 'cat_t2_label', 'mod_label', 'mod_val_label', 'comparative']
         }
 
         self.custom_content = {
             "regular": {
-                "[columns]": "`giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2` and `cat_t2_label`.",
-                "[templated_h]": "Cooperation is significantly `{comparative}` when `{iv_label}` is `{cat_t1_label}` compared to when `{iv_label}` is `{cat_t2_label}`.",
-                "[cols_data]": "`iv_label`, `cat_t1_label` and `cat_t2_label`",
+                "[columns]": "`dependent`, `giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2` and `cat_t2_label`.",
+                "[templated_h]": "`{dependent}`  is significantly `{comparative}` when `{iv_label}` is `{cat_t1_label}` compared to when `{iv_label}` is `{cat_t2_label}`.",
+                "[cols_data]": "`dependent`, `iv_label`, `cat_t1_label` and `cat_t2_label`",
                 "[new_cols_data]": "`comparative`",
                 "[cols_add]": "On top of the existing columns, you must add another one, `comparative` that can take the values `higher` or `lower`."
             },
             "var_mod": {
-                "[columns]": "`giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2`, `cat_t2_label`, `mod`, `mod_label`, `mod_t1`, `mod_t1_label`, `mod_t2`  and `mod_t2_label`.",
-                "[templated_h]": "When comparing studies where `{iv_label}` is `{cat_t1_label}` and studies where `{iv_label}` is `{cat_t2_label}`, effect sizes from studies involving `{mod_t1_label}` as `{mod_label}` are significantly `{comparative}` than effect sizes based on `{mod_t2_label}` as `{mod_label}`.",
-                "[cols_data]": "`iv_label`, `cat_t1_label`, `cat_t2_label`, `mod_label`, `mod_t1_label`, and `mod_t2_label`",
+                "[columns]": "`dependent`, `giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2`, `cat_t2_label`, `mod`, `mod_label`, `mod_t1`, `mod_t1_label`, `mod_t2`  and `mod_t2_label`.",
+                "[templated_h]": "When comparing studies where `{iv_label}` is `{cat_t1_label}` and studies where `{iv_label}` is `{cat_t2_label}`, `{dependent}` from studies involving `{mod_t1_label}` as `{mod_label}` are significantly `{comparative}` than effect sizes based on `{mod_t2_label}` as `{mod_label}`.",
+                "[cols_data]": "`dependent`, `iv_label`, `cat_t1_label`, `cat_t2_label`, `mod_label`, `mod_t1_label`, and `mod_t2_label`",
                 "[new_cols_data]": "`comparative`",
                 "[cols_add]": "On top of the existing columns, you must add another one, `comparative` that can take the values `higher` or `lower`."
             },
             "study_mod": {
-                "[columns]": "`giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2`, `cat_t2_label`, `mod`, `mod_label`, `mod_val` and `mod_val_label`.",
-                "[templated_h]": "When comparing studies where `{iv_label}` is `{cat_t1_label}` and studies where `{iv_label}` is `{cat_t2_label}`, cooperation is significantly `{comparative}` when `{mod_label}` is `{mod_val_label}`.",
-                "[cols_data]": "`iv_label`, `cat_t1_label`, `cat_t2_label`, `mod_label`, and `mod_val_label`",
+                "[columns]": "`dependent`, `giv_prop`, `iv`, `iv_label`, `cat_t1`, `cat_t1_label`, `cat_t2`, `cat_t2_label`, `mod`, `mod_label`, `mod_val` and `mod_val_label`.",
+                "[templated_h]": "When comparing studies where `{iv_label}` is `{cat_t1_label}` and studies where `{iv_label}` is `{cat_t2_label}`, `{dependent}` is significantly `{comparative}` when `{mod_label}` is `{mod_val_label}`.",
+                "[cols_data]": "`dependent`, `iv_label`, `cat_t1_label`, `cat_t2_label`, `mod_label`, and `mod_val_label`",
                 "[new_cols_data]": "`comparative`",
                 "[cols_add]": "On top of the existing columns, you must add another one, `comparative` that can take the values `higher` or `lower`."
             }

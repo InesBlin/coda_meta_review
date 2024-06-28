@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,heterogeneousEthnicity,Heterogeneous ethnicity,false,na,true,na,studyOneShot,One-shot vs repeated,1,One-shot,higher
+1,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyExperimentalSetting,Experimental setting,2,Lab,higher
+2,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyGameIncentive,Game incentive,1,Monetary,higher
+3,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyMatchingProtocol,Matching,2,Partner,higher
+4,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyShowUpFee,Show-up fee,2,Course credit,higher

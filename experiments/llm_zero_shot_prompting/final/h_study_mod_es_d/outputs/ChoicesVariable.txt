@@ -1,0 +1,5 @@
+When comparing studies where Number of choices level is Low and studies where Number of choices level is High, cooperation is significantly higher when One-shot vs repeated is Repeated.
+When comparing studies where Highest choice option level is Low and studies where Highest choice option level is High, cooperation is significantly higher when Real partner is Real.
+When comparing studies where Highest choice option level is Low and studies where Highest choice option level is High, cooperation is significantly higher when Known endgame is na.
+When comparing studies where Highest choice option level is Low and studies where Highest choice option level is High, cooperation is significantly higher when One-shot vs repeated is Repeated.
+When comparing studies where Highest choice option level is Low and studies where Highest choice option level is High, cooperation is significantly higher when Real partner is Deception.

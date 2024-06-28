@@ -1,0 +1,5 @@
+When comparing studies where Game incentive is Monetary and studies where Game incentive is Hypothetical, cooperation is significantly higher when Game incentive is Hypothetical.
+When comparing studies where Game incentive is Monetary and studies where Game incentive is Hypothetical, cooperation is significantly higher when Academic discipline is Mixed.
+When comparing studies where Game incentive is Monetary and studies where Game incentive is Hypothetical, cooperation is significantly higher when Recruitment method is Participant pool.
+When comparing studies where Game incentive is Monetary and studies where Game incentive is Non-monetary Material, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Game incentive is Hypothetical and studies where Game incentive is Non-monetary Material, cooperation is significantly higher when Game incentive is Non-monetary.

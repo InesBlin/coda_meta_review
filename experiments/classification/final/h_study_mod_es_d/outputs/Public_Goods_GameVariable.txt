@@ -1,0 +1,5 @@
+When comparing studies where endowment level is low and studies where endowment level is high, contribution is significantly lower when source of year of data collection is conducted compared to when source of year of data collection has another value.
+When comparing studies where endowment level is low and studies where endowment level is high, cooperation is significantly higher when published is published article compared to when published has another value.
+When comparing studies where endowment level is low and studies where endowment level is high, cooperation is significantly higher when real partner is real compared to when real partner has another value.
+When comparing studies where endowment level is low and studies where endowment level is high, cooperation is significantly higher when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where private account return level is high and studies where private account return level is low, contribution is significantly higher when matching is partner compared to when matching has another value.

@@ -1,0 +1,4 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,higher
+1,contributions,minimumContributionLevel,Minimum contribution level,low,Low,medium,Medium,higher
+2,contributions,minimumContributionLevel,Minimum contribution level,medium,Medium,high,High,higher

@@ -1,0 +1,5 @@
+When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when has country is usa compared to when has country has another value.
+When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when matching is stranger compared to when matching has another value.
+When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when show-up fee is paid compared to when show-up fee has another value.
+When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when discussion is absent compared to when discussion has another value.
+When comparing studies where matching is stranger and studies where matching is partner, cooperation is significantly lower when real partner is real compared to when real partner has another value.

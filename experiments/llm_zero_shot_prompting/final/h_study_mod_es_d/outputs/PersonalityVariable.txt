@@ -1,0 +1,5 @@
+When comparing studies where Psychopathology is Borderline and studies where Psychopathology is Control, cooperation is significantly higher when Student sample is na.
+When comparing studies where Psychopathology is Autism spectrum disorders and studies where Psychopathology is Control, cooperation is significantly lower when Real partner is Deception.
+When comparing studies where Psychopathology is Depression and studies where Psychopathology is Control, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Psychopathology is Non-suicidal self-injury and studies where Psychopathology is Suicide attempt, cooperation is significantly lower when Real partner is Deception.
+When comparing studies where Psychopathology is Bipolar and studies where Psychopathology is Control, cooperation is significantly higher when Student sample is na.

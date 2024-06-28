@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,cooperation,powerLevel,Power level,high,High,low,Low,higher
+1,cooperation,powerLevel,Power level,high,High,control,Control,higher
+2,contributions,powerLevel,Power level,high,High,low,Low,higher
+3,withdrawals,powerLevel,Power level,high,High,control,Control,higher
+4,cooperation,powerLevel,Power level,low,Low,control,Control,higher

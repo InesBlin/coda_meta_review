@@ -1,0 +1,5 @@
+When comparing studies where Comprehension of the game level is Low and studies where Comprehension of the game level is High, cooperation is significantly higher when Show-up fee is Paid.
+When comparing studies where Comprehension of the game level is Low and studies where Comprehension of the game level is High, cooperation is significantly lower when Game incentive is Monetary.
+When comparing studies where Comprehension of the game level is Low and studies where Comprehension of the game level is High, cooperation is significantly higher when One-shot vs repeated is Repeated.
+When comparing studies where Comprehension of the game level is Low and studies where Comprehension of the game level is High, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Comprehension of the game level is Low and studies where Comprehension of the game level is High, cooperation is significantly higher when Show-up fee is Course credit.

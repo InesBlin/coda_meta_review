@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium`, `cooperation` is significantly `higher` when `studyKnownEndgame` is `Known endgame`.,,,,,,,,,,
+1,When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium`, `cooperation` is significantly `higher` when `studyOneShotRepeated` is `Repeated one-shot game`.,,,,,,,,,,
+2,When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium`, `cooperation` is significantly `higher` when `studyRealPartner` is `Real partner`.,,,,,,,,,,
+3,When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium`, `cooperation` is significantly `higher` when `studyMatchingProtocol` is `Matching`.,,,,,,,,,,
+4,When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium`, `cooperation` is significantly `higher` when `studyShowUpFee` is `Paid`.,,,,,,,,,,

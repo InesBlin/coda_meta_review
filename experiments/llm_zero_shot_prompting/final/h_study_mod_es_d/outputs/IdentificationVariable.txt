@@ -1,0 +1,5 @@
+When comparing studies where Partner's group membership is Ingroup and studies where Partner's group membership is Ingroup and Outgroup, contributions is significantly higher when Symmetry is na.
+When comparing studies where Partner's group membership is Stranger and studies where Partner's group membership is Ingroup, cooperation is significantly higher when Published is Published Article.
+When comparing studies where Partner's group membership is Ingroup and studies where Partner's group membership is Outgroup, cooperation is significantly higher when Student sample is na.
+When comparing studies where Identification level is High and studies where Identification level is Low, contributions is significantly higher when Show-up fee is Paid.
+When comparing studies where Knowledge of group membership is Common and studies where Knowledge of group membership is Unilateral, cooperation is significantly higher when Show-up fee is Absent.

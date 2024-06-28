@@ -1,0 +1,5 @@
+When comparing studies where number of trials level is low and studies where number of trials level is high, cooperation is significantly higher when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when has country is chn compared to when has country has another value.
+When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when game incentive is monetary compared to when game incentive has another value.
+When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when experimental setting is lab compared to when experimental setting has another value.
+When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when matching is partner compared to when matching has another value.

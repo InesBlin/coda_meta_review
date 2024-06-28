@@ -1,0 +1,4 @@
+Contribution is significantly higher when emotion is sadness compared to when emotion is neutral.
+Contribution is significantly lower when emotion is neutral compared to when emotion is disgust.
+Withdrawal is significantly lower when emotion is neutral compared to when emotion is disgust.
+Withdrawal is significantly higher when emotion is sadness compared to when emotion is neutral.

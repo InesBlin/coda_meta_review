@@ -1,0 +1,5 @@
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Symmetry is na.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly lower when Acquaintance is Strangers.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Show-up fee is Paid.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly lower when One-shot vs repeated is Repeated.

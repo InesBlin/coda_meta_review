@@ -1,0 +1,5 @@
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Show-up fee is Paid.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when has country is USA.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Show-up fee is Course credit.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Game type is Public Goods Game.
+When comparing studies where Power level is High and studies where Power level is Control, cooperation is significantly higher when Matching is Stranger.

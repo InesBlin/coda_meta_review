@@ -1,0 +1,5 @@
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Experimental setting is Field.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Experimental setting is Lab.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Online, cooperation is significantly higher when Experimental setting is Lab.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Online, cooperation is significantly higher when Experimental setting is Online.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Experimental setting is Other.

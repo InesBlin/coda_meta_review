@@ -1,0 +1,2 @@
+contributions  is significantly higher when Rebate vs refund is Absent compared to when Rebate vs refund is Partial Rebate.
+cooperation  is significantly higher when Rebate vs refund is Absent compared to when Rebate vs refund is Full Refund.

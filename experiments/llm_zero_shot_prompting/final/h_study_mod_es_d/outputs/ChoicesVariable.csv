@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,nbOfChoicesLevel,Number of choices level,low,Low,high,High,studyOneShot,One-shot vs repeated,0,Repeated,higher
+1,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher
+2,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,studyKnownEndgame,Known endgame,true,na,higher
+3,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,studyOneShot,One-shot vs repeated,0,Repeated,higher
+4,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,studyRealPartner,Real partner,2,Deception,higher

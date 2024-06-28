@@ -1,0 +1,5 @@
+contributions  is significantly higher when Leader's characteristic is Weak compared to when Leader's characteristic is Strong.
+contributions  is significantly lower when Leader's characteristic is Outgroup compared to when Leader's characteristic is Ingroup.
+contributions  is significantly higher when Leader's characteristic is Positive emotion compared to when Leader's characteristic is Negative emotion.
+contributions  is significantly higher when Leader's behavior is Cooperative compared to when Leader's behavior is Noncooperative.
+contributions  is significantly higher when Leader's behavior is Cooperative compared to when Leader's behavior is Noncooperative.

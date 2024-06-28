@@ -1,0 +1,5 @@
+When comparing studies where Cognitive load treatment is na and studies where Cognitive load treatment is na, cooperation is significantly higher when Game incentive is Monetary.
+When comparing studies where Cognitive load treatment is na and studies where Cognitive load treatment is na, cooperation is significantly lower when Game incentive is Non-monetary.
+When comparing studies where Cognitive load treatment is na and studies where Cognitive load treatment is na, cooperation is significantly higher when Show-up fee is Paid.
+When comparing studies where Cognitive load treatment is na and studies where Cognitive load treatment is na, cooperation is significantly lower when Show-up fee is Absent.
+When comparing studies where Cognitive load treatment is na and studies where Cognitive load treatment is na, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.

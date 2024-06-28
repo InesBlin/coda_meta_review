@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,country,has country,CHN,CHN,higher
+1,contributions,minimumContributionLevel,Minimum contribution level,low,Low,medium,Medium,studyStudentSample,Student sample,true,na,higher
+2,contributions,minimumContributionLevel,Minimum contribution level,medium,Medium,high,High,studyKnownEndgame,Known endgame,true,na,higher
+3,contributions,minimumContributionLevel,Minimum contribution level,medium,Medium,high,High,publicationStatus,Published,1,Published Article,higher
+4,contributions,minimumContributionLevel,Minimum contribution level,medium,Medium,high,High,studyExperimentalSetting,Experimental setting,2,Lab,higher

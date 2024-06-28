@@ -1,0 +1,5 @@
+When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Known endgame is na.
+When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Trial of cooperation is All trials.
+When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Academic discipline is Mixed.
+When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Game incentive is Monetary lottery.
+When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Recruitment method is Participant pool.

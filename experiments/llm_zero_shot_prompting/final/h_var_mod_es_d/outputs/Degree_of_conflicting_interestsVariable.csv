@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
+0,cooperation,conflictIndexLevel,Conflict level,high,High,medium,Medium,conflictIndex,Conflict index,k_index,K index,g_index,g index,higher
+1,cooperation,conflictIndexLevel,Conflict level,medium,Medium,low,Low,conflictIndex,Conflict index,k_index,K index,g_index,g index,higher
+2,cooperation,conflictIndexLevel,Conflict level,high,High,low,Low,conflictIndex,Conflict index,k_index,K index,g_index,g index,higher
+3,cooperation,conflictIndex,Conflict index,k_index,K index,g_index,g index,conflictIndexLevel,Conflict level,high,High,low,Low,lower
+4,cooperation,conflictIndex,Conflict index,k_index,K index,g_index,g index,conflictIndexLevel,Conflict level,high,High,medium,Medium,lower

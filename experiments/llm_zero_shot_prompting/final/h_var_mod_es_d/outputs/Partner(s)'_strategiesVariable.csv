@@ -1,0 +1,3 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
+0,cooperation,iteratedStrategy,Iterated strategy,grit,GRIT,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,iteratedPreprogrammedCooperationRateLevel,Iterated pre-programmed cooperation rate level,high,High,low,Low,higher
+1,cooperation,iteratedPreprogrammedCooperationRateLevel,Iterated pre-programmed cooperation rate level,high,High,low,Low,iteratedStrategy,Iterated strategy,grit,GRIT,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,lower

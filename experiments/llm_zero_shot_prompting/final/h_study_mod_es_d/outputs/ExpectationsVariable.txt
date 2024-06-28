@@ -1,0 +1,5 @@
+When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly lower when Real partner is Hypothetical.
+When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Real partner is Real.
+When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Real partner is Deception.
+When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly lower when Real partner is Hypothetical.
+When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Real partner is Deception.

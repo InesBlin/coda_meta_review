@@ -1,0 +1,5 @@
+When comparing studies where gain-loss frame is gain and studies where gain-loss frame is loss, withdrawal is significantly lower when acquaintance is strangers compared to when acquaintance has another value.
+When comparing studies where context frame is cooperative and studies where context frame is generic, contribution is significantly higher when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.
+When comparing studies where context frame is moral and studies where context frame is generic, contribution is significantly higher when show-up fee is course credit compared to when show-up fee has another value.
+When comparing studies where give-take frame is give-some and studies where give-take frame is take-some, cooperation is significantly higher when has country is fin compared to when has country has another value.
+When comparing studies where give-take frame is give-some and studies where give-take frame is take-some, cooperation is significantly higher when show-up fee is paid compared to when show-up fee has another value.

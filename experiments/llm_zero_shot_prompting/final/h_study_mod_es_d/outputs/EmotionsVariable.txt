@@ -1,0 +1,5 @@
+When comparing studies where Emotion is Neutral and studies where Emotion is Anger, contributions is significantly higher when One-shot vs repeated is One-shot.
+When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Real partner is Hypothetical.
+When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Game incentive is Monetary.
+When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Acquaintance is Strangers.
+When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Symmetry is na.

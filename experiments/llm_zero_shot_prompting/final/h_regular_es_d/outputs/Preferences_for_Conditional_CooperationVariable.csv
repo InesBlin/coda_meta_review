@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
+0,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,freeriders,Freeriders,others,Others,higher
+1,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,hump-shaped_contributors,Hump-shaped contributors,others,Others,higher
+2,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,others,Others,higher
+3,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,freeriders,Freeriders,hump-shaped_contributors,Hump-shaped contributors,higher
+4,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,higher

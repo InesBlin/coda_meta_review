@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,studyKnownEndgame,Known endgame,true,na,higher
+1,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
+2,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
+3,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,studyGameIncentive,Game incentive,2,Monetary lottery,higher
+4,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,recruitmentMethod,Recruitment method,1,Participant pool,higher

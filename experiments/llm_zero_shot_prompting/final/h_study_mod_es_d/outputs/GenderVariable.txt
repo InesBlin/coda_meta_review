@@ -1,0 +1,5 @@
+When comparing studies where Heterogeneous gender is na and studies where Heterogeneous gender is na, cooperation is significantly higher when Continuous vs step-level public goods is Step-level.
+When comparing studies where Partner's gender is known is na and studies where Partner's gender is known is na, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Gender is Female and studies where Gender is Male, cooperation is significantly higher when Academic discipline is Sociology.
+When comparing studies where Gender is Female and studies where Gender is Male, cooperation is significantly higher when Academic discipline is Economics.
+When comparing studies where Heterogeneous gender is na and studies where Heterogeneous gender is na, cooperation is significantly higher when Academic discipline is Psychology.

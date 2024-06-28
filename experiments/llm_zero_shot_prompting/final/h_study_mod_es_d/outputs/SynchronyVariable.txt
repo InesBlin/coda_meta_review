@@ -1,0 +1,5 @@
+When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Known endgame is na.
+When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Real partner is Real.
+When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Game type is Prisoner's Dilemma Game.
+When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Trial of cooperation is All trials.
+When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when One-shot vs repeated is Repeated.

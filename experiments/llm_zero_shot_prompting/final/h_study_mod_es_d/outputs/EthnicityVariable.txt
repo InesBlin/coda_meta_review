@@ -1,0 +1,5 @@
+When comparing studies where Heterogeneous ethnicity is na and studies where Heterogeneous ethnicity is na, cooperation is significantly higher when One-shot vs repeated is One-shot.
+When comparing studies where Ethnicity (US) is White and studies where Ethnicity (US) is Asian, cooperation is significantly higher when Experimental setting is Lab.
+When comparing studies where Ethnicity (US) is White and studies where Ethnicity (US) is Asian, cooperation is significantly higher when Game incentive is Monetary.
+When comparing studies where Ethnicity (US) is White and studies where Ethnicity (US) is Asian, cooperation is significantly higher when Matching is Partner.
+When comparing studies where Ethnicity (US) is White and studies where Ethnicity (US) is Asian, cooperation is significantly higher when Show-up fee is Course credit.

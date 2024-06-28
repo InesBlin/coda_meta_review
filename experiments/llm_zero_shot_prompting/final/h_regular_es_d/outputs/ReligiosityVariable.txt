@@ -1,0 +1,3 @@
+contributions  is significantly higher when Religious exposure level is High compared to when Religious exposure level is Low.
+cooperation  is significantly higher when Religious exposure level is High compared to when Religious exposure level is Low.
+withdrawals  is significantly higher when Religious exposure level is High compared to when Religious exposure level is Low.

@@ -1,0 +1,6 @@
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,academicGradeLevel,Academic grade level,junior,Junior,middle,Middle,studyGameIncentive,Game incentive,1,Monetary,higher
+1,cooperation,academicGradeLevel,Academic grade level,junior,Junior,senior,Senior,studyRealPartner,Real partner,1,Real,higher
+2,cooperation,academicGradeLevel,Academic grade level,junior,Junior,middle,Middle,studyGameIncentive,Game incentive,1,Monetary,higher
+3,cooperation,academicGradeLevel,Academic grade level,junior,Junior,senior,Senior,studyGameIncentive,Game incentive,1,Monetary,higher
+4,cooperation,academicGradeLevel,Academic grade level,junior,Junior,senior,Senior,studyRealPartner,Real partner,1,Real,higher

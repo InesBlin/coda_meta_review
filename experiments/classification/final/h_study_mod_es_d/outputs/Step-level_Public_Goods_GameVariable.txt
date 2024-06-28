@@ -1,0 +1,5 @@
+When comparing studies where threshold level is medium and studies where threshold level is high, contribution is significantly lower when discussion is absent compared to when discussion has another value.
+When comparing studies where threshold level is medium and studies where threshold level is high, contribution is significantly lower when show-up fee is paid compared to when show-up fee has another value.
+When comparing studies where threshold level is medium and studies where threshold level is low, contribution is significantly higher when experimental setting is lab compared to when experimental setting has another value.
+When comparing studies where threshold level is medium and studies where threshold level is low, contribution is significantly higher when continuous vs step-level public goods is step-level compared to when continuous vs step-level public goods has another value.
+When comparing studies where threshold level is medium and studies where threshold level is high, contribution is significantly lower when discussion is absent compared to when discussion has another value.

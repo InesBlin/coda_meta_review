@@ -6,6 +6,7 @@ To make the hypotheses more comparable against each other, we have worked with e
 
 We distinguish between three types of hypotheses:
 
+
 1 - regular
 
 Tempalte: {dependent} is significantly {comparative} when {concept} is {concept_val_1} compared to when {concept} is {concept_val_2}.		
@@ -18,7 +19,7 @@ Example: When comparing studies where Gender is Male and studies where Gender is
 
 3 - categorical variable
 
-Template: When comparing studies where {concept} is {concept_val_1} and studies where {concept} is {concept_val_2}, effect sizes from studies involving {mod_val_1} as {mod} are significantly {comparative} than effect sizes based on {mod_val_2} as {mod}		
+Template: When comparing studies where {concept} is {concept_val_1} and studies where {concept} is {concept_val_2}, {dependent} from studies involving {mod_val_1} as {mod} are significantly {comparative} than {dependent} from studies involving {mod_val_2} as {mod}		
 Example: When comparing studies where Leader's behaviour is Cooperative and studies where Leader's behaviour is non-cooperative, contributions from studies involving Authority as Leadership assignment rule are significantly higher than contributions based on Fixed as Leadership assignment rule.
 
 In this user study, you will be asked to assess the three types of hypotheses. For each type of hypotheses, you will have three sub-tasks:
