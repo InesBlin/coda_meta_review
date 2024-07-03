@@ -1,5 +1,5 @@
 Cooperation is significantly higher when group size level is low compared to when group size level is medium.
 Cooperation is significantly higher when group size level is low compared to when group size level is high.
-Contribution is significantly lower when group size level is low compared to when group size level is high.
-Contribution is significantly higher when group size level is low compared to when group size level is high.
+Cooperation is significantly lower when group size level is low compared to when group size level is high.
+Cooperation is significantly higher when group size level is low compared to when group size level is high.
 Cooperation is significantly lower when decision maker is group compared to when decision maker is individual.

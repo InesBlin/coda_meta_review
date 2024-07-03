@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Known endgame is na compared to when Known endgame is na.
-cooperation  is significantly higher when Known endgame is na compared to when Known endgame is na.
-cooperation  is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated is One-shot.
-cooperation  is significantly higher when Continuation probability level is High compared to when Continuation probability level is Low.
-cooperation  is significantly lower when Number of trials level is Low compared to when Number of trials level is High.
+Cooperation  is significantly higher when Known endgame is na compared to when Known endgame is na.
+Cooperation  is significantly higher when Continuation probability level is Low compared to when Continuation probability level is Medium.
+Cooperation  is significantly lower when Number of trials level is Low compared to when Number of trials level is High.
+Cooperation  is significantly lower when Continuation probability level is High compared to when Continuation probability level is Low.
+Cooperation  is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated is One-shot.

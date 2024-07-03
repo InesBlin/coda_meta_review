@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Experimenter.
-cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Other.
-cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Other.
-cooperation  is significantly higher when Punishment treatment is 1 compared to when Punishment treatment is -1.
-cooperation  is significantly lower when Punishment treatment is 0 compared to when Punishment treatment is 1.
+Cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Experimenter.
+Cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Other.
+Cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Network.
+Cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Leader.
+Cooperation  is significantly higher when Punishment agent is Peer compared to when Punishment agent is Institution.

@@ -1,5 +1,5 @@
-Contribution is significantly lower when reward treatment is -1 compared to when reward treatment is 0.
-Contribution is significantly lower when reward rule is contribution-based compared to when reward rule is rank-based.
-Contribution is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
-Contribution is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
-Contribution is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
+Cooperation is significantly lower when reward treatment is -1 compared to when reward treatment is 0.
+Cooperation is significantly lower when reward rule is contribution-based compared to when reward rule is rank-based.
+Cooperation is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
+Cooperation is significantly higher when reward treatment is 1 compared to when reward treatment is -1.
+Cooperation is significantly higher when reward treatment is 1 compared to when reward treatment is -1.

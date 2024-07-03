@@ -1,5 +1,5 @@
-contributions  is significantly higher when Primed construct is Competition compared to when Primed construct is Cooperation.
-contributions  is significantly higher when Primed construct is Religion compared to when Primed construct is Competition.
-contributions  is significantly higher when Primed construct is Religion compared to when Primed construct is Neutral.
-cooperation  is significantly higher when Primed construct is Competition compared to when Primed construct is Neutral.
-withdrawals  is significantly higher when Primed construct is Cooperation compared to when Primed construct is Neutral.
+Cooperation  is significantly higher when Primed construct is Religion compared to when Primed construct is Neutral.
+Cooperation  is significantly higher when Primed construct is Competition compared to when Primed construct is Neutral.
+Cooperation  is significantly lower when Primed construct is Competition compared to when Primed construct is Cooperation.
+Cooperation  is significantly higher when Primed construct is Competition compared to when Primed construct is Neutral.
+Cooperation  is significantly higher when Primed construct is Cooperation compared to when Primed construct is Neutral.

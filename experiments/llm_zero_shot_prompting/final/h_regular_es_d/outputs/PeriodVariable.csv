@@ -1,4 +1,4 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,lower
-1,withdrawals,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,lower
-2,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,lower
+0,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,higher
+1,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,higher
+2,withdrawals,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,higher

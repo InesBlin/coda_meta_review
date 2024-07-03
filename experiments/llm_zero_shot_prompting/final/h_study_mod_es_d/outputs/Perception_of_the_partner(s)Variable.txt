@@ -1,5 +1,5 @@
-When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Game incentive is Hypothetical.
-When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Game incentive is Monetary.
-When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Game incentive is Monetary lottery.
-When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Game incentive is Non-monetary.
-When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Game incentive is Monetary.
+When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Academic discipline is Mixed compared to when Academic discipline has another value.
+When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly higher when Academic discipline is Other compared to when Academic discipline has another value.
+When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly lower when Academic discipline is Psychology compared to when Academic discipline has another value.
+When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly lower when Academic discipline is Economics compared to when Academic discipline has another value.
+When comparing studies where Partner perception level is high and studies where Partner perception level is low, cooperation is significantly lower when Academic discipline is Psychology compared to when Academic discipline has another value.

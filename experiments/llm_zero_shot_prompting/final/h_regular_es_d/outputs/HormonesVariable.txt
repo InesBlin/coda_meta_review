@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Hormone level is Low compared to when Hormone level is High.
-cooperation  is significantly higher when Hormones administration is Oxytocin compared to when Hormones administration is Vasopressin.
-cooperation  is significantly higher when Hormones administration is Oxytocin compared to when Hormones administration is Placebo.
-cooperation  is significantly higher when Hormone level is Medium compared to when Hormone level is High.
-cooperation  is significantly higher when Hormone level is Low compared to when Hormone level is Medium.
+Cooperation  is significantly lower when Hormone level is Low compared to when Hormone level is High.
+Cooperation  is significantly higher when Hormones administration is Oxytocin compared to when Hormones administration is Vasopressin.
+Cooperation  is significantly higher when Hormones administration is Oxytocin compared to when Hormones administration is Placebo.
+Cooperation  is significantly higher when Hormone level is Medium compared to when Hormone level is High.
+Cooperation  is significantly higher when Hormone level is Low compared to when Hormone level is Medium.

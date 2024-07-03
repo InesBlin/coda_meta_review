@@ -1,5 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,medium_cooperation,Medium Cooperation,higher
-1,contributions,descriptiveNorm,Descriptive norm,no_information,No Information,high_cooperation,High Cooperation,higher
-2,contributions,groupVariability,Group variability,high,High,low,Low,higher
-3,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,lower
+1,contributions,descriptiveNorm,Descriptive norm,medium_cooperation,Medium Cooperation,high_cooperation,High Cooperation,higher
+2,contributions,groupVariability,Group variability,high,High,low,Low,lower
+3,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,higher
+4,contributions,descriptiveNorm,Descriptive norm,no_information,No Information,medium_cooperation,Medium Cooperation,higher

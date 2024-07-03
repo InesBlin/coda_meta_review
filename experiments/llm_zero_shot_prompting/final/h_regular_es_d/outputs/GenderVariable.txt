@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Heterogeneous gender is na compared to when Heterogeneous gender is na.
-cooperation  is significantly higher when Heterogeneous gender is na compared to when Heterogeneous gender is na.
-cooperation  is significantly higher when Partner's gender is known is na compared to when Partner's gender is known is na.
-contributions  is significantly higher when Heterogeneous gender is na compared to when Heterogeneous gender is na.
-withdrawals  is significantly lower when Gender is Female compared to when Gender is Male.
+Cooperation  is significantly higher when Heterogeneous gender is na compared to when Heterogeneous gender is na.
+Cooperation  is significantly higher when Heterogeneous gender is na compared to when Heterogeneous gender is na.
+Cooperation  is significantly higher when Gender is Female compared to when Gender is Male.
+Cooperation  is significantly higher when Partner's gender is known is na compared to when Partner's gender is known is na.
+Cooperation  is significantly higher when Gender is Female compared to when Gender is Male.

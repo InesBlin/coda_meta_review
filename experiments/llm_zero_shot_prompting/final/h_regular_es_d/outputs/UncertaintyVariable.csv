@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,withdrawals,uncertaintyLevel,Uncertainty level,low,Low,high,High,higher
-1,withdrawals,uncertaintyLevel,Uncertainty level,medium,Medium,high,High,higher
+0,cooperation,uncertaintyLevel,Uncertainty level,low,Low,high,High,higher
+1,withdrawals,uncertaintyLevel,Uncertainty level,low,Low,medium,Medium,higher
 2,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,higher
 3,contributions,uncertaintyLevel,Uncertainty level,medium,Medium,high,High,higher
 4,contributions,uncertaintyTarget,Uncertainty target,threshold,Threshold,loss,Loss,higher

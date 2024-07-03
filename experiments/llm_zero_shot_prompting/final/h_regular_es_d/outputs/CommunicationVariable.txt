@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Communication content is Other compared to when Communication content is Promise.
-cooperation  is significantly higher when Communication content is Other compared to when Communication content is Threat.
-cooperation  is significantly higher when Communication content is Irrelevant compared to when Communication content is Promise.
-cooperation  is significantly higher when Communication content is Other compared to when Communication content is Request.
-cooperation  is significantly higher when Real communication is na compared to when Real communication is na.
+Cooperation  is significantly higher when Communication content is Other compared to when Communication content is Threat.
+Cooperation  is significantly higher when Communication content is Other compared to when Communication content is Request.
+Cooperation  is significantly higher when Communication content is Threat compared to when Communication content is Promise.
+Cooperation  is significantly higher when Communication content is Irrelevant compared to when Communication content is Promise.
+Cooperation  is significantly higher when Communication content is Threat compared to when Communication content is Promise.

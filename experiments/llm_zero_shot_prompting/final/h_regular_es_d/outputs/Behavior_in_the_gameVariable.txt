@@ -1,5 +1,5 @@
-contributions  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
-contributions  is significantly lower when Partner's behavior level is High compared to when Partner's behavior level is Low.
-cooperation  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
-contributions  is significantly higher when Participant's behavior level is High compared to when Participant's behavior level is Medium.
-contributions  is significantly higher when Participant's behavior level is Medium compared to when Participant's behavior level is Low.
+Cooperation  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
+Cooperation  is significantly lower when Partner's behavior level is High compared to when Partner's behavior level is Low.
+Cooperation  is significantly higher when Participant's behavior level is Medium compared to when Participant's behavior level is Low.
+Cooperation  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
+Cooperation  is significantly higher when Participant's behavior level is High compared to when Participant's behavior level is Medium.

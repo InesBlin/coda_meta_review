@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,studyGameIncentive,Game incentive,0,Hypothetical,higher
-1,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-2,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,recruitmentMethod,Recruitment method,1,Participant pool,higher
-3,cooperation,gameIncentive,Game incentive,monetary,Monetary,non-monetary_material,Non-monetary Material,studyMatchingProtocol,Matching,2,Partner,higher
-4,cooperation,gameIncentive,Game incentive,hypothetical,Hypothetical,non-monetary_material,Non-monetary Material,studyGameIncentive,Game incentive,3,Non-monetary,higher
+0,cooperation,showUpFee,Show-up fee,True,na,False,na,studyShowUpFee,Show-up fee,1,Paid,higher
+1,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,deception,Deception,true,na,lower
+2,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,studyGameIncentive,Game incentive,0,Hypothetical,lower
+3,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,studyGameIncentive,Game incentive,1,Monetary,higher
+4,cooperation,gameIncentive,Game incentive,monetary,Monetary,hypothetical,Hypothetical,studyGameIncentive,Game incentive,3,Non-monetary,higher

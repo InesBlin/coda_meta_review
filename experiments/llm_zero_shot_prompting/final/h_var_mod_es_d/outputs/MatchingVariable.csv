@@ -1,3 +1,3 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,contributions,partnerChoice,Partner choice,exogenous,Exogenous,endogenous,Endogenous,matching,Matching,partner,Partner,partner's_choice,Partner's choice,higher
-1,contributions,matching,Matching,partner,Partner,partner's_choice,Partner's choice,partnerChoice,Partner choice,exogenous,Exogenous,endogenous,Endogenous,higher
+0,"When comparing studies where `Matching` is `Partner` and studies where `Matching` is `Partner's choice`, cooperation from studies involving `Exogenous` as `Partner choice` is significantly `higher` than cooperation from studies involving based on `Endogenous` as `Partner choice`.",higher,,,,,,,,,,,,
+1,"When comparing studies where `Partner choice` is `Exogenous` and studies where `Partner choice` is `Endogenous`, cooperation from studies involving `Matching` as `Partner` is significantly `higher` than cooperation from studies involving based on `Matching` as `Partner's choice`.",higher,,,,,,,,,,,,

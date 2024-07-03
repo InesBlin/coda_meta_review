@@ -1,5 +1,5 @@
-Contribution is significantly higher when context frame is cooperative compared to when context frame is competitive.
 Cooperation is significantly higher when context frame is cooperative compared to when context frame is competitive.
 Cooperation is significantly higher when context frame is cooperative compared to when context frame is competitive.
 Cooperation is significantly higher when context frame is cooperative compared to when context frame is competitive.
-Contribution is significantly higher when context frame is cooperative compared to when context frame is generic.
+Cooperation is significantly higher when context frame is cooperative compared to when context frame is competitive.
+Cooperation is significantly higher when context frame is cooperative compared to when context frame is generic.

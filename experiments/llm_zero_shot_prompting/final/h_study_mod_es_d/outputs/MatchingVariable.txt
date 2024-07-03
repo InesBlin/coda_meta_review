@@ -1,5 +1,5 @@
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Symmetry is na.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly lower when Acquaintance is Strangers.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Show-up fee is Paid.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Matching is Partner.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly lower when One-shot vs repeated is Repeated.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
+When comparing studies where Matching is Stranger and studies where Matching is Partner's choice, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
+When comparing studies where Matching is Stranger and studies where Matching is Partner's choice, cooperation is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type has another value.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Game type is Public Goods Game compared to when Game type has another value.
+When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.

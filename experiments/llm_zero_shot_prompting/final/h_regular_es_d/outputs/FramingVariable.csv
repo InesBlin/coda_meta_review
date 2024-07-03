@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,contributions,contextFrame,Context frame,cooperative,Cooperative,generic,Generic,higher
-1,contributions,contextFrame,Context frame,competitive,Competitive,generic,Generic,higher
-2,cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,higher
-3,contributions,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,higher
-4,cooperation,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,higher
+0,cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,higher
+1,cooperation,contextFrame,Context frame,cooperative,Cooperative,generic,Generic,higher
+2,cooperation,contextFrame,Context frame,competitive,Competitive,moral,Moral,higher
+3,cooperation,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,higher
+4,cooperation,publicGoodBadFrame,Public Good-Bad frame,public_bad,Public Bad,public_good,Public Good,higher

@@ -1,5 +1,5 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,When comparing studies where `Feedback content` is `Choice` and studies where `Feedback content` is `Earnings`, `contributions` from studies involving `Group` as `Feedback target` are significantly higher than effect sizes based on `Individual` as `Feedback target.`,higher,,,,,,,,,,,
-1,When comparing studies where `Feedback target` is `Group` and studies where `Feedback target` is `Other`, `contributions` from studies involving `Choice` as `Feedback content` are significantly higher than effect sizes based on `Others` as `Feedback content.`,higher,,,,,,,,,,,
-2,When comparing studies where `Feedback content` is `Choice` and studies where `Feedback content` is `Others`, `contributions` from studies involving `Group` as `Feedback target` are significantly higher than effect sizes based on `Other` as `Feedback target.`,higher,,,,,,,,,,,
-3,When comparing studies where `Feedback target` is `Group` and studies where `Feedback target` is `Individual`, `contributions` from studies involving `Choice` as `Feedback content` are significantly higher than effect sizes based on `Earnings` as `Feedback content.`,higher,,,,,,,,,,,
+0,contributions,feedbackTarget,Feedback target,group,Group,other,Other,feedbackContent,Feedback content,choice,Choice,others,Others,higher
+1,contributions,feedbackTarget,Feedback target,group,Group,individual,Individual,feedbackContent,Feedback content,choice,Choice,earnings,Earnings,higher
+2,contributions,feedbackContent,Feedback content,choice,Choice,earnings,Earnings,feedbackTarget,Feedback target,group,Group,individual,Individual,lower
+3,contributions,feedbackContent,Feedback content,choice,Choice,others,Others,feedbackTarget,Feedback target,group,Group,other,Other,lower

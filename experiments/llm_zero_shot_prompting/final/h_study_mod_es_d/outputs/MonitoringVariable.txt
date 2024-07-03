@@ -1,5 +1,5 @@
-When comparing studies where Monitoring cost is Low and studies where Monitoring cost is Medium, contributions is significantly higher when Sanction is na.
-When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, contributions is significantly higher when Game incentive is Monetary.
-When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, contributions is significantly higher when Acquaintance is Strangers.
-When comparing studies where Monitoring cost is Medium and studies where Monitoring cost is High, contributions is significantly higher when Source of year of data collection is Conducted.
-When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, contributions is significantly higher when Known endgame is na.
+When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, cooperation is significantly higher when Trial of cooperation is All trials compared to when Trial of cooperation has another value.
+When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, cooperation is significantly higher when Sanction is na compared to when Sanction has another value.
+When comparing studies where Monitoring cost is Low and studies where Monitoring cost is High, cooperation is significantly higher when Source of year of data collection is Conducted compared to when Source of year of data collection has another value.

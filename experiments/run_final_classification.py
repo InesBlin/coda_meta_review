@@ -5,13 +5,14 @@ Final classification model + hypothesis generation
 import os
 import json
 import click
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from src.knowledge import generate_hypothesis
 
-
+EMBEDDING_DIM = 336
 ID_TO_CLASSES = {
     0: 'negative', 1: 'noEffect', 2: 'positive'
 }
@@ -145,6 +146,8 @@ def main(folder_in, folder_embed, folder_out):
 
             X_train = X[list(df[(df.td == "train") & (df.effect != 'noEffect')].index)]
             y_train = [y[i] for i in list(df[(df.td == "train") & (df.effect != 'noEffect')].index)]
+            X_val = X[list(df[(df.td == "val") & (df.effect != 'noEffect')].index)]
+            y_val = [y[i] for i in list(df[(df.td == "val") & (df.effect != 'noEffect')].index)]
             X_test = X[list(df[(df.td == "test") & (df.effect != 'noEffect')].index)]
             y_test = [y[i] for i in list(df[(df.td == "test") & (df.effect != 'noEffect')].index)]
 
@@ -157,9 +160,15 @@ def main(folder_in, folder_embed, folder_out):
                 random_state=config['random_state'],
             )
             clf.fit(X_train, y_train)
+            joblib.dump(clf, os.path.join(save_f, "model.pkl"))
+            importances = clf.feature_importances_
+            imp_df = pd.DataFrame({'feat': list(range(X.shape[1])), 'imp': importances})
+            imp_df["grouped_feat"] = imp_df.feat // EMBEDDING_DIM
+            imp_df.groupby("grouped_feat").agg({"imp": "sum"}).reset_index().to_csv(os.path.join(save_f, "imp_feature.csv"))
 
             results = {}
             results.update(get_metrics(clf, X_train, y_train, "train"))
+            results.update(get_metrics(clf, X_val, y_val, "val"))
             results.update(get_metrics(clf, X_test, y_test, "test"))
             with open(os.path.join(save_f, "results.json"), 'w', encoding='utf-8') as openfile:
                 json.dump(results, openfile, indent=4)

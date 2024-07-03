@@ -1,4 +1,4 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
 0,cooperation,focalPointFrame,Focal point frame,True,na,False,na,contextFrame,Context frame,cooperative,Cooperative,generic,Generic,higher
-1,cooperation,focalPointFrame,Focal point frame,True,na,False,na,contextFrame,Context frame,competitive,Competitive,generic,Generic,higher
-2,contributions,focalPointFrame,Focal point frame,True,na,False,na,contextFrame,Context frame,cooperative,Cooperative,generic,Generic,higher
+1,contributions,focalPointFrame,Focal point frame,True,na,False,na,contextFrame,Context frame,cooperative,Cooperative,generic,Generic,higher
+2,cooperation,focalPointFrame,Focal point frame,True,na,False,na,contextFrame,Context frame,competitive,Competitive,generic,Generic,higher

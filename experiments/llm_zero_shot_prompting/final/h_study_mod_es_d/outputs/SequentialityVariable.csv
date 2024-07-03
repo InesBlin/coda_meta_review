@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyExperimentalSetting,Experimental setting,2,Lab,higher
-1,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyAcademicDiscipline,Academic discipline,1,Economics,higher
-2,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
-3,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-4,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyExperimentalSetting,Experimental setting,5,Lab in the field,higher
+0,cooperation,sequentiality,Sequentiality,sequential_leadership-by-example,Sequential leadership-by-example,simultaneous,Simultaneous,studyGameIncentive,Game incentive,1,Monetary,higher
+1,cooperation,sequentiality,Sequentiality,sequential_leadership-by-example,Sequential leadership-by-example,simultaneous,Simultaneous,studyGameIncentive,Game incentive,1,Monetary,higher
+2,cooperation,sequentiality,Sequentiality,sequential_leadership-by-example,Sequential leadership-by-example,simultaneous,Simultaneous,studyGameIncentive,Game incentive,1,Monetary,higher
+3,cooperation,sequentiality,Sequentiality,sequential_leadership-by-example,Sequential leadership-by-example,simultaneous,Simultaneous,studyGameIncentive,Game incentive,1,Monetary,higher
+4,cooperation,sequentiality,Sequentiality,sequential_leadership-by-example,Sequential leadership-by-example,simultaneous,Simultaneous,studyGameIncentive,Game incentive,1,Monetary,higher

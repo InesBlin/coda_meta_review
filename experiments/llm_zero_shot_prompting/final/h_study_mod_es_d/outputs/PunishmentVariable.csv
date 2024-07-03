@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyExperimentalSetting,Experimental setting,2,Lab,higher
-1,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyDilemmaType,Game type,2,Public Goods Game,higher
-2,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyKnownEndgame,Known endgame,true,na,higher
-3,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,publicationStatus,Published,1,Published Article,higher
-4,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,studyStudentSample,Student sample,false,na,higher
+0,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,studySymmetric,Symmetry,true,na,higher
+1,contributions,punishmentAgent,Punishment agent,peer,Peer,institution,Institution,publicationStatus,Published,1,Published Article,higher
+2,contributions,punishmentAgent,Punishment agent,peer,Peer,network,Network,studyRealPartner,Real partner,1,Real,higher
+3,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,studyRealPartner,Real partner,1,Real,higher
+4,contributions,punishmentAgent,Punishment agent,peer,Peer,institution,Institution,studySymmetric,Symmetry,true,na,higher

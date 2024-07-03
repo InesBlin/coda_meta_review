@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyExperimentalSetting,Experimental setting,4,Field,higher
-1,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyExperimentalSetting,Experimental setting,2,Lab,higher
+0,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyShowUpFee,Show-up fee,2,Course credit,higher
+1,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyShowUpFee,Show-up fee,1,Paid,higher
 2,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyGameIncentive,Game incentive,1,Monetary,higher
-3,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyShowUpFee,Show-up fee,2,Course credit,higher
-4,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyShowUpFee,Show-up fee,1,Paid,higher
+3,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyGameIncentive,Game incentive,1,Monetary,higher
+4,cooperation,shadowoftheFuture,Shadow of the future,True,na,False,na,studyGameIncentive,Game incentive,0,Hypothetical,lower

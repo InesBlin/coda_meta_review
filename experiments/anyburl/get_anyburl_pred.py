@@ -75,9 +75,5 @@ def main(folder_in_data, folder_in_preds, folder_out):
 
 
 if __name__ == '__main__':
-    # PRED_PATH = "./experiments/anyburl/preds-10"
-    # DATA_PATH = "./data/hypotheses/lp/h_regular_es_d.csv"
-    # TH = "regular"
-    # get_all_data(data_path=DATA_PATH, pred_path=PRED_PATH, th=TH).to_csv("test.csv")
     # python experiments/anyburl/get_anyburl_pred.py data/hypotheses/lp experiments/anyburl/preds experiments/anyburl/final 
     main()

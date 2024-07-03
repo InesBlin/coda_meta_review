@@ -1,2 +1,2 @@
-Contribution is significantly lower when time pressure is time pressure compared to when time pressure is control.
-Contribution is significantly higher when time pressure is time pressure compared to when time pressure is time delay.
+Cooperation is significantly lower when time pressure is time pressure compared to when time pressure is control.
+Cooperation is significantly higher when time pressure is time pressure compared to when time pressure is time delay.

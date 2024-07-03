@@ -1,5 +1,5 @@
-When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Sanction is na.
-When comparing studies where Continuation probability level is High and studies where Continuation probability level is Low, cooperation is significantly lower when has country is USA.
-When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Source of country or region is Specified country.
-When comparing studies where One-shot vs repeated is Repeated and studies where One-shot vs repeated is One-shot, cooperation is significantly higher when Discussion is Absent.
-When comparing studies where Continuation probability level is High and studies where Continuation probability level is Low, cooperation is significantly higher when Real partner is Real.
+When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.
+When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Matching is Stranger compared to when Matching has another value.
+When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
+When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.

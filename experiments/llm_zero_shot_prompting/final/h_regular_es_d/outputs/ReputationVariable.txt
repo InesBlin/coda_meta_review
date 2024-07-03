@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Knowledge of partner's prior behavior is cooperative compared to when Knowledge of partner's prior behavior is absent.
-cooperation  is significantly lower when Knowledge of partner's prior behavior is absent compared to when Knowledge of partner's prior behavior is present.
-cooperation  is significantly higher when Knowledge of partner's prior behavior is cooperative compared to when Knowledge of partner's prior behavior is noncooperative.
-contributions  is significantly higher when Knowledge of partner's prior behavior is cooperative compared to when Knowledge of partner's prior behavior is noncooperative.
-cooperation  is significantly lower when Gossip is Absent compared to when Gossip is Present.
+Cooperation  is significantly higher when Knowledge of partner's prior behavior is Absent compared to when Knowledge of partner's prior behavior is Present.
+Cooperation  is significantly higher when Knowledge of partner's prior behavior is cooperative compared to when Knowledge of partner's prior behavior is noncooperative.
+Cooperation  is significantly higher when Anonymity manipulation is Low compared to when Anonymity manipulation is Medium.
+Cooperation  is significantly higher when Anonymity manipulation is High compared to when Anonymity manipulation is Medium.
+Cooperation  is significantly higher when Anonymity manipulation is Low compared to when Anonymity manipulation is Medium.

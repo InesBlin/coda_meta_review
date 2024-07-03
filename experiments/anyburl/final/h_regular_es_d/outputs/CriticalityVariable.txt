@@ -1,1 +1,1 @@
-Contribution is significantly lower when criticality level is low compared to when criticality level is high.
+Cooperation is significantly lower when criticality level is low compared to when criticality level is high.

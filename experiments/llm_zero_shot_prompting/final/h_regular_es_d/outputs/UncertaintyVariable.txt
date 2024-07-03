@@ -1,5 +1,5 @@
-withdrawals  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
-withdrawals  is significantly higher when Uncertainty level is Medium compared to when Uncertainty level is High.
-contributions  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
-contributions  is significantly higher when Uncertainty level is Medium compared to when Uncertainty level is High.
-contributions  is significantly higher when Uncertainty target is Threshold compared to when Uncertainty target is Loss.
+Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
+Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is Medium.
+Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
+Cooperation  is significantly higher when Uncertainty level is Medium compared to when Uncertainty level is High.
+Cooperation  is significantly higher when Uncertainty target is Threshold compared to when Uncertainty target is Loss.

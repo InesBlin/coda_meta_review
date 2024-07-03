@@ -1,4 +1,4 @@
-When comparing studies where symmetry is false and studies where symmetry is true, contribution is significantly higher when game incentive is monetary compared to when game incentive has another value.
+When comparing studies where symmetry is false and studies where symmetry is true, cooperation is significantly higher when game incentive is monetary compared to when game incentive has another value.
 When comparing studies where symmetry is true and studies where symmetry is false, cooperation is significantly lower when has country is gbr compared to when has country has another value.
 When comparing studies where symmetry is true and studies where symmetry is false, cooperation is significantly lower when source of country or region is specified country compared to when source of country or region has another value.
 When comparing studies where symmetry is true and studies where symmetry is false, cooperation is significantly lower when deception is true compared to when deception has another value.

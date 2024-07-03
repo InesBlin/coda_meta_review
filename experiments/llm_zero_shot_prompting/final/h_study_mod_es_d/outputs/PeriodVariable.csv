@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcademicDiscipline,Academic discipline,5,Other,higher
-1,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-2,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
-3,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcademicDiscipline,Academic discipline,1,Economics,higher
-4,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcademicDiscipline,Academic discipline,1,Economics,higher
+0,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,yearSource,Source of year of data collection,7,Available online,higher
+1,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,recruitmentMethod,Recruitment method,1,Participant pool,higher
+2,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,country,has country,ISR,ISR,higher
+3,contributions,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,yearSource,Source of year of data collection,5,Published,higher
+4,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyGameIncentive,Game incentive,1,Monetary,higher

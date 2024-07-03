@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Symmetry is True compared to when Symmetry is False.
-cooperation  is significantly lower when Symmetry is False compared to when Symmetry is True.
-withdrawals  is significantly lower when Symmetry is True compared to when Symmetry is False.
-withdrawals  is significantly higher when Symmetry target is Access to the resource compared to when Symmetry target is Other.
-contributions  is significantly higher when Symmetry is True compared to when Symmetry is False.
+Cooperation  is significantly higher when Symmetry is na compared to when Symmetry is na.
+Cooperation  is significantly higher when Symmetry is na compared to when Symmetry is na.
+Cooperation  is significantly lower when Symmetry is na compared to when Symmetry is na.
+Cooperation  is significantly higher when Symmetry is na compared to when Symmetry is na.
+Cooperation  is significantly higher when Symmetry target is Access to the resource compared to when Symmetry target is Other.

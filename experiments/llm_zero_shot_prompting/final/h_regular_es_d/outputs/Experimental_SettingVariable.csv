@@ -1,3 +1,5 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,contributions,experimentalSetting,Experimental setting,lab_in_the_field,Lab in the field,field,Field,lower
+0,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,lower
 1,cooperation,experimentalSetting,Experimental setting,lab,Lab,online,Online,higher
+2,contributions,experimentalSetting,Experimental setting,lab_in_the_field,Lab in the field,lab,Lab,higher
+3,contributions,experimentalSetting,Experimental setting,lab_in_the_field,Lab in the field,field,Field,lower

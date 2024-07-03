@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,thresholdLevel,Threshold level,medium,Medium,low,Low,higher
-1,cooperation,thresholdLevel,Threshold level,high,High,low,Low,higher
-2,cooperation,stepReturnLevel,Step return level,medium,Medium,high,High,lower
-3,cooperation,stepReturnLevel,Step return level,low,Low,medium,Medium,higher
-4,contributions,thresholdLevel,Threshold level,medium,Medium,low,Low,higher
+0,cooperation,thresholdLevel,Threshold level,high,High,low,Low,higher
+1,cooperation,stepReturnLevel,Step return level,medium,Medium,high,High,higher
+2,cooperation,thresholdLevel,Threshold level,medium,Medium,low,Low,higher
+3,cooperation,stepReturnLevel,Step return level,low,Low,high,High,lower
+4,contributions,thresholdLevel,Threshold level,high,High,low,Low,higher

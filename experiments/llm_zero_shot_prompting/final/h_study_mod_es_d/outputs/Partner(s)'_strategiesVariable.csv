@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,iteratedStrategy,Iterated strategy,tit-for-tat,Tit-for-Tat,real_partner,Real Partner,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
-1,cooperation,iteratedPreprogrammedCooperationRateLevel,Iterated pre-programmed cooperation rate level,high,High,low,Low,country,has country,CAN,CAN,higher
-2,cooperation,iteratedStrategy,Iterated strategy,extortionate_zero_determinant,Extortionate Zero Determinant,generous_zero_determinant,Generous Zero Determinant,yearSource,Source of year of data collection,1,Conducted,lower
-3,contributions,iteratedPreprogrammedCooperationRateLevel,Iterated pre-programmed cooperation rate level,high,High,low,Low,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
-4,cooperation,iteratedStrategy,Iterated strategy,tit-for-tat,Tit-for-Tat,real_partner,Real Partner,publicationStatus,Published,1,Published Article,higher
+0,cooperation,iteratedStrategy,Iterated strategy,tit-for-tat,Tit-for-Tat,predominantly_cooperative,Predominantly Cooperative,studyRealPartner,Real partner,2,Deception,lower
+1,cooperation,iteratedStrategy,Iterated strategy,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,other,Other,studyRealPartner,Real partner,2,Deception,lower
+2,cooperation,iteratedStrategy,Iterated strategy,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,predominantly_competitive,Predominantly Competitive,studyRealPartner,Real partner,2,Deception,lower
+3,cooperation,iteratedStrategy,Iterated strategy,predominantly_competitive,Predominantly Competitive,predominantly_cooperative,Predominantly Cooperative,studyRealPartner,Real partner,2,Deception,lower
+4,cooperation,iteratedStrategy,Iterated strategy,predominantly_competitive,Predominantly Competitive,real_partner,Real Partner,studyRealPartner,Real partner,2,Deception,lower

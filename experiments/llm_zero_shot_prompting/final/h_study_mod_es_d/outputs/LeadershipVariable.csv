@@ -1,6 +1,6 @@
-dependent,giv_prop,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-contributions,,leaderBehavior,Leader's behavior,cooperative,Cooperative,noncooperative,Noncooperative,yearSource,Source of year of data collection,7,Available online,higher
-withdrawals,,leaderBehavior,Leader's behavior,cooperative,Cooperative,noncooperative,Noncooperative,studyOneShot,One-shot vs repeated,1,One-shot,lower
-contributions,,leadershipAssignmentRule,Leadership assignment rule,fixed,Fixed ,rotating,Rotating,studyOneShot,One-shot vs repeated,0,Repeated,higher
-contributions,,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,elected,Elected,yearSource,Source of year of data collection,4,Submitted,higher
-contributions,,leaderCharacteristic,Leader's characteristic,male,Male,female,Female,studyOneShotRepeated,Repeated one-shot game,false,na,higher
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,studyKnownEndgame,Known endgame,true,na,higher
+1,contributions,leadershipAssignmentRule,Leadership assignment rule,fixed,Fixed ,volunteer,Volunteer,studyMatchingProtocol,Matching,2,Partner,higher
+2,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,country,has country,DEU,DEU,higher
+3,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,studyExperimentalSetting,Experimental setting,2,Lab,higher
+4,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,authority,Authority,studyRealPartner,Real partner,1,Real,higher

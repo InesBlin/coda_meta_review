@@ -1,4 +1,4 @@
-Contribution is significantly lower when iterated strategy is predominantly competitive compared to when iterated strategy is predominantly cooperative.
+Cooperation is significantly lower when iterated strategy is predominantly competitive compared to when iterated strategy is predominantly cooperative.
 Cooperation is significantly lower when iterated strategy is preprogrammed cooperation rate compared to when iterated strategy is other.
 Cooperation is significantly lower when iterated strategy is extortionate zero determinant compared to when iterated strategy is generous zero determinant.
 Cooperation is significantly lower when iterated strategy is tit-for-tat compared to when iterated strategy is predominantly cooperative.

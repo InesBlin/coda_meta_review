@@ -1,4 +1,4 @@
-contributions  is significantly higher when Age cohort is old compared to when Age cohort is young.
-contributions  is significantly higher when Age cohort is middle compared to when Age cohort is old.
-contributions  is significantly higher when Age cohort is young compared to when Age cohort is middle.
-cooperation  is significantly higher when Age cohort is old compared to when Age cohort is young.
+Cooperation  is significantly higher when Age cohort is old compared to when Age cohort is young.
+Cooperation  is significantly higher when Age cohort is middle compared to when Age cohort is old.
+Cooperation  is significantly higher when Age cohort is young compared to when Age cohort is middle.
+Cooperation  is significantly higher when Age cohort is old compared to when Age cohort is young.

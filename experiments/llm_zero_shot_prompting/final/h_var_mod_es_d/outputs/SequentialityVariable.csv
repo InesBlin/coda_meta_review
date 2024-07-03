@@ -1,2 +1,2 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,"When comparing studies where `Endogenous position` is `true` and studies where `Endogenous position` is `false`, `cooperation` from studies involving `Simultaneous` as `Sequentiality` are significantly `higher` than effect sizes based on `Sequential turn-taking` as `Sequentiality`.",,,,,,,,,,,,,
+0,cooperation,positionEndogenous,Endogenous position,True,na,False,na,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,higher

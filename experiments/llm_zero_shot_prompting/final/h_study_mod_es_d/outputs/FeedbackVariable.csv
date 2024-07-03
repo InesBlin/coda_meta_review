@@ -1,6 +1,6 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,feedbackTarget,Feedback target,individual,Individual,absent,Absent,studyExperimentalSetting,Experimental setting,2,Lab,higher
-1,contributions,feedbackTarget,Feedback target,individual,Individual,group,Group,studyRealPartner,Real partner,1,Real,higher
-2,cooperation,feedbackTarget,Feedback target,individual,Individual,group,Group,studyDilemmaType,Game type,2,Public Goods Game,higher
-3,contributions,feedbackTarget,Feedback target,individual,Individual,absent,Absent,studyKnownEndgame,Known endgame,false,na,lower
-4,cooperation,feedbackTarget,Feedback target,individual,Individual,absent,Absent,studyRealPartner,Real partner,2,Deception,lower
+dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+cooperation,feedbackTarget,Feedback target,individual,Individual,group,Group,studyContinuousPGG,Continuous vs step-level public goods,1,Continuous,higher
+cooperation,feedbackContent,Feedback content,success,Success,failure,Failure,studyKnownEndgame,Known endgame,false,na,lower
+contributions,feedbackContent,Feedback content,choice,Choice,rank,Rank,studyExperimentalSetting,Experimental setting,2,Lab,higher
+cooperation,feedbackTarget,Feedback target,network,Network,individual,Individual,studyOneShot,One-shot vs repeated,0,Repeated,lower
+contributions,feedbackTarget,Feedback target,individual,Individual,group,Group,studyShowUpFee,Show-up fee,0,Absent,higher

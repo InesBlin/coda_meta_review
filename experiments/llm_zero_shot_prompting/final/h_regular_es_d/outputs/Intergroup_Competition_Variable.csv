@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_competition,intergroup competition,higher
-1,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,higher
-2,contributions,intergroupComp,Intergroup competition,intergroup_comparison,intergroup comparison,intergroup_competition,intergroup competition,higher
-3,contributions,intergroupComp,Intergroup competition,intergroup_conflict,intergroup conflict,intergroup_harmony,intergroup harmony,lower
-4,withdrawals,intergroupComp,Intergroup competition,intergroup_comparison,intergroup comparison,individual_group,Individual group,lower
+0,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_prisoner's_dilemma,Intergroup Prisoner's Dilemma,higher
+1,cooperation,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_competition,intergroup competition,higher
+2,cooperation,intergroupComp,Intergroup competition,intergroup_comparison,intergroup comparison,individual_group,Individual group,higher
+3,contributions,intergroupComp,Intergroup competition,individual_group,Individual group,intergroup_competition,intergroup competition,higher
+4,contributions,intergroupComp,Intergroup competition,intergroup_comparison,intergroup comparison,individual_group,Individual group,higher

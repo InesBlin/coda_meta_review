@@ -1,3 +1,3 @@
 Cooperation is significantly lower when power level is high compared to when power level is control.
 Cooperation is significantly higher when power level is low compared to when power level is control.
-Contribution is significantly higher when power level is high compared to when power level is low.
+Cooperation is significantly higher when power level is high compared to when power level is low.

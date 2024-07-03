@@ -1,5 +1,5 @@
-When comparing studies where Age cohort is old and studies where Age cohort is young, contributions is significantly higher when Game incentive is Monetary.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Real partner is Real.
-When comparing studies where Age cohort is old and studies where Age cohort is young, contributions is significantly higher when Game type is Public Goods Game.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab in the field.
-When comparing studies where Age cohort is old and studies where Age cohort is young, contributions is significantly higher when One-shot vs repeated is One-shot.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Natural experiment compared to when Experimental setting has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab in the field compared to when Experimental setting has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Field compared to when Experimental setting has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.

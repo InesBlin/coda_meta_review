@@ -1,5 +1,5 @@
-withdrawals  is significantly higher when Replenishment rate level is High compared to when Replenishment rate level is Medium.
-withdrawals  is significantly higher when Replenishment rate level is Medium compared to when Replenishment rate level is Low.
-withdrawals  is significantly higher when Resource size level is High compared to when Resource size level is Medium.
-withdrawals  is significantly higher when Resource size level is Medium compared to when Resource size level is Low.
-withdrawals  is significantly lower when Resource size level is Low compared to when Resource size level is High.
+Cooperation  is significantly higher when Replenishment rate level is High compared to when Replenishment rate level is Low.
+Cooperation  is significantly higher when Resource size level is High compared to when Resource size level is Medium.
+Cooperation  is significantly higher when Resource size level is Medium compared to when Resource size level is Low.
+Cooperation  is significantly higher when Replenishment rate level is High compared to when Replenishment rate level is Medium.
+Cooperation  is significantly lower when Resource size level is Low compared to when Resource size level is High.

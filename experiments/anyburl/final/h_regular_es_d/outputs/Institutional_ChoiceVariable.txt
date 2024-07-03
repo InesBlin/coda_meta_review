@@ -1,3 +1,3 @@
-Contribution is significantly lower when institutional choice is endogenous compared to when institutional choice is exogenous.
-Contribution is significantly higher when institutional choice is endogenous compared to when institutional choice is exogenous.
-Contribution is significantly higher when institutional choice is endogenous compared to when institutional choice is exogenous.
+Cooperation is significantly lower when institutional choice is endogenous compared to when institutional choice is exogenous.
+Cooperation is significantly higher when institutional choice is endogenous compared to when institutional choice is exogenous.
+Cooperation is significantly higher when institutional choice is endogenous compared to when institutional choice is exogenous.

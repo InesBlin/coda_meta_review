@@ -1,5 +1,5 @@
-When comparing studies where Emotion is Neutral and studies where Emotion is Anger, contributions is significantly higher when One-shot vs repeated is One-shot.
-When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Real partner is Hypothetical.
-When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Game incentive is Monetary.
-When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Acquaintance is Strangers.
-When comparing studies where Emotion is Neutral and studies where Emotion is Disgust, contributions is significantly lower when Symmetry is na.
+When comparing studies where Emotion valence is positive and studies where Emotion valence is negative, cooperation is significantly higher when Show-up fee is Paid compared to when Show-up fee has another value.
+When comparing studies where Emotion is Neutral and studies where Emotion is Anger, cooperation is significantly lower when Student sample is na compared to when Student sample has another value.
+When comparing studies where Emotion valence is positive and studies where Emotion valence is neutral, cooperation is significantly higher when Student sample is na compared to when Student sample has another value.
+When comparing studies where Emotion is Happiness and studies where Emotion is Neutral, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
+When comparing studies where Emotion valence is neutral and studies where Emotion valence is negative, cooperation is significantly lower when Experimental setting is Lab compared to when Experimental setting has another value.

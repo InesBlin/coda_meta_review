@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Emotion valence is positive compared to when Emotion valence is negative.
-cooperation  is significantly lower when Emotion is Fear compared to when Emotion is Happiness.
-cooperation  is significantly higher when Emotion intensity is Low compared to when Emotion intensity is High.
-cooperation  is significantly higher when Emotion is Guilt compared to when Emotion is Neutral.
-cooperation  is significantly higher when Emotion is Shame compared to when Emotion is Neutral.
+Cooperation  is significantly higher when Emotion valence is positive compared to when Emotion valence is negative.
+Cooperation  is significantly higher when Emotion valence is neutral compared to when Emotion valence is negative.
+Cooperation  is significantly higher when Emotion is Guilt compared to when Emotion is Neutral.
+Cooperation  is significantly higher when Emotion is Shame compared to when Emotion is Neutral.
+Cooperation  is significantly lower when Emotion is Fear compared to when Emotion is Happiness.

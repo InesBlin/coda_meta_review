@@ -1,2 +1,2 @@
-Contribution is significantly lower when descriptive norm is medium cooperation compared to when descriptive norm is high cooperation.
-Contribution is significantly lower when group variability is high compared to when group variability is low.
+Cooperation is significantly lower when descriptive norm is medium cooperation compared to when descriptive norm is high cooperation.
+Cooperation is significantly lower when group variability is high compared to when group variability is low.

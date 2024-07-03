@@ -1,5 +1,5 @@
-When comparing studies where Punishment incentive is Monetary and studies where Punishment incentive is Non-monetary Social, contributions is significantly higher when Experimental setting is Lab.
-When comparing studies where Punishment incentive is Monetary and studies where Punishment incentive is Non-monetary Social, contributions is significantly higher when Game type is Public Goods Game.
-When comparing studies where Punishment incentive is Monetary and studies where Punishment incentive is Non-monetary Social, contributions is significantly higher when Known endgame is na.
-When comparing studies where Punishment incentive is Monetary and studies where Punishment incentive is Non-monetary Social, contributions is significantly higher when Published is Published Article.
-When comparing studies where Punishment incentive is Monetary and studies where Punishment incentive is Non-monetary Social, contributions is significantly higher when Student sample is na.
+When comparing studies where Punishment agent is Peer and studies where Punishment agent is Other, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Punishment agent is Peer and studies where Punishment agent is Institution, cooperation is significantly higher when Published is Published Article compared to when Published has another value.
+When comparing studies where Punishment agent is Peer and studies where Punishment agent is Network, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Punishment agent is Peer and studies where Punishment agent is Other, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Punishment agent is Peer and studies where Punishment agent is Institution, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.

@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
 0,cooperation,groupSizeLevel,Group size level,high,High,low,Low,decisionMaker,Decision maker,individual,individual,group,group,higher
-1,cooperation,decisionMaker,Decision maker,individual,individual,group,group,groupSizeLevel,Group size level,low,Low,medium,Medium,higher
-2,cooperation,decisionMaker,Decision maker,individual,individual,group,group,groupSizeLevel,Group size level,medium,Medium,high,High,higher
-3,cooperation,groupSizeLevel,Group size level,medium,Medium,high,High,decisionMaker,Decision maker,individual,individual,group,group,lower
-4,cooperation,groupSizeLevel,Group size level,low,Low,medium,Medium,decisionMaker,Decision maker,group,group,individual,individual,lower
+1,cooperation,groupSizeLevel,Group size level,high,High,low,Low,decisionMaker,Decision maker,group,group,individual,individual,higher
+2,cooperation,decisionMaker,Decision maker,group,group,individual,individual,groupSizeLevel,Group size level,high,High,low,Low,higher
+3,cooperation,decisionMaker,Decision maker,individual,individual,group,group,groupSizeLevel,Group size level,high,High,low,Low,higher
+4,cooperation,groupSizeLevel,Group size level,medium,Medium,high,High,decisionMaker,Decision maker,individual,individual,group,group,lower

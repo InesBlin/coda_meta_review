@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyRealPartner,Real partner,0,Hypothetical,lower
-1,contributions,criticalityLevel,Criticality level,low,Low,high,High,studySymmetric,Symmetry,true,na,higher
-2,contributions,criticalityLevel,Criticality level,low,Low,high,High,studySymmetric,Symmetry,false,na,higher
-3,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyOneShot,One-shot vs repeated,1,One-shot,higher
-4,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyOneShot,One-shot vs repeated,1,One-shot,higher
+0,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher
+1,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyOneShot,One-shot vs repeated,1,One-shot,higher
+2,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyShowUpFee,Show-up fee,1,Paid,higher
+3,contributions,criticalityLevel,Criticality level,low,Low,high,High,publicationStatus,Published,1,Published Article,higher
+4,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher

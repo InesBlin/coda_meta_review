@@ -1,5 +1,5 @@
-When comparing studies where nan is nan and studies where nan is nan, When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium` is significantly nan when nan is nan.
-When comparing studies where nan is nan and studies where nan is nan, When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium` is significantly nan when nan is nan.
-When comparing studies where nan is nan and studies where nan is nan, When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium` is significantly nan when nan is nan.
-When comparing studies where nan is nan and studies where nan is nan, When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium` is significantly nan when nan is nan.
-When comparing studies where nan is nan and studies where nan is nan, When comparing studies where `State trust level` is `Low` and studies where `State trust level` is `Medium` is significantly nan when nan is nan.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.

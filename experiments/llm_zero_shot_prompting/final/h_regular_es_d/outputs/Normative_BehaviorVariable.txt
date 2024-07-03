@@ -1,4 +1,5 @@
-contributions  is significantly higher when Descriptive norm is Low Cooperation compared to when Descriptive norm is Medium Cooperation.
-contributions  is significantly higher when Descriptive norm is No Information compared to when Descriptive norm is High Cooperation.
-contributions  is significantly higher when Group variability is High compared to when Group variability is Low.
-contributions  is significantly lower when Descriptive norm is Low Cooperation compared to when Descriptive norm is High Cooperation.
+Cooperation  is significantly higher when Descriptive norm is Low Cooperation compared to when Descriptive norm is Medium Cooperation.
+Cooperation  is significantly higher when Descriptive norm is Medium Cooperation compared to when Descriptive norm is High Cooperation.
+Cooperation  is significantly lower when Group variability is High compared to when Group variability is Low.
+Cooperation  is significantly higher when Descriptive norm is Low Cooperation compared to when Descriptive norm is High Cooperation.
+Cooperation  is significantly higher when Descriptive norm is No Information compared to when Descriptive norm is Medium Cooperation.

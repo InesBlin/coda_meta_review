@@ -1,5 +1,5 @@
-contributions  is significantly higher when Context frame is Cooperative compared to when Context frame is Generic.
-contributions  is significantly higher when Context frame is Competitive compared to when Context frame is Generic.
-cooperation  is significantly higher when Context frame is Competitive compared to when Context frame is Generic.
-contributions  is significantly higher when Context frame is Cooperative compared to when Context frame is Competitive.
-cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Competitive.
+Cooperation  is significantly higher when Context frame is Competitive compared to when Context frame is Generic.
+Cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Generic.
+Cooperation  is significantly higher when Context frame is Competitive compared to when Context frame is Moral.
+Cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Competitive.
+Cooperation  is significantly higher when Public Good-Bad frame is Public Bad compared to when Public Good-Bad frame is Public Good.

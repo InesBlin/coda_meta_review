@@ -1,6 +1,6 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyOneShotRepeated,Repeated one-shot game,true,na,higher
-1,contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,studyExperimentalSetting,Experimental setting,2,Lab,higher
-2,cooperation,anonymityManipul,Anonymity manipulation,high,High,medium,Medium,publicationStatus,Published,1,Published Article,higher
-3,contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,studyRealPartner,Real partner,1,Real,higher
-4,cooperation,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyRealPartner,Real partner,2,Deception,lower
+dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+cooperation,partnerSelection,Partner selection,present,present,absent,absent,studyKnownEndgame,Known endgame,false,na,higher
+cooperation,gossip,Gossip,absent,Absent,present,Present,recruitmentMethod,Recruitment method,2,MTurk,lower
+contributions,anonymityManipul,Anonymity manipulation,high,High,low,Low,country,has country,GBR,GBR,higher
+cooperation,partnerSelection,Partner selection,present,present,absent,absent,sanction,Sanction,false,na,higher
+contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,cooperative,cooperative,noncooperative,noncooperative,studyGameIncentive,Game incentive,2,Monetary lottery,higher

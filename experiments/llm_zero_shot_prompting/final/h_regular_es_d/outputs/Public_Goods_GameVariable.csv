@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,mPCRlevel,MPCR level,low,Low,medium,Medium,higher
-1,cooperation,mPCRlevel,MPCR level,medium,Medium,high,High,higher
-2,cooperation,endowmentLevel,Endowment level,medium,Medium,low,Low,higher
-3,cooperation,endowmentLevel,Endowment level,low,Low,high,High,higher
-4,contributions,individualMPCRlevel,Individual MPCR level,low,Low,high,High,higher
+0,cooperation,endowmentLevel,Endowment level,low,Low,high,High,higher
+1,cooperation,endowmentLevel,Endowment level,medium,Medium,low,Low,higher
+2,cooperation,endowmentLevel,Endowment level,medium,Medium,high,High,higher
+3,cooperation,mPCRlevel,MPCR level,medium,Medium,high,High,higher
+4,cooperation,mPCRlevel,MPCR level,low,Low,medium,Medium,higher

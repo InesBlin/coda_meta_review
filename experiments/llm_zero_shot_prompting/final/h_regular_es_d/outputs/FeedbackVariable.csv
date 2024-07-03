@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,feedbackTarget,Feedback target,network,Network,individual,Individual,higher
-1,cooperation,feedbackTarget,Feedback target,individual,Individual,absent,Absent,higher
-2,cooperation,noise,Noise,true,na,false,na,higher
-3,cooperation,feedbackContent,Feedback content,success,Success,failure,Failure,higher
-4,cooperation,feedbackTarget,Feedback target,individual,Individual,group,Group,higher
+0,cooperation,feedbackTarget,Feedback target,group,Group,absent,Absent,higher
+1,cooperation,feedbackTarget,Feedback target,network,Network,individual,Individual,higher
+2,cooperation,feedbackTarget,Feedback target,individual,Individual,absent,Absent,higher
+3,cooperation,feedbackTarget,Feedback target,individual,Individual,group,Group,higher
+4,cooperation,feedbackTarget,Feedback target,individual,Individual,other,Other,higher

@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Highest choice option level is Low compared to when Highest choice option level is High.
-cooperation  is significantly higher when Highest choice option level is Medium compared to when Highest choice option level is High.
-cooperation  is significantly higher when Number of choices level is Low compared to when Number of choices level is Medium.
-cooperation  is significantly higher when Number of choices level is Low compared to when Number of choices level is High.
-cooperation  is significantly higher when Lowest choice option level is High compared to when Lowest choice option level is Low.
+Cooperation  is significantly higher when Number of choices level is Low compared to when Number of choices level is High.
+Cooperation  is significantly higher when Highest choice option level is Medium compared to when Highest choice option level is High.
+Cooperation  is significantly higher when Highest choice option level is Low compared to when Highest choice option level is High.
+Cooperation  is significantly higher when Number of choices level is Medium compared to when Number of choices level is High.
+Cooperation  is significantly higher when Highest choice option level is Low compared to when Highest choice option level is Medium.

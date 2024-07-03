@@ -1,5 +1,5 @@
-cooperation  is significantly higher when MPCR level is Low compared to when MPCR level is Medium.
-cooperation  is significantly higher when MPCR level is Medium compared to when MPCR level is High.
-cooperation  is significantly higher when Endowment level is Medium compared to when Endowment level is Low.
-cooperation  is significantly higher when Endowment level is Low compared to when Endowment level is High.
-contributions  is significantly higher when Individual MPCR level is Low compared to when Individual MPCR level is High.
+Cooperation  is significantly higher when Endowment level is Low compared to when Endowment level is High.
+Cooperation  is significantly higher when Endowment level is Medium compared to when Endowment level is Low.
+Cooperation  is significantly higher when Endowment level is Medium compared to when Endowment level is High.
+Cooperation  is significantly higher when MPCR level is Medium compared to when MPCR level is High.
+Cooperation  is significantly higher when MPCR level is Low compared to when MPCR level is Medium.

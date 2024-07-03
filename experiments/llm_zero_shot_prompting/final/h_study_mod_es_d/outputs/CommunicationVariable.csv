@@ -1,6 +1,6 @@
-dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,publicationStatus,Published,1,Published Article,higher
-cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,studySymmetric,Symmetry,true,na,higher
-cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,studyExperimentalSetting,Experimental setting,2,Lab,higher
-cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,discussion,Discussion,2,Bi-directional,higher
-cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,studyAcquaintance,Acquaintance,0,Strangers,higher
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher
+1,cooperation,restricted,Restricted communication,false,na,true,na,studyOneShot,One-shot vs repeated,1,One-shot,lower
+2,contributions,communicationOccurrence,Communication occurrence,one-shot,One-shot,ongoing,Ongoing,discussion,Discussion,0,Absent,lower
+3,cooperation,communicationContent,Communication content,irrelevant,Irrelevant,promise,Promise,studyAcquaintance,Acquaintance,1,Acquaintance,higher
+4,cooperation,communicationReal,Real communication,True,na,False,na,country,has country,USA,USA,higher

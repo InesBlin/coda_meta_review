@@ -1,5 +1,5 @@
 When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when source of year of data collection is submitted compared to when source of year of data collection has another value.
 When comparing studies where decision maker is group and studies where decision maker is individual, cooperation is significantly lower when show-up fee is course credit compared to when show-up fee has another value.
-When comparing studies where group size level is low and studies where group size level is high, withdrawal is significantly higher when discussion is absent compared to when discussion has another value.
+When comparing studies where group size level is low and studies where group size level is high, cooperation is significantly lower when discussion is absent compared to when discussion has another value.
 When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when one-shot vs repeated is one-shot compared to when one-shot vs repeated has another value.
 When comparing studies where group size level is low and studies where group size level is medium, cooperation is significantly higher when has country is aus compared to when has country has another value.

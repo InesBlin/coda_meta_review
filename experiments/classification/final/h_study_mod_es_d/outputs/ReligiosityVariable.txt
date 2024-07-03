@@ -1,2 +1,2 @@
-When comparing studies where religious exposure level is high and studies where religious exposure level is low, contribution is significantly higher when has country is ind compared to when has country has another value.
-When comparing studies where religious exposure level is high and studies where religious exposure level is low, contribution is significantly higher when one-shot vs repeated is one-shot compared to when one-shot vs repeated has another value.
+When comparing studies where religious exposure level is high and studies where religious exposure level is low, cooperation is significantly higher when has country is ind compared to when has country has another value.
+When comparing studies where religious exposure level is high and studies where religious exposure level is low, cooperation is significantly higher when one-shot vs repeated is one-shot compared to when one-shot vs repeated has another value.

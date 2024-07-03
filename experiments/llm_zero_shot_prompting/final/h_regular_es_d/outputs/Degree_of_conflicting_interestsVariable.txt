@@ -1,5 +1,5 @@
-contributions  is significantly higher when Conflict level is High compared to when Conflict level is Low.
-cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Medium.
-withdrawals  is significantly higher when Conflict level is Medium compared to when Conflict level is Low.
-withdrawals  is significantly higher when Conflict level is High compared to when Conflict level is Low.
-cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Low.
+Cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Low.
+Cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Medium.
+Cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Low.
+Cooperation  is significantly higher when Conflict level is Medium compared to when Conflict level is Low.
+Cooperation  is significantly higher when Conflict level is High compared to when Conflict level is Medium.

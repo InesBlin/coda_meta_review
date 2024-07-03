@@ -1,1 +1,1 @@
-withdrawals  is significantly nan when Real partner is Real compared to when Real partner is Hypothetical.
+Cooperation  is significantly nan when nan is nan compared to when nan is nan.

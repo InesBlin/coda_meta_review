@@ -1,4 +1,4 @@
-When comparing studies where partner perception level is high and studies where partner perception level is low, contribution is significantly higher when trial of cooperation is all trials compared to when trial of cooperation has another value.
+When comparing studies where partner perception level is high and studies where partner perception level is low, cooperation is significantly higher when trial of cooperation is all trials compared to when trial of cooperation has another value.
 When comparing studies where gender of the partner is m and studies where gender of the partner is f, cooperation is significantly higher when matching is partner compared to when matching has another value.
 When comparing studies where partner perception level is high and studies where partner perception level is low, cooperation is significantly higher when has country is nld compared to when has country has another value.
 When comparing studies where partner perception level is high and studies where partner perception level is low, cooperation is significantly higher when published is published article compared to when published has another value.

@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,discussion,Discussion,0,Absent,higher
-1,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyKnownEndgame,Known endgame,true,na,higher
-2,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyGameIncentive,Game incentive,1,Monetary,higher
-3,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyRealPartner,Real partner,1,Real,higher
-4,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyAcquaintance,Acquaintance,0,Strangers,higher
+0,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyOneShotRepeated,Repeated one-shot game,False,na,higher
+1,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyOneShotRepeated,Repeated one-shot game,False,na,higher
+2,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyOneShotRepeated,Repeated one-shot game,False,na,higher
+3,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyOneShotRepeated,Repeated one-shot game,False,na,higher
+4,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,studyOneShotRepeated,Repeated one-shot game,False,na,higher

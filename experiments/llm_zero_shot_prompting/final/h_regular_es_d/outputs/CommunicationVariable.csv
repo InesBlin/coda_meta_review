@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,communicationContent,Communication content,other,Other,promise,Promise,higher
-1,cooperation,communicationContent,Communication content,other,Other,threat,Threat,higher
-2,cooperation,communicationContent,Communication content,irrelevant,Irrelevant,promise,Promise,higher
-3,cooperation,communicationContent,Communication content,other,Other,request,Request,higher
-4,cooperation,communicationReal,Real communication,True,na,False,na,higher
+0,cooperation,communicationContent,Communication content,other,Other,threat,Threat,higher
+1,cooperation,communicationContent,Communication content,other,Other,request,Request,higher
+2,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,higher
+3,cooperation,communicationContent,Communication content,irrelevant,Irrelevant,promise,Promise,higher
+4,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,higher

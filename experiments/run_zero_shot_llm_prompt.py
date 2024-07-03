@@ -15,6 +15,12 @@ from src.lp.llm import LLMHypothesisGeneration
 MODEL_3 = "gpt-3.5-turbo-0125"
 MODEL_4 = "gpt-4o"
 
+def arrange_output(text):
+    """ Removing non-formatted content from the output prompt """
+    text = text.split("with the added `comparative` column:\n")[-1]
+    text = text.split("These rows were selected ")[0]
+    return text
+
 def write_readable_h(output_f, df_output, llmhg):
     """ Save human readable hypotheses in txt file """
     f_readable = open(output_f, 'w', encoding='utf-8')
@@ -81,6 +87,7 @@ def main(folder_in, folder_out):
                         except:  # if context window too big -> switching models
                             llmhg = LLMHypothesisGeneration(type_hypothesis=th, model=MODEL_4)
                             output = llmhg(data=data_prompt)
+                            output = arrange_output(text=output)
                             df_output = output.replace("```csv", "").replace("```", "")
                             df_output = pd.read_csv(StringIO(df_output))
                             df_output.to_csv(os.path.join(folder, "outputs", f"{name}.csv"))

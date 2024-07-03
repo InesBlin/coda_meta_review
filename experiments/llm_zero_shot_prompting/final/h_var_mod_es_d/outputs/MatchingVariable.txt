@@ -1,2 +1,2 @@
-When comparing studies where Partner choice is Exogenous and studies where Partner choice is Endogenous, contributions from studies involving Partner as Matching are significantly higher than effect sizes based on Partner's choice as Matching.
-When comparing studies where Matching is Partner and studies where Matching is Partner's choice, contributions from studies involving Exogenous as Partner choice are significantly higher than effect sizes based on Endogenous as Partner choice.
+When comparing studies where nan is nan and studies where nan is nan, cooperation from studies involving nan as nan is significantly nan than cooperation from studies involving based on nan as nan.
+When comparing studies where nan is nan and studies where nan is nan, cooperation from studies involving nan as nan is significantly nan than cooperation from studies involving based on nan as nan.

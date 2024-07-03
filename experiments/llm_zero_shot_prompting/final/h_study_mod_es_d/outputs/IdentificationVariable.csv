@@ -1,6 +1,6 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,targetMembership,Partner's group membership,ingroup,Ingroup,ingroup_and_outgroup,Ingroup and Outgroup,studySymmetric,Symmetry,true,na,higher
-1,cooperation,targetMembership,Partner's group membership,stranger,Stranger,ingroup,Ingroup,publicationStatus,Published,1,Published Article,higher
-2,cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyStudentSample,Student sample,true,na,higher
-3,contributions,identificationLevel,Identification level,high,High,low,Low,studyShowUpFee,Show-up fee,1,Paid,higher
-4,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unilateral,Unilateral,studyShowUpFee,Show-up fee,0,Absent,higher
+dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,deception,Deception,false,na,higher
+cooperation,identificationLevel,Identification level,high,High,low,Low,studyStudentSample,Student sample,true,na,higher
+cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyOneShotRepeated,Repeated one-shot game,true,na,higher
+cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,sanction,Sanction,false,na,higher
+contributions,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyMatchingProtocol,Matching,2,Partner,higher

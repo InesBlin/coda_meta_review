@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,cooperation,emotionValence,Emotion valence,positive,positive,negative,negative,higher
-1,cooperation,emotion,Emotion,fear,Fear,happiness,Happiness,lower
-2,cooperation,emotionIntensity,Emotion intensity,low,Low,high,High,higher
-3,cooperation,emotion,Emotion,guilt,Guilt,neutral,Neutral,higher
-4,cooperation,emotion,Emotion,shame,Shame,neutral,Neutral,higher
+1,cooperation,emotionValence,Emotion valence,neutral,neutral,negative,negative,higher
+2,cooperation,emotion,Emotion,guilt,Guilt,neutral,Neutral,higher
+3,cooperation,emotion,Emotion,shame,Shame,neutral,Neutral,higher
+4,cooperation,emotion,Emotion,fear,Fear,happiness,Happiness,lower

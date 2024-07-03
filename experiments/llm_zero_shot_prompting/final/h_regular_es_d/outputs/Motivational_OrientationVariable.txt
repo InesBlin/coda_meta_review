@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Motivational orientation is Cooperative compared to when Motivational orientation is Individualistic.
-cooperation  is significantly higher when Motivational orientation is Cooperative compared to when Motivational orientation is Competitive.
-cooperation  is significantly higher when Endogenous motivational orientation is Cooperative compared to when Endogenous motivational orientation is Competitive.
-cooperation  is significantly higher when Motivational orientation is Competitive compared to when Motivational orientation is Individualistic.
-withdrawals  is significantly higher when Endogenous motivational orientation is Cooperative compared to when Endogenous motivational orientation is Individualistic.
+Cooperation  is significantly higher when Endogenous motivational orientation is Cooperative compared to when Endogenous motivational orientation is Competitive.
+Cooperation  is significantly higher when Motivational orientation is Cooperative compared to when Motivational orientation is Competitive.
+Cooperation  is significantly higher when Endogenous motivational orientation is Cooperative compared to when Endogenous motivational orientation is Individualistic.
+Cooperation  is significantly higher when Motivational orientation is Cooperative compared to when Motivational orientation is Individualistic.
+Cooperation  is significantly higher when Endogenous motivational orientation is Cooperative compared to when Endogenous motivational orientation is Individualistic.

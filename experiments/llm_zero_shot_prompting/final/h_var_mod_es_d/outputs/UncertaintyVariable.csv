@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,threshold,Threshold,loss,Loss,higher
+0,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
 1,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
-2,contributions,uncertaintyLevel,Uncertainty level,medium,Medium,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
+2,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
 3,contributions,uncertaintyLevel,Uncertainty level,low,Low,medium,Medium,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
-4,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
+4,contributions,uncertaintyLevel,Uncertainty level,low,Low,medium,Medium,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher

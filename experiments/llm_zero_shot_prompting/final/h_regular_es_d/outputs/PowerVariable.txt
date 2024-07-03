@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Power level is High compared to when Power level is Low.
-cooperation  is significantly higher when Power level is High compared to when Power level is Control.
-contributions  is significantly higher when Power level is High compared to when Power level is Low.
-withdrawals  is significantly higher when Power level is High compared to when Power level is Control.
-cooperation  is significantly higher when Power level is Low compared to when Power level is Control.
+Cooperation  is significantly higher when Power level is High compared to when Power level is Low.
+Cooperation  is significantly higher when Power level is High compared to when Power level is Control.
+Cooperation  is significantly higher when Power level is High compared to when Power level is Control.
+Cooperation  is significantly higher when Power level is High compared to when Power level is Control.
+Cooperation  is significantly lower when Power level is Low compared to when Power level is Control.

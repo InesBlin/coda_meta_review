@@ -1,5 +1,5 @@
-cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.
-cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is Control.
-cooperation  is significantly lower when Time pressure is time delay compared to when Time pressure is Control.
-contributions  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.
-withdrawals  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.
+Cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.
+Cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is Control.
+Cooperation  is significantly higher when Time pressure is time delay compared to when Time pressure is Control.
+Cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.
+Cooperation  is significantly higher when Time pressure is time pressure compared to when Time pressure is time delay.

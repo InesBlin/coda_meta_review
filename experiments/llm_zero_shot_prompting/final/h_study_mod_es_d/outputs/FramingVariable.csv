@@ -1,6 +1,6 @@
 dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-cooperation,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,studyRealPartner,Real partner,1,Real,higher
-contributions,giveTakeFrame,Give-Take frame,give-some,Give-some,take-some,Take-some,studyShowUpFee,Show-up fee,1,Paid,higher
-cooperation,gainLossFrame,Gain-Loss frame,gain,Gain,loss,Loss,studyStudentSample,Student sample,true,na,higher
-contributions,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,studyKnownEndgame,Known endgame,true,na,higher
-cooperation,contextFrame,Context frame,cooperative,Cooperative,competitive,Competitive,studyShowUpFee,Show-up fee,1,Paid,higher
+cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,studyShowUpFee,Show-up fee,1,Paid,higher
+cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,studyExperimentalSetting,Experimental setting,2,Lab,higher
+cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,studyRealPartner,Real partner,1,Real,higher
+cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,studyOneShot,One-shot vs repeated,1,One-shot,higher
+cooperation,contextFrame,Context frame,competitive,Competitive,generic,Generic,studySymmetric,Symmetry,true,na,higher

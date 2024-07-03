@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,motivationalOrientation,Motivational orientation,competitive,Competitive,individualistic,Individualistic,deception,Deception,false,na,higher
-1,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyRealPartner,Real partner,1,Real,higher
-2,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher
-3,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyShowUpFee,Show-up fee,1,Paid,higher
-4,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyGameIncentive,Game incentive,0,Hypothetical,higher
+0,cooperation,motivationalOrientation,Motivational orientation,competitive,Competitive,individualistic,Individualistic,studyGameIncentive,Game incentive,0,Hypothetical,higher
+1,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyGameIncentive,Game incentive,0,Hypothetical,higher
+2,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyGameIncentive,Game incentive,2,Monetary lottery,higher
+3,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyGameIncentive,Game incentive,2,Monetary lottery,higher
+4,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,competitive,Competitive,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher

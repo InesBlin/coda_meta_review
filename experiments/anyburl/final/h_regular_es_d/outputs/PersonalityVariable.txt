@@ -1,5 +1,5 @@
-Withdrawal is significantly higher when svo type is prosocial compared to when svo type is proself.
-Contribution is significantly lower when svo type is individualist compared to when svo type is prosocial.
-Contribution is significantly higher when svo type is prosocial compared to when svo type is proself.
+Cooperation is significantly lower when svo type is prosocial compared to when svo type is proself.
+Cooperation is significantly lower when svo type is individualist compared to when svo type is prosocial.
+Cooperation is significantly higher when svo type is prosocial compared to when svo type is proself.
 Cooperation is significantly higher when svo type is individualist compared to when svo type is competitor.
 Cooperation is significantly lower when svo type is individualist compared to when svo type is prosocial.

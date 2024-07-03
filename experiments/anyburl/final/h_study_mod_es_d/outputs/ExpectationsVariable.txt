@@ -1,4 +1,4 @@
-When comparing studies where expectations level is low and studies where expectations level is high, contribution is significantly lower when continuous vs step-level public goods is continuous compared to when continuous vs step-level public goods has another value.
+When comparing studies where expectations level is low and studies where expectations level is high, cooperation is significantly lower when continuous vs step-level public goods is continuous compared to when continuous vs step-level public goods has another value.
 When comparing studies where expectations level is low and studies where expectations level is high, cooperation is significantly lower when sanction is false compared to when sanction has another value.
 When comparing studies where expectations level is low and studies where expectations level is high, cooperation is significantly lower when game incentive is monetary compared to when game incentive has another value.
 When comparing studies where expectations level is low and studies where expectations level is high, cooperation is significantly lower when student sample is true compared to when student sample has another value.

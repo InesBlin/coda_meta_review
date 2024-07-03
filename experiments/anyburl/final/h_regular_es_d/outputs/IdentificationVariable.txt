@@ -1,5 +1,5 @@
-Contribution is significantly higher when identification level is high compared to when identification level is low.
-Contribution is significantly lower when partner's group membership is stranger compared to when partner's group membership is ingroup and outgroup.
+Cooperation is significantly higher when identification level is high compared to when identification level is low.
+Cooperation is significantly lower when partner's group membership is stranger compared to when partner's group membership is ingroup and outgroup.
 Cooperation is significantly higher when partner's group membership is ingroup compared to when partner's group membership is outgroup.
-Contribution is significantly lower when partner's group membership is stranger compared to when partner's group membership is outgroup.
+Cooperation is significantly lower when partner's group membership is stranger compared to when partner's group membership is outgroup.
 Cooperation is significantly higher when partner's group membership is ingroup compared to when partner's group membership is outgroup.

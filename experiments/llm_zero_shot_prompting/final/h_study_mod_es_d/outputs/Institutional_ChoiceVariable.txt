@@ -1,5 +1,5 @@
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly higher when Continuous vs step-level public goods is Continuous.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Matching is Stranger.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, contributions is significantly lower when Acquaintance is Strangers.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Acquaintance is Acquaintance compared to when Acquaintance has another value.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
+When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type has another value.

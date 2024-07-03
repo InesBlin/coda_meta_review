@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyExperimentalSetting,Experimental setting,4,Field,higher
-1,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyExperimentalSetting,Experimental setting,2,Lab,higher
-2,cooperation,experimentalSetting,Experimental setting,lab,Lab,online,Online,studyExperimentalSetting,Experimental setting,2,Lab,higher
-3,cooperation,experimentalSetting,Experimental setting,lab,Lab,online,Online,studyExperimentalSetting,Experimental setting,1,Online,higher
-4,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyExperimentalSetting,Experimental setting,5,Other,higher
+0,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+1,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+2,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+3,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+4,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher

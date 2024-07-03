@@ -1,5 +1,5 @@
-When comparing studies where Symmetry is na and studies where Symmetry is na, contributions is significantly higher when Repeated one-shot game is na.
-When comparing studies where Symmetry target is Access to the resource and studies where Symmetry target is Other, withdrawals is significantly lower when Experimental setting is Class.
-When comparing studies where Symmetry is na and studies where Symmetry is na, withdrawals is significantly higher when Recruitment method is Participant pool.
-When comparing studies where Symmetry is na and studies where Symmetry is na, withdrawals is significantly higher when One-shot vs repeated is One-shot.
-When comparing studies where Symmetry is na and studies where Symmetry is na, contributions is significantly higher when has country is COL.
+When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
