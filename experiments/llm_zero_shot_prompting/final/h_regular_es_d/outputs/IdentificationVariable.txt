@@ -1,5 +1,5 @@
+Cooperation  is significantly higher when Entitativity level is Low compared to when Entitativity level is High.
 Cooperation  is significantly higher when Knowledge of group membership is Common compared to when Knowledge of group membership is Unilateral.
-Cooperation  is significantly higher when Knowledge of group membership is Common compared to when Knowledge of group membership is Unknown.
 Cooperation  is significantly higher when Knowledge of group membership is Unilateral compared to when Knowledge of group membership is Unknown.
-Cooperation  is significantly lower when Partner's group membership is Stranger compared to when Partner's group membership is Ingroup.
 Cooperation  is significantly higher when Partner's group membership is Stranger compared to when Partner's group membership is Outgroup.
+Cooperation  is significantly higher when Identification level is High compared to when Identification level is Low.

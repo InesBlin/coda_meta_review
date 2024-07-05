@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,cooperation,rewardTreatment,Reward treatment,1,1,-1,-1,higher
-1,cooperation,rewardAgent,Reward agent,peer,Peer,experimenter,Experimenter,lower
-2,cooperation,rewardTreatment,Reward treatment,1,1,0,0,higher
-3,contributions,rewardTreatment,Reward treatment,1,1,0,0,lower
-4,contributions,rewardTreatment,Reward treatment,-1,-1,0,0,higher
+1,cooperation,rewardTreatment,Reward treatment,1,1,0,0,higher
+2,cooperation,rewardAgent,Reward agent,peer,Peer,experimenter,Experimenter,higher
+3,contributions,rewardRule,Reward rule,contribution-based,Contribution-based,rank-based,Rank-based,higher
+4,contributions,rewardTreatment,Reward treatment,1,1,0,0,higher

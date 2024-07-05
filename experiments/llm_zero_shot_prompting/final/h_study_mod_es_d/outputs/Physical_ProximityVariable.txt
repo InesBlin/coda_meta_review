@@ -1,5 +1,5 @@
-When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Matching is Stranger compared to when Matching has another value.
-When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly lower when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Published is Published Article compared to when Published has another value.
-When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly lower when Student sample is na compared to when Student sample has another value.
-When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when Student sample is true compared to when Student sample has another value.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly lower when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Physical proximity is Low and studies where Physical proximity is High, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.

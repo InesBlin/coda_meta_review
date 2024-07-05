@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,monitoringCost,Monitoring cost,low,Low,high,High,studySymmetric,Symmetry,true,na,higher
-1,contributions,monitoringCost,Monitoring cost,low,Low,high,High,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
-2,contributions,monitoringCost,Monitoring cost,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher
-3,contributions,monitoringCost,Monitoring cost,low,Low,high,High,sanction,Sanction,true,na,higher
-4,contributions,monitoringCost,Monitoring cost,low,Low,high,High,yearSource,Source of year of data collection,1,Conducted,higher
+0,cooperation,costlyMonitoring,Costly monitoring,False,False,True,True,yearSource,Source of year of data collection,4,Submitted,higher
+1,cooperation,monitoringCost,Monitoring cost,medium,Medium,high,High,studyGameIncentive,Game incentive,1,Monetary,higher
+2,cooperation,costlyMonitoring,Costly monitoring,False,False,True,True,studySymmetric,Symmetry,true,true,higher
+3,contributions,monitoringCost,Monitoring cost,low,Low,high,High,studyDilemmaType,Game type,2,Public Goods Game,higher
+4,contributions,monitoringCost,Monitoring cost,low,Low,medium,Medium,studyRealPartner,Real partner,1,Real,higher

@@ -1,5 +1,5 @@
-When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated has another value.
-When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Trial of cooperation is All trials compared to when Trial of cooperation has another value.
-When comparing studies where Synchrony is na and studies where Synchrony is na, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Synchrony is True and studies where Synchrony is False, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
+When comparing studies where Synchrony is True and studies where Synchrony is False, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
+When comparing studies where Synchrony is True and studies where Synchrony is False, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.
+When comparing studies where Synchrony is True and studies where Synchrony is False, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.
+When comparing studies where Synchrony is True and studies where Synchrony is False, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.

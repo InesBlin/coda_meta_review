@@ -1,5 +1,5 @@
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Natural experiment compared to when Experimental setting has another value.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab in the field compared to when Experimental setting has another value.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Field compared to when Experimental setting has another value.
-When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Student sample is true compared to when Student sample has another value.
+When comparing studies where Age cohort is old and studies where Age cohort is young, cooperation is significantly higher when Acquaintance is Acquaintance compared to when Acquaintance has another value.

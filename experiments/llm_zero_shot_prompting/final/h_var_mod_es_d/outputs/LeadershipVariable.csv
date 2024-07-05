@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,leaderCharacteristic,Leader's characteristic,weak,Weak,strong,Strong,higher
-1,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,leadershipEndogenous,Endogenous leadership,exogenous,Exogenous,endogenous,Endogenous,higher
-2,contributions,leadershipAssignmentRule,Leadership assignment rule,volunteer,Volunteer,random_appointment,Random Appointment,leadershipEndogenous,Endogenous leadership,endogenous,Endogenous,exogenous,Exogenous,higher
-3,contributions,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,random_appointment,Random Appointment,leadershipRole,Leadership role,leader,Leader ,follower,Follower,higher
-4,contributions,leadershipEndogenous,Endogenous leadership,exogenous,Exogenous,endogenous,Endogenous,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,elected,Elected,higher
+0,contributions,leadershipAssignmentRule,Leadership assignment rule,volunteer,Volunteer,other,Other,leadershipEndogenous,Endogenous leadership,exogenous,Exogenous,endogenous,Endogenous,higher
+1,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,leaderCharacteristic,Leader's characteristic,weak,Weak,strong,Strong,higher
+2,contributions,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,random_appointment,Random Appointment,leadershipRole,Leadership role,leader,Leader ,follower,Follower,higher
+3,contributions,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,elected,Elected,leadershipEndogenous,Endogenous leadership,exogenous,Exogenous,endogenous,Endogenous,higher
+4,contributions,leadershipEndogenous,Endogenous leadership,exogenous,Exogenous,endogenous,Endogenous,leadershipAssignmentRule,Leadership assignment rule,volunteer,Volunteer,other,Other,lower

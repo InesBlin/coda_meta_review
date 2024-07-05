@@ -1,1 +1,1 @@
-When comparing studies where Endogenous position is na and studies where Endogenous position is na, cooperation from studies involving Simultaneous as Sequentiality is significantly higher than cooperation from studies involving based on Sequential turn-taking as Sequentiality.
+When comparing studies where Endogenous position is True and studies where Endogenous position is False, cooperation from studies involving Simultaneous as Sequentiality is significantly higher than cooperation from studies involving based on Sequential turn-taking as Sequentiality.

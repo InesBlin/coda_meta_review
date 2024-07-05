@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyShowUpFee,Show-up fee,3,Non-monetary,higher
-1,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyGameIncentive,Game incentive,1,Monetary,higher
-2,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyMatchingProtocol,Matching,2,Partner,higher
-3,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,yearSource,Source of year of data collection,4,Submitted,higher
-4,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyDilemmaType,Game type,3,Resource Dilemma,higher
+0,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyRealPartner,Real partner,1,Real,higher
+1,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyTrialOfCooperation,Trial of cooperation,1,All trials,higher
+2,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyGameIncentive,Game incentive,1,Monetary,higher
+3,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyExperimentalSetting,Experimental setting,2,Lab,higher
+4,withdrawals,partnerReal,Real partner,real,Real,hypothetical,Hypothetical,studyMatchingProtocol,Matching,2,Partner,higher

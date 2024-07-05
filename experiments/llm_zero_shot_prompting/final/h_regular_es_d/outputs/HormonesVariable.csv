@@ -1,6 +1,5 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,hormoneLevel,Hormone level,low,Low,high,High,lower
-1,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,vasopressin,Vasopressin,higher
+0,cooperation,hormoneLevel,Hormone level,low,Low,high,High,higher
+1,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,vasopressin,Vasopressin,lower
 2,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,placebo,Placebo,higher
-3,cooperation,hormoneLevel,Hormone level,medium,Medium,high,High,higher
-4,cooperation,hormoneLevel,Hormone level,low,Low,medium,Medium,higher
+3,cooperation,hormoneLevel,Hormone level,medium,Medium,high,High,lower

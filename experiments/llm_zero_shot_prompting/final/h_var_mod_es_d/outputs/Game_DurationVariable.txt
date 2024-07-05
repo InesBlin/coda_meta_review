@@ -1,1 +1,1 @@
-When comparing studies where Known endgame is na and studies where Known endgame is na, cooperation from studies involving High as Continuation probability level is significantly higher than cooperation from studies involving based on Low as Continuation probability level.
+When comparing studies where Known endgame is True and studies where Known endgame is False, cooperation from studies involving High as Continuation probability level is significantly higher than cooperation from studies involving based on Low as Continuation probability level.

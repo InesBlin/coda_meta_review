@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,cooperation,groupSizeLevel,Group size level,low,Low,high,High,higher
-1,cooperation,groupSizeLevel,Group size level,medium,Medium,high,High,higher
-2,contributions,groupSizeLevel,Group size level,low,Low,high,High,higher
-3,cooperation,groupSizeLevel,Group size level,low,Low,medium,Medium,higher
-4,contributions,groupSizeLevel,Group size level,low,Low,medium,Medium,higher
+1,contributions,groupSizeLevel,Group size level,low,Low,high,High,higher
+2,withdrawals,groupSizeLevel,Group size level,low,Low,high,High,higher
+3,cooperation,groupSizeLevel,Group size level,medium,Medium,high,High,higher
+4,cooperation,groupSizeLevel,Group size level,low,Low,medium,Medium,higher

@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,heterogeneousGender,Heterogeneous gender,False,na,True,na,studyRealPartner,Real partner,1,Real,higher
-1,cooperation,heterogeneousGender,Heterogeneous gender,False,na,True,na,studyRealPartner,Real partner,1,Real,higher
-2,cooperation,heterogeneousGender,Heterogeneous gender,False,na,True,na,studyRealPartner,Real partner,1,Real,higher
-3,cooperation,heterogeneousGender,Heterogeneous gender,False,na,True,na,studyRealPartner,Real partner,1,Real,higher
-4,cooperation,heterogeneousGender,Heterogeneous gender,False,na,True,na,studyRealPartner,Real partner,1,Real,higher
+0,cooperation,heterogeneousGender,Heterogeneous gender,false,false,true,true,studyGameIncentive,Game incentive,3,Non-monetary,Higher
+1,cooperation,heterogeneousGender,Heterogeneous gender,false,false,true,true,studyGameIncentive,Game incentive,1,Monetary,Higher
+2,cooperation,partnersGenderKnownInGame,Partner's gender is known,false,false,true,true,studyGameIncentive,Game incentive,1,Monetary,Higher
+3,cooperation,gender,Gender,female,Female,male,Male,studyGameIncentive,Game incentive,4,Non-monetary lottery,Higher
+4,cooperation,gender,Gender,female,Female,male,Male,studyGameIncentive,Game incentive,2,Monetary lottery,Higher

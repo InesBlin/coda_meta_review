@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,studyKnownEndgame,Known endgame,true,na,higher
-1,contributions,leadershipAssignmentRule,Leadership assignment rule,fixed,Fixed ,volunteer,Volunteer,studyMatchingProtocol,Matching,2,Partner,higher
-2,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,country,has country,DEU,DEU,higher
-3,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,studyExperimentalSetting,Experimental setting,2,Lab,higher
-4,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,authority,Authority,studyRealPartner,Real partner,1,Real,higher
+0,contributions,leadershipAssignmentRule,Leadership assignment rule,fixed,Fixed ,random_appointment,Random Appointment,studyContinuousPGG,Continuous vs step-level public goods,1,Continuous,higher
+1,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,sanction,Sanction,true,true,higher
+2,contributions,leadershipAssignmentRule,Leadership assignment rule,authority,Authority,elected,Elected,studySymmetric,Symmetry,true,true,higher
+3,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,authority,Authority,studyKnownEndgame,Known endgame,true,true,higher
+4,contributions,leadershipAssignmentRule,Leadership assignment rule,fixed,Fixed ,volunteer,Volunteer,studyRealPartner,Real partner,1,Real,higher

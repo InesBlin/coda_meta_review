@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,individualDifferenceLevel,Individual difference level,high,High,low,Low,studyAcquaintance,Acquaintance,0,Strangers,higher
-1,cooperation,sVOType,SVO type,prosocial,Prosocial,proself,Proself,studyOneShot,One-shot vs repeated,1,One-shot,higher
-2,cooperation,psychopathology,Psychopathology,non-suicidal_self-injury,Non-suicidal self-injury,suicide_attempt,Suicide attempt,studyMatchingProtocol,Matching,2,Partner,lower
-3,cooperation,individualDifferenceLevel,Individual difference level,high,High,low,Low,studyGameIncentive,Game incentive,0,Hypothetical,higher
-4,cooperation,sVOType,SVO type,prosocial,Prosocial,competitor,Competitor,studyExperimentalSetting,Experimental setting,2,Lab,higher
+0,cooperation,sVOType,SVO type,prosocial,Prosocial,competitor,Competitor,studyGameIncentive,Game incentive,1,Monetary,higher
+1,cooperation,individualDifferenceLevel,Individual difference level,low,Low,medium,Medium,studyGameIncentive,Game incentive,1,Monetary,higher
+2,cooperation,sVOType,SVO type,individualist,Individualist,prosocial,Prosocial,studyShowUpFee,Show-up fee,2,Course credit,lower
+3,contributions,sVOType,SVO type,prosocial,Prosocial,proself,Proself,studyAcquaintance,Acquaintance,2,Possible Acquaintance,higher
+4,cooperation,sVOType,SVO type,prosocial,Prosocial,competitor,Competitor,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher

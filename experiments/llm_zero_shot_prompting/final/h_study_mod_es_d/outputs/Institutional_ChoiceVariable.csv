@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,0,Strangers,higher
-1,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,1,Acquaintance,higher
+0,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,deception,Deception,true,true,higher
+1,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyRealPartner,Real partner,1,Real,higher
 2,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyGameIncentive,Game incentive,1,Monetary,higher
 3,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyOneShot,One-shot vs repeated,1,One-shot,higher
-4,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
+4,cooperation,institutionalChoice,Institutional choice,endogenous,Endogenous,exogenous,Exogenous,studyAcquaintance,Acquaintance,1,Acquaintance,higher

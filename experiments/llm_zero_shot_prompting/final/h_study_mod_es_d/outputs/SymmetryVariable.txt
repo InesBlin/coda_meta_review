@@ -1,5 +1,5 @@
-When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
-When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
-When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
-When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
-When comparing studies where Symmetry is na and studies where Symmetry is na, cooperation is significantly higher when Symmetry is na compared to when Symmetry has another value.
+When comparing studies where Symmetry is True and studies where Symmetry is False, cooperation is significantly Higher when Academic discipline is Sociology compared to when Academic discipline has another value.
+When comparing studies where Symmetry is True and studies where Symmetry is False, cooperation is significantly Higher when Academic discipline is Psychology compared to when Academic discipline has another value.
+When comparing studies where Symmetry is True and studies where Symmetry is False, cooperation is significantly Higher when Academic discipline is Economics compared to when Academic discipline has another value.
+When comparing studies where Symmetry is True and studies where Symmetry is False, cooperation is significantly Higher when Academic discipline is Other compared to when Academic discipline has another value.
+When comparing studies where Symmetry is True and studies where Symmetry is False, cooperation is significantly Higher when Academic discipline is Mixed compared to when Academic discipline has another value.

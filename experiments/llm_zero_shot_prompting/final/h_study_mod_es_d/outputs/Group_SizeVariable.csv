@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher
-1,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyShowUpFee,Show-up fee,1,Paid,higher
-2,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyExperimentalSetting,Experimental setting,1,Online,higher
-3,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyOneShot,One-shot vs repeated,0,Repeated,higher
-4,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,1,Economics,higher
+0,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyGameIncentive,Game incentive,0,Hypothetical,higher
+1,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher
+2,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyGameIncentive,Game incentive,2,Monetary lottery,higher
+3,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyGameIncentive,Game incentive,3,Non-monetary,higher
+4,cooperation,groupSizeLevel,Group size level,low,Low,high,High,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher

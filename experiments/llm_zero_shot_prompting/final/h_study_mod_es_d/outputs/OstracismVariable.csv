@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,ostracism,Ostracism,False,na,True,na,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-1,cooperation,ostracism,Ostracism,False,na,True,na,studyGameIncentive,Game incentive,0,Hypothetical,lower
-2,cooperation,ostracism,Ostracism,False,na,True,na,studyAcquaintance,Acquaintance,0,Strangers,higher
-3,cooperation,ostracism,Ostracism,False,na,True,na,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,lower
-4,cooperation,ostracism,Ostracism,False,na,True,na,studyOneShot,One-shot vs repeated,0,Repeated,higher
+0,contributions,ostracism,Ostracism,False,False,True,True,studyContinuousPGG,Continuous vs step-level public goods,1,Continuous,higher
+1,cooperation,ostracism,Ostracism,False,False,True,True,studyExperimentalSetting,Experimental setting,2,Lab,higher
+2,contributions,ostracism,Ostracism,False,False,True,True,studyAcquaintance,Acquaintance,0,Strangers,lower
+3,contributions,ostracism,Ostracism,False,False,True,True,studyDilemmaType,Game type,2,Public Goods Game,higher
+4,contributions,ostracism,Ostracism,False,False,True,True,studyKnownEndgame,Known endgame,true,true,higher

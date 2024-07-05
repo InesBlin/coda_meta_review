@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,studySymmetric,Symmetry,true,na,higher
-1,contributions,punishmentAgent,Punishment agent,peer,Peer,institution,Institution,publicationStatus,Published,1,Published Article,higher
-2,contributions,punishmentAgent,Punishment agent,peer,Peer,network,Network,studyRealPartner,Real partner,1,Real,higher
-3,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,studyRealPartner,Real partner,1,Real,higher
-4,contributions,punishmentAgent,Punishment agent,peer,Peer,institution,Institution,studySymmetric,Symmetry,true,na,higher
+0,contributions,punishmentTreatment,Punishment treatment,1,1,-1,-1,studyRealPartner,Real partner,2,Deception,higher
+1,contributions,punishmentTreatment,Punishment treatment,1,1,-1,-1,studyKnownEndgame,Known endgame,true,true,higher
+2,contributions,punishmentTreatment,Punishment treatment,1,1,-1,-1,studyStudentSample,Student sample,true,true,higher
+3,contributions,punishmentTreatment,Punishment treatment,1,1,-1,-1,studyOneShotRepeated,Repeated one-shot game,true,true,higher
+4,contributions,punishmentTreatment,Punishment treatment,1,1,-1,-1,studyGameIncentive,Game incentive,1,Monetary,higher

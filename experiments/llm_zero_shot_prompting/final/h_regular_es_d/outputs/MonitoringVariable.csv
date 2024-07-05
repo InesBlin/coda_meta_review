@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,cooperation,monitoringCost,Monitoring cost,medium,Medium,high,High,higher
-1,contributions,monitoringCost,Monitoring cost,medium,Medium,high,High,higher
-2,contributions,monitoringCost,Monitoring cost,low,Low,high,High,higher
+1,contributions,monitoringCost,Monitoring cost,low,Low,high,High,higher
+2,contributions,monitoringCost,Monitoring cost,medium,Medium,high,High,higher
 3,contributions,monitoringCost,Monitoring cost,low,Low,medium,Medium,higher
-4,cooperation,costlyMonitoring,Costly monitoring,False,na,True,na,higher
+4,cooperation,costlyMonitoring,Costly monitoring,False,False,True,True,higher

@@ -1,5 +1,5 @@
 When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Discussion is Absent compared to when Discussion has another value.
 When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Sanction is false compared to when Sanction has another value.
+When comparing studies where Experimental setting is Lab and studies where Experimental setting is Field, cooperation is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type has another value.
