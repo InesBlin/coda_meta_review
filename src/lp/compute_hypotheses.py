@@ -130,9 +130,11 @@ class HypothesesBuilder:
             observations = observations[observations[col].notna()]
             observations = observations[~observations[col].str.contains(".well-known", na=False)]
         
-        # Keeping only categorical moderators for now
+        # Keeping only categorical moderators/treatments for now
         if "mod" in observations.columns:
             observations = observations[~observations["mod"].isin(self.mod_filter_out)]
+        
+        observations = observations[~observations["iv"].isin(self.mod_filter_out)]
 
         return observations
 
@@ -280,7 +282,7 @@ class HypothesesBuilder:
         ).set_index("n")['nl'].to_dict()
         for col in ["iv", "cat_t1", "cat_t2", "mod", "mod_t1", "mod_t2", "mod_val"]:
             if col in obs.columns:
-                obs[f"{col}_label"] = obs[col].apply(lambda x: labels.get(x, "na"))
+                obs[f"{col}_label"] = obs[col].apply(lambda x: labels.get(x, str(x).split('/')[-1]))
         return obs
 
     def __call__(self, sparql_endpoint, observations: Union[str, None] = None,
