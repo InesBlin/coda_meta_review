@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,higher
+0,contributions,resourceFixed,Fixed resource,True,True,False,False,higher
 1,withdrawals,resourceSizeLevel,Resource size level,high,High,medium,Medium,higher
-2,withdrawals,resourceSizeLevel,Resource size level,medium,Medium,low,Low,higher
-3,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,higher
+2,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,medium,Medium,higher
+3,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,higher
 4,withdrawals,resourceSizeLevel,Resource size level,low,Low,high,High,lower

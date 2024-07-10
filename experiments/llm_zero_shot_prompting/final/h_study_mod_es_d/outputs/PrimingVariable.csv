@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyRealPartner,Real partner,2,Deception,higher
-1,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,yearSource,Source of year of data collection,5,Published,higher
-2,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyExperimentalSetting,Experimental setting,1,Online,higher
-3,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyGameIncentive,Game incentive,2,Monetary lottery,higher
-4,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyRealPartner,Real partner,1,Real,higher
+0,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyExperimentalSetting,Experimental setting,2,Lab,higher
+1,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyMatchingProtocol,Matching,2,Partner,higher
+2,cooperation,primingConcept,Primed construct,cooperation,Cooperation,neutral,Neutral,studyAcquaintance,Acquaintance,0,Strangers,lower
+3,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyGameIncentive,Game incentive,1,Monetary,higher
+4,cooperation,primingConcept,Primed construct,competition,Competition,cooperation,Cooperation,studyRealPartner,Real partner,2,Deception,higher

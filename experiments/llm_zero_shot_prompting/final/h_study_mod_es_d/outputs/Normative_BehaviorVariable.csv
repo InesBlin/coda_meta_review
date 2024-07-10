@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyKnownEndgame,Known endgame,true,na,higher
-1,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,medium_cooperation,Medium Cooperation,studyRealPartner,Real partner,1,Real,higher
-2,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyMatchingProtocol,Matching,1,Stranger,higher
-3,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyExperimentalSetting,Experimental setting,4,Field,higher
-4,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyStudentSample,Student sample,true,na,higher
+0,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyShowUpFee,Show-up fee,1,Paid,higher
+1,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyShowUpFee,Show-up fee,1,Paid,higher
+2,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyShowUpFee,Show-up fee,1,Paid,higher
+3,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyShowUpFee,Show-up fee,1,Paid,higher
+4,contributions,descriptiveNorm,Descriptive norm,low_cooperation,Low Cooperation,high_cooperation,High Cooperation,studyShowUpFee,Show-up fee,1,Paid,higher

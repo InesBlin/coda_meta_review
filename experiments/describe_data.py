@@ -53,12 +53,14 @@ for th, info in features.items():
     features[th] = info
 
 fig = px.histogram(pd.concat([info for _, info in features.items()]),
-                   x="grouped_feat", y="imp", color="th")
+                   x="grouped_feat", y="imp", color="th",
+                   color_discrete_sequence=px.colors.qualitative.Safe,
+                   opacity=0.75)
 fig.update_layout(barmode='group')
 fig.update_yaxes(range=[0, 1])
 fig.update_xaxes(title_text='Feature')
 fig.update_yaxes(title_text='Importance Feature')
-fig.write_image(f"./experiments/visualisation/feat_importance_classification.pdf", format='pdf')
+fig.write_image(f"./experiments/visualisations/feat_importance_classification.pdf", format='pdf')
 
 from src.lp.blank_node_lp import BNLinkPredictor
 folder_in = "data/hypotheses/anyburl"

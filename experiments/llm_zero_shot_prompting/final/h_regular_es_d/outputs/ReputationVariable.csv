@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,Absent,present,Present,higher
-1,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,cooperative,cooperative,noncooperative,noncooperative,higher
-2,cooperation,anonymityManipul,Anonymity manipulation,low,Low,medium,Medium,higher
-3,cooperation,anonymityManipul,Anonymity manipulation,high,High,medium,Medium,higher
-4,cooperation,anonymityManipul,Anonymity manipulation,low,Low,medium,Medium,higher
+0,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,cooperative,cooperative,noncooperative,noncooperative,higher
+1,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,cooperative,cooperative,absent,absent,higher
+2,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,lower
+3,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,cooperative,cooperative,absent,absent,higher
+4,cooperation,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,noncooperative,noncooperative,lower

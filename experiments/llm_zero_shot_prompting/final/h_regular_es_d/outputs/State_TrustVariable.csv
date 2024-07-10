@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,stateTrustLevel,State trust level,low,Low,medium,Medium,higher
-1,cooperation,stateTrustLevel,State trust level,low,Low,high,High,higher
-2,contributions,stateTrustLevel,State trust level,low,Low,medium,Medium,higher
-3,contributions,stateTrustLevel,State trust level,low,Low,high,High,higher
-4,contributions,stateTrustLevel,State trust level,medium,Medium,high,High,higher
+0,cooperation,stateTrustLevel,State trust level,low,Low,high,High,higher
+1,cooperation,stateTrustLevel,State trust level,low,Low,medium,Medium,higher
+2,cooperation,stateTrustLevel,State trust level,medium,Medium,high,High,higher
+3,contributions,stateTrustLevel,State trust level,low,Low,medium,Medium,higher
+4,contributions,stateTrustLevel,State trust level,low,Low,high,High,lower

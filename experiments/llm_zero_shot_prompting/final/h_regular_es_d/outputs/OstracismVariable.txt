@@ -1,4 +1,3 @@
-Cooperation  is significantly higher when Ostracism is na compared to when Ostracism is na.
-Cooperation  is significantly higher when Ostracism is na compared to when Ostracism is na.
-Cooperation  is significantly higher when Ostracism is na compared to when Ostracism is na.
-Cooperation  is significantly higher when Ostracism is na compared to when Ostracism is na.
+Cooperation  is significantly higher when Ostracism is False compared to when Ostracism is True.
+Cooperation  is significantly higher when Ostracism is False compared to when Ostracism is True.
+Cooperation  is significantly higher when Ostracism is False compared to when Ostracism is True.

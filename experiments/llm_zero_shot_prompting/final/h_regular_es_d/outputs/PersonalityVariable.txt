@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when SVO type is Individualist compared to when SVO type is Prosocial.
-Cooperation  is significantly higher when SVO type is Individualist compared to when SVO type is Competitor.
-Cooperation  is significantly higher when SVO type is Altruist compared to when SVO type is Prosocial.
-Cooperation  is significantly higher when SVO type is Prosocial compared to when SVO type is Competitor.
-Cooperation  is significantly higher when SVO type is Altruist compared to when SVO type is Unclassified.
+Cooperation  is significantly higher when Individual difference level is High compared to when Individual difference level is Low.
+Cooperation  is significantly higher when Individual difference level is High compared to when Individual difference level is Low.
+Cooperation  is significantly lower when Individual difference level is Medium compared to when Individual difference level is High.
+Cooperation  is significantly higher when Psychopathology is Borderline compared to when Psychopathology is Bipolar.
+Cooperation  is significantly higher when Psychopathology is Non-suicidal self-injury compared to when Psychopathology is Suicide attempt.

@@ -1,5 +1,5 @@
-When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Repeated one-shot game is true compared to when Repeated one-shot game has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Trial of cooperation is All trials compared to when Trial of cooperation has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Show-up fee is Paid compared to when Show-up fee has another value.
+When comparing studies where State trust level is Low and studies where State trust level is High, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.

@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Feedback target is Group compared to when Feedback target is Absent.
-Cooperation  is significantly higher when Feedback target is Network compared to when Feedback target is Individual.
-Cooperation  is significantly higher when Feedback target is Individual compared to when Feedback target is Absent.
-Cooperation  is significantly higher when Feedback target is Individual compared to when Feedback target is Group.
-Cooperation  is significantly higher when Feedback target is Individual compared to when Feedback target is Other.
+Cooperation  is significantly higher when Feedback content is Success compared to when Feedback content is Failure.
+Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Earnings.
+Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Others.
+Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Rank.
+Cooperation  is significantly higher when Feedback content is Success compared to when Feedback content is Failure.

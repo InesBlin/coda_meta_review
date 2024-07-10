@@ -1,5 +1,5 @@
 Cooperation  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
-Cooperation  is significantly lower when Partner's behavior level is High compared to when Partner's behavior level is Low.
-Cooperation  is significantly higher when Participant's behavior level is Medium compared to when Participant's behavior level is Low.
 Cooperation  is significantly higher when Participant's behavior level is Low compared to when Participant's behavior level is High.
+Cooperation  is significantly higher when Participant's behavior level is Medium compared to when Participant's behavior level is Low.
 Cooperation  is significantly higher when Participant's behavior level is High compared to when Participant's behavior level is Medium.
+Cooperation  is significantly higher when Partner's behavior level is High compared to when Partner's behavior level is Low.

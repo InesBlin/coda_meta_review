@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
 0,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
-1,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+1,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,discussion,Discussion,0,Absent,higher
 2,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
-3,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
-4,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyAcquaintance,Acquaintance,0,Strangers,higher
+3,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,sanction,Sanction,false,false,higher
+4,cooperation,experimentalSetting,Experimental setting,lab,Lab,field,Field,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher

@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Leader's characteristic is Weak compared to when Leader's characteristic is Strong.
-Cooperation  is significantly higher when Leader's characteristic is Male compared to when Leader's characteristic is Female.
-Cooperation  is significantly higher when Leader's characteristic is Outgroup compared to when Leader's characteristic is Ingroup.
-Cooperation  is significantly lower when Leadership assignment rule is Random Appointment compared to when Leadership assignment rule is Elected.
-Cooperation  is significantly lower when Leadership assignment rule is Random Appointment compared to when Leadership assignment rule is Rotating.
+Cooperation  is significantly higher when Leadership is True compared to when Leadership is False.
+Cooperation  is significantly higher when Leadership is True compared to when Leadership is False.
+Cooperation  is significantly higher when Leadership is True compared to when Leadership is False.
+Cooperation  is significantly higher when Leadership is True compared to when Leadership is False.
+Cooperation  is significantly higher when Leadership is True compared to when Leadership is False.

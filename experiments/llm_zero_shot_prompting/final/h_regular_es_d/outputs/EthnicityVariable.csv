@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,ethnicityUS,Ethnicity (US),white,White,other,Other,higher
-1,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,higher
-2,cooperation,heterogeneousEthnicity,Heterogeneous ethnicity,True,na,False,na,higher
-3,cooperation,heterogeneousEthnicity,Heterogeneous ethnicity,false,na,true,na,lower
-4,contributions,ethnicityUS,Ethnicity (US),white,White,black_or_african_american,Black or African American,higher
+0,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,higher
+1,cooperation,ethnicityUS,Ethnicity (US),white,White,black_or_african_american,Black or African American,higher
+2,cooperation,ethnicityUS,Ethnicity (US),white,White,other,Other,higher
+3,cooperation,heterogeneousEthnicity,Heterogeneous ethnicity,True,True,False,False,higher
+4,cooperation,heterogeneousEthnicity,Heterogeneous ethnicity,False,False,True,True,higher

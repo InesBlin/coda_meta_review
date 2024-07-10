@@ -1,5 +1,5 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,contributions,punishmentAgent,Punishment agent,leader,Leader,network,Network,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_leadership-by-example,Sequential leadership-by-example,higher
-1,contributions,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,punishmentAgent,Punishment agent,peer,Peer,other,Other,higher
-2,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,higher
-3,contributions,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_leadership-by-example,Sequential leadership-by-example,punishmentAgent,Punishment agent,leader,Leader,network,Network,lower
+0,contributions,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_leadership-by-example,Sequential leadership-by-example,punishmentAgent,Punishment agent,leader,Leader,network,Network,higher
+1,contributions,punishmentAgent,Punishment agent,leader,Leader,network,Network,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_leadership-by-example,Sequential leadership-by-example,lower
+2,contributions,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,punishmentAgent,Punishment agent,peer,Peer,other,Other,higher
+3,contributions,punishmentAgent,Punishment agent,peer,Peer,other,Other,punishmentSequential,Sequential punishment,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,lower

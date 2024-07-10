@@ -1,5 +1,5 @@
-When comparing studies where Endowment level is Medium and studies where Endowment level is Low, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where Endowment level is Medium and studies where Endowment level is Low, cooperation is significantly higher when Known endgame is na compared to when Known endgame has another value.
-When comparing studies where Endowment level is Medium and studies where Endowment level is High, cooperation is significantly lower when Continuous vs step-level public goods is Continuous compared to when Continuous vs step-level public goods has another value.
+When comparing studies where Endowment level is Low and studies where Endowment level is High, cooperation is significantly higher when Show-up fee is Paid compared to when Show-up fee has another value.
 When comparing studies where Endowment level is Medium and studies where Endowment level is Low, cooperation is significantly higher when Show-up fee is Paid compared to when Show-up fee has another value.
-When comparing studies where Endowment level is Medium and studies where Endowment level is High, cooperation is significantly lower when has country is ITA compared to when has country has another value.
+When comparing studies where Endowment level is Low and studies where Endowment level is High, cooperation is significantly lower when Real partner is Deception compared to when Real partner has another value.
+When comparing studies where Endowment level is Low and studies where Endowment level is High, cooperation is significantly lower when Real partner is Deception compared to when Real partner has another value.
+When comparing studies where Endowment level is Medium and studies where Endowment level is High, cooperation is significantly higher when Show-up fee is Paid compared to when Show-up fee has another value.

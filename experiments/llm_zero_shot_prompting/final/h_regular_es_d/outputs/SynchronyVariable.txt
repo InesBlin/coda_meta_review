@@ -1,2 +1,2 @@
-Cooperation  is significantly higher when Synchrony is na compared to when Synchrony is na.
-Cooperation  is significantly higher when Synchrony is na compared to when Synchrony is na.
+Cooperation  is significantly higher when Synchrony is True compared to when Synchrony is False.
+Cooperation  is significantly higher when Synchrony is True compared to when Synchrony is False.

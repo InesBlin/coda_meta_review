@@ -1,2 +1,4 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
 0,cooperation,religiousLevel,Religious exposure level,high,High,low,Low,higher
+1,withdrawals,religiousLevel,Religious exposure level,high,High,low,Low,higher
+2,contributions,religiousLevel,Religious exposure level,high,High,low,Low,higher

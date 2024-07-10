@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,academicGradeLevel,Academic grade level,junior,Junior,middle,Middle,higher
+0,cooperation,academicGradeLevel,Academic grade level,junior,Junior,senior,Senior,higher
 1,cooperation,academicGradeLevel,Academic grade level,middle,Middle,senior,Senior,higher
-2,cooperation,academicGradeLevel,Academic grade level,junior,Junior,senior,Senior,higher
-3,cooperation,academicDiscipline,Academic discipline,psychology,Psychology,others,Others,higher
+2,cooperation,student,Student sample,True,True,False,False,higher
+3,cooperation,student,Student sample,false,false,true,true,higher
 4,cooperation,academicDiscipline,Academic discipline,economics,Economics,others,Others,higher

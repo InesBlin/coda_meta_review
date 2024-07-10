@@ -2,4 +2,3 @@ Cooperation  is significantly higher when Matching is Stranger compared to when 
 Cooperation  is significantly higher when Matching is Stranger compared to when Matching is Partner's choice.
 Cooperation  is significantly lower when Matching is Partner compared to when Matching is Partner's choice.
 Cooperation  is significantly higher when Partner choice is Exogenous compared to when Partner choice is Endogenous.
-Cooperation  is significantly higher when Matching is Stranger compared to when Matching is Partner.

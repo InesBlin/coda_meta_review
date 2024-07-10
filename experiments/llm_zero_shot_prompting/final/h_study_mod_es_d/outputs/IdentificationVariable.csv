@@ -1,6 +1,6 @@
-dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,deception,Deception,false,na,higher
-cooperation,identificationLevel,Identification level,high,High,low,Low,studyStudentSample,Student sample,true,na,higher
-cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyOneShotRepeated,Repeated one-shot game,true,na,higher
-cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,sanction,Sanction,false,na,higher
-contributions,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyMatchingProtocol,Matching,2,Partner,higher
+,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
+0,cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyShowUpFee,Show-up fee,2,Course credit,higher
+1,cooperation,targetMembership,Partner's group membership,stranger,Stranger,outgroup,Outgroup,studyKnownEndgame,Known endgame,true,true,higher
+2,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unilateral,Unilateral,studyKnownEndgame,Known endgame,true,true,higher
+3,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,studyGameIncentive,Game incentive,1,Monetary,higher
+4,contributions,identificationLevel,Identification level,high,High,low,Low,studyDilemmaType,Game type,3,Resource Dilemma,higher

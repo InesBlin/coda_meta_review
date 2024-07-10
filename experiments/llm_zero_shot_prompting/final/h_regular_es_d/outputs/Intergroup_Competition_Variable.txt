@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Intergroup competition is Individual group compared to when Intergroup competition is Intergroup Prisoner's Dilemma.
-Cooperation  is significantly higher when Intergroup competition is Individual group compared to when Intergroup competition is intergroup competition.
 Cooperation  is significantly higher when Intergroup competition is intergroup comparison compared to when Intergroup competition is Individual group.
-Cooperation  is significantly higher when Intergroup competition is Individual group compared to when Intergroup competition is intergroup competition.
+Cooperation  is significantly higher when Intergroup competition is Individual group compared to when Intergroup competition is Intergroup Prisoner's Dilemma.
+Cooperation  is significantly lower when Intergroup competition is Individual group compared to when Intergroup competition is intergroup competition.
+Cooperation  is significantly lower when Intergroup competition is Individual group compared to when Intergroup competition is intergroup competition.
 Cooperation  is significantly higher when Intergroup competition is intergroup comparison compared to when Intergroup competition is Individual group.

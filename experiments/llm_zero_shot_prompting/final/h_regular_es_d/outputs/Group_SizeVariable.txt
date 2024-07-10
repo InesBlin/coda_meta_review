@@ -1,5 +1,5 @@
 Cooperation  is significantly higher when Group size level is Low compared to when Group size level is High.
-Cooperation  is significantly higher when Group size level is Medium compared to when Group size level is High.
 Cooperation  is significantly higher when Group size level is Low compared to when Group size level is High.
-Cooperation  is significantly higher when Group size level is Low compared to when Group size level is Medium.
+Cooperation  is significantly higher when Group size level is Low compared to when Group size level is High.
+Cooperation  is significantly higher when Group size level is Medium compared to when Group size level is High.
 Cooperation  is significantly higher when Group size level is Low compared to when Group size level is Medium.

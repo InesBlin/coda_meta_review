@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Endogenous position is na compared to when Endogenous position is na.
-Cooperation  is significantly higher when Endogenous position is na compared to when Endogenous position is na.
+Cooperation  is significantly higher when Endogenous position is true compared to when Endogenous position is false.
+Cooperation  is significantly lower when Endogenous position is False compared to when Endogenous position is True.
 Cooperation  is significantly higher when Sequentiality is Simultaneous compared to when Sequentiality is Sequential turn-taking.
 Cooperation  is significantly higher when Sequentiality is Simultaneous compared to when Sequentiality is Sequential turn-taking.
-Cooperation  is significantly lower when Sequentiality is Sequential leadership-by-example compared to when Sequentiality is Simultaneous.
+Cooperation  is significantly higher when Endogenous position is true compared to when Endogenous position is false.

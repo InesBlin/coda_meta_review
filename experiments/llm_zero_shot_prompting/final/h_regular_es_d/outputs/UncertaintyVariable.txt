@@ -1,5 +1,5 @@
 Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
 Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is Medium.
+Cooperation  is significantly lower when Uncertainty level is Medium compared to when Uncertainty level is High.
 Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is High.
-Cooperation  is significantly higher when Uncertainty level is Medium compared to when Uncertainty level is High.
-Cooperation  is significantly higher when Uncertainty target is Threshold compared to when Uncertainty target is Loss.
+Cooperation  is significantly higher when Uncertainty level is Low compared to when Uncertainty level is Medium.

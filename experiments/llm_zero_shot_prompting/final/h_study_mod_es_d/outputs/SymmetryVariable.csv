@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,symmetric,Symmetry,True,na,False,na,studySymmetric,Symmetry,True,na,higher
-1,cooperation,symmetric,Symmetry,True,na,False,na,studySymmetric,Symmetry,False,na,higher
-2,cooperation,symmetric,Symmetry,True,na,False,na,studySymmetric,Symmetry,True,na,higher
-3,cooperation,symmetric,Symmetry,True,na,False,na,studySymmetric,Symmetry,False,na,higher
-4,cooperation,symmetric,Symmetry,True,na,False,na,studySymmetric,Symmetry,True,na,higher
+0,cooperation,symmetric,Symmetry,True,True,False,False,studyAcademicDiscipline,Academic discipline,3,Sociology,Higher
+1,cooperation,symmetric,Symmetry,True,True,False,False,studyAcademicDiscipline,Academic discipline,2,Psychology,Higher
+2,cooperation,symmetric,Symmetry,True,True,False,False,studyAcademicDiscipline,Academic discipline,1,Economics,Higher
+3,cooperation,symmetric,Symmetry,True,True,False,False,studyAcademicDiscipline,Academic discipline,5,Other,Higher
+4,cooperation,symmetric,Symmetry,True,True,False,False,studyAcademicDiscipline,Academic discipline,4,Mixed,Higher

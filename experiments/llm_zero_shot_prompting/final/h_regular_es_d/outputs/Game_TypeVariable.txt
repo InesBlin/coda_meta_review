@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Stag Hunt.
 Cooperation  is significantly higher when Game type is Chicken Game compared to when Game type is Stag Hunt.
-Cooperation  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Other Game.
 Cooperation  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Chicken Game.
-Cooperation  is significantly lower when Game type is Other Game compared to when Game type is Resource Dilemma.
+Cooperation  is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type is Stag Hunt.
+Cooperation  is significantly higher when Game type is Continuous Public Goods Game compared to when Game type is Other Game.
+Cooperation  is significantly higher when Game type is Continuous Public Goods Game compared to when Game type is Resource Dilemma.

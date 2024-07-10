@@ -1,0 +1,49 @@
+Logfile
+~~~~~~~
+
+
+PREDICTION_TYPE = aRx
+SAFE_PREFIX_MODE = false
+PATH_TRAINING = ./coda/data/train_h_regular_es_d.csv
+PATH_TEST = ./coda/data/test_h_regular_es_d.csv
+PATH_VALID = ./coda/data/val_h_regular_es_d.csv
+PATH_OUTPUT = ./coda/regular/preds-|X|
+PATH_EXPLANATION = null
+PATH_RULES = ./coda/regular/rules-|10,50,100|
+PATH_RULES_BASE = 
+TOP_K_OUTPUT = 100
+UNSEEN_NEGATIVE_EXAMPLES = 5
+UNSEEN_NEGATIVE_EXAMPLES_REFINE = 5
+THRESHOLD_CONFIDENCE = 1.0E-4
+DISCRIMINATION_BOUND = 10000
+TRIAL_SIZE = 1000000
+WORKER_THREADS = 7
+BEAM_SAMPLING_MAX_BODY_GROUNDINGS = 1000
+BEAM_SAMPLING_MAX_BODY_GROUNDING_ATTEMPTS = 100000
+BEAM_SAMPLING_MAX_REPETITIONS = 5
+READ_CYCLIC_RULES = 1
+READ_ACYCLIC1_RULES = 1
+READ_ACYCLIC2_RULES = 1
+READ_ZERO_RULES = 1
+READ_THRESHOLD_CONFIDENCE = 1.0E-4
+READ_THRESHOLD_CORRECT_PREDICTIONS = 2
+READ_THRESHOLD_MAX_RULE_LENGTH = 10.0
+AGGREGATION_TYPE = maxplus
+RULE_AC2_WEIGHT = 0.1
+RULE_ZERO_WEIGHT = 0.01
+
+rules:   ./coda/regular/rules-10
+output: ./coda/regular/preds-10
+finished in 1s (rule indexing and application, creation and storage of ranking).
+finished in 1s including all operations (+ loading triplesets,  + loading rules).
+
+rules:   ./coda/regular/rules-50
+output: ./coda/regular/preds-50
+finished in 1s (rule indexing and application, creation and storage of ranking).
+finished in 1s including all operations (+ loading triplesets,  + loading rules).
+
+rules:   ./coda/regular/rules-100
+output: ./coda/regular/preds-100
+finished in 1s (rule indexing and application, creation and storage of ranking).
+finished in 1s including all operations (+ loading triplesets,  + loading rules).
+

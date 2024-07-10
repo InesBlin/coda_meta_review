@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher
-1,cooperation,restricted,Restricted communication,false,na,true,na,studyOneShot,One-shot vs repeated,1,One-shot,lower
-2,contributions,communicationOccurrence,Communication occurrence,one-shot,One-shot,ongoing,Ongoing,discussion,Discussion,0,Absent,lower
-3,cooperation,communicationContent,Communication content,irrelevant,Irrelevant,promise,Promise,studyAcquaintance,Acquaintance,1,Acquaintance,higher
-4,cooperation,communicationReal,Real communication,True,na,False,na,country,has country,USA,USA,higher
+0,cooperation,communicationReal,Real communication,True,True,False,False,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
+1,cooperation,communicationTreatment,Communication treatment,True,True,False,False,studyStudentSample,Student sample,true,true,higher
+2,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,recruitmentMethod,Recruitment method,1,Participant pool,lower
+3,contributions,communicationType,Communication type,written,Written,verbal,Verbal,studyMatchingProtocol,Matching,2,Partner,higher
+4,contributions,communicationTreatment,Communication treatment,True,True,False,False,studyAcquaintance,Acquaintance,0,Strangers,higher

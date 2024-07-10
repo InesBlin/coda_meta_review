@@ -1,5 +1,5 @@
-When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated has another value.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Deception is true compared to when Deception has another value.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
 When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
-When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated has another value.
-When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
-When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when One-shot vs repeated is Repeated compared to when One-shot vs repeated has another value.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
+When comparing studies where Power level is High and studies where Power level is Low, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.

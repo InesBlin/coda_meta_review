@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,contributions,leaderCharacteristic,Leader's characteristic,weak,Weak,strong,Strong,higher
-1,contributions,leaderCharacteristic,Leader's characteristic,male,Male,female,Female,higher
-2,contributions,leaderCharacteristic,Leader's characteristic,outgroup,Outgroup,ingroup,Ingroup,higher
-3,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,elected,Elected,lower
-4,contributions,leadershipAssignmentRule,Leadership assignment rule,random_appointment,Random Appointment,rotating,Rotating,lower
+0,contributions,leadership,Leadership,True,True,False,False,higher
+1,withdrawals,leadership,Leadership,True,True,False,False,higher
+2,contributions,leadership,Leadership,True,True,False,False,higher
+3,withdrawutions,leadership,Leadership,True,True,False,False,higher
+4,withdrawals,leadership,Leadership,True,True,False,False,higher

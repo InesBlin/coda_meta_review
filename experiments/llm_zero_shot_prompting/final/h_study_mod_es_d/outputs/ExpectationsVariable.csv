@@ -1,6 +1,6 @@
 ,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,5,Other,higher
-1,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
-2,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-3,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
-4,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
+0,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher
+1,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyRealPartner,Real partner,2,Deception,higher
+2,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyKnownEndgame,Known endgame,true,true,higher
+3,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyKnownEndgame,Known endgame,true,true,higher
+4,cooperation,expectationsLevel,Expectations level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher

@@ -1,5 +1,5 @@
-Cooperation  is significantly higher when Partner perception is Trustworthy compared to when Partner perception is Untrustworthy.
-Cooperation  is significantly higher when Similarity level is High compared to when Similarity level is Low.
 Cooperation  is significantly higher when Partner perception level is high compared to when Partner perception level is control.
-Cooperation  is significantly higher when Partner perception level is low compared to when Partner perception level is control.
 Cooperation  is significantly higher when Partner perception level is high compared to when Partner perception level is low.
+Cooperation  is significantly higher when Partner perception is Trustworthy compared to when Partner perception is Untrustworthy.
+Cooperation  is significantly higher when Partner perception level is low compared to when Partner perception level is control.
+Cooperation  is significantly higher when Similarity level is High compared to when Similarity level is Low.
