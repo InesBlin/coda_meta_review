@@ -1,6 +1,7 @@
 {
     "template_folder": "meta_review/templates",
     "config": "meta_review/config.yaml",
+    "label_des": "./src/configs/node_label_description.csv",
     "structure": "meta_review/templates/structure.yaml",
     "references": "meta_review/templates/references.json",
     "data": "./data/observationData.csv",

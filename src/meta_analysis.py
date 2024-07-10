@@ -318,7 +318,6 @@ class MetaAnalysis:
         return {
             "data": data, "results_rma": results_rma, "refs": references
         }
-        return
 
 
 @click.command()
@@ -349,8 +348,10 @@ def main(input_data_path):
     output = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
                                 method="REML", vi="variance", mods=mods)
     results_rma, refs = output["results_rma"], output["refs"]
-    print(results_rma)
-    print(refs)
+    print(results_rma.keys())
+    print(results_rma['k'][0], type(results_rma['k']))
+    print(results_rma['b'][-1][0], type(results_rma['b']))
+    # print(refs)
 
 
 if __name__ == '__main__':

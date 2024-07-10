@@ -196,10 +196,19 @@
     <h3 style="color: green;">{{ coding_variables_ }}</h3>
     <div class="half_separator"></div><br>
     <span>{{ coding_variables }}</span><br><br>
+    {% block data_variables %}
+        {{ macros.table_container(data_variables_id, data_variables) }}
+    {% endblock %}
     <p><span>{{ coding_variables_custom }}</span></p>
     <h3 style="color: green;">{{ analytic_strategy_ }}</h3>
     <div class="half_separator"></div><br>
-    <p><span>We used {{ name_es }}'s {{ es_measure }} with {{ method_mv }} estimation.</span></p>
+    <p><span>All analyses were conducted using the metafor package (Viechtbauer, 2010) in R (RCoreTeam, 2019).</span></p>
+    <!-- P1 -->
+    <p><span>To test the hypothesis that "{{ hypothesis }}", we first estimated the overall effect size using a {{ type_method }} model with {{ method_mv }} estimation, along with bothnthe 95% confidence interval (CI) and the 90% prediction interval.</span></p>
+    <!-- P2 -->
+    <!-- to-do -->
+    <!-- P3 -->
+    <p><span>We then considered the variation in the effect size distribution by using several indicators of heterogeneity of variance (T, \( T^2 \), and \( I^2 \)). </span></p>
     <p><span>{{ analytic_strategy_custom }}</span></p>
 
     <div class="separator"></div>

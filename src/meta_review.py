@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 """
 Meta-review generation in Python
+
+
+Query to get labels+description
+
+```SPARQL
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT * WHERE {
+    ?node rdfs:label ?label ;
+          dct:description ?description .
+}
+```
 """
 import os
 import re
@@ -99,6 +111,7 @@ class MetaReview:
 
         self.data = config["data"]
         self.h = config["hypothesis"]
+        self.label_des = pd.read_csv(config["label_des"])
 
         if "config" in config:
             self.config = load_yaml_file(config["config"])
@@ -274,15 +287,49 @@ class MetaReview:
         if self.type_h == 'regular':
             return None
         return {self.h['type_mod']: [self.h['mod']]}
+    
+    def get_data_ma(self, output, var):
+        """ Retrieves data to display in the meta-analysis """
+        columns_info = {
+            "studyName": "ID", "citation": "Study", "overallN": "N",
+            "country": "Country", "effectSize": self.config["es_measure"],
+            "effectSizeLowerLimit": "Lower Bound CI", 
+            "effectSizeUpperLimit": "Upper Bound CI", 
+        }
+        columns = ["studyName", "citation", "overallN", "country"] + \
+            var + ["effectSize", "effectSizeLowerLimit", "effectSizeUpperLimit"]
+        output[columns].rename(columns=columns_info).to_csv("test.csv")
+        return output[columns].rename(columns=columns_info)
+
+    def get_variables(self):
+        """ Include any moderator + control variables """
+        res = []
+        if "mod" in self.h:
+            res.append(self.h["mod"])
+        if "control_variables" in self.config:
+            res += self.config["control_variables"]
+        return res
+    
+    def get_data_variables(self, var):
+        """ Retrieves description of variables """
+        filtered_df = self.label_des[self.label_des['node'].apply(lambda x: any(x.endswith(y) for y in var))]
+        filtered_df["node"] = filtered_df["node"].apply(lambda x: x.split("#")[-1].split("/")[-1])
+        return filtered_df
 
     def __call__(self, save_folder):
         """ Run meta-analysis and produce meta-review """
         output = self.pipeline(
             data=self.data, es_measure=self.config["es_measure"],
             method=self.config["method_mv"], mods=self.format_moderator())
+        type_method = "mixed effects" if self.config["method_mv"] in ["ML", "REML"] else "fixed effects"
+        variables = self.get_variables()
+        print(variables)
+        output["data"].to_csv("data.csv")
         ma_res, refs = output["results_rma"], output["refs"]
         es, pval, i2 = ma_res['b'][-1][0], ma_res["pval"][-1], ma_res['I2'][-1]
         ci_lb, ci_ub = ma_res["ci.lb"][-1], ma_res["ci.ub"][-1]
+        k = ma_res["k"][-1]
+
 
         type_es = "standardized mean difference" \
             if self.config["es_measure"] == "d" else "raw correlation coefficient"
@@ -292,12 +339,16 @@ class MetaReview:
 
         args = {
             "hypothesis": self.text_h, "name": self.h['giv1'], "info": self.h,
+            "type_method": type_method,
             "data_ma_shape": format(output["data"].shape[0], ','),
             "data_ma_es_nb": format(output["data"].shape[0], ','),
             "data_ma_study_nb": format(output["data"].study.unique().shape[0], ','),
             "data_ma_country_nb": format(output["data"].country.unique().shape[0], ','),
             "columns": self.columns, "data_ma_id": 'data_ma_id',
-            "data_ma": output["data"][self.columns], "ma_res_call": ma_res["call"],
+            "data_ma": self.get_data_ma(output=output["data"], var=variables),
+            "data_variables_id": "data_variables_id",
+            "data_variables": self.get_data_variables(var=variables),
+            "ma_res_call": ma_res["call"],
             "es": round(es, 2), "categorize_es": categorize_es(es),
             "pval": round(pval, 3), "categorize_pval": categorize_pval(pval),
             "conclude_hypothesis": conclude_h,

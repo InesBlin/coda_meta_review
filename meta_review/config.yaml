@@ -7,5 +7,5 @@ inclusion_criteria:
   metadata:
     lang: ["ENG"]
 es_measure: "d"
-coding_variables: "[ADD CODING VARIABLES (description of each variable)]"
-method_mv: "REML"
+coding_variables: "We used the following variables including possible moderators and control variables. Each variable comes with an ID, a label and a description."
+method_mv: "EE"
