@@ -27,6 +27,21 @@ from jinja2 import Environment, FileSystemLoader
 import plotly.express as px
 from src.pipeline import Pipeline
 
+NE_HYPOTHESES = {
+    "regular": "There is no significant difference in cooperation when comparing studies where {siv1} is {sivv1} and studies where {siv2} is {sivv2}.",
+    "var_mod": "When comparing studies where {siv1} is {sivv1} and studies where {siv2} is {sivv2}, there is no significant differences in cooperation between studies involving {mod1} as {mod} and studies involving {mod2} as {mod}.",
+    "study_mod": "When comparing studies where {siv1} is {sivv1} and studies where {siv2} is {sivv2}, there is no significant difference in cooperation when {mod} is {mod1} compared to when {mod} has another value.",
+}
+
+def generate_hypothesis(h, th):
+    """ Generate human-readable hypothesis """
+    template = NE_HYPOTHESES[th]
+    pattern = r'\{(.*?)\}'
+    matches = re.findall(pattern, template)
+    for col in matches:
+        template = template.replace("{" + col + "}", h[col])
+    return template.capitalize()
+
 
 def custom_enumerate(iterable, start=1):
     """ Custom enumerate for HTML """
@@ -49,11 +64,11 @@ def load_json_file(filename):
 
 def categorize_es(x):
     """ categorize effect size """
-    if abs(x) >= 0.5:
+    if abs(x) >= 0.8:
         return "large"
-    if abs(x) >= 0.2:
-        return "small"
-    return "null"
+    if abs(x) >= 0.5:
+        return "medium"
+    return "small"
 
 
 def categorize_pval(x):
@@ -92,9 +107,9 @@ class MetaReview:
     
     Hypothesis is in dictionary format
     1-, 2-, and 3- all contain `siv1`, `sivv1`, `siv2` and `sivv2` as keys 
-    1- contains `reg_qualifier` as key
-    2- contains `num_qualifier`, `mod_qualifier`, `mod`,  `type_mod` as keys
-    3- contains `mod1`, `mod`, `cat_qualifier`, `mod2`, `type_mod` as keys
+    1- contains `'comparative'` as key
+    2- contains `'comparative'`, `mod_qualifier`, `mod`,  `type_mod` as keys
+    3- contains `mod1`, `mod`, `comparative`, `mod2`, `type_mod` as keys
 
     [NB]: for now focus on 1-
     """
@@ -126,8 +141,6 @@ class MetaReview:
         self.id_ref_to_nb = {x["id"]: i+1 for i, x in enumerate(self.references)}
         self.config = {k: replace_cite_id(v, self.id_ref_to_nb) \
             if isinstance(v, str) else v for k, v in self.config.items()}
-        self.structure = load_yaml_file(config["structure"])
-        self.key_qualifier = [x for x in self.h.keys() if x.endswith("qualifier")][0]
         self.type_h = self.get_type_hypothesis()
 
         self.h_template = {
@@ -160,24 +173,24 @@ class MetaReview:
 
     def get_type_hypothesis(self):
         """ From hypothesis dict, get the type of hypothesis """
-        if "reg_qualifier" in self.h:
-            return "regular"
-        if "num_qualifier" in self.h:
-            return "numerical_moderator"
-        return "categorical_moderator"
+        if "mod_val" in self.h:
+            return "study_mod"
+        if "mod1" in self.h:
+            return "var_mod"
+        return "regular"
 
     def get_text_hypothesis(self, templates, hyp):
         """ Input = template to use + hypothesis, Output = text, human-readable hypothesis """
         if self.type_h == "regular":
-            return templates["regular"].format(hyp['reg_qualifier'], hyp['siv1'],
+            return templates["regular"].format(hyp['comparative'], hyp['siv1'],
                 hyp['sivv1'], hyp['siv2'], hyp['sivv2'])
         if self.type_h == "numerical_moderator":
             return templates["numerical_moderator"].format(hyp['siv1'], hyp['sivv1'],
-                hyp['siv2'], hyp['sivv2'], hyp['num_qualifier'], hyp['mod_qualifier'],
+                hyp['siv2'], hyp['sivv2'], hyp['comparative'], hyp['mod_qualifier'],
                 hyp['mod'])
         # type_h == "categorical_moderator"
         return templates["categorical_moderator"].format(hyp['siv1'], hyp['sivv1'],
-            hyp['siv2'], hyp['sivv2'], hyp['mod1'], hyp['mod'], hyp['cat_qualifier'],
+            hyp['siv2'], hyp['sivv2'], hyp['mod1'], hyp['mod'], hyp['comparative'],
             hyp['mod2'], hyp['mod'])
 
     def get_comparison_hypothesis(self, type_h):
@@ -193,9 +206,9 @@ class MetaReview:
                 A more accurate hypothesis would be: {hyp}"""
 
         if type_h == "not_verified":
-            qualifier = "higher" if self.h[self.key_qualifier] == "lower" else "lower"
+            qualifier = "higher" if self.h['comparative'] == "lower" else "lower"
             hyp = deepcopy(self.h)
-            hyp[self.key_qualifier] = qualifier
+            hyp['comparative'] = qualifier
             return type_h, f"""
                 The hypothesis is incorrect.
                 The original hypothesis was: {self.text_h}
@@ -203,9 +216,9 @@ class MetaReview:
                 """
 
         if type_h == "not_verified_not_sig":
-            qualifier = "higher" if self.h[self.key_qualifier] == "lower" else "lower"
+            qualifier = "higher" if self.h['comparative'] == "lower" else "lower"
             hyp = deepcopy(self.h)
-            hyp[self.key_qualifier] = qualifier
+            hyp['comparative'] = qualifier
             hyp = self.get_text_hypothesis(templates=self.h_template_not_stat_sig, hyp=hyp)
             return type_h, f"""
                 The hypothesis seems to be incorrect but is not statistically significant.
@@ -218,28 +231,53 @@ class MetaReview:
         The original hypothesis was: "{self.text_h}"
         This hypothesis is not validated.
         """
+    
+    def get_pval_paragraph(self, pval):
+        """
+        From template: 
+        IF {$p} ≤ 0.05 This results indicates that Cooperation is significantly {higher/lower} when {siv1} is {sivv1} compared to when {siv2} is {sivv2}.
+        IF {$p} > 0.05 This results indicate no significant difference in cooperation when {siv1} is {sivv1} compared to when {siv2} is {sivv2}.
+        """
+        if pval <= 0.05:
+            return f"This result indicates that {self.text_h}"
+        return f"This result indicates that {generate_hypothesis(h=self.h, th=self.type_h)}"
+    
+    @staticmethod
+    def get_qep_paragraph(qep, k, qe):
+        """
+        From template:
+        IF $QEp ≤ 0.05: contained more variation than would be expected by chance, Q({$k-1}) = {$QE}, p = {$QEp}.
+        IF $QEp > 0.05: did not contain more variation than would be expected by chance, Q({$k-1}) = {$QE}, p = {$QEp}.
+        """
+        output = "Moreover, the overall effect size distribution "
+        if qep <= 0.05:
+            output += "contained more variation "
+        else:
+            output += "did not contain more variation "
+        
+        return output + f"than would be expected by chance, \(Q({k-1}) = {round(qe, 3)}\), \(p = {round(qep, 3)}\)."
 
     def verify_hypothesis(self, es, pval):
         """ Compare outcome to hypothesis """
         if es > 0.2:
-            if self.h[self.key_qualifier] == "higher":
+            if self.h['comparative'] == "higher":
                 if pval < 0.05:
                     return self.get_comparison_hypothesis(type_h="verified")
                 # pval >= 0.05
                 return self.get_comparison_hypothesis(type_h="verified_not_sig")
-            # self.h[self.key_qualifier] == 'lower'
+            # self.h['comparative'] == 'lower'
             if pval < 0.05:
                 return self.get_comparison_hypothesis(type_h="not_verified")
             # pval >= 0.05
             return self.get_comparison_hypothesis(type_h="not_verified_not_sig")
 
         if es < -0.2:
-            if self.h[self.key_qualifier] == "lower":
+            if self.h['comparative'] == "lower":
                 if pval < 0.05:
                     return self.get_comparison_hypothesis(type_h="verified")
                 # pval >= 0.05
                 return self.get_comparison_hypothesis(type_h="verified_not_sig")
-            # self.h[self.key_qualifier] == 'lower'
+            # self.h['comparative'] == 'lower'
             if pval < 0.05:
                 return self.get_comparison_hypothesis(type_h="not_verified")
             # pval >= 0.05
@@ -318,17 +356,19 @@ class MetaReview:
 
     def __call__(self, save_folder):
         """ Run meta-analysis and produce meta-review """
+        print(self.format_moderator())
         output = self.pipeline(
             data=self.data, es_measure=self.config["es_measure"],
             method=self.config["method_mv"], mods=self.format_moderator())
         type_method = "mixed effects" if self.config["method_mv"] in ["ML", "REML"] else "fixed effects"
         variables = self.get_variables()
-        print(variables)
         output["data"].to_csv("data.csv")
         ma_res, refs = output["results_rma"], output["refs"]
+        print(refs)
         es, pval, i2 = ma_res['b'][-1][0], ma_res["pval"][-1], ma_res['I2'][-1]
         ci_lb, ci_ub = ma_res["ci.lb"][-1], ma_res["ci.ub"][-1]
-        k = ma_res["k"][-1]
+        k, tau2, qep = ma_res["k"][-1], ma_res['tau2'][-1], ma_res['QEp'][-1]
+        qe = ma_res['QE'][-1]
 
 
         type_es = "standardized mean difference" \
@@ -336,7 +376,7 @@ class MetaReview:
         name_es = "Cohen" if self.config["es_measure"] == "d" else "Pearson"
         ex_mod_read = [x for x in ma_res['df_info'].info_treatment.values if x != 'intrcpt'][0]
         type_h, conclude_h = self.verify_hypothesis(es=es, pval=pval)
-
+        print(self.get_qep_paragraph(qep, k, qe))
         args = {
             "hypothesis": self.text_h, "name": self.h['giv1'], "info": self.h,
             "type_method": type_method,
@@ -348,24 +388,26 @@ class MetaReview:
             "data_ma": self.get_data_ma(output=output["data"], var=variables),
             "data_variables_id": "data_variables_id",
             "data_variables": self.get_data_variables(var=variables),
-            "ma_res_call": ma_res["call"],
+            "ma_res_call": ma_res["call"], "k": k,
             "es": round(es, 2), "categorize_es": categorize_es(es),
             "pval": round(pval, 3), "categorize_pval": categorize_pval(pval),
             "conclude_hypothesis": conclude_h,
             "references": self.references,
             "type_es": type_es, "name_es": name_es,
             "i2_description": self.get_i2_description(i2=i2),
-            "tau2_description": self.get_tau2_description(tau2=ma_res['tau2'][-1]),
+            "tau2_description": self.get_tau2_description(tau2=tau2),
             "ci_lb": round(ci_lb, 3), "ci_ub": round(ci_ub, 3),
             "df_info_id": "df_info_id", "df_info": ma_res['df_info'],
             "type_h": self.type_h, "mod": self.h.get('mod'),
             "type_mod": self.type_h.split('_', maxsplit=1)[0],
             "ref_mod": refs[self.h.get('mod')] if self.h.get('mod') else None,
             "ex_mod_read": ex_mod_read,
-            "ex_mod_val": ex_mod_read.replace(self.h.get('mod'), '') if self.h.get('mod') else None
+            "ex_mod_val": ex_mod_read.replace(self.h.get('mod'), '') if self.h.get('mod') else None,
+            "pval_paragraph": self.get_pval_paragraph(pval),
+            "T2": tau2, "T": math.sqrt(tau2), "I2": round(i2, 3),
+            "qep_paragraph": self.get_qep_paragraph(qep, k, qe)
             }
         args.update(self.config)
-        args.update(self.structure)
         args.update(self.custom_content)
         args.update(self.get_figures(data=output["data"]))
 

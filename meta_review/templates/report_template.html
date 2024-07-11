@@ -136,11 +136,11 @@
     <h1>{{ title }}</h1>
     <h3>{{ authors }}</h3>
     <div class="separator"></div>
-    <h2 style="color: green;">{{ introduction_ }}</h2>
+    <h2 style="color: green;">1. Introduction</h2>
     <span>{{ introduction }}</span>
     <p><span>{{ introduction_custom }}</span></p>
     <div class="separator"></div>
-    <h2 style="color: green;">{{ hypothesis_ }}</h2>
+    <h2 style="color: green;">2. Hypothesis</h2>
     <p>The objective of this meta-review is to explore a starting hypothesis on differences in cooperation, and investigate whether the CoDa databank supports this hypothesis or not.</p>
     <p>Hypothesis explored: {{ hypothesis }}</p>
     <p>Treatment 1: GIV = {{ name }}, SIV = {{ info['siv1'] }}, SIVV = {{ info['sivv1'] }}</p>
@@ -150,9 +150,9 @@
     {% endif %}
     <p><span>{{ hypothesis_custom }}</span></p>
     <div class="separator"></div>
-    <h2 style="color: green;">{{ methods_ }}</h2><br>
+    <h2 style="color: green;">3. Methods</h2><br>
     <p><span>{{ methods_custom }}</span></p>
-    <h3 style="color: green;">{{ inclusion_criteria_ }}</h3>
+    <h3 style="color: green;">3.1. Inclusion Criteria</h3>
     <div class="half_separator"></div><br>
     <p><span>{{ inclusion_criteria_1 }}</span></p>
     <p><span>{{ inclusion_criteria_2 }}</span></p>
@@ -165,9 +165,9 @@
 
     <!-- Tab buttons -->
     <div class="tab-buttons">
-        <button class="tablink" onclick="openTab('fig_study_provenance')">{{ study_provenance_ }}</button>
-        <button class="tablink" onclick="openTab('fig_study_year')">{{ study_year_ }}</button>
-        <button class="tablink" onclick="openTab('table_study_data')">{{ study_data_ }}</button>
+        <button class="tablink" onclick="openTab('fig_study_provenance')">Study Provenance</button>
+        <button class="tablink" onclick="openTab('fig_study_year')">Study Year</button>
+        <button class="tablink" onclick="openTab('table_study_data')">Study Data</button>
     </div>
 
     <!-- Tab content -->
@@ -189,18 +189,18 @@
     </div>
     <br><br>
     <p><span>{{ inclusion_criteria_custom }}</span></p>
-    <h3 style="color: green;">{{ coding_effect_sizes_ }}</h3>
+    <h3 style="color: green;">3.2. Coding of effect sizes</h3>
     <div class="half_separator"></div><br>
     <p><span>To capture {{ type_es  }}, we used {{ name_es }}'s {{ es_measure }}.</span></p>
     <p><span>{{ coding_effect_sizes_custom }}</span></p>
-    <h3 style="color: green;">{{ coding_variables_ }}</h3>
+    <h3 style="color: green;">3.3. Coding of variables</h3>
     <div class="half_separator"></div><br>
     <span>{{ coding_variables }}</span><br><br>
     {% block data_variables %}
         {{ macros.table_container(data_variables_id, data_variables) }}
     {% endblock %}
     <p><span>{{ coding_variables_custom }}</span></p>
-    <h3 style="color: green;">{{ analytic_strategy_ }}</h3>
+    <h3 style="color: green;">3.4. Analytic strategy</h3>
     <div class="half_separator"></div><br>
     <p><span>All analyses were conducted using the metafor package (Viechtbauer, 2010) in R (RCoreTeam, 2019).</span></p>
     <!-- P1 -->
@@ -208,21 +208,21 @@
     <!-- P2 -->
     <!-- to-do -->
     <!-- P3 -->
-    <p><span>We then considered the variation in the effect size distribution by using several indicators of heterogeneity of variance (T, \( T^2 \), and \( I^2 \)). </span></p>
+    <p><span>We then considered the variation in the effect size distribution by using several indicators of heterogeneity of variance (\( T \), \( T^2 \), and \( I^2 \)). </span></p>
     <p><span>{{ analytic_strategy_custom }}</span></p>
 
     <div class="separator"></div>
-    <h2 style="color: green;">{{ results_ }}</h2>
+    <h2 style="color: green;">4. Results</h2>
     <h2>Run a Meta-analysis</h2>
     <!-- Tab buttons -->
     <div class="tab-buttons">
-        <button class="tablink" onclick="openTab('ma_res_call')">{{ ma_res_call_ }}</button>
-        <button class="tablink" onclick="openTab('ma_res_df')">{{ ma_res_df_ }}</button>
+        <button class="tablink" onclick="openTab('ma_res_call')">Raw R Output</button>
+        <button class="tablink" onclick="openTab('ma_res_df')">Structured R Output</button>
     </div>
 
     <!-- Tab content -->
     <div id="ma_res_call" class="tab" style="display:block;">
-        <h3>{{ ma_res_call_ }}</h3>
+        <h3>Raw R Output</h3>
         {% if type_h == "categorical_moderator" %}
             <p>This meta-analysis uses {{ ref_mod }} as a reference value for moderator.</p>
         {% endif %}
@@ -230,13 +230,21 @@
     </div>
 
     <div id="ma_res_df" class="tab">
-        <h3>{{ ma_res_df_ }}</h3>
+        <h3>Structured R Output</h3>
         {% block df_info %}
             {{ macros.table_container(df_info_id, df_info) }}
         {% endblock %}
     </div>
     <br><br>
-    <h2>How to interpret a meta-analysis?</h2>
+    <!-- P4 -->
+    <p><span>The meta-analysis is based on \( k = {{ k }}\)  effects. Findings revealed a {{ categorize_es }} overall meta-analytic effect of \( {{ es_measure }} = {{ es }}\) (95% CI [{{ ci_lb }}, {{ ci_ub }}], 90% PI [{{ ci_lb }}, {{ ci_ub }}]).</span></p>
+    <!-- P5 -->
+    <p><span>{{ pval_paragraph }}</span></p>
+    <!-- P6 -->
+    <p><span>There is heterogeneity in the effect size distribution (\( T = {{ T}} \), \( T^2 = {{ T2 }} \)) and a substantial amount of this variation can be explained by between-study differences (\( I^2 = {{ I2 }} \)).</span></p>
+    <!-- P7 -->
+    <p><span>{{ qep_paragraph }}</span></p>
+    <!-- <h2>How to interpret a meta-analysis?</h2>
     <ul>
         <li>The effect size (\( \textnormal{estimate} \) or \( b \)) quantifies the differences between two groups. An effect size whose absolute value is bigger than 0.5, bigger than 0.2 and smaller than 0.2 will be characterised as large-medium, small and null respectively.</li>
         <li>The p-value measures the significance of a result. If \( p < 0.05 \), the result is considered statistically significant. If the result is not statistically significant, the confidence interval will contain 0.</li>
@@ -249,8 +257,8 @@
             <li>Since the meta-analysis is run with a categorical moderator, each group is compared to a reference group. For instance, in this meta-analysis, the reference value for {{ mod }} is {{ ref_mod }}. For instance, if a line reads {{ ex_mod_read }}, it means that studies with {{ ex_mod_val }} as {{ mod }} are compared with studies with {{ ref_mod }} as {{ mod }}.</li>
         {% endif %}
     </ul>
-    <br><br>
-    <h2>Actual results</h2>
+    <br><br> -->
+    <!-- <h2>Actual results</h2>
     <ul>
         {% if type_h != "categorical_moderator" %}
         <li>The overall meta-analytic effect size is {{ es }}. This effect can be considered {{ categorize_es }}.</li>
@@ -261,17 +269,17 @@
     </ul>
     <p><span>{{ results_custom }}</span></p>
     <h2 style="color: green;">{{ discussion_ }}</h2>
-    <div class="separator"></div>
+    
     <h2>Was the starting hypothesis correct?</h2>
     <p>{{ conclude_hypothesis }}</p>
-    <p><span>{{ discussion_custom }}</span></p>
+    <p><span>{{ discussion_custom }}</span></p> -->
     
 
     <!-- down here -->
 
-
+    <div class="separator"></div>
     <!-- References section -->
-    <h2 style="color: green;">{{ references_ }}</h2>
+    <h2 style="color: green;">References</h2>
     <div id="references">
         {% for i, reference in references|custom_enumerate %}
             <p><span class="reference-number">[{{ i  }}]</span> {{ reference.author }} ({{ reference.year }}). {{ reference.title }}.</p>

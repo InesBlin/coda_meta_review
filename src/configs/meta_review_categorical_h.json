@@ -2,7 +2,6 @@
     "template_folder": "meta_review/templates",
     "config": "meta_review/config.yaml",
     "label_des": "./src/configs/node_label_description.csv",
-    "structure": "meta_review/templates/structure.yaml",
     "references": "meta_review/templates/references.json",
     "data": "./data/observationData.csv",
     "cached": {
@@ -16,7 +15,7 @@
     "hypothesis": {
         "giv1": "gender", "siv1": "gender", "sivv1": "female",
         "giv2": "gender", "siv2": "gender", "sivv2": "male",
-        "cat_qualifier": "higher", "mod_qualifier": "higher",
+        "comparative": "higher",
         "mod": "studyOneShot", "type_mod": "study",
         "mod1": "Repeated", "mod2": "One-shot"
     }

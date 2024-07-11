@@ -127,7 +127,7 @@ def get_reference_level(data, mods):
     if mods:
         for k, v in mods.items():
             for mod in v:
-                # print(data[mod].unique())
+                print(data[mod].unique())
                 # print([type(x) for x in data[mod].unique()])
                 res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str) or (isinstance(x, float) and not np.isnan(x))])[0]
     return res
@@ -351,6 +351,9 @@ def main(input_data_path):
     print(results_rma.keys())
     print(results_rma['k'][0], type(results_rma['k']))
     print(results_rma['b'][-1][0], type(results_rma['b']))
+    print(results_rma['QEp'][-1])
+    print(results_rma['QE'][-1])
+    print(results_rma['call'])
     # print(refs)
 
 
