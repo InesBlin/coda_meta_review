@@ -33,13 +33,13 @@ print(" & ".join(RES_CLASSIFICATION_SHAPE))
 
 labels = {
     "regular": {
-    0: "giv", 1: "siv1", 2: "cat1", 3: "siv2", 4: "cat2", 5: "dep"},
+    0: "giv", 1: "siv_1", 2: "sivv_1", 3: "siv_2", 4: "sivv_2", 5: "dep"},
     "study_mod": {
-    0: "giv", 1: "siv1", 2: "cat1", 3: "siv2", 4: "cat2", 5: "mod", 6: "mod_val", 7: "dep"},
+    0: "giv", 1: "siv_1", 2: "sivv_1", 3: "siv_2", 4: "sivv_2", 5: "mod", 6: "mod_val", 7: "dep"},
     "var_mod": {
-    0: "giv", 1: "siv1", 2: "cat1", 3: "siv2", 4: "cat2", 5: "mod", 6: "mod1", 7: "mod2", 8: "dep"}
+    0: "giv", 1: "siv_1", 2: "sivv_1", 3: "siv_2", 4: "sivv_2", 5: "mod", 6: "mod_1", 7: "mod_2", 8: "dep"}
 }
-all_cols = ["giv", "siv1", "cat1", "siv2", "cat2", "mod", "mod_val", "mod1", "mod2", "dep"]
+all_cols = ["giv", "siv_1", "sivv_1", "siv_2", "sivv_2", "mod", "mod_val", "mod_1", "mod_2", "dep"]
 
 features = {
     th: pd.read_csv(f"./experiments/classification/final/h_{th}_es_d/imp_feature.csv", index_col=0) for th in ["regular", "study_mod", "var_mod"]
@@ -57,7 +57,7 @@ fig = px.histogram(pd.concat([info for _, info in features.items()]),
                    color_discrete_sequence=px.colors.qualitative.Safe,
                    opacity=0.75)
 fig.update_layout(barmode='group')
-fig.update_yaxes(range=[0, 1])
+# fig.update_yaxes(range=[0, 1])
 fig.update_xaxes(title_text='Feature')
 fig.update_yaxes(title_text='Importance Feature')
 fig.write_image(f"./experiments/visualisations/feat_importance_classification.pdf", format='pdf')

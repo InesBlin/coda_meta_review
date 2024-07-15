@@ -50,5 +50,5 @@ def main(folder_in, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/save_data_anyburl.py ./data/hypotheses/bn/ ./data/hypotheses/anyburl/
+    # python experiments/anyburl/save_data_anyburl.py ./data/hypotheses/bn/ ./data/hypotheses/anyburl/
     main()

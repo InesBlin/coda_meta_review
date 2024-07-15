@@ -52,7 +52,7 @@ def main(save_folder):
 
 
 if __name__ == '__main__':
-    # python experiments/save_embedding_classification.py ./data/hypotheses/embeds
+    # python experiments/hp_kg_embed/save_embedding_classification.py ./data/hypotheses/embeds
     main()
 
     

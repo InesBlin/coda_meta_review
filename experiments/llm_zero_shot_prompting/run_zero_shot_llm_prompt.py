@@ -105,5 +105,5 @@ def main(folder_in, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/run_zero_shot_llm_prompt.py data/hypotheses/llm experiments/llm_zero_shot_prompting/final
+    # python experiments/llm_zero_shot_prompting/run_zero_shot_llm_prompt.py data/hypotheses/llm experiments/llm_zero_shot_prompting/final
     main()

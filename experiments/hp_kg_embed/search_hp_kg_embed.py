@@ -75,6 +75,6 @@ def main(data, subject_col, predicate_col, object_col, results_path, results_csv
 
 
 if __name__ == '__main__':
-    # python experiments/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/kg_embed/results_kg_embedding_hp_500.json experiments/kg_embed/results_kg_embedding_hp_500.csv
-    # python experiments/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/kg_embed/results_kg_embedding_hp_378.json experiments/kg_embed/results_kg_embedding_hp_378.csv
+    # python experiments/hp_kg_embed/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/kg_embed/results_kg_embedding_hp_500.json experiments/kg_embed/results_kg_embedding_hp_500.csv
+    # python experiments/hp_kg_embed/search_hp_kg_embed.py ./data/vocab.csv s p o experiments/kg_embed/results_kg_embedding_hp_378.json experiments/kg_embed/results_kg_embedding_hp_378.csv
     main()

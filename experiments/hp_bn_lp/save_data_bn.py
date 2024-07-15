@@ -56,5 +56,5 @@ def main(folder_in, folder_out, vocab):
 
 
 if __name__ == '__main__':
-    # python experiments/save_data_bn.py data/hypotheses/lp/ data/hypotheses/bn/ data/vocab.csv
+    # python experiments/hp_bn_lp/save_data_bn.py data/hypotheses/lp/ data/hypotheses/bn/ data/vocab.csv
     main()

@@ -170,5 +170,5 @@ def main(folder_data, folder_embed, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/search_hp_classification.py ./data/hypotheses/classification/ ./data/hypotheses/embeds ./experiments/classification/hp_search
+    # python experiments/classification/search_hp_classification.py ./data/hypotheses/classification/ ./data/hypotheses/embeds ./experiments/classification/hp_search
     main()

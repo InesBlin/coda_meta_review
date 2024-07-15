@@ -30,15 +30,6 @@ BEST_PARAMS = {
         "max_features": 'sqrt',
         "random_state": 23  # reproducibility
     },
-    # "h_regular_es_r": {
-    #     "criterion": 'entropy',
-    #     "splitter": 'random',
-    #     "max_depth": 15,
-    #     "min_samples_split": 2,
-    #     "min_samples_leaf": 2,  
-    #     "max_features": 0.5,
-    #     "random_state": 23  # reproducibility
-    # },
     "h_var_mod_es_d": {
         "criterion": 'gini',
         "splitter": 'random',
@@ -48,24 +39,6 @@ BEST_PARAMS = {
         "max_features": 0.5,
         "random_state": 23  # reproducibility
     },
-    # "h_var_mod_es_r": {
-    #     "criterion": 'entropy',
-    #     "splitter": 'best',
-    #     "max_depth": 5,
-    #     "min_samples_split": 5,
-    #     "min_samples_leaf": 2,  
-    #     "max_features": 'sqrt',
-    #     "random_state": 23  # reproducibility
-    # },
-    # "h_study_mod_es_r": {
-    #     "criterion": 'entropy',
-    #     "splitter": 'best',
-    #     "max_depth": 15,
-    #     "min_samples_split": 2,
-    #     "min_samples_leaf": 2,  
-    #     "max_features": "sqrt",
-    #     "random_state": 23  # reproducibility
-    # },
     "h_study_mod_es_d": {
         "criterion": 'entropy',
         "splitter": 'random',
@@ -180,5 +153,5 @@ def main(folder_in, folder_embed, folder_out):
 
 
 if __name__ == '__main__':
-    # python experiments/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
+    # python experiments/classification/run_final_classification.py ./experiments/classification/hp_search ./data/hypotheses/embeds ./experiments/classification/final
     main()
