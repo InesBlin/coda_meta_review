@@ -202,29 +202,6 @@ def main(data, subject_col, predicate_col, object_col, model,
 
 if __name__ == '__main__':
     # python src/lp/kg_embedder.py ./data/vocab.csv s p o distmult 500 336 0.001 1 models/coda_ontology
-    # DATA_PATH = "./data/coda_kg.csv"
-    # SPO_COLS = ['subject', 'predicate', 'object']
-    # KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS)
-
-    # DF_NODES = KG_EMB.get_description(KG_EMB.sh_train.entity_id_to_label)
-    # DF_NODES.to_csv("sh_entities.csv")
-
-    # DF_NODES = pd.read_csv("sh_entities.csv", index_col=0)
-    # KG_EMB.get_embeddings(df_description=DF_NODES, save_path="coda_entity_embeddings.pt")
-
-    # EMBEDDINGS = torch.load("coda_entity_embeddings.pt")
-    # PIPELINE = KG_EMB.init_pipeline(embeddings=EMBEDDINGS)
-    # PIPELINE.save_to_directory('models/test_slcwa')
-
-    # DATA_PATH="./data/vocab.csv"
-    # SPO_COLS=["s","p","o"]
-    # KG_EMB = KGEmbedder(data_path=DATA_PATH, spo_cols=SPO_COLS, create_inverse_triples=False)
-    # PIPELINE = KG_EMB.init_pipeline(
-    #     model="distmult", random_seed=23, epochs=500, embedding_dim=336,
-    #     lr=0.001, num_negs_per_pos=1
-    # )
-    # for key in ['hits@1', 'hits@3', 'hits@10', 'mean_reciprocal_rank']:
-    #     print(f"{key}: {PIPELINE.metric_results.get_metric(key)}")
     main()
 
  

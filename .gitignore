@@ -16,3 +16,4 @@ wandb/
 LightGBM/
 experiments/old
 test_bnlp
+experiments/visualisations/*.pdf

@@ -1,2 +1,0 @@
-Cooperation is significantly higher when symmetry target is mpcr, compared to when symmetry target is lottery prize.
-Cooperation is significantly lower when symmetry target is lottery prize, compared to when symmetry target is mpcr.

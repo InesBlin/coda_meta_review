@@ -1,4 +1,0 @@
-Cooperation is significantly lower when endogenous leadership is exogenous, compared to when leadership role is follower.
-Cooperation is significantly higher when leader's characteristic is weak, compared to when leader's characteristic is strong.
-Cooperation is significantly higher when endogenous leadership is exogenous, compared to when leadership assignment rule is authority.
-Cooperation is significantly lower when leader's characteristic is weak, compared to when leadership assignment rule is elected.

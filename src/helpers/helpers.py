@@ -32,6 +32,7 @@ def run_request(uri: str, headers: dict):
     return pd.read_json(io.StringIO(response.content.decode('utf-8')))
 
 def remove_url(url):
+    """ readable url """
     return str(url).split('/')[-1]
 
 

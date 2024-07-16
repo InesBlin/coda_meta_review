@@ -121,22 +121,11 @@ def custom_split(data_reg: pd.DataFrame, data_effect: pd.DataFrame, tvt_split_re
     sh = TriplesFactory.from_labeled_triples(data_reg[spo_cols].values)
     # sh_train, sh_val, sh_test = sh.split(tvt_split_reg, random_state=23)
     c_split = split_effect_triples(data=data_effect, tvt_split=tvt_split_effect, th=th)
-
-    # res = {
-    #     "train": pd.concat([pd.DataFrame(sh_train.triples, columns=spo_cols), c_split["train"]]),
-    #     "val": pd.concat([pd.DataFrame(sh_val.triples, columns=spo_cols), c_split["val"]]),
-    #     "test": pd.concat([pd.DataFrame(sh_test.triples, columns=spo_cols), c_split["test"]]),
-    # }
     res = {
         "train": pd.concat([pd.DataFrame(sh.triples, columns=spo_cols), c_split["train"]]),
         "val": c_split["val"],
         "test": c_split["test"],
     }
-    # res = {
-    #     "train": c_split["train"],
-    #     "val": c_split["val"],
-    #     "test": c_split["test"],
-    # }
     return {x: TriplesFactory.from_labeled_triples(val[spo_cols].values) for x, val in res.items()}
 
 
@@ -173,17 +162,6 @@ class BNLinkPredictor:
 
 
 if __name__ == '__main__':
-    # TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
-    # ES_MEASURE = ['d', 'r']
-    # for th in TYPE_HYPOTHESIS:
-    #     for es in ES_MEASURE:
-    #         DATA_REG = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_random.csv", index_col=0).dropna()
-    #         DATA_EFFECT = pd.read_csv(f"./data/hypotheses/bn/h_{th}_es_{es}_effect.csv", index_col=0).dropna()
-    #         TVT_REG = [0.8, 0.1, 0.1]
-    #         TVT_EFFECT = [0.6, 0.2, 0.2]
-    #         OUTPUT = custom_split(data_reg=DATA_REG, data_effect=DATA_EFFECT, tvt_split_reg=TVT_REG, tvt_split_reg=TVT_EFFECT, th=th)
-    #         print(OUTPUT)
-
     FOLDER_IN = "./test_bnlp"
     TH, ES = "regular", "d"
     BN_LP = BNLinkPredictor(dr=os.path.join(FOLDER_IN, f"h_{TH}_es_{ES}_random.csv"),

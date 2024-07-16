@@ -1,4 +1,0 @@
-Cooperation is significantly lower when communication occurrence is one-shot, compared to when communication occurrence is ongoing.
-Cooperation is significantly higher when communication type is verbal, compared to when communication type is written.
-Cooperation is significantly higher when communication content is promise, compared to when communication content is other.
-Cooperation is significantly lower when communication content is threat, compared to when communication content is other.

@@ -21,10 +21,6 @@ TARGET = "effect"
 MODEL_PATH = "./models/coda_ontology/trained_model.pkl"
 ENTITY_TO_ID_PATH = "./models/coda_ontology/training_triples/entity_to_id.tsv.gz"
 RELATION_TO_ID_PATH = "./models/coda_ontology/training_triples/relation_to_id.tsv.gz"
-# CLASSES_TO_ID = {
-#     'LargeMediumNegativeES': 0, 'SmallNegativeES': 1, 'NullFinding': 2,
-#     'SmallPositiveES': 3, 'LargeMediumPositiveES': 4
-# }
 CLASSES_TO_ID = {
     'negative': 0, 'noEffect': 1, 'positive': 2
 }

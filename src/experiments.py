@@ -90,7 +90,6 @@ def run_meta_analysis_with_moderators(groupings: pd.DataFrame, data: pd.DataFram
 
     groupings = groupings.sort_values(by="nb", ascending=False).reset_index()
     res = {"type_mod": type_mod}
-    # groupings = groupings[:2]
     for index, row_ in tqdm(groupings.sort_values(by="nb", ascending=False).iterrows(),
                             total=len(groupings)):
         res[index] = {
@@ -109,12 +108,6 @@ def run_meta_analysis_with_moderators(groupings: pd.DataFrame, data: pd.DataFram
         moderators = get_moderators(pipeline=pipeline, data_run=data_run,
                                     info=info,  type_mod=type_mod)
 
-        # var_moderators = pipeline.meta_analysis.moderator \
-        #     .get_variable_moderators(
-        #         data=data_run, info={"giv1": pipeline.giv1, "giv2": pipeline.giv2,
-        #                                 "siv1": row_.siv1_id, "siv2": row_.siv2_id})
-        # for index_mod, mod in enumerate(var_moderators):
-        # moderators = moderators[:2]
         for index_mod, mod in enumerate(moderators):
             try:
                 output = pipeline.meta_analysis(

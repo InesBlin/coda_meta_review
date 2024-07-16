@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Caching diverse type of data 
+Caching diverse type of data for the moderators
 """
 import os
 import click
@@ -11,8 +11,6 @@ from src.moderator import ModeratorComponent
 from src.helpers.sparql_queries import SIMPLE_COUNTRY_MOD_QUERY, COMPLEX_COUNTRY_MOD_QUERY, VARIABLE_MOD_QUERY
 
 MODERATOR_C = ModeratorComponent()
-
-
 
 @click.command()
 @click.argument("type_cache")

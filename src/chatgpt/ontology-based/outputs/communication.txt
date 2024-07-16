@@ -1,7 +1,0 @@
-Sure, here are five hypotheses respecting the constraints:
-
-Cooperation is significantly higher when CommunicationOccurrence is one-shot, compared to when CommunicationOccurrence is ongoing.
-Cooperation is significantly lower when CommunicationContent is threat, compared to when CommunicationContent is request.
-Cooperation is significantly higher when CommunicationType is written, compared to when CommunicationType is verbal.
-Cooperation is significantly lower when CommunicationContent is irrelevant, compared to when CommunicationContent is other.
-Cooperation is significantly higher when CommunicationType is nonverbal, compared to when CommunicationType is verbal.

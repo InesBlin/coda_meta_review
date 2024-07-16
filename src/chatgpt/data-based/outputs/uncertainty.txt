@@ -1,7 +1,0 @@
-Cooperation is significantly higher when uncertainty level is low, compared to when uncertainty target is group size.
-Cooperation is significantly lower when uncertainty level is high, compared to when uncertainty target is incentive structure.
-Cooperation is significantly lower when uncertainty level is medium, compared to when uncertainty target is return from private account.
-Cooperation is significantly higher when uncertainty level is low, compared to when uncertainty target is loss.
-Cooperation is significantly lower when uncertainty level is medium, compared to when uncertainty target is threshold.
-Cooperation is significantly lower when uncertainty level is low, compared to when uncertainty target is mpcr.
-Cooperation is significantly higher when uncertainty level is high, compared to when uncertainty target is other.

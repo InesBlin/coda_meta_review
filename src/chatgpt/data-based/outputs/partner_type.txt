@@ -1,3 +1,0 @@
-Cooperation is significantly higher when partner type is computer, compared to when partner type is peer.
-Cooperation is significantly higher when partner type is peer, compared to when partner type is other.
-Cooperation is significantly higher when partner type is stranger, compared to when partner type is computer.

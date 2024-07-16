@@ -1,7 +1,0 @@
-Here are five hypotheses generated respecting the constraints:
-
-Cooperation is significantly lower when altruism is high, compared to when altruism is medium.
-Cooperation is significantly higher when machiavellianism is low, compared to when machiavellianism is high.
-Cooperation is significantly lower when emotional_intelligence is low, compared to when emotional_intelligence is high.
-Cooperation is significantly higher when trust_propensity is high, compared to when trust_propensity is low.
-Cooperation is significantly lower when conscientiousness is low, compared to when conscientiousness is high.

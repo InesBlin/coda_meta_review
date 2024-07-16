@@ -1,3 +1,0 @@
-Cooperation is significantly lower when state trust level is low, compared to when state trust level is high.
-Cooperation is significantly lower when state trust level is low, compared to when state trust level is medium.
-Cooperation is significantly higher when state trust level is medium, compared to when state trust level is high.

@@ -1,7 +1,0 @@
-Here are five hypotheses respecting the constraints:
-
-Cooperation is significantly lower when RewardAgent is computer, compared to when RewardAgent is peer.
-Cooperation is significantly higher when RewardSequential is sequential_leadership-by-example, compared to when RewardSequential is simultaneous.
-Cooperation is significantly lower when RewardIncentive is monetary, compared to when RewardIncentive is non-monetary_material.
-Cooperation is significantly higher when RewardRule is outcome-based, compared to when RewardRule is rank-based.
-Cooperation is significantly lower when RewardTreatment is -1, compared to when RewardTreatment is 0.

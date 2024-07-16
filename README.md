@@ -1,33 +1,28 @@
-# CoDa Narratives
+# Automated Hypothesis Generation on Human Cooperation
 
-## Experiments
-
-`experiments` folder
-
-1. Extract data to use
-* save_data_hypotheses.py
-
-2. Prep data
-* prep_data.py
-
-3. Models
-
-* Classification
-    * search_hp_kg_embed.py: search hyperparams for kg embeddings
-    * save_embedding_classification.py: saving embeddding to train models
-    * search_hp_classification.py: search hyperparams for classification
-    * run_final_classification.py: run final models for classification task + readable output
-* LLM
-    * run_zero_shot_llm_prompt.py: run prompting for ontology-based prompts
-* LP
-    * search_hp_bn_lp.py: search hyperparams for link prediction
-    * save_data_bn.py: build KG for LP task
+This is the code we submit together with the paper [TO-ADD], submitted to [TO-ADD]. The code contains the followings:
+- The core code in the `src` folder, for general usage
+- All elements related to our experiments, including:
+    * The data and models, cf. folders `data/zip` and `models`
+    * Thorough details on the experiements in the folder `experiments`. For more clarity we provide a README.md for the experiments in that folder.
+- An interface and templates for the meta-review automated generation, cf. folders `app` and `meta_review`.
 
 
-Folders:
-* classification: results of classification models
-* hp_kg_embed: results of hyperparameter search for kg embeddings (ontology)
-* llm_zero_shot_prompting: results of llm 
+## Installing a virtualenv + Set-Up
+
+We used Python 3.10.8. If you plan to use the OpenAI API, you need to add your API key. To do, create a file `src/settings.py` and add your key:
+```python
+API_KEY_GPT = "your-key
+```
+
+Installing rpy2 can cause problems with conda, hence we recommend to first install it before installing all the other dependencies.
+
+```bash
+conda install rpy2
+pip install -r requirements.txt
+python setup.py install
+cd kglab && python setup.py install
+```
 
 ## Adapting the R shiny app
 
@@ -38,17 +33,18 @@ Aim = transfer the R code to Python, to make it easily runnable
     * For now: based on comparison between two treatments (specific independent variables and their value)
 * `src/data_prep.py`: takes pre-selected data as input, and processes it for the meta-analysis
 * `src/meta_analysis.py`: takes processed data as input, and does the meta-analysis
-* ``
+
+## Interface
+To retrieve data from the KG, you first need to set up a local repository of CoDa. We used the GraphDB software. The graphs can be uploaded on [this website](https://odissei.triply.cc/coda/databank/graphs).
+
+To make the application more efficient, we first cached some data:
+
+- On the moderators:
+    - Caching: cf. `src/helpers/cache_data.py` with examples to run from terminal command
+    - Categorising: cf. `src/helpers/categorise_moderators.py` with examples to run from terminal command
+- On observation data used for the interface (also directly available):
+    - `src/helpers/get_obs_data.py`
 
 
-## Installing a virtualenv
-
-We used Python 3.10.8
-
-Installing rpy2 can cause problems with conda, hence we recommend to first install it before installing all the other dependencies.
-
-```bash
-conda install rpy2
-pip install -r requirements.txt
-python setup.py install
-```
+Depreciated (not used anymore):
+- `src/helpers/get_generic_specific.py`

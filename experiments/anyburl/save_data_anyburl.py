@@ -16,6 +16,8 @@ TVT_SPLIT = [0.8, 0.1, 0.1]
 
 def split(data_reg: pd.DataFrame, data_effect: pd.DataFrame,
           tvt_split: Tuple[float, float, float], th: str):
+    """ split data: only the effect triples are split intro train/val/test,
+    the rest is in the train set """
     check_tvt_prop(tvt_split=tvt_split)
     spo_cols = ["subject", "predicate", "object"]
     sh = TriplesFactory.from_labeled_triples(data_reg[spo_cols].values)
@@ -32,7 +34,7 @@ def split(data_reg: pd.DataFrame, data_effect: pd.DataFrame,
 @click.argument("folder_in")
 @click.argument("folder_out")
 def main(folder_in, folder_out):
-    """ Main to save train/val/test data """
+    """ Main to save train/val/test data (only format that is compatible with AnyBURL) """
     if not os.path.exists(folder_out):
         os.makedirs(folder_out)
     for th in TYPE_HYPOTHESIS:

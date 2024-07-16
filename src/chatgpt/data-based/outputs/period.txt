@@ -1,4 +1,0 @@
-Cooperation is significantly higher when block of cooperation (ordinal) is first, compared to when block of cooperation (ordinal) is last.
-Cooperation is significantly higher when trial of cooperation (ordinal) is first, compared to when trial of cooperation (ordinal) is other.
-Cooperation is significantly lower when block of cooperation (ordinal) is last, compared to when block of cooperation (ordinal) is other.
-Cooperation is significantly higher when trial of cooperation (ordinal) is last, compared to when trial of cooperation (ordinal) is other.

@@ -1,8 +1,0 @@
-Cooperation is significantly higher when religiosity operationalization is religious attendance, compared to when religious exposure level is medium.
-Cooperation is significantly higher when religiosity operationalization is religious attendance, compared to when religious exposure level is low.
-Cooperation is significantly lower when religious exposure level is high, compared to when religious exposure level is medium.
-Cooperation is significantly lower when religious exposure level is high, compared to when religious exposure level is low.
-Cooperation is significantly higher when religiosity operationalization is religious affiliation, compared to when religious exposure level is low.
-Cooperation is significantly higher when religiosity operationalization is religious attendance, compared to when religious exposure level is high.
-Cooperation is significantly higher when religiosity operationalization is religious affiliation, compared to when religious exposure level is high.
-Cooperation is significantly lower when religious exposure level is low, compared to when religious exposure level is medium.

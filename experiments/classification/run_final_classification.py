@@ -20,6 +20,7 @@ CLASSES_TO_COMPARATIVE = {
     'negative': 'lower', 'positive': 'higher', "noEffect": "n/a"
 }
 
+# Below: best params found from experiments
 BEST_PARAMS = {
     "h_regular_es_d": {
         "criterion": 'gini',
@@ -49,7 +50,6 @@ BEST_PARAMS = {
         "random_state": 23  # reproducibility
     }
 }
-
 
 
 def get_metrics(clf, X, y, td):

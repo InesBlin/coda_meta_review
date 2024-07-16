@@ -3,12 +3,6 @@
 
 Adapted from the original code: https://github.com/roosyay/CoDa_Hypotheses
 
-run SPARQL query: 
-run_query(
-            query=MODERATOR_C.country_prop_query,
-            sparql_endpoint=MODERATOR_C.sparql_endpoint,
-            headers=HEADERS_CSV
-        )
 """
 import math
 from typing import Union

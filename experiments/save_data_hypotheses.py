@@ -7,7 +7,6 @@ Can then be re-used for:
 - Classification task
 - LP task
 
-For now: only 'regular' or 'categorical' (options with IRI, for variable and study moderators)
 """
 import os
 import json
@@ -16,7 +15,7 @@ from loguru import logger
 from src.lp.compute_hypotheses import HypothesesBuilder
 
 TYPE_HYPOTHESIS = ['regular', 'var_mod', 'study_mod']
-ES_MEASURE = ['d', 'r']
+ES_MEASURE = ['d']
 
 @click.command()
 @click.argument("sparql_endpoint")

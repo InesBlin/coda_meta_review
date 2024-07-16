@@ -1,7 +1,0 @@
-Sure, here are five hypotheses respecting the constraints provided:
-
-Cooperation is significantly higher when PunishmentRule is outcome-based, compared to when PunishmentRule is other.
-Cooperation is significantly lower when PunishmentSequential is sequential_leadership-by-example, compared to when PunishmentSequential is simultaneous.
-Cooperation is significantly higher when PunishmentAgent is institution, compared to when PunishmentAgent is computer.
-Cooperation is significantly lower when PunishmentDistributionRule is deductive, compared to when PunishmentDistributionRule is redistributive.
-Cooperation is significantly higher when PunishmentIncentive is hypothetical, compared to when PunishmentIncentive is non-monetary_social.

@@ -1,5 +1,0 @@
-Cooperation is significantly higher when knowledge of group membership is common, compared to when partner's group membership is ingroup.
-Cooperation is significantly higher when group type is experimentally induced group, compared to when partner's group membership is outgroup.
-Cooperation is significantly higher when group type is natural group, compared to when knowledge of group membership is unknown.
-Cooperation is significantly higher when group type is natural group, compared to when identification level is low.
-Cooperation is significantly higher when identification level is high, compared to when partner's group membership is stranger.
