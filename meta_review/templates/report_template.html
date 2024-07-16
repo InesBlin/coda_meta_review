@@ -159,7 +159,7 @@
         <li>{{ key }}: {{ value }}</li>
     {% endfor %}
     </ul>
-    <p>These criteria resulted in the inclusion of {{ data_ma_es_nb }} effect sizes extracted from {{ data_ma_study_nb }} studies conducted across {{data_ma_country_nb}} industrialized societies. </p>
+    <p>These data and criteria resulted in the inclusion of {{ data_ma_es_nb }} effect sizes extracted from {{ data_ma_study_nb }} studies conducted across {{data_ma_country_nb}} industrialized societies. </p>
 
     <!-- Tab buttons -->
     <div class="tab-buttons">
@@ -193,16 +193,16 @@
     <p><span>{{ coding_effect_sizes_custom }}</span></p>
     <h3 style="color: green;">3.3. Coding of variables</h3>
     <div class="half_separator"></div><br>
-    <span>{{ coding_variables }}</span><br><br>
+    <!-- <span>{{ control_variables }}</span><br><br> -->
     {% block data_variables %}
         {{ macros.table_container(data_variables_id, data_variables) }}
     {% endblock %}
-    <p><span>{{ coding_variables_custom }}</span></p>
+    <p><span>{{ control_variables_custom }}</span></p>
     <h3 style="color: green;">3.4. Analytic strategy</h3>
     <div class="half_separator"></div><br>
     <p><span>All analyses were conducted using the metafor package (Viechtbauer, 2010) in R (RCoreTeam, 2019).</span></p>
     <!-- P1 -->
-    <p><span>To test the hypothesis that "{{ hypothesis }}", we first estimated the overall effect size using a {{ type_method }} model with {{ method_mv }} estimation, along with bothnthe 95% confidence interval (CI) and the 90% prediction interval.</span></p>
+    <p><span>To test the hypothesis that "{{ hypothesis }}", we first estimated the overall effect size using a {{ type_method }} model with {{ method_mv }} estimation, along with both the 95% confidence interval (CI) and the 90% prediction interval.</span></p>
     <!-- P2 -->
     <!-- to-do -->
     <!-- P3 -->

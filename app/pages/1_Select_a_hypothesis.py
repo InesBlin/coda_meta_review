@@ -2,15 +2,16 @@
 """ Expert's recommendation """
 import os
 import json
-import subprocess
 import pandas as pd
-from src.meta_review import load_json_file
-from src.hg.literature import LiteratureHypothesisGenerator
-from src.hg.llm import LLMHypothesisGenerator
 import streamlit as st
-from datetime import datetime
+from src.hg.literature import LiteratureHypothesisGenerator
+from src.knowledge import generate_hypothesis
+# from src.hg.llm import LLMHypothesisGenerator
+from src.settings import ROOT_PATH
 
-DATA_T = pd.read_csv("./data/same_gv_different_and_same_gv_treat_1_2.csv", index_col=0)
+# Only keeping comparison where there is at least one study
+DATA_T = pd.read_csv(
+    os.path.join(ROOT_PATH, "data/same_gv_different_and_same_gv_treat_1_2.csv"), index_col=0)
 DATA_T = DATA_T[DATA_T.nb > 0]
 
 def reinit_t1_t2_var():
@@ -39,6 +40,11 @@ def save_json(filepath, data):
     """ self explanatory """
     with open(filepath, "w", encoding="utf-8") as openfile:
         json.dump(data, openfile, indent=4)
+
+def get_readable_h(h):
+    """ Human-readable hypotheses to select (instead of backend, dictionary version) """
+    return f"Comparing studies where {h['siv1']} is {h['sivv1']} and studies where " + \
+        f"{h['siv2']} is {h['sivv2']}"
 
 
 def main():
@@ -134,21 +140,32 @@ def main():
                     st.session_state["sivv2"] = sivv2
                     st.session_state["submit_hs_dva_f_sivv2"] = True
 
+        if st.session_state.get("sivv2") and st.session_state.get('submit_hs_dva_f_sivv2'):
+            with st.form("hs_dva_f_comparative"):
+                comparative = st.selectbox(
+                    "Choose your comparative (treatment 1 vs. treatment 2)", ["higher", "lower"],
+                    index=None)
+                if st.form_submit_button("Save comparative"):
+                    st.session_state["comparative"] = comparative
+                    st.session_state["submit_hs_dva_f_comparative"] = True
+
         # Wrap up the hypothesis
-        if st.session_state.get("sivv2"):
+        if st.session_state.get("comparative"):
             hypothesis = {
                 "giv1": st.session_state["giv1"], "siv1": st.session_state["siv1"],
                 "sivv1": st.session_state["sivv1"], "giv2": st.session_state["giv2"],
-                "siv2": st.session_state["siv2"], "sivv2": st.session_state["sivv2"]
+                "siv2": st.session_state["siv2"], "sivv2": st.session_state["sivv2"],
+                "comparative": st.session_state["comparative"]
             }
-            st.markdown(f"""You have chosen one hypothesis:\\
-            ```
-            {hypothesis}
-            ```""")
+            st.markdown(f"""
+            You have chosen the following hypothesis:\\
+            {generate_hypothesis(h_dict=hypothesis)}
+            """)
 
             if st.button("Add to hypotheses"):
                 if hypothesis not in st.session_state["hypotheses"]:
                     st.session_state["hypotheses"].append(hypothesis)
+                st.session_state["submit_h"] = True
                 st.success("Hypothesis added to hypotheses for meta-review", icon="🔥")
 
             if st.button("Choose another hypothesis"):
@@ -163,10 +180,12 @@ def main():
         with st.form("hypotheses_params_form"):
             hypotheses_selector = st.radio(
                 "How would you like to select your hypothesis?",
-                ["From literature", "LLM-Based", "LP-Based"],
+                # ["From literature", "LLM-Based", "LP-Based"],
+                ["From literature"],
                 index=None
             )
-            top_k = st.number_input('How many hypotheses would you like to generate?', value=3, key="top_k")
+            top_k = st.number_input('How many hypotheses would you like to generate?',
+                                    value=1, key="top_k")
             if st.form_submit_button("Generate Hypotheses Params"):
                 st.session_state["submit_hp"] = True
                 st.session_state["hypotheses_selector"] = hypotheses_selector
@@ -178,32 +197,35 @@ def main():
                     hg = LiteratureHypothesisGenerator()
                     hypotheses = hg(giv=giv, top_k=int(top_k))
                     st.session_state["hypotheses_choice"] = hypotheses
-                if st.session_state.hypotheses_selector == "LLM-Based":
-                    giv = None
-                    data = "./data/prompt_data_based.csv"
-                    scoring_selector = st.radio(
-                        "How would you like to rank your hypotheses?",
-                        ["random", "frequency", "entropy"],
-                        index=None)
-                    if scoring_selector:
-                        hg = LLMHypothesisGenerator(data=data, scoring=scoring_selector)
-                        hypotheses = hg(giv=giv, top_k=int(top_k))
-                        st.session_state["hypotheses_choice"] = hypotheses
+                # if st.session_state.hypotheses_selector == "LLM-Based":
+                #     giv = None
+                #     data = "./data/prompt_data_based.csv"
+                #     scoring_selector = st.radio(
+                #         "How would you like to rank your hypotheses?",
+                #         ["random", "frequency", "entropy"],
+                #         index=None)
+                #     if scoring_selector:
+                #         hg = LLMHypothesisGenerator(data=data, scoring=scoring_selector)
+                #         hypotheses = hg(giv=giv, top_k=int(top_k))
+                #         st.session_state["hypotheses_choice"] = hypotheses
 
-                if st.session_state.hypotheses_selector == "LP-Based":
-                    st.warning("Not yet implemented")
+                # if st.session_state.hypotheses_selector == "LP-Based":
+                #     st.warning("Not yet implemented")
 
             if st.session_state.get("hypotheses_choice"):
                 with st.form("hypotheses_form"):
+                    readable_to_dict = {get_readable_h(h): h for h in \
+                        st.session_state.get("hypotheses_choice")}
                     hypothesis_selector = st.radio(
                         "Which hypothesis would you like to explore?",
-                        st.session_state.get("hypotheses_choice"),
+                        readable_to_dict.keys(),
                         index=None, key="hypothesis_selector"
                     )
                     if st.form_submit_button("Submit Hypothesis"):
                         st.session_state["submit_h"] = True
                         if hypothesis_selector not in st.session_state["hypotheses"]:
-                            st.session_state["hypotheses"].append(hypothesis_selector)
+                            st.session_state["hypotheses"].append(
+                                readable_to_dict[hypothesis_selector])
 
     with st.sidebar:
         st.write("You have chosen the following hypotheses:")

@@ -32,9 +32,9 @@ def build_config(hypothesis):
 
     # Update variables
     if st.session_state.mr_variables:
-        config.update({"coding_variables": st.session_state["mr_variables"]})
+        config.update({"control_variables": st.session_state["mr_variables"]})
     else:
-        config.update({"coding_variables": []})
+        config.update({"control_variables": []})
 
     # Update analytic strategy
     for as_key in ["type_rma", "es_measure", "method_mv"]:

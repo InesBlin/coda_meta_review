@@ -7,11 +7,13 @@ Data Selection
 (2) data preparation (DataPrep)
 (3) based on inclusion criteria (InclusionCriteria)
 """
-from typing import Union, Dict
+import pandas as pd
+from typing import Union, Dict, List
 from src.data_selection import DataSelector
 from src.data_prep import DataPrep
 from src.inclusion_criteria import InclusionCriteria
 from src.meta_analysis import MetaAnalysis
+from src.moderator import define_moderators
 from kglab.helpers.data_load import read_csv
 
 
@@ -46,12 +48,17 @@ class Pipeline:
             MetaAnalysis(siv1=siv1, sivv1=sivv1,
                          siv2=siv2, sivv2=sivv2, **cached_moderator)
 
-    def get_data_meta_analysis(self, data):
+    def get_data_meta_analysis(self, data, variables):
         """ self explanatory """
         data_run = self.data_selector(data=data)
         data_run = self.data_prep(filtered_data=data_run)
         if self.inclusion_criteria is not None:
             data_run = self.inclusion_criteria(data=data_run)
+        if variables:
+            f_vars = [x for x in variables if x not in data.columns]
+            for x in f_vars:
+                mod_def = define_moderators(x, data['treatmentValue1'], data['treatmentValue2'])
+                data = pd.concat([data, mod_def], axis=1)
         return data_run
 
     @staticmethod
@@ -66,9 +73,8 @@ class Pipeline:
 
     def __call__(self, data, type_rma: str = "uni", es_measure: str = "d",
                  yi: str = "effectSize", method: str = "REML", vi: str = "variance",
-                 mods: Union[Dict, None] = None):
-        data_run = self.get_data_meta_analysis(data=data)
-        data_run.to_csv('data_run.csv')
+                 mods: Union[Dict, None] = None, variables: Union[List, None] = None):
+        data_run = self.get_data_meta_analysis(data=data, variables=variables)
 
         output = self.meta_analysis(data=data_run,
             type_rma=type_rma, es_measure=es_measure, yi=yi, method=method, vi=vi,

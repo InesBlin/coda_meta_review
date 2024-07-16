@@ -86,6 +86,12 @@ def replace_cite_id(input_text, dico):
         return f"[{dico.get(key, '')}]"
     return re.sub(pattern, replace_with_dict, input_text)
 
+def generate_sent_ic(inclusion_criteria):
+    """ Generate sentence for inclusion criteria """
+    if inclusion_criteria:
+        return "For studies to be included in the meta-analysis, the following criteria had to be fulfilled:"
+    return ""
+
 
 class MetaReview:
     """ Main class for generating the meta-review
@@ -132,9 +138,8 @@ class MetaReview:
             self.config = load_yaml_file(config["config"])
         else:
             keys_config = [
-                "title", "authors", "introduction", "inclusion_criteria_1",
-                "inclusion_criteria_2", "inclusion_criteria", "es_measure",
-                "coding_variables", "method_mv"]
+                "title", "authors", "introduction", "inclusion_criteria_1", "inclusion_criteria", "es_measure",
+                "control_variables", "method_mv"]
             self.config = {k: config.get(k) for k in keys_config}
 
         self.references = load_json_file(config["references"])
@@ -239,8 +244,8 @@ class MetaReview:
         IF {$p} > 0.05 This results indicate no significant difference in cooperation when {siv1} is {sivv1} compared to when {siv2} is {sivv2}.
         """
         if pval <= 0.05:
-            return f"This result indicates that {self.text_h}"
-        return f"This result indicates that {generate_hypothesis(h=self.h, th=self.type_h)}"
+            return f'This result indicates that "{self.text_h}"'
+        return f'This result indicates that "{generate_hypothesis(h=self.h, th=self.type_h)}"'
     
     @staticmethod
     def get_qep_paragraph(qep, k, qe):
@@ -336,7 +341,6 @@ class MetaReview:
         }
         columns = ["studyName", "citation", "overallN", "country"] + \
             var + ["effectSize", "effectSizeLowerLimit", "effectSizeUpperLimit"]
-        output[columns].rename(columns=columns_info).to_csv("test.csv")
         return output[columns].rename(columns=columns_info)
 
     def get_variables(self):
@@ -356,13 +360,12 @@ class MetaReview:
 
     def __call__(self, save_folder):
         """ Run meta-analysis and produce meta-review """
-        print(self.format_moderator())
+        variables = self.get_variables()
         output = self.pipeline(
             data=self.data, es_measure=self.config["es_measure"],
-            method=self.config["method_mv"], mods=self.format_moderator())
+            method=self.config["method_mv"], mods=self.format_moderator(),
+            variables=variables)
         type_method = "mixed effects" if self.config["method_mv"] in ["ML", "REML"] else "fixed effects"
-        variables = self.get_variables()
-        output["data"].to_csv("data.csv")
         ma_res, refs = output["results_rma"], output["refs"]
         print(refs)
         es, pval, i2 = ma_res['b'][-1][0], ma_res["pval"][-1], ma_res['I2'][-1]
@@ -404,8 +407,9 @@ class MetaReview:
             "ex_mod_read": ex_mod_read,
             "ex_mod_val": ex_mod_read.replace(self.h.get('mod'), '') if self.h.get('mod') else None,
             "pval_paragraph": self.get_pval_paragraph(pval),
-            "T2": tau2, "T": math.sqrt(tau2), "I2": round(i2, 3),
-            "qep_paragraph": self.get_qep_paragraph(qep, k, qe)
+            "T2": round(tau2, 3), "T": round(math.sqrt(tau2), 3), "I2": round(i2, 3),
+            "qep_paragraph": self.get_qep_paragraph(qep, k, qe),
+            "inclusion_criteria_2": generate_sent_ic(self.inclusion_criteria)
             }
         args.update(self.config)
         args.update(self.custom_content)

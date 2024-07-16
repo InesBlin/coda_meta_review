@@ -15,24 +15,25 @@ class LiteratureHypothesisGenerator(HypothesisGenerator):
             # Paper: Gender differences in cooperation across 20 societies: a meta-analysis
             {"giv1": "gender", "siv1": "gender", "sivv1": "female",
              "giv2": "gender", "siv2": "gender", "sivv2": "male",
-             'reg_qualifier': 'higher'}
+             'comparative': 'higher'}
         ]
-        self.numerical_h = [
-            # Paper: Gender differences in cooperation across 20 societies: a meta-analysis
-            {"giv1": "gender", "siv1": "gender", "sivv1": "female",
-             "giv2": "gender", "siv2": "gender", "sivv2": "male",
-             'num_qualifier': 'higher', 'mod_qualifier': 'higher',
-             'mod': 'studyKindex', 'type_mod': 'study'}
-        ]
-        self.categorical_h = [
-            # Paper: Gender differences in cooperation across 20 societies: a meta-analysis
-            {"giv1": "gender", "siv1": "gender", "sivv1": "female",
-             "giv2": "gender", "siv2": "gender", "sivv2": "male",
-             'cat_qualifier': 'higher', 'mod_qualifier': 'higher',
-             'mod': 'studyOneShot', 'type_mod': 'study',
-             'mod1': 'Repeated', 'mod2': 'One-shot'}
-        ]
-        self.h = self.regular_h + self.numerical_h + self.categorical_h
+        # self.numerical_h = [
+        #     # Paper: Gender differences in cooperation across 20 societies: a meta-analysis
+        #     {"giv1": "gender", "siv1": "gender", "sivv1": "female",
+        #      "giv2": "gender", "siv2": "gender", "sivv2": "male",
+        #      'num_qualifier': 'higher', 'mod_qualifier': 'higher',
+        #      'mod': 'studyKindex', 'type_mod': 'study'}
+        # ]
+        # self.categorical_h = [
+        #     # Paper: Gender differences in cooperation across 20 societies: a meta-analysis
+        #     {"giv1": "gender", "siv1": "gender", "sivv1": "female",
+        #      "giv2": "gender", "siv2": "gender", "sivv2": "male",
+        #      'cat_qualifier': 'higher', 'mod_qualifier': 'higher',
+        #      'mod': 'studyOneShot', 'type_mod': 'study',
+        #      'mod1': 'Repeated', 'mod2': 'One-shot'}
+        # ]
+        # self.h = self.regular_h + self.numerical_h + self.categorical_h
+        self.h = self.regular_h
 
     def __call__(self, giv: Union[str, None] = None, top_k: int = 1):
         if giv:

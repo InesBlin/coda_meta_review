@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 SECTION_NAMES = [
     "introduction_custom", "hypothesis_custom", "methods_custom",
     "inclusion_criteria_custom", "coding_effect_sizes_custom",
-    "coding_variables_custom", "analytic_strategy_custom",
+    "control_variables_custom", "analytic_strategy_custom",
     "results_custom", "discussion_custom"
 ]
 
@@ -26,7 +26,8 @@ def main():
     st.title("Adding Custom Text")
     st.write("#")
 
-    st.write("At the end of this page, you can find the HTML template of the meta-review that will be generated.")
+    st.write("At the end of this page, you can find the HTML template of " + \
+        "the meta-review that will be generated.")
     st.write("If you want, you can add content at the end of each section.")
 
     with st.form("form_custom_text"):

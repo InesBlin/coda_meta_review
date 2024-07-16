@@ -2,7 +2,7 @@
 """ Analytic strategy for the meta-analysis """
 import streamlit as st
 
-TYPE_RMA_TO_K = {"simple": "uni", "multilevel": "mv"}
+TYPE_RMA_TO_K = {"simple": "uni"}#, "multilevel": "mv"}
 ES_MEASURE_TO_K = {
     "Cohen's standardized mean difference (d)": "d",
     "Pearson's correlation coefficient (r)": "r"}
@@ -49,13 +49,13 @@ def main():
                 st.session_state["submit_as"] = True
                 st.session_state["method_mv"] = analytic_strategy["method_mv"]
                 st.session_state["es_measure"] = ES_MEASURE_TO_K[analytic_strategy["es_measure"]]
-    
-    if st.session_state["submit_as"] and st.session_state["method_mv"] and st.session_state["es_measure"]:
+
+    if st.session_state["submit_as"] and st.session_state["method_mv"] \
+        and st.session_state["es_measure"]:
         if st.button("Save Analytic Strategy"):
             st.session_state["submit_as_whole"] = True
             st.success("Analytic strategy saved for the meta-review", icon="🔥")
 
-        
 
 if __name__ == '__main__':
     main()

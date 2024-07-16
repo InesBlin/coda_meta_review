@@ -2,8 +2,7 @@
 """
 Inclusion criteria
 """
-import re
-from typing import Union, Dict, List, Tuple
+from typing import Union, Dict
 import pandas as pd
 
 def check_selection(value, criterion):
@@ -117,11 +116,15 @@ class InclusionCriteria:
         if attributes:
             for criteria in simple_set.intersection(set(attributes.keys())):
                 data = data[check_selection(data[criteria], attributes[criteria])]
+                if data.shape[0] == 0:
+                    return data
             for criteria in range_set.intersection(set(attributes.keys())):
                 (min_n, max_n) = attributes[criteria]
                 (min_n_t, max_n_t) = thresholds[criteria]
                 if min_n > min_n_t or max_n < max_n_t:
                     data = data[check_range(data[criteria], attributes[criteria])]
+                    if data.shape[0] == 0:
+                        return data
         return data
 
     def __call__(self, data: pd.DataFrame):
@@ -151,68 +154,68 @@ def main(ic):
 
 if __name__ == '__main__':
     for METADATA in [
-        {"authorNames": ["Bruntsch", "Kopányi-Peuker"]},
-        {"lang": ["JPN", "CHI"]},
+        # {"authorNames": ["Bruntsch", "Kopányi-Peuker"]},
+        # {"lang": ["JPN", "CHI"]},
         {"overallN": (100, 2300)},
-        {"publicationStatus": ['Published Article', 'Doctoral Dissertation']}
+        # {"publicationStatus": ['Published Article', 'Doctoral Dissertation']}
     ]:
         IC = InclusionCriteria(metadata=METADATA)
         main(ic=IC)
 
-    for STUDY in [
-        {"deception": ["FALSE"]},
-        {"studySymmetric": ["FALSE"]},
-        {"studyKnownEndgame": ["FALSE"]},
-        {"studyDilemmaType": ["Public Goods Game"]},
-        {"studyContinuousPGG": ["Continuous"]},
-        {"studyExperimentalSetting": ['Lab']},
-        {"studyOneShot": ["Repeated"]},
-        {"studyOneShotRepeated": ['TRUE']},
-        {"studyMatchingProtocol": ['Partner']},
-        {"studyShowUpFee": ['Paid']},
-        {"studyGameIncentive": "Monetary"},
-        {"discussion": ["Absent"]},
-        {"participantDecision": ["Simultaneous"]},
-        {"studyRealPartner": ["Real"]},
-        {"studyAcquaintance": ["Strangers"]},
-        {"sanction": ["TRUE"]},
-        {"studyNumberOfChoices": (5, 10)},
-        {"choiceLow": (1, 2)},
-        {"choiceHigh": (5, 11)},
-        {"studyKindex": (0.2, 0.7)},
-        {"studyMPCR": (0.2, 0.7)},
-        {"studyGroupSize": (100, 223)},
-        {"replenishmentRate": (5, 20)},
-        {"studyPGDThreshold": (1, 10)}
-    ]:
-        IC = InclusionCriteria(study=STUDY)
-        main(ic=IC)
+    # for STUDY in [
+    #     {"deception": ["FALSE"]},
+    #     {"studySymmetric": ["FALSE"]},
+    #     {"studyKnownEndgame": ["FALSE"]},
+    #     {"studyDilemmaType": ["Public Goods Game"]},
+    #     {"studyContinuousPGG": ["Continuous"]},
+    #     {"studyExperimentalSetting": ['Lab']},
+    #     {"studyOneShot": ["Repeated"]},
+    #     {"studyOneShotRepeated": ['TRUE']},
+    #     {"studyMatchingProtocol": ['Partner']},
+    #     {"studyShowUpFee": ['Paid']},
+    #     {"studyGameIncentive": "Monetary"},
+    #     {"discussion": ["Absent"]},
+    #     {"participantDecision": ["Simultaneous"]},
+    #     {"studyRealPartner": ["Real"]},
+    #     {"studyAcquaintance": ["Strangers"]},
+    #     {"sanction": ["TRUE"]},
+    #     {"studyNumberOfChoices": (5, 10)},
+    #     {"choiceLow": (1, 2)},
+    #     {"choiceHigh": (5, 11)},
+    #     {"studyKindex": (0.2, 0.7)},
+    #     {"studyMPCR": (0.2, 0.7)},
+    #     {"studyGroupSize": (100, 223)},
+    #     {"replenishmentRate": (5, 20)},
+    #     {"studyPGDThreshold": (1, 10)}
+    # ]:
+    #     IC = InclusionCriteria(study=STUDY)
+    #     main(ic=IC)
 
-    for SAMPLE in [
-        {"yearOfDataCollection": (1900, 2000)},
-        {"studyStudentSample": ["FALSE"]},
-        {"studyAcademicDiscipline": ['Psychology', 'Mixed']},
-        {"yearSource": ['Conducted', 'Published']},
-        {"country": ["ITA", "KOR"]},
-        {"countrySource": ['Specified country', 'All authors']},
-        {"recruitmentMethod": ['Participant pool', 'Other']},
-        {"meanAge": (20, 60)},
-        {"maleProportion": (0.2, 0.4)},
-        {"ageHigh": (53, 83)},
-        {"ageLow": (23, 73)},
-        {"overallN": (1000, 2000)}
-    ]:
-        IC = InclusionCriteria(sample=SAMPLE)
-        main(ic=IC)
+    # for SAMPLE in [
+    #     {"yearOfDataCollection": (1900, 2000)},
+    #     {"studyStudentSample": ["FALSE"]},
+    #     {"studyAcademicDiscipline": ['Psychology', 'Mixed']},
+    #     {"yearSource": ['Conducted', 'Published']},
+    #     {"country": ["ITA", "KOR"]},
+    #     {"countrySource": ['Specified country', 'All authors']},
+    #     {"recruitmentMethod": ['Participant pool', 'Other']},
+    #     {"meanAge": (20, 60)},
+    #     {"maleProportion": (0.2, 0.4)},
+    #     {"ageHigh": (53, 83)},
+    #     {"ageLow": (23, 73)},
+    #     {"overallN": (1000, 2000)}
+    # ]:
+    #     IC = InclusionCriteria(sample=SAMPLE)
+    #     main(ic=IC)
 
-    for QUANT in [
-        {"numberOfObservations": (300, 1000)},
-        {"overallMeanContributions": (2, 12)},
-        {"overallStandardDeviation": (5, 7)},
-        {"overallProportionCooperation": (0.5, 0.78)},
-        {"overallMeanWithdrawal": (3, 7)},
-        {"overallPercentageEndowmentContributed": (0.5, 0.78)},
-        {"studyTrialOfCooperation": ['All trials', 'First trial']}
-    ]:
-        IC = InclusionCriteria(quantitative=QUANT)
-        main(ic=IC)
+    # for QUANT in [
+    #     {"numberOfObservations": (300, 1000)},
+    #     {"overallMeanContributions": (2, 12)},
+    #     {"overallStandardDeviation": (5, 7)},
+    #     {"overallProportionCooperation": (0.5, 0.78)},
+    #     {"overallMeanWithdrawal": (3, 7)},
+    #     {"overallPercentageEndowmentContributed": (0.5, 0.78)},
+    #     {"studyTrialOfCooperation": ['All trials', 'First trial']}
+    # ]:
+    #     IC = InclusionCriteria(quantitative=QUANT)
+    #     main(ic=IC)

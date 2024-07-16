@@ -12,9 +12,6 @@ meta_review/regular
 meta_review/numerical
 meta_review/categorical
 app/meta_review/
-wandb/
-LightGBM/
-experiments/old
 test_bnlp
-experiments/visualisations/*.pdf
 data_old/
+src/settings.py
