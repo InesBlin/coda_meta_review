@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,iteratedStrategy,Iterated strategy,predominantly_competitive,Predominantly Competitive,predominantly_cooperative,Predominantly Cooperative,higher
-1,cooperation,iteratedStrategy,Iterated strategy,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,predominantly_competitive,Predominantly Competitive,higher
-2,cooperation,iteratedStrategy,Iterated strategy,predominantly_competitive,Predominantly Competitive,real_partner,Real Partner,higher
-3,cooperation,iteratedStrategy,Iterated strategy,preprogrammed_cooperation_rate,Preprogrammed Cooperation Rate,tit-for-tat,Tit-for-Tat,higher
-4,cooperation,iteratedStrategy,Iterated strategy,predominantly_competitive,Predominantly Competitive,predominantly_cooperative,Predominantly Cooperative,higher

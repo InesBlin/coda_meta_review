@@ -1,5 +1,0 @@
-When comparing studies where Real partner is Real and studies where Real partner is Hypothetical, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Real partner is Real and studies where Real partner is Hypothetical, cooperation is significantly higher when Trial of cooperation is All trials compared to when Trial of cooperation has another value.
-When comparing studies where Real partner is Real and studies where Real partner is Hypothetical, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Real partner is Real and studies where Real partner is Hypothetical, cooperation is significantly higher when Experimental setting is Lab compared to when Experimental setting has another value.
-When comparing studies where Real partner is Real and studies where Real partner is Hypothetical, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.

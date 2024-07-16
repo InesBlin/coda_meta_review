@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyKnownEndgame,Known endgame,true,true,higher
-1,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyRealPartner,Real partner,1,Real,lower
-2,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyRealPartner,Real partner,0,Hypothetical,higher
-3,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyExperimentalSetting,Experimental setting,2,Lab,lower
-4,contributions,criticalityLevel,Criticality level,low,Low,high,High,studyExperimentalSetting,Experimental setting,3,Class,higher

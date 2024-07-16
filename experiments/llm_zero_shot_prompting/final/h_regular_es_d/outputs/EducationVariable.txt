@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Academic grade level is Junior compared to when Academic grade level is Senior.
-Cooperation  is significantly higher when Academic grade level is Middle compared to when Academic grade level is Senior.
-Cooperation  is significantly higher when Student sample is True compared to when Student sample is False.
-Cooperation  is significantly higher when Student sample is false compared to when Student sample is true.
-Cooperation  is significantly higher when Academic discipline is Economics compared to when Academic discipline is Others.

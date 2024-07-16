@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,gameType,Game type,chicken_game,Chicken Game,stag_hunt,Stag Hunt,higher
-1,cooperation,gameType,Game type,prisoner's_dilemma_game,Prisoner's Dilemma Game,chicken_game,Chicken Game,higher
-2,cooperation,gameType,Game type,prisoner's_dilemma_game,Prisoner's Dilemma Game,stag_hunt,Stag Hunt,higher
-3,contributions,gameType,Game type,continuous_public_goods_game,Continuous Public Goods Game,other_game,Other Game,higher
-4,contributions,gameType,Game type,continuous_public_goods_game,Continuous Public Goods Game,resource_dilemma,Resource Dilemma,higher

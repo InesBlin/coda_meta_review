@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,punishmentTreatment,Punishment treatment,-1,-1,0,0,higher
-1,cooperation,punishmentTreatment,Punishment treatment,1,1,-1,-1,higher
-2,cooperation,punishmentTreatment,Punishment treatment,0,0,1,1,higher
-3,contributions,punishmentIncentive,Punishment incentive,monetary,Monetary,non-monetary_social,Non-monetary Social,higher
-4,contributions,punishmentIncentive,Punishment incentive,non-monetary_material,Non-monetary Material,non-monetary_social,Non-monetary Social,higher

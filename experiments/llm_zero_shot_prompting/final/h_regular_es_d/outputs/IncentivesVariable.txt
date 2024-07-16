@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Show-up fee is true compared to when Show-up fee is false.
-Cooperation  is significantly higher when Show-up fee is True compared to when Show-up fee is False.
-Cooperation  is significantly higher when Game incentive is Monetary compared to when Game incentive is Hypothetical.
-Cooperation  is significantly higher when Game incentive is Monetary compared to when Game incentive is Non-monetary Material.
-Cooperation  is significantly higher when Game incentive is Hypothetical compared to when Game incentive is Non-monetary Material.

@@ -1,3 +1,0 @@
-Cooperation is significantly lower when communication content is other compared to when communication content is threat.
-Cooperation is significantly lower when communication content is threat compared to when communication content is promise.
-Cooperation is significantly lower when communication content is threat compared to when communication content is promise.

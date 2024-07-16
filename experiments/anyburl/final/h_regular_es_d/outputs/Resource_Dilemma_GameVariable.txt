@@ -1,1 +1,0 @@
-Cooperation is significantly higher when resource size level is high compared to when resource size level is medium.

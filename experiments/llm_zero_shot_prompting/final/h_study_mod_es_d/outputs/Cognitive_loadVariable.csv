@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,cognitiveLoadTreatment,Cognitive load treatment,True,True,False,False,yearSource,Source of year of data collection,1,Conducted,higher
-1,cooperation,cognitiveLoadTreatment,Cognitive load treatment,True,True,False,False,studyGameIncentive,Game incentive,1,Monetary,higher
-2,cooperation,cognitiveLoadTreatment,Cognitive load treatment,True,True,False,False,studyShowUpFee,Show-up fee,1,Paid,higher
-3,cooperation,cognitiveLoadTreatment,Cognitive load treatment,True,True,False,False,studyMatchingProtocol,Matching,2,Partner,higher
-4,cooperation,cognitiveLoadTreatment,Cognitive load treatment,True,True,False,False,studyStudentSample,Student sample,true,true,higher

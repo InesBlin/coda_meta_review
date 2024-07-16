@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,cooperation,lowerChoiceRangeLevel,Lowest choice option level,high,High,low,Low,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,higher
-1,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,lowerChoiceRangeLevel,Lowest choice option level,high,High,low,Low,lower
-2,cooperation,upperChoiceRangeLevel,Highest choice option level,low,Low,medium,Medium,nbOfChoicesLevel,Number of choices level,low,Low,medium,Medium,higher
-3,cooperation,nbOfChoicesLevel,Number of choices level,low,Low,high,High,lowerChoiceRangeLevel,Lowest choice option level,high,High,low,Low,higher
-4,cooperation,nbOfChoicesLevel,Number of choices level,low,Low,high,High,upperChoiceRangeLevel,Highest choice option level,low,Low,high,High,lower

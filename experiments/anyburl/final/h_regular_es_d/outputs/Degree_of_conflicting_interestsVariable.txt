@@ -1,5 +1,0 @@
-Cooperation is significantly lower when conflict index is k index compared to when conflict index is g index.
-Cooperation is significantly higher when conflict index is k index compared to when conflict index is g index.
-Cooperation is significantly lower when conflict level is high compared to when conflict level is low.
-Cooperation is significantly lower when conflict level is high compared to when conflict level is low.
-Cooperation is significantly lower when conflict level is high compared to when conflict level is low.

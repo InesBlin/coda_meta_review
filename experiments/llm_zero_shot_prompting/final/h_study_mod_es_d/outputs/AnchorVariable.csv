@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation ,studyGameIncentive,Game incentive,2,Monetary lottery,higher
-1,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation ,studyGameIncentive,Game incentive,4,Non-monetary lottery,higher
-2,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation ,studyRealPartner,Real partner,2,Deception,higher
-3,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation ,studySymmetric,Symmetry,true,true,higher
-4,contributions,anchor,Anchor,low_cooperation,low cooperation,high_cooperation,high cooperation ,studyDilemmaType,Game type,2,Public Goods Game,higher

@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,deception,Deception,true,true,higher
-1,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,sanction,Sanction,true,true,higher
-2,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyRealPartner,Real partner,1,Real,higher
-3,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyAcquaintance,Acquaintance,0,Strangers,higher
-4,cooperation,trialOfCooperationOrdinal,Trial of cooperation (ordinal),first,first,last,last,studyDilemmaType,Game type,2,Public Goods Game,higher

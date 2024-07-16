@@ -1,5 +1,0 @@
-When comparing studies where punishment agent is peer and studies where punishment agent is other, cooperation is significantly lower when recruitment method is participant pool compared to when recruitment method has another value.
-When comparing studies where punishment agent is peer and studies where punishment agent is other, cooperation is significantly lower when source of year of data collection is working paper published compared to when source of year of data collection has another value.
-When comparing studies where punishment treatment is 1 and studies where punishment treatment is -1, cooperation is significantly higher when has country is chn compared to when has country has another value.
-When comparing studies where punishment treatment is 1 and studies where punishment treatment is -1, cooperation is significantly higher when experimental setting is online compared to when experimental setting has another value.
-When comparing studies where punishment treatment is -1 and studies where punishment treatment is 0, cooperation is significantly lower when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.

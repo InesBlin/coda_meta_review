@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,ethnicityUS,Ethnicity (US),white,White,black_or_african_american,Black or African American,studyGameIncentive,Game incentive,3,Non-monetary,higher
-1,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyGameIncentive,Game incentive,1,Monetary,higher
-2,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyOneShotRepeated,Repeated one-shot game,true,true,higher
-3,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studySymmetric,Symmetry,true,true,higher
-4,cooperation,ethnicityUS,Ethnicity (US),white,White,asian,Asian,studyExperimentalSetting,Experimental setting,2,Lab,higher

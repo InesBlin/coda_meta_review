@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,studyOneShotRepeated,Repeated one-shot game,true,true,higher
-1,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,studyAcquaintance,Acquaintance,0,Strangers,lower
-2,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,studyShowUpFee,Show-up fee,1,Paid,higher
-3,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,studyStudentSample,Student sample,true,true,higher
-4,contributions,minimumContributionLevel,Minimum contribution level,low,Low,high,High,studySymmetric,Symmetry,true,true,higher

@@ -1,5 +1,0 @@
-When comparing studies where uncertainty level is low and studies where uncertainty level is high, cooperation is significantly lower when show-up fee is absent compared to when show-up fee has another value.
-When comparing studies where uncertainty target is threshold and studies where uncertainty target is loss, cooperation is significantly lower when known endgame is true compared to when known endgame has another value.
-When comparing studies where uncertainty target is threshold and studies where uncertainty target is loss, cooperation is significantly lower when repeated one-shot game is false compared to when repeated one-shot game has another value.
-When comparing studies where uncertainty target is threshold and studies where uncertainty target is loss, cooperation is significantly lower when show-up fee is absent compared to when show-up fee has another value.
-When comparing studies where uncertainty target is threshold and studies where uncertainty target is loss, cooperation is significantly lower when recruitment method is other compared to when recruitment method has another value.

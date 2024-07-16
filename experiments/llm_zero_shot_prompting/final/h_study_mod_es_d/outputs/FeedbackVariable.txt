@@ -1,5 +1,0 @@
-When comparing studies where Noise is True and studies where Noise is False, cooperation is significantly higher when Known endgame is false compared to when Known endgame has another value.
-When comparing studies where Feedback target is Individual and studies where Feedback target is Absent, cooperation is significantly higher when Acquaintance is Strangers compared to when Acquaintance has another value.
-When comparing studies where Feedback target is Individual and studies where Feedback target is Group, cooperation is significantly lower when Experimental setting is Online compared to when Experimental setting has another value.
-When comparing studies where Feedback target is Individual and studies where Feedback target is Absent, cooperation is significantly higher when Known endgame is false compared to when Known endgame has another value.
-When comparing studies where Feedback target is Individual and studies where Feedback target is Group, cooperation is significantly higher when Show-up fee is Absent compared to when Show-up fee has another value.

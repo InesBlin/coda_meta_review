@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,timePressure,Time pressure,time_pressure,time pressure,control,Control,higher
-1,cooperation,timePressure,Time pressure,time_delay,time delay,control,Control,lower
-2,cooperation,timePressure,Time pressure,time_pressure,time pressure,time_delay,time delay,higher
-3,contributions,timePressure,Time pressure,time_pressure,time pressure,control,Control,higher
-4,contributions,timePressure,Time pressure,time_pressure,time pressure,time_delay,time delay,higher

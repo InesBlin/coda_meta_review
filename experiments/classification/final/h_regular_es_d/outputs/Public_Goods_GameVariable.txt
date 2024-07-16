@@ -1,5 +1,0 @@
-Cooperation is significantly lower when mpcr level is low compared to when mpcr level is medium.
-Cooperation is significantly lower when mpcr level is medium compared to when mpcr level is high.
-Cooperation is significantly lower when mpcr level is low compared to when mpcr level is medium.
-Cooperation is significantly lower when endowment level is medium compared to when endowment level is high.
-Cooperation is significantly lower when endowment level is medium compared to when endowment level is high.

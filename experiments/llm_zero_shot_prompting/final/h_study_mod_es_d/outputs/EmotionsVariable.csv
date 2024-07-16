@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,emotion,Emotion,neutral,Neutral,anger,Anger,studyGameIncentive,Game incentive,1,Monetary,higher
-1,contributions,emotion,Emotion,neutral,Neutral,anger,Anger,studyRealPartner,Real partner,2,Deception,lower
-2,contributions,emotion,Emotion,neutral,Neutral,anger,Anger,studyOneShot,One-shot vs repeated,1,One-shot,higher
-3,contributions,emotion,Emotion,neutral,Neutral,anger,Anger,studyMatchingProtocol,Matching,1,Stranger,higher
-4,contributions,emotion,Emotion,neutral,Neutral,anger,Anger,publicationStatus,Published,1,Published Article,higher

@@ -1,5 +1,0 @@
-When comparing studies where Criticality level is Low and studies where Criticality level is High, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Criticality level is Low and studies where Criticality level is High, cooperation is significantly lower when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Criticality level is Low and studies where Criticality level is High, cooperation is significantly higher when Real partner is Hypothetical compared to when Real partner has another value.
-When comparing studies where Criticality level is Low and studies where Criticality level is High, cooperation is significantly lower when Experimental setting is Lab compared to when Experimental setting has another value.
-When comparing studies where Criticality level is Low and studies where Criticality level is High, cooperation is significantly higher when Experimental setting is Class compared to when Experimental setting has another value.

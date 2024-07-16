@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,motivationalOrientation,Motivational orientation,competitive,Competitive,individualistic,Individualistic,discussion,Discussion,2,Bi-directional,higher
-1,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyExperimentalSetting,Experimental setting,2,Lab,higher
-2,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyOneShot,One-shot vs repeated,1,One-shot,higher
-3,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyMatchingProtocol,Matching,2,Partner,higher
-4,cooperation,motivationalOrientation,Motivational orientation,cooperative,Cooperative,individualistic,Individualistic,studyGameIncentive,Game incentive,2,Monetary lottery,higher

@@ -1,5 +1,0 @@
-When comparing studies where institution type is reward and studies where institution type is punishment, cooperation is significantly lower when game incentive is monetary compared to when game incentive has another value.
-When comparing studies where institution type is reward and studies where institution type is punishment, cooperation is significantly lower when discussion is absent compared to when discussion has another value.
-When comparing studies where institutional choice is endogenous and studies where institutional choice is exogenous, cooperation is significantly higher when has country is nld compared to when has country has another value.
-When comparing studies where institution type is reward and studies where institution type is punishment, cooperation is significantly lower when recruitment method is other compared to when recruitment method has another value.
-When comparing studies where institution type is reward and studies where institution type is punishment, cooperation is significantly lower when source of year of data collection is submitted compared to when source of year of data collection has another value.

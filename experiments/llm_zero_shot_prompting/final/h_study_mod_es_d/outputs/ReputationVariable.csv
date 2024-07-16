@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyContinuousPGG,Continuous vs step-level public goods,2,Step-level,higher
-1,cooperation,anonymityManipul,Anonymity manipulation,high,High,low,Low,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
-2,contributions,gossip,Gossip,absent,Absent,present,Present,recruitmentMethod,Recruitment method,2,MTurk,higher
-3,cooperation,gossip,Gossip,absent,Absent,present,Present,studyStudentSample,Student sample,true,true,higher
-4,contributions,knowledgeOfPartnerPriorBehavior,Knowledge of partner's prior behavior,absent,absent,present,present,studyAcquaintance,Acquaintance,0,Strangers,higher

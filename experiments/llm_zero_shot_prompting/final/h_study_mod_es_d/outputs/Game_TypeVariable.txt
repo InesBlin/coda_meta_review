@@ -1,5 +1,0 @@
-When comparing studies where Game type is Prisoner's Dilemma Game and studies where Game type is Stag Hunt, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Game type is Prisoner's Dilemma Game and studies where Game type is Chicken Game, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Game type is Prisoner's Dilemma Game and studies where Game type is Chicken Game, cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.
-When comparing studies where Game type is Prisoner's Dilemma Game and studies where Game type is Chicken Game, cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.
-When comparing studies where Game type is Chicken Game and studies where Game type is Stag Hunt, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.

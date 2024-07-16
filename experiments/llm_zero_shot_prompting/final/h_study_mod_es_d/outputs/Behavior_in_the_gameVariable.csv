@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,studyKnownEndgame,Known endgame,true,true,higher
-1,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,studyKnownEndgame,Known endgame,false,false,lower
-2,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,studyOneShot,One-shot vs repeated,0,Repeated,lower
-3,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,studySymmetric,Symmetry,true,true,higher
-4,cooperation,ownBehaviorLevel,Participant's behavior level,low,Low,high,High,studyGameIncentive,Game incentive,1,Monetary,higher

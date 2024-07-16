@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,positionEndogenous,Endogenous position,true,true,false,false,higher
-1,cooperation,positionEndogenous,Endogenous position,False,False,True,True,lower
-2,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,higher
-3,withdrawals,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,higher
-4,withdrawals,positionEndogenous,Endogenous position,true,true,false,false,higher

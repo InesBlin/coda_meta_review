@@ -1,5 +1,0 @@
-When comparing studies where give-take frame is give-some and studies where give-take frame is take-some, cooperation is significantly higher when has country is chn compared to when has country has another value.
-When comparing studies where gain-loss frame is gain and studies where gain-loss frame is loss, cooperation is significantly higher when has country is chn compared to when has country has another value.
-When comparing studies where gain-loss frame is gain and studies where gain-loss frame is loss, cooperation is significantly higher when source of country or region is specified country compared to when source of country or region has another value.
-When comparing studies where gain-loss frame is gain and studies where gain-loss frame is loss, cooperation is significantly higher when deception is true compared to when deception has another value.
-When comparing studies where gain-loss frame is gain and studies where gain-loss frame is loss, cooperation is significantly higher when discussion is absent compared to when discussion has another value.

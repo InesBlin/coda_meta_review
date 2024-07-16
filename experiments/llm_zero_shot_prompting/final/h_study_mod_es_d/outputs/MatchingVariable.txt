@@ -1,5 +1,0 @@
-When comparing studies where Matching is Stranger and studies where Matching is Partner's choice, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Matching is Partner compared to when Matching has another value.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Matching is Stranger and studies where Matching is Partner, cooperation is significantly higher when Student sample is true compared to when Student sample has another value.

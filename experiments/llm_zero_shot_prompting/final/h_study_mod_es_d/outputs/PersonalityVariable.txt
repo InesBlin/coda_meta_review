@@ -1,5 +1,0 @@
-When comparing studies where SVO type is Prosocial and studies where SVO type is Competitor, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Individual difference level is Low and studies where Individual difference level is Medium, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where SVO type is Individualist and studies where SVO type is Prosocial, cooperation is significantly lower when Show-up fee is Course credit compared to when Show-up fee has another value.
-When comparing studies where SVO type is Prosocial and studies where SVO type is Proself, cooperation is significantly higher when Acquaintance is Possible Acquaintance compared to when Acquaintance has another value.
-When comparing studies where SVO type is Prosocial and studies where SVO type is Competitor, cooperation is significantly higher when Game type is Prisoner's Dilemma Game compared to when Game type has another value.

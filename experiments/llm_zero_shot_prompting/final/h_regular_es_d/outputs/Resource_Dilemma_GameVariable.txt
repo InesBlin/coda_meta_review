@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Fixed resource is True compared to when Fixed resource is False.
-Cooperation  is significantly higher when Resource size level is High compared to when Resource size level is Medium.
-Cooperation  is significantly higher when Replenishment rate level is High compared to when Replenishment rate level is Medium.
-Cooperation  is significantly higher when Replenishment rate level is High compared to when Replenishment rate level is Low.
-Cooperation  is significantly lower when Resource size level is Low compared to when Resource size level is High.

@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Asian.
-Cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Black or African American.
-Cooperation  is significantly higher when Ethnicity (US) is White compared to when Ethnicity (US) is Other.
-Cooperation  is significantly higher when Heterogeneous ethnicity is True compared to when Heterogeneous ethnicity is False.
-Cooperation  is significantly higher when Heterogeneous ethnicity is False compared to when Heterogeneous ethnicity is True.

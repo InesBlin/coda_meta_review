@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Context frame is Competitive compared to when Context frame is Moral.
-Cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Generic.
-Cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Competitive.
-Cooperation  is significantly higher when Give-Take frame is Give-some compared to when Give-Take frame is Take-some.
-Cooperation  is significantly higher when Context frame is Cooperative compared to when Context frame is Generic.

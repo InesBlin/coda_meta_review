@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyOneShotRepeated,Repeated one-shot game,true,true,higher
-1,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyKnownEndgame,Known endgame,true,true,higher
-2,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studySymmetric,Symmetry,true,true,higher
-3,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyStudentSample,Student sample,true,true,higher
-4,cooperation,sequentiality,Sequentiality,simultaneous,Simultaneous,sequential_turn-taking,Sequential turn-taking,studyRealPartner,Real partner,1,Real,higher

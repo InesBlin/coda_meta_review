@@ -1,4 +1,0 @@
-Cooperation is significantly higher when emotion is sadness compared to when emotion is neutral.
-Cooperation is significantly lower when emotion is neutral compared to when emotion is disgust.
-Cooperation is significantly higher when emotion is neutral compared to when emotion is disgust.
-Cooperation is significantly lower when emotion is sadness compared to when emotion is neutral.

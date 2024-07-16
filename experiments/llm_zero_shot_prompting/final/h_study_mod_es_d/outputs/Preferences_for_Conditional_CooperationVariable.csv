@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,publicationStatus,Published,1,Published Article,higher
-1,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyGameIncentive,Game incentive,1,Monetary,higher
-2,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyDilemmaType,Game type,2,Public Goods Game,higher
-3,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyAcademicDiscipline,Academic discipline,4,Mixed,higher
-4,contributions,preferenceConditionalCooperation,Preference for conditional cooperation,conditional_cooperators,Conditional cooperators,hump-shaped_contributors,Hump-shaped contributors,studyKnownEndgame,Known endgame,true,true,higher

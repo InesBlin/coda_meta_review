@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,knownEndGame,Known endgame,true,true,false,false,higher
-1,cooperation,knownEndGame,Known endgame,True,True,False,False,higher
-2,cooperation,nbTrialsLevel,Number of trials level,low,Low,high,High,lower
-3,cooperation,continuationProbabilityLevel,Continuation probability level,high,High,low,Low,higher
-4,cooperation,continuationProbabilityLevel,Continuation probability level,low,Low,medium,Medium,lower

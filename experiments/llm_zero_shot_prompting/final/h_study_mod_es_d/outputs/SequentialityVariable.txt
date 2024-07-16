@@ -1,5 +1,0 @@
-When comparing studies where Sequentiality is Simultaneous and studies where Sequentiality is Sequential turn-taking, cooperation is significantly higher when Repeated one-shot game is true compared to when Repeated one-shot game has another value.
-When comparing studies where Sequentiality is Simultaneous and studies where Sequentiality is Sequential turn-taking, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Sequentiality is Simultaneous and studies where Sequentiality is Sequential turn-taking, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
-When comparing studies where Sequentiality is Simultaneous and studies where Sequentiality is Sequential turn-taking, cooperation is significantly higher when Student sample is true compared to when Student sample has another value.
-When comparing studies where Sequentiality is Simultaneous and studies where Sequentiality is Sequential turn-taking, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.

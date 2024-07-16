@@ -1,5 +1,0 @@
-When comparing studies where Heterogeneous gender is false and studies where Heterogeneous gender is true, cooperation is significantly Higher when Game incentive is Non-monetary compared to when Game incentive has another value.
-When comparing studies where Heterogeneous gender is false and studies where Heterogeneous gender is true, cooperation is significantly Higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Partner's gender is known is false and studies where Partner's gender is known is true, cooperation is significantly Higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Gender is Female and studies where Gender is Male, cooperation is significantly Higher when Game incentive is Non-monetary lottery compared to when Game incentive has another value.
-When comparing studies where Gender is Female and studies where Gender is Male, cooperation is significantly Higher when Game incentive is Monetary lottery compared to when Game incentive has another value.

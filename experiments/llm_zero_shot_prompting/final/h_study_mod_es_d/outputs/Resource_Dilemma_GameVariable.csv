@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,studyKnownEndgame,Known endgame,true,true,higher
-1,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,studyRealPartner,Real partner,1,Real,higher
-2,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,studyGameIncentive,Game incentive,1,Monetary,higher
-3,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,studyOneShot,One-shot vs repeated,1,One-shot,higher
-4,withdrawals,replenishmentRateLevel,Replenishment rate level,high,High,low,Low,studyDilemmaType,Game type,3,Resource Dilemma,higher

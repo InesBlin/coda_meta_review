@@ -1,5 +1,0 @@
-Cooperation is significantly higher when leadership assignment rule is authority compared to when leadership assignment rule is fixed .
-Cooperation is significantly higher when leader's behavior is cooperative compared to when leader's behavior is noncooperative.
-Cooperation is significantly higher when leadership role is leader  compared to when leadership role is follower.
-Cooperation is significantly lower when leader's characteristic is weak compared to when leader's characteristic is strong.
-Cooperation is significantly lower when endogenous leadership is exogenous compared to when endogenous leadership is endogenous.

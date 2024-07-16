@@ -1,3 +1,0 @@
-Cooperation is significantly higher when game type is other game compared to when game type is resource dilemma.
-Cooperation is significantly higher when game type is other game compared to when game type is prisoner's dilemma game.
-Cooperation is significantly higher when game type is other game compared to when game type is prisoner's dilemma game.

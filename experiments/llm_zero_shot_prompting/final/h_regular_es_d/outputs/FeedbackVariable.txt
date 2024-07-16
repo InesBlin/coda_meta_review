@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Feedback content is Success compared to when Feedback content is Failure.
-Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Earnings.
-Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Others.
-Cooperation  is significantly higher when Feedback content is Choice compared to when Feedback content is Rank.
-Cooperation  is significantly higher when Feedback content is Success compared to when Feedback content is Failure.

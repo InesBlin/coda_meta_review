@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,symmetric,Symmetry,false,false,true,true,higher
-1,cooperation,symmetric,Symmetry,True,True,False,False,lower
-2,contributions,symmetryTarget,Symmetry target,mpcr,MPCR,lottery_prize,Lottery prize,higher
-3,contributions,symmetric,Symmetry,false,false,true,true,higher
-4,withdrawals,symmetric,Symmetry,True,True,False,False,lower

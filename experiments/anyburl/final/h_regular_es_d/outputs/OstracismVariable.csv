@@ -1,3 +1,0 @@
-,dependent,iv,cat_t1,cat_t2,giv_prop,iv_label,cat_t1_label,cat_t2_label,comparative,hypothesis
-429,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/ostracism,False,True,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,Ostracism,na,na,higher,Cooperation is significantly higher when ostracism is false compared to when ostracism is true.
-4622,https://data.cooperationdatabank.org/id/dependentvariable/cooperation,https://data.cooperationdatabank.org/vocab/prop/ostracism,False,True,https://data.cooperationdatabank.org/vocab/prop/OstracismVariable,Ostracism,na,na,lower,Cooperation is significantly lower when ostracism is false compared to when ostracism is true.

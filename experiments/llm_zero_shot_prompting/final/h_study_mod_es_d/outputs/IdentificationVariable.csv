@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,targetMembership,Partner's group membership,ingroup,Ingroup,outgroup,Outgroup,studyShowUpFee,Show-up fee,2,Course credit,higher
-1,cooperation,targetMembership,Partner's group membership,stranger,Stranger,outgroup,Outgroup,studyKnownEndgame,Known endgame,true,true,higher
-2,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unilateral,Unilateral,studyKnownEndgame,Known endgame,true,true,higher
-3,cooperation,knowledgeOfMembership,Knowledge of group membership,common,Common,unknown,Unknown,studyGameIncentive,Game incentive,1,Monetary,higher
-4,contributions,identificationLevel,Identification level,high,High,low,Low,studyDilemmaType,Game type,3,Resource Dilemma,higher

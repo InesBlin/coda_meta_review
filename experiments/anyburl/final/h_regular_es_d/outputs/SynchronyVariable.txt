@@ -1,1 +1,0 @@
-Cooperation is significantly higher when synchrony is true compared to when synchrony is false.

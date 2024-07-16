@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_t1,mod_t1_label,mod_t2,mod_t2_label,comparative
-0,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
-1,contributions,uncertaintyLevel,Uncertainty level,low,Low,high,High,uncertaintyTarget,Uncertainty target,threshold,Threshold,loss,Loss,higher
-2,contributions,uncertaintyLevel,Uncertainty level,low,Low,medium,Medium,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,higher
-3,contributions,uncertaintyTarget,Uncertainty target,return_from_public_account,Return from public account,return_from_private_account,Return from private account,uncertaintyLevel,Uncertainty level,low,Low,high,High,lower
-4,contributions,uncertaintyTarget,Uncertainty target,threshold,Threshold,loss,Loss,uncertaintyLevel,Uncertainty level,low,Low,high,High,lower

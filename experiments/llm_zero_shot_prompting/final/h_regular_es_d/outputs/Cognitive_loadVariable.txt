@@ -1,2 +1,0 @@
-Cooperation  is significantly higher when Cognitive load treatment is True compared to when Cognitive load treatment is False.
-Cooperation  is significantly higher when Cognitive load treatment is True compared to when Cognitive load treatment is False.

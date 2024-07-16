@@ -1,4 +1,0 @@
-When comparing studies where partner's gender is known is false and studies where partner's gender is known is true, cooperation from studies involving male as gender is significantly lower than cooperation from studies involving female as gender.
-When comparing studies where heterogeneous gender is false and studies where heterogeneous gender is true, cooperation from studies involving male as gender is significantly lower than cooperation from studies involving female as gender.
-When comparing studies where partner's gender is known is false and studies where partner's gender is known is true, cooperation from studies involving male as gender is significantly higher than cooperation from studies involving female as gender.
-When comparing studies where heterogeneous gender is false and studies where heterogeneous gender is true, cooperation from studies involving male as gender is significantly higher than cooperation from studies involving female as gender.

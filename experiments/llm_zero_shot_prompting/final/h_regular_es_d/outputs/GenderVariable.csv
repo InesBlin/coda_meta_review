@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,comparative
-0,cooperation,heterogeneousGender,Heterogeneous gender,false,false,true,true,higher
-1,cooperation,partnersGenderKnownInGame,Partner's gender is known,false,false,true,true,higher
-2,cooperation,gender,Gender,female,Female,male,Male,higher
-3,contributions,partnersGenderKnownInGame,Partner's gender is known,false,false,true,true,higher
-4,contributions,heterogeneousGender,Heterogeneous gender,false,false,true,true,higher

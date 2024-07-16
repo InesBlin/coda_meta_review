@@ -1,2 +1,0 @@
-When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when matching is partner compared to when matching has another value.
-When comparing studies where one-shot vs repeated is repeated and studies where one-shot vs repeated is one-shot, cooperation is significantly higher when one-shot vs repeated is repeated compared to when one-shot vs repeated has another value.

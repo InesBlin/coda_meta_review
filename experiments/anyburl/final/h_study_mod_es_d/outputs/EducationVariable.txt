@@ -1,5 +1,0 @@
-When comparing studies where student sample is true and studies where student sample is false, cooperation is significantly lower when academic discipline is other compared to when academic discipline has another value.
-When comparing studies where academic discipline is economics and studies where academic discipline is others, cooperation is significantly lower when academic discipline is other compared to when academic discipline has another value.
-When comparing studies where student sample is true and studies where student sample is false, cooperation is significantly lower when known endgame is true compared to when known endgame has another value.
-When comparing studies where student sample is true and studies where student sample is false, cooperation is significantly lower when repeated one-shot game is false compared to when repeated one-shot game has another value.
-When comparing studies where student sample is true and studies where student sample is false, cooperation is significantly lower when show-up fee is paid compared to when show-up fee has another value.

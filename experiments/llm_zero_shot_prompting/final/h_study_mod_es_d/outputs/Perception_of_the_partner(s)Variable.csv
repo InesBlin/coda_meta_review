@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,recruitmentMethod,Recruitment method,3,Other,higher
-1,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,studyAcademicDiscipline,Academic discipline,2,Psychology,higher
-2,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,studyGameIncentive,Game incentive,1,Monetary,higher
-3,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,studyRealPartner,Real partner,1,Real,higher
-4,cooperation,partnerPerceptionLevel,Partner perception level,high,high,low,low,studyStudentSample,Student sample,true,true,higher

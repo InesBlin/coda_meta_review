@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Iterated strategy is Predominantly Competitive compared to when Iterated strategy is Predominantly Cooperative.
-Cooperation  is significantly higher when Iterated strategy is Preprogrammed Cooperation Rate compared to when Iterated strategy is Predominantly Competitive.
-Cooperation  is significantly higher when Iterated strategy is Predominantly Competitive compared to when Iterated strategy is Real Partner.
-Cooperation  is significantly higher when Iterated strategy is Preprogrammed Cooperation Rate compared to when Iterated strategy is Tit-for-Tat.
-Cooperation  is significantly higher when Iterated strategy is Predominantly Competitive compared to when Iterated strategy is Predominantly Cooperative.

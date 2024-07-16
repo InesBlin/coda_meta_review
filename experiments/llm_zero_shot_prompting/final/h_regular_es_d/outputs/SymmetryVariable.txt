@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Symmetry is false compared to when Symmetry is true.
-Cooperation  is significantly lower when Symmetry is True compared to when Symmetry is False.
-Cooperation  is significantly higher when Symmetry target is MPCR compared to when Symmetry target is Lottery prize.
-Cooperation  is significantly higher when Symmetry is false compared to when Symmetry is true.
-Cooperation  is significantly lower when Symmetry is True compared to when Symmetry is False.

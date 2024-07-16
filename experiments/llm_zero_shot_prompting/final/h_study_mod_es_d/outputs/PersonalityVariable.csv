@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,sVOType,SVO type,prosocial,Prosocial,competitor,Competitor,studyGameIncentive,Game incentive,1,Monetary,higher
-1,cooperation,individualDifferenceLevel,Individual difference level,low,Low,medium,Medium,studyGameIncentive,Game incentive,1,Monetary,higher
-2,cooperation,sVOType,SVO type,individualist,Individualist,prosocial,Prosocial,studyShowUpFee,Show-up fee,2,Course credit,lower
-3,contributions,sVOType,SVO type,prosocial,Prosocial,proself,Proself,studyAcquaintance,Acquaintance,2,Possible Acquaintance,higher
-4,cooperation,sVOType,SVO type,prosocial,Prosocial,competitor,Competitor,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher

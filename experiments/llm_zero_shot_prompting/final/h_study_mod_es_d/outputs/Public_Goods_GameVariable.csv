@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,contributions,endowmentLevel,Endowment level,low,Low,high,High,studyShowUpFee,Show-up fee,1,Paid,higher
-1,cooperation,endowmentLevel,Endowment level,medium,Medium,low,Low,studyShowUpFee,Show-up fee,1,Paid,higher
-2,contributions,endowmentLevel,Endowment level,low,Low,high,High,studyRealPartner,Real partner,2,Deception,lower
-3,cooperation,endowmentLevel,Endowment level,low,Low,high,High,studyRealPartner,Real partner,2,Deception,lower
-4,contributions,endowmentLevel,Endowment level,medium,Medium,high,High,studyShowUpFee,Show-up fee,1,Paid,higher

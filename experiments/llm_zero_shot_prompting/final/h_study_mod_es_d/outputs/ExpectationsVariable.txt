@@ -1,5 +1,0 @@
-When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.
-When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Expectations level is Low and studies where Expectations level is High, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.

@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,gameComprehensionLevel,Comprehension of the game level,low,Low,high,High,studyStudentSample,Student sample,true,true,higher
-1,cooperation,gameComprehensionLevel,Comprehension of the game level,low,Low,high,High,studySymmetric,Symmetry,true,true,higher
-2,cooperation,gameComprehensionLevel,Comprehension of the game level,low,Low,high,High,studyShowUpFee,Show-up fee,1,Paid,lower
-3,cooperation,gameComprehensionLevel,Comprehension of the game level,low,Low,high,High,studyShowUpFee,Show-up fee,2,Course credit,higher
-4,cooperation,gameComprehensionLevel,Comprehension of the game level,low,Low,high,High,studyRealPartner,Real partner,1,Real,higher

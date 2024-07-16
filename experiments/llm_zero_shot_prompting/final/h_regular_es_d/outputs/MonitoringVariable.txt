@@ -1,5 +1,0 @@
-Cooperation  is significantly higher when Monitoring cost is Medium compared to when Monitoring cost is High.
-Cooperation  is significantly higher when Monitoring cost is Low compared to when Monitoring cost is High.
-Cooperation  is significantly higher when Monitoring cost is Medium compared to when Monitoring cost is High.
-Cooperation  is significantly higher when Monitoring cost is Low compared to when Monitoring cost is Medium.
-Cooperation  is significantly higher when Costly monitoring is False compared to when Costly monitoring is True.

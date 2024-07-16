@@ -1,5 +1,0 @@
-When comparing studies where communication treatment is true and studies where communication treatment is false, cooperation is significantly higher when known endgame is true compared to when known endgame has another value.
-When comparing studies where communication treatment is true and studies where communication treatment is false, cooperation is significantly higher when recruitment method is other compared to when recruitment method has another value.
-When comparing studies where communication treatment is true and studies where communication treatment is false, cooperation is significantly higher when has country is deu compared to when has country has another value.
-When comparing studies where communication treatment is true and studies where communication treatment is false, cooperation is significantly higher when source of country or region is specified country compared to when source of country or region has another value.
-When comparing studies where communication treatment is true and studies where communication treatment is false, cooperation is significantly higher when deception is false compared to when deception has another value.

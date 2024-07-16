@@ -1,5 +1,0 @@
-When comparing studies where Replenishment rate level is High and studies where Replenishment rate level is Low, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Replenishment rate level is High and studies where Replenishment rate level is Low, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Replenishment rate level is High and studies where Replenishment rate level is Low, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Replenishment rate level is High and studies where Replenishment rate level is Low, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
-When comparing studies where Replenishment rate level is High and studies where Replenishment rate level is Low, cooperation is significantly higher when Game type is Resource Dilemma compared to when Game type has another value.

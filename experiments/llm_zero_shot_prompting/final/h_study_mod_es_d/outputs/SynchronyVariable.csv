@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,synchrony,Synchrony,True,True,False,False,studyKnownEndgame,Known endgame,true,true,higher
-1,cooperation,synchrony,Synchrony,True,True,False,False,studyRealPartner,Real partner,1,Real,higher
-2,cooperation,synchrony,Synchrony,True,True,False,False,studyExperimentalSetting,Experimental setting,2,Lab,higher
-3,cooperation,synchrony,Synchrony,True,True,False,False,studyMatchingProtocol,Matching,2,Partner,higher
-4,cooperation,synchrony,Synchrony,True,True,False,False,studySymmetric,Symmetry,true,true,higher

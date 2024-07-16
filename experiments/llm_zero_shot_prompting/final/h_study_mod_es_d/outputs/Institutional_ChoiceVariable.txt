@@ -1,5 +1,0 @@
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Deception is true compared to when Deception has another value.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Game incentive is Monetary compared to when Game incentive has another value.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when One-shot vs repeated is One-shot compared to when One-shot vs repeated has another value.
-When comparing studies where Institutional choice is Endogenous and studies where Institutional choice is Exogenous, cooperation is significantly higher when Acquaintance is Acquaintance compared to when Acquaintance has another value.

@@ -1,5 +1,0 @@
-When comparing studies where Anchor is low cooperation and studies where Anchor is high cooperation , cooperation is significantly higher when Game incentive is Monetary lottery compared to when Game incentive has another value.
-When comparing studies where Anchor is low cooperation and studies where Anchor is high cooperation , cooperation is significantly higher when Game incentive is Non-monetary lottery compared to when Game incentive has another value.
-When comparing studies where Anchor is low cooperation and studies where Anchor is high cooperation , cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.
-When comparing studies where Anchor is low cooperation and studies where Anchor is high cooperation , cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
-When comparing studies where Anchor is low cooperation and studies where Anchor is high cooperation , cooperation is significantly higher when Game type is Public Goods Game compared to when Game type has another value.

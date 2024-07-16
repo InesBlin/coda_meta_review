@@ -1,5 +1,0 @@
-When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Trial of cooperation is Other trials compared to when Trial of cooperation has another value.
-When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
-When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Real partner is Real compared to when Real partner has another value.
-When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Matching is Stranger compared to when Matching has another value.
-When comparing studies where Uncertainty level is Low and studies where Uncertainty level is High, cooperation is significantly higher when Show-up fee is Absent compared to when Show-up fee has another value.

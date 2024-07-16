@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,ageCohort,Age cohort,old,old,young,young,studyKnownEndgame,Known endgame,true,true,higher
-1,cooperation,ageCohort,Age cohort,old,old,young,young,studyMatchingProtocol,Matching,2,Partner,higher
-2,cooperation,ageCohort,Age cohort,old,old,young,young,studyGameIncentive,Game incentive,1,Monetary,higher
-3,cooperation,ageCohort,Age cohort,old,old,young,young,studyStudentSample,Student sample,true,true,higher
-4,cooperation,ageCohort,Age cohort,old,old,young,young,studyAcquaintance,Acquaintance,1,Acquaintance,higher

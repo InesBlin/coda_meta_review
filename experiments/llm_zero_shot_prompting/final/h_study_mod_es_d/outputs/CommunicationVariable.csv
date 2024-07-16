@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,communicationReal,Real communication,True,True,False,False,studyDilemmaType,Game type,1,Prisoner's Dilemma Game,higher
-1,cooperation,communicationTreatment,Communication treatment,True,True,False,False,studyStudentSample,Student sample,true,true,higher
-2,cooperation,communicationContent,Communication content,threat,Threat,promise,Promise,recruitmentMethod,Recruitment method,1,Participant pool,lower
-3,contributions,communicationType,Communication type,written,Written,verbal,Verbal,studyMatchingProtocol,Matching,2,Partner,higher
-4,contributions,communicationTreatment,Communication treatment,True,True,False,False,studyAcquaintance,Acquaintance,0,Strangers,higher

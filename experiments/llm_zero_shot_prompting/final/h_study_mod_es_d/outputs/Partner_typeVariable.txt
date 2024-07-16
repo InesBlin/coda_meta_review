@@ -1,5 +1,0 @@
-When comparing studies where Partner type is Peer and studies where Partner type is Computer, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
-When comparing studies where Partner type is Peer and studies where Partner type is Other, cooperation is significantly higher when Symmetry is true compared to when Symmetry has another value.
-When comparing studies where Partner type is Peer and studies where Partner type is Computer, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Partner type is Peer and studies where Partner type is Other, cooperation is significantly higher when Known endgame is true compared to when Known endgame has another value.
-When comparing studies where Partner type is Peer and studies where Partner type is Computer, cooperation is significantly higher when Real partner is Deception compared to when Real partner has another value.

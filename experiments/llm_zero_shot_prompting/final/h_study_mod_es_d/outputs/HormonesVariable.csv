@@ -1,6 +1,0 @@
-,dependent,iv,iv_label,cat_t1,cat_t1_label,cat_t2,cat_t2_label,mod,mod_label,mod_val,mod_val_label,comparative
-0,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,placebo,Placebo,studyKnownEndgame,Known endgame,true,true,higher
-1,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,placebo,Placebo,studyOneShotRepeated,Repeated one-shot game,true,true,higher
-2,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,placebo,Placebo,studyRealPartner,Real partner,1,Real,higher
-3,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,placebo,Placebo,studyStudentSample,Student sample,true,true,higher
-4,cooperation,hormonesAdministration,Hormones administration,oxytocin,Oxytocin,vasopressin,Vasopressin,studyTrialOfCooperation,Trial of cooperation,5,Other trials,higher
