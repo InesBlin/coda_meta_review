@@ -2,6 +2,7 @@
 """
 Generating hypotheses based on LLM prompting
 """
+import os
 import random
 from typing import Union
 import pandas as pd
@@ -55,7 +56,7 @@ class LLMHypothesisGenerator(HypothesisGenerator):
 
 
 if __name__ == '__main__':
-    DATA = "./data/prompt_data_based.csv"
+    DATA = os.path.join("data/prompt_data_based.csv")
     HG = LLMHypothesisGenerator(data=DATA, scoring="random")
     print("Random: ", HG())
     print("Random + gender: ", HG(giv="gender"))

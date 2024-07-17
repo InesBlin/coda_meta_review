@@ -143,9 +143,9 @@
     <p>Hypothesis explored: {{ hypothesis }}</p>
     <p>Treatment 1: GIV = {{ name }}, SIV = {{ info['siv1'] }}, SIVV = {{ info['sivv1'] }}</p>
     <p>Treatment 2: GIV = {{ name }}, SIV = {{ info['siv2'] }}, SIVV = {{ info['sivv2'] }}</p>
-    {% if type_h != "regular" %}
+    <!-- {% if type_h != "regular" %}
         <p>This meta-analysis include the following moderator: {{ mod }}. It is a {{ type_mod }} moderator.</p>
-    {% endif %}
+    {% endif %} -->
     <p><span>{{ hypothesis_custom }}</span></p>
     <div class="separator"></div>
     <h2 style="color: green;">3. Methods</h2><br>
@@ -193,7 +193,7 @@
     <p><span>{{ coding_effect_sizes_custom }}</span></p>
     <h3 style="color: green;">3.3. Coding of variables</h3>
     <div class="half_separator"></div><br>
-    <!-- <span>{{ control_variables }}</span><br><br> -->
+    <span>{{ control_variables_text }}</span><br><br>
     {% block data_variables %}
         {{ macros.table_container(data_variables_id, data_variables) }}
     {% endblock %}
@@ -221,9 +221,9 @@
     <!-- Tab content -->
     <div id="ma_res_call" class="tab" style="display:block;">
         <h3>Raw R Output</h3>
-        {% if type_h == "categorical_moderator" %}
+        <!-- {% if type_h == "categorical_moderator" %}
             <p>This meta-analysis uses {{ ref_mod }} as a reference value for moderator.</p>
-        {% endif %}
+        {% endif %} -->
         <pre><code>{{ ma_res_call }}</code></pre>
     </div>
 
@@ -242,38 +242,6 @@
     <p><span>There is heterogeneity in the effect size distribution (\( T = {{ T}} \), \( T^2 = {{ T2 }} \)) and a substantial amount of this variation can be explained by between-study differences (\( I^2 = {{ I2 }} \)).</span></p>
     <!-- P7 -->
     <p><span>{{ qep_paragraph }}</span></p>
-    <!-- <h2>How to interpret a meta-analysis?</h2>
-    <ul>
-        <li>The effect size (\( \textnormal{estimate} \) or \( b \)) quantifies the differences between two groups. An effect size whose absolute value is bigger than 0.5, bigger than 0.2 and smaller than 0.2 will be characterised as large-medium, small and null respectively.</li>
-        <li>The p-value measures the significance of a result. If \( p < 0.05 \), the result is considered statistically significant. If the result is not statistically significant, the confidence interval will contain 0.</li>
-        <li>\( I^2 \) measures the heterogeneity across studies. If the heterogeneity is high (\( > 25 \)%), studies cannot be considered studies of the same population, and a finer-grained subgroup analysis might be worth to explore. </li>
-        <li>\( T^2 \) measures the dispersion of the effect sizers.</li>
-        {% if type_h == "numerical_moderator" %}
-            <li>Since the meta-analysis was done with a {{ type_mod }} moderator, the line that interests you is the line with <code>{{ mod }}</code>.</li>
-        {% endif %}
-        {% if type_h == "categorical_moderator" %}
-            <li>Since the meta-analysis is run with a categorical moderator, each group is compared to a reference group. For instance, in this meta-analysis, the reference value for {{ mod }} is {{ ref_mod }}. For instance, if a line reads {{ ex_mod_read }}, it means that studies with {{ ex_mod_val }} as {{ mod }} are compared with studies with {{ ref_mod }} as {{ mod }}.</li>
-        {% endif %}
-    </ul>
-    <br><br> -->
-    <!-- <h2>Actual results</h2>
-    <ul>
-        {% if type_h != "categorical_moderator" %}
-        <li>The overall meta-analytic effect size is {{ es }}. This effect can be considered {{ categorize_es }}.</li>
-        <li>The p-value is {{ pval }}, with confidence interval [{{ ci_lb }}, {{ ci_ub }}]. It is {{ categorize_pval }}.</li>
-        {% endif %}
-        <li>{{ i2_description }}</li>
-        <li>{{ tau2_description }}</li>
-    </ul>
-    <p><span>{{ results_custom }}</span></p>
-    <h2 style="color: green;">{{ discussion_ }}</h2>
-    
-    <h2>Was the starting hypothesis correct?</h2>
-    <p>{{ conclude_hypothesis }}</p>
-    <p><span>{{ discussion_custom }}</span></p> -->
-    
-
-    <!-- down here -->
 
     <div class="separator"></div>
     <!-- References section -->

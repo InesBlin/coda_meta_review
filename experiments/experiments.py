@@ -2,6 +2,7 @@
 """
 Running diverse set of experiments
 """
+import os
 import pickle
 from typing import Union
 import click
@@ -11,6 +12,7 @@ from kglab.helpers.data_load import read_csv
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_CSV
 from src.pipeline import Pipeline
+from src.settings import ROOT_PATH
 
 SPARQL_ENDPOINT = "http://localhost:7200/repositories/coda"
 QUERY_LABEL = """
@@ -23,11 +25,11 @@ select * where {
 } 
 """
 CACHED = {
-        "study_moderators": "./data/moderators/study_moderators.csv",
-        "country_moderators": "./data/moderators/country_moderators.csv",
-        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
-        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
-        "variable_moderators": "./data/moderators/variable_moderators.csv"
+        "study_moderators": os.path.join(ROOT_PATH, "data/moderators/study_moderators.csv"),
+        "country_moderators": os.path.join(ROOT_PATH, "data/moderators/country_moderators.csv"),
+        "simple_country_moderators": os.path.join(ROOT_PATH, "data/moderators/simple_country_moderators.csv"),
+        "complex_country_moderators": os.path.join(ROOT_PATH, "data/moderators/complex_country_moderators.csv"),
+        "variable_moderators": os.path.join(ROOT_PATH, "data/moderators/variable_moderators.csv")
     }
 
 def add_siv_id(content):

@@ -6,6 +6,7 @@ import subprocess
 from datetime import datetime
 import streamlit as st
 from src.meta_review import load_json_file
+from src.settings import ROOT_PATH
 
 
 def save_json(filepath, data):
@@ -20,7 +21,11 @@ def build_config(hypothesis):
     folder_name = folder_name[:10]+ "_" + folder_name[11:19]
     folder_name = os.path.join("app", "meta_review", folder_name)
     os.makedirs(folder_name)
-    config = load_json_file(filename="./src/configs/meta_review_base.json")
+    config = load_json_file(filename=os.path.join(ROOT_PATH, "src/configs/meta_review_base.json"))
+    for k in ["template_folder", "label_des", "references", "data"]:
+        config[k] = os.path.join(ROOT_PATH, config[k])
+    for k, v in config["cached"].items():
+        config["cached"][k] = os.path.join(ROOT_PATH, v)
     # Update hypothesis
     config.update({"hypothesis": hypothesis})
 

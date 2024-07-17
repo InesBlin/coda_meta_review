@@ -15,7 +15,7 @@
     "hypothesis": {
         "giv1": "gender", "siv1": "gender", "sivv1": "female",
         "giv2": "gender", "siv2": "gender", "sivv2": "male",
-        "reg_qualifier": "higher"
+        "comparative": "higher"
     },
     "inclusion_criteria": {
         "metadata": {

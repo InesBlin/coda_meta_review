@@ -7,14 +7,16 @@ Data Selection
 (2) data preparation (DataPrep)
 (3) based on inclusion criteria (InclusionCriteria)
 """
-import pandas as pd
+import os
 from typing import Union, Dict, List
+import pandas as pd
+from kglab.helpers.data_load import read_csv
 from src.data_selection import DataSelector
 from src.data_prep import DataPrep
 from src.inclusion_criteria import InclusionCriteria
 from src.meta_analysis import MetaAnalysis
 from src.moderator import define_moderators
-from kglab.helpers.data_load import read_csv
+from src.settings import ROOT_PATH
 
 
 def helper_giv(giv):
@@ -48,7 +50,7 @@ class Pipeline:
             MetaAnalysis(siv1=siv1, sivv1=sivv1,
                          siv2=siv2, sivv2=sivv2, **cached_moderator)
 
-    def get_data_meta_analysis(self, data, variables):
+    def get_data_meta_analysis(self, data, variables: Union[List, None] = None):
         """ self explanatory """
         data_run = self.data_selector(data=data)
         data_run = self.data_prep(filtered_data=data_run)
@@ -66,7 +68,8 @@ class Pipeline:
         """ Adding moderator from the terminal """
         add_mod = input(f"Do you want to add {type_m} moderators? ")
         if add_mod == "1":
-            mods = input(f"Enter all the options you want, separated by ',' from this list: {options} \n")
+            mods = input("Enter all the options you want, separated by ',' " + \
+                f"from this list: {options} \n")
             mods = mods.split(',')
             return [x for x in mods if x in options]
         return None
@@ -83,7 +86,7 @@ class Pipeline:
 
 
 if __name__ == '__main__':
-    DATA = read_csv("./data/observationData.csv")
+    DATA = read_csv(os.path.join(ROOT_PATH, "data/observationData.csv"))
     VALS = [
         ("punishment", "punishment treatment", "1", "punishment", "punishment treatment", "-1")
     ]
@@ -94,23 +97,18 @@ if __name__ == '__main__':
         "study": {"deception": ["FALSE"]},
     }
     CACHED = {
-        "study_moderators": "./data/moderators/study_moderators.csv",
-        "country_moderators": "./data/moderators/country_moderators.csv",
-        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
-        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
-        "variable_moderators": "./data/moderators/variable_moderators.csv"
+        "study_moderators": os.path.join(ROOT_PATH, "data/moderators/study_moderators.csv"),
+        "country_moderators": os.path.join(ROOT_PATH, "data/moderators/country_moderators.csv"),
+        "simple_country_moderators": \
+            os.path.join(ROOT_PATH, "data/moderators/simple_country_moderators.csv"),
+        "complex_country_moderators": \
+            os.path.join(ROOT_PATH, "data/moderators/complex_country_moderators.csv"),
+        "variable_moderators": os.path.join(ROOT_PATH, "data/moderators/variable_moderators.csv")
     }
     for GIV1, SIV1, SIVV1, GIV2, SIV2, SIVV2 in VALS:
-        PIPELINE = Pipeline(giv1=GIV1, siv1=SIV1, sivv1=SIVV1, giv2=GIV2, siv2=SIV2, sivv2=SIVV2, inclusion_criteria=INCLUSION_CRITERIA, **CACHED)
+        PIPELINE = Pipeline(
+            giv1=GIV1, siv1=SIV1, sivv1=SIVV1,
+            giv2=GIV2, siv2=SIV2, sivv2=SIVV2,
+            inclusion_criteria=INCLUSION_CRITERIA, **CACHED)
         CURR_DATA = PIPELINE.get_data_meta_analysis(data=DATA)
         print(CURR_DATA.shape)
-        # MODS = ["punishment incentive", "sequential punishment"]
-        # MODS = {
-        #     "variable": ["punishment incentive"]
-        # }
-        # MODS = None
-        # OUTPUT = PIPELINE(data=DATA, mods=MODS)
-        # curr_res = OUTPUT["results_rma"]
-        # print(f"{SIV1} : {SIVV1} || {SIV2} : {SIVV2}")
-        # print([curr_res[x].reshape((1,))[0] for x in ["b", "k", "pval"]])
-        # print("====================")

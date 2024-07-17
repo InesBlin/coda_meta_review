@@ -16,6 +16,7 @@ if len(st.session_state["hypotheses"]) == 0:
     st.warning("You haven't chosen a hypothesis yet. To do so, " + \
         "please refer to the page 'Select a hypothesis'.")
 else:
+    # Filtering data based on hypothesis (to ensure inclusion criteria are consistant with data)
     h = st.session_state["hypotheses"][0]
     data_selector = DataSelector(siv1=h["siv1"], siv2=h["siv2"], sivv1=h["sivv1"], sivv2=h["sivv2"])
     data_prep = DataPrep(siv1=h["siv1"], sivv1=h["sivv1"], siv2=h["siv2"], sivv2=h["sivv2"])

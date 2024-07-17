@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+Setup for packaging
+"""
 from setuptools import setup, find_packages
 setup(
     name='coda_narratives',

@@ -9,14 +9,15 @@ Conditions:
     - A different specific independent variable --> OPTION_GROUPING = "different_siv"
 """
 import os
-import click
 from itertools import combinations
+import click
 from tqdm import tqdm
 import pandas as pd
 from kglab.helpers.data_load import read_csv
 from kglab.helpers.kg_query import run_query
 from kglab.helpers.variables import HEADERS_CSV
 from src.pipeline import Pipeline
+from src.settings import ROOT_PATH
 
 SPARQL_ENDPOINT = "http://localhost:7200/repositories/coda"
 OPTION_GROUPING = "different_siv"
@@ -103,7 +104,7 @@ def main(generic_specific, obs_data, option_grouping):
 
     obs_data = read_csv(obs_data)
 
-    df_out_path = f"./data/same_gv_{option_grouping}_treat_1_2.csv"
+    df_out_path = os.path.join(ROOT_PATH, f"data/same_gv_{option_grouping}_treat_1_2.csv")
     if not os.path.exists(df_out_path):
         df_out = get_df_out_pairs(data=df, option_grouping=option_grouping)
         tqdm.pandas()
@@ -112,7 +113,7 @@ def main(generic_specific, obs_data, option_grouping):
     else:
         df_out = read_csv(df_out_path)
 
-    analysis_path = f"./data/analysis_{option_grouping}_treat_1_2.csv"
+    analysis_path = os.path.join(ROOT_PATH, f"data/analysis_{option_grouping}_treat_1_2.csv")
     cols_res = ["k", "b", "se", "zval", "pval", "ci.lb", "ci.ub", "tau2"]
     if not os.path.exists(analysis_path):
         df_out = df_out[df_out.nb >= 10]
@@ -131,9 +132,12 @@ def main(generic_specific, obs_data, option_grouping):
 
 if __name__ == '__main__':
     # Examples of command (from root directory)
-    # python src/get_generic_specific.py data/generic_specific.csv ./data/observationData.csv different_siv
-    # python src/get_generic_specific.py data/generic_specific.csv ./data/observationData.csv same_siv
-    # python src/get_generic_specific.py data/generic_specific.csv ./data/observationData.csv different_and_same_gv
+    # python src/get_generic_specific.py data/generic_specific.csv \
+    #   ./data/observationData.csv different_siv
+    # python src/get_generic_specific.py data/generic_specific.csv \
+    #   ./data/observationData.csv same_siv
+    # python src/get_generic_specific.py data/generic_specific.csv \
+    #   ./data/observationData.csv different_and_same_gv
     if not os.path.exists("data"):
         os.makedirs("data")
     main()

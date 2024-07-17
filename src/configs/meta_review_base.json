@@ -1,8 +1,8 @@
 {
     "template_folder": "meta_review/templates",
-    "label_des": "./src/configs/node_label_description.csv",
+    "label_des": "src/configs/node_label_description.csv",
     "references": "meta_review/templates/references.json",
-    "data": "./data/observationData.csv",
+    "data": "data/observationData.csv",
     "cached": {
         "study_moderators": "./data/moderators/study_moderators.csv",
         "country_moderators": "./data/moderators/country_moderators.csv",

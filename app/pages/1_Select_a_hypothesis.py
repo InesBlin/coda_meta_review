@@ -21,6 +21,7 @@ def reinit_t1_t2_var():
         st.session_state[f"submit_hs_dva_f_{var}"] = False
     st.session_state["data_t1_t2"] = DATA_T
 
+
 def init_t1_t2_var():
     """ Init treatment 1 vs. treatment 2 session state variables 
     (if not already in the session state) """
@@ -31,15 +32,13 @@ def init_t1_t2_var():
             st.session_state[f"submit_hs_dva_f_{var}"] = False
     if "data_t1_t2" not in st.session_state:
         st.session_state["data_t1_t2"] = DATA_T
+    for k in ["hypotheses", "hypotheses_choice"]:
+        if k not in st.session_state:
+            st.session_state[k] = []
+    for k in ["submit_hp", "submit_fhsh", "hs_diy_vs_assistant"]:
+        if k not in st.session_state:
+            st.session_state[k] = False
 
-def update_val(**kwargs):
-    """ Update (key, value) pair in session state """
-    st.session_state[kwargs["key"]] = kwargs["val"]
-
-def save_json(filepath, data):
-    """ self explanatory """
-    with open(filepath, "w", encoding="utf-8") as openfile:
-        json.dump(data, openfile, indent=4)
 
 def get_readable_h(h):
     """ Human-readable hypotheses to select (instead of backend, dictionary version) """
@@ -50,12 +49,6 @@ def get_readable_h(h):
 def main():
     """ Main """
     init_t1_t2_var()
-    for k in ["hypotheses", "hypotheses_choice"]:
-        if k not in st.session_state:
-            st.session_state[k] = []
-    for k in ["submit_hp", "submit_fhsh", "hs_diy_vs_assistant"]:
-        if k not in st.session_state:
-            st.session_state[k] = False
     st.title("Select a hypothesis")
     st.write("#")
 
@@ -140,6 +133,7 @@ def main():
                     st.session_state["sivv2"] = sivv2
                     st.session_state["submit_hs_dva_f_sivv2"] = True
 
+        # Comparative
         if st.session_state.get("sivv2") and st.session_state.get('submit_hs_dva_f_sivv2'):
             with st.form("hs_dva_f_comparative"):
                 comparative = st.selectbox(
@@ -199,7 +193,7 @@ def main():
                     st.session_state["hypotheses_choice"] = hypotheses
                 # if st.session_state.hypotheses_selector == "LLM-Based":
                 #     giv = None
-                #     data = "./data/prompt_data_based.csv"
+            #     data = os.path.join(ROOT_PATH, "data/prompt_data_based.csv")
                 #     scoring_selector = st.radio(
                 #         "How would you like to rank your hypotheses?",
                 #         ["random", "frequency", "entropy"],

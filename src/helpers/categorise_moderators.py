@@ -24,7 +24,6 @@ def categorise_country_mod(csv_path: str):
 def helper_study_mod(x: str):
     """ Rule-based system to determine whether the moderator is numerical or categorical """
     class_start_iri = "https://data.cooperationdatabank.org/vocab/class/"
-    xsd_cat = ['http://www.w3.org/2001/XMLSchema#' + x for x in ['boolean', 'string']]
     if x.startswith(class_start_iri) or "boolean" in x:
         return 'categorical'
     return 'numerical'
@@ -81,7 +80,7 @@ def main(country, study, variable, endpoint, save):
         categorise_study_mod(csv_path=study, endpoint=endpoint))
     output.update(
         categorise_variable_mod(csv_path=variable, endpoint=endpoint))
-    
+
     with open(save, "w", encoding="utf-8") as openfile:
         json.dump(output, openfile, indent=4)
 
@@ -89,8 +88,7 @@ def main(country, study, variable, endpoint, save):
 
 
 if __name__ == '__main__':
-    # python src/helpers/categorise_moderators.py ./data/moderators/country_moderators.csv ./data/moderators/study_moderators.csv ./data/moderators/variable_moderators.csv http://localhost:7200/repositories/coda data/cat_moderators.json
+    # python src/helpers/categorise_moderators.py ./data/moderators/country_moderators.csv \
+    #   ./data/moderators/study_moderators.csv ./data/moderators/variable_moderators.csv \
+    #   http://localhost:7200/repositories/coda data/cat_moderators.json
     main()
-
-
-

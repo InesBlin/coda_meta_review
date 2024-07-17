@@ -2,8 +2,10 @@
 """
 Inclusion criteria
 """
+import os
 from typing import Union, Dict
 import pandas as pd
+from src.settings import ROOT_PATH
 
 def check_selection(value, criterion):
     """ Check string selection """
@@ -33,8 +35,10 @@ class InclusionCriteria:
         - ('overallN', Tuple[min, max])
         - ('publicationStatus', List)
 
-        - For each element {x} in self.{k}_simple: {k} param can have ({x}, List) as (key, value types)
-        - For each element {x} in self.{k}_range: {k} param can have ({x}, Tuple[min, max]) as (key, value types)
+        - For each element {x} in self.{k}_simple: {k} param can have 
+        ({x}, List) as (key, value types)
+        - For each element {x} in self.{k}_range: {k} param can have 
+        ({x}, Tuple[min, max]) as (key, value types)
         """
         self.sample = sample
         self.study = study
@@ -89,7 +93,8 @@ class InclusionCriteria:
         ])
         self.quantitative_range = set([
             'numberOfObservations', 'overallMeanContributions', 'overallStandardDeviation',
-            'overallProportionCooperation', 'overallMeanWithdrawal', 'overallPercentageEndowmentContributed'
+            'overallProportionCooperation', 'overallMeanWithdrawal',
+            'overallPercentageEndowmentContributed'
         ])
         self.quantitative_range_thresholds = {
             'numberOfObservations': (0, 2500),
@@ -144,7 +149,7 @@ class InclusionCriteria:
 
 def main(ic):
     """ Main """
-    data = pd.read_csv("./data/observationData.csv", index_col=0)
+    data = pd.read_csv(os.path.join(ROOT_PATH, "data/observationData.csv"), index_col=0)
     print(data.shape)
     data = ic(data=data)
     print(data)

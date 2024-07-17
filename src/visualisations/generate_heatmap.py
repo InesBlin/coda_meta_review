@@ -34,7 +34,8 @@ def main(data, save_html):
     curr_df = df_filter.copy()
     with pd.option_context('mode.chained_assignment', None):
         for i in ["1", "2"]:
-            curr_df[f"label{i}"] = curr_df[f"generic{i}"] + " -> " + curr_df[f"siv{i}"] + " -> " + curr_df[f"sivv{i}"]
+            curr_df[f"label{i}"] = curr_df[f"generic{i}"] + " -> " + \
+                curr_df[f"siv{i}"] + " -> " + curr_df[f"sivv{i}"]
     curr_df = curr_df.sort_values(by=["label1", "label2"])
     labels1 = sorted(curr_df.label1.unique())
     labels1_to_index = {x: i for i, x in enumerate(labels1)}
@@ -45,9 +46,10 @@ def main(data, save_html):
     for _, row in curr_df.iterrows():
         data_hm[labels1_to_index[row.label1]][labels2_to_index[row.label2]] = row.b
     custom_data = np.array([[l1 + " || " + l2 for l2 in labels2] for l1 in labels1])
-    heatmap = go.Heatmap(z=data_hm, colorscale="rdgy_r", zmin=-1, zmax=1,
-                        customdata=custom_data,
-                        hovertemplate = "Treatment 1 vs. 2:<br>%{customdata}<br>Effect Size: %{z}<extra></extra>")
+    heatmap = go.Heatmap(
+        z=data_hm, colorscale="rdgy_r", zmin=-1, zmax=1,
+        customdata=custom_data,
+        hovertemplate = "Treatment 1 vs. 2:<br>%{customdata}<br>Effect Size: %{z}<extra></extra>")
     fig = go.Figure(data=heatmap)
     fig.update_layout(width=800, height=600)
     fig.write_html(save_html)

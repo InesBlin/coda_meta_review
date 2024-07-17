@@ -15,6 +15,8 @@ if len(st.session_state.get("hypotheses")) == 0:
     st.warning("You haven't chosen a hypothesis yet. To do so, " + \
         "please refer to the page 'Select a hypothesis'.")
 else:
+    # Filtering data based on hypothesis + inclusion criteria 
+    # (to ensure vars are consistant with data)
     h = st.session_state["hypotheses"][0]
     data_selector = DataSelector(siv1=h["siv1"], siv2=h["siv2"], sivv1=h["sivv1"], sivv2=h["sivv2"])
     data_prep = DataPrep(siv1=h["siv1"], sivv1=h["sivv1"], siv2=h["siv2"], sivv2=h["sivv2"])
@@ -29,7 +31,8 @@ def get_variables(data):
     """ Get all variables """
     mr_variables = data.columns
     filter_out_startswith = ['observation', 'effectSize']
-    mr_variables = [x for x in mr_variables if not any(x.startswith(s) for s in filter_out_startswith)]
+    mr_variables = [x for x in mr_variables if not any(x.startswith(s) \
+        for s in filter_out_startswith)]
     filter_out = [
        'variance', 'study', 'studyName',
        'treatmentSubproperties', 'ivnames', 'valueNameSupport', 'studyName.y',

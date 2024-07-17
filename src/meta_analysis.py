@@ -2,23 +2,26 @@
 """
 Meta-analyses in Python
 """
+import os
 from typing import Union, List, Dict
 import click
 import numpy as np
 import pandas as pd
 import rpy2.robjects as ro
 from rpy2.robjects import pandas2ri, Formula, NULL, ListVector
-from rpy2.robjects.conversion import localconverter
 from rpy2.robjects.packages import importr
 from rpy2.robjects.vectors import StrVector
 from kglab.helpers.data_load import read_csv
 from src.helpers.helpers import select_observations
 from src.moderator import bind_moderators, ModeratorComponent
+from src.settings import ROOT_PATH
 
 
 def is_filled(val):
     """ Source: https://github.com/cooperationdatabank/ETL/blob/main/src/convert-indicators.py"""
-    empty_vals =[ "", "NA", "NaN" , "N/A" , 'nan' , 'None' , '999' ,'999.0',  'missing' , 'other' , 'others', 'Other', 'Others']
+    empty_vals =[
+        "", "NA", "NaN" , "N/A" , 'nan' , 'None' ,'999' ,'999.0',
+        'missing' , 'other' , 'others', 'Other', 'Others']
     if str(val) not in empty_vals:
         return True
     return False
@@ -123,15 +126,17 @@ def enrich_results_ma(results_rma, mods):
 
 
 def get_reference_level(data, mods):
+    """ Get ref level for data with moderator """
     res = {}
     if mods:
-        for k, v in mods.items():
+        for _, v in mods.items():
             for mod in v:
                 print(data[mod].unique())
                 # print([type(x) for x in data[mod].unique()])
-                res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str) or (isinstance(x, float) and not np.isnan(x))])[0]
+                res[mod] = sorted([x for x in data[mod].unique() if isinstance(x, str) \
+                    or (isinstance(x, float) and not np.isnan(x))])[0]
     return res
-            
+
 
 class MetaAnalysis:
     """ Main class for meta-analysis.
@@ -162,7 +167,8 @@ class MetaAnalysis:
         self.method_mv = ["ML", "REML"]
 
         """  character string to specify whether an equal- or a random-effects model 
-        should be fitted. An equal-effects model is fitted when using method="EE". -> in practice rarely met
+        should be fitted. An equal-effects model is fitted when using method="EE". 
+        -> in practice rarely met
         A random- effects model is fitted by setting method equal to one of the following: 
         "DL", "HE", "HS", "HSk", "SJ", "ML", "REML", "EB", "PM", "GENQ", "PMM", or "GENQM". 
         The default is "REML". See ‘Details’. """
@@ -271,7 +277,6 @@ class MetaAnalysis:
         for column in self.moderator.study_moderators:
             data[column] = data[column].apply(lambda x: None if ',' in str(x) else x)
             data[column] = data[column].apply(convert_to_numeric)
-            # data[column] = pd.to_numeric(data[column], errors='ignore')
 
         # Add country moderators (l1282 -> l1327)
         if mods and mods.get("country"):
@@ -281,6 +286,7 @@ class MetaAnalysis:
 
     @staticmethod
     def format_mods(mods, start_mod):
+        """Format moderators for R meta-analysis """
         return ListVector({None: f"[{start_mod+i+1}] " + mod for i, mod in enumerate(mods)})
 
     def __call__(self, type_rma: str, es_measure: str,
@@ -292,14 +298,13 @@ class MetaAnalysis:
         self._check_args(type_rma=type_rma, es_measure=es_measure, method=method, yi=yi,
                          data=data, mods=mods, slab=slab, vi=vi, V=V,
                          multilevel_variables=multilevel_variables)
-    
+
         input_r = convert_pd_to_rdata(input_df=data)
 
         slab = StrVector(slab) if slab else StrVector([""]*data.shape[0])
         if mods:
             all_mods = [x for _, v in mods.items() for x in v]
             mods_ma = StrVector(all_mods)
-            # mods = input_r.colnames[-len(mods):]
         else:
             mods_ma = None
 
@@ -310,8 +315,6 @@ class MetaAnalysis:
             random = self.get_random(multilevel_variables=multilevel_variables)
             res = self.rma_mv(yi=input_r.rx2(yi), V=input_r.rx2(V), data=input_r, method=method,
                             random=random, mods=mods_ma, slab=slab)
-        # print(res)
-        # return {k: res.rx2[k][0] for k in self.vars_res}
         results_rma = convert_r_results_to_python(res)
         references = get_reference_level(data=data, mods=mods)
         results_rma = enrich_results_ma(results_rma=results_rma, mods=mods)
@@ -325,21 +328,19 @@ class MetaAnalysis:
 @click.argument("input_data_path")
 def main(input_data_path):
     """ Main script to store obs data """
-    CACHED = {
-        "study_moderators": "./data/moderators/study_moderators.csv",
-        "country_moderators": "./data/moderators/country_moderators.csv",
-        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
-        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
-        "variable_moderators": "./data/moderators/variable_moderators.csv"
+    cached = {
+        "study_moderators": os.path.join(ROOT_PATH, "data/moderators/study_moderators.csv"),
+        "country_moderators": os.path.join(ROOT_PATH, "data/moderators/country_moderators.csv"),
+        "simple_country_moderators": os.path.join(
+            ROOT_PATH, "data/moderators/simple_country_moderators.csv"),
+        "complex_country_moderators": os.path.join(
+            ROOT_PATH, "data/moderators/complex_country_moderators.csv"),
+        "variable_moderators": os.path.join(ROOT_PATH, "data/moderators/variable_moderators.csv")
     }
-    # meta_analysis = MetaAnalysis(
-    #     siv1="punishment treatment", sivv1="1",
-    #     siv2="punishment treatment", sivv2="-1", **CACHED)
     meta_analysis = MetaAnalysis(
         siv1="gender", sivv1="female",
-        siv2="gender", sivv2="male", **CACHED)
+        siv2="gender", sivv2="male", **cached)
     data = read_csv(input_data_path)
-    # mods = ["punishment incentive", "sequential punishment"]
     mods = None
     mods = {# "variable": ["one-shot vs repeated"],
             "study": ["studyOneShot"],
@@ -347,14 +348,13 @@ def main(input_data_path):
             }
     output = meta_analysis(type_rma="uni", es_measure="d", yi="effectSize", data=data,
                                 method="REML", vi="variance", mods=mods)
-    results_rma, refs = output["results_rma"], output["refs"]
+    results_rma, _ = output["results_rma"], output["refs"]
     print(results_rma.keys())
     print(results_rma['k'][0], type(results_rma['k']))
     print(results_rma['b'][-1][0], type(results_rma['b']))
     print(results_rma['QEp'][-1])
     print(results_rma['QE'][-1])
     print(results_rma['call'])
-    # print(refs)
 
 
 if __name__ == '__main__':

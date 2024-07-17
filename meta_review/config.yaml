@@ -7,5 +7,5 @@ inclusion_criteria:
   metadata:
     lang: ["ENG"]
 es_measure: "d"
-control_variables: "We used the following variables including possible moderators and control variables. Each variable comes with an ID, a label and a description."
+control_variables_text: "We used the following variables including possible moderators and control variables."
 method_mv: "EE"

@@ -3,6 +3,8 @@
 generic helpers
 """
 import io
+import json
+import yaml
 import requests
 import pandas as pd
 
@@ -33,7 +35,7 @@ def run_request(uri: str, headers: dict):
 
 def remove_url(url):
     """ readable url """
-    return str(url).split('/')[-1]
+    return str(url).rsplit('/', maxsplit=1)[-1]
 
 
 def rdflib_to_pd(graph):
@@ -42,3 +44,17 @@ def rdflib_to_pd(graph):
     for subj, pred, obj in graph:
         df.loc[df.shape[0]] = [str(subj), str(pred), str(obj)]
     return df
+
+
+def load_yaml_file(filename):
+    """ Self explanatory """
+    with open(filename, 'r', encoding='utf-8') as file:
+        data = yaml.safe_load(file)
+    return data
+
+
+def load_json_file(filename):
+    """ Self explanatory """
+    with open(filename, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data

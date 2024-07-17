@@ -133,5 +133,5 @@ def main(paper_id, save_path):
 
 
 if __name__ == '__main__':
-    # python src/helpers/get_obs_data.py ./data/paperIDs ./data/observationData.csv 
+    # python src/helpers/get_obs_data.py ./data/paperIDs ./data/observationData.csv
     main()
