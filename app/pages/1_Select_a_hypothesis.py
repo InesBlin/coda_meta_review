@@ -56,7 +56,7 @@ def main():
         hs_diy_vs_assistant = st.radio(
             "How would you like to select your hypothesis?",
             ["Select my own hypotheses", "Please help me find some interesting hypotheses"],
-            index=None)
+            index=0)
         if st.form_submit_button("Confirm method"):
             st.session_state["submit_fhsh"] = True
             st.session_state["hs_diy_vs_assistant"] = hs_diy_vs_assistant
@@ -152,8 +152,8 @@ def main():
                 "comparative": st.session_state["comparative"]
             }
             st.markdown(f"""
-            You have chosen the following hypothesis:\\
-            {generate_hypothesis(h_dict=hypothesis)}
+            You have chosen the following hypothesis:
+            "{generate_hypothesis(h_dict=hypothesis)}"
             """)
 
             if st.button("Add to hypotheses"):

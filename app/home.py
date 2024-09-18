@@ -15,7 +15,7 @@ def main():
         page_icon="👋",
     )
 
-    st.title("Generating Meta-Reviews with the CoDa Databank")
+    st.title("Living Meta-Review Generation for Social Scientists")
     st.markdown(
         """
         ## Introduction
@@ -38,15 +38,11 @@ def main():
         """
     )
     pdf_viewer(
-        input=os.path.join(ROOT_PATH, "app/figures/hypotheses-streamlit-app-home.drawio.pdf"))
+        input=os.path.join(ROOT_PATH, "app/figures/interface-interface-vis.drawio.pdf"))
     st.markdown(
         """
-        From discussions with experts, we have also come up with the following 
-        list of recommendations:
-        1. It is more sensible to compare specific independent variables from the same generic
-        independent variables;
-        2. You can first start with a regular hypothesis, then explore finer-grained 
-        moderator hypotheses.
+        From discussions with experts, we have also come up with the recommendation that it is more sensible to compare specific independent variables from the same generic
+        independent variables.
 
         ## How to use this application?
         At the moment, only regular hypotheses are supported.
