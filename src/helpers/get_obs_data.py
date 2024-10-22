@@ -5,12 +5,17 @@ from copy import deepcopy
 import click
 import pandas as pd
 from src.helpers.helpers import run_request
+from kglab.helpers.kg_query import run_query
+from kglab.helpers.variables import HEADERS_CSV
 
 
 class KGDataCall:
     """ Class to retrieve observation data, to be used as basis for meta-analysis """
-    def __init__(self, api: str = "https://api.odissei.triply.cc/queries/coda-dev/"):
+    def __init__(self,
+                 api: str = "https://api.odissei.triply.cc/queries/coda-dev/",
+                 sparql_endpoint: str = "http://localhost:7200/repositories/coda"):
         self.api = api
+        self.sparql_endpoint = sparql_endpoint
 
         self.page_observation = 3
         self.observation_query = api + "dashboard/1/run?page={}&pageSize=10000"
@@ -19,6 +24,16 @@ class KGDataCall:
         self.page_query = api + "dashboard-support/1/run?page={}&pageSize=10000"
 
         self.study_query = f"{api}study-characteristics/1/run"
+
+        self.query_dv = """
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX cp: <https://data.cooperationdatabank.org/vocab/prop/>
+        PREFIX cc: <https://data.cooperationdatabank.org/vocab/class/>
+        SELECT * WHERE {
+            ?observation cp:dependentVariable ?dependentVariable ;
+                         rdf:type cc:Observation .
+        }
+        """
 
     def get_treatment_value(self, data):
         """ Format treatment values """
@@ -90,6 +105,16 @@ class KGDataCall:
         # # Merging the two DataFrames
         data = data.merge(curr_data, left_on='paperName', right_on='paper_ID',
                           how='left', suffixes=('DOI', ''))
+
+        # Add dependent variable + only keep 'contributions' or 'cooperation'
+        dvs = run_query(
+            query=self.query_dv,
+            sparql_endpoint=self.sparql_endpoint,
+            headers=HEADERS_CSV)
+        data = data.merge(dvs, on='observation', how='left')
+        data = data[data['dependentVariable'].isna() | \
+            ~data['dependentVariable'].str.endswith('withdrawals', na=False)]
+
         return data
 
     def get_observation_data(self, paper_id_path: str):
@@ -133,5 +158,5 @@ def main(paper_id, save_path):
 
 
 if __name__ == '__main__':
-    # python src/helpers/get_obs_data.py ./data/paperIDs ./data/observationData.csv
+    # python src/helpers/get_obs_data.py --paper_id data/paperIDs.csv --save_path data/observationData.csv
     main()

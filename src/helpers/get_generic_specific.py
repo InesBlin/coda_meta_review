@@ -133,11 +133,11 @@ def main(generic_specific, obs_data, option_grouping):
 if __name__ == '__main__':
     # Examples of command (from root directory)
     # python src/get_generic_specific.py data/generic_specific.csv \
-    #   ./data/observationData.csv different_siv
+    #  data/observationData.csv different_siv
     # python src/get_generic_specific.py data/generic_specific.csv \
-    #   ./data/observationData.csv same_siv
+    #   data/observationData.csv same_siv
     # python src/get_generic_specific.py data/generic_specific.csv \
-    #   ./data/observationData.csv different_and_same_gv
+    #   data/observationData.csv different_and_same_gv
     if not os.path.exists("data"):
         os.makedirs("data")
     main()

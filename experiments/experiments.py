@@ -150,12 +150,12 @@ def main(groupings, data, type_mod, save_path, updated_grouping):
 
 if __name__ == '__main__':
     # VARIABLE
-    # python src/experiments.py ./data/same_gv_different_siv_treat_1_2_with_ids.csv \
-    # ./data/observationData.csv variable meta_analyses_with_variable_moderators.pkl ./saved.csv
+    # python src/experiments.py data/same_gv_different_siv_treat_1_2_with_ids.csv \
+    # data/observationData.csv variable meta_analyses_with_variable_moderators.pkl saved.csv
     # STUDY
-    # python src/experiments.py ./data/same_gv_different_siv_treat_1_2_with_ids.csv \
-    # ./data/observationData.csv study meta_analyses_with_study_moderators.pkl ./saved.csv
+    # python src/experiments.py data/same_gv_different_siv_treat_1_2_with_ids.csv \
+    # data/observationData.csv study meta_analyses_with_study_moderators.pkl saved.csv
     # COUNTRY
-    # python src/experiments.py ./data/same_gv_different_siv_treat_1_2_with_ids.csv \
-    # ./data/observationData.csv country meta_analyses_with_country_moderators.pkl ./saved.csv
+    # python src/experiments.py data/same_gv_different_siv_treat_1_2_with_ids.csv \
+    # data/observationData.csv country meta_analyses_with_country_moderators.pkl saved.csv
     main()

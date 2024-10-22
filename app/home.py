@@ -5,13 +5,12 @@ import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 from src.settings import ROOT_PATH
 
-
 def main():
     """ Main """
     if "hypotheses" not in st.session_state:
         st.session_state["hypotheses"] = []
     st.set_page_config(
-        page_title="Hello",
+        page_title="CoDa Meta-Review",
         page_icon="👋",
     )
 
@@ -33,7 +32,7 @@ def main():
 
         ## Hypotheses
         We have first worked with experts to design templated hypotheses that can be generated. 
-        They are all based on the vocabulary (or ontology) on which the CODA dataset was built.
+        They are all based on the vocabulary (or ontology) on which the CoDa dataset was built.
         The hypotheses and their templates are displayed below:
         """
     )

@@ -88,7 +88,7 @@ def main(country, study, variable, endpoint, save):
 
 
 if __name__ == '__main__':
-    # python src/helpers/categorise_moderators.py ./data/moderators/country_moderators.csv \
-    #   ./data/moderators/study_moderators.csv ./data/moderators/variable_moderators.csv \
+    # python src/helpers/categorise_moderators.py data/moderators/country_moderators.csv \
+    #   data/moderators/study_moderators.csv data/moderators/variable_moderators.csv \
     #   http://localhost:7200/repositories/coda data/cat_moderators.json
     main()

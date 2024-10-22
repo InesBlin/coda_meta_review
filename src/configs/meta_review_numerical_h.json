@@ -1,15 +1,15 @@
 {
     "template_folder": "meta_review/templates",
     "config": "meta_review/config.yaml",
-    "label_des": "./src/configs/node_label_description.csv",
+    "label_des": "src/configs/node_label_description.csv",
     "references": "meta_review/templates/references.json",
-    "data": "./data/observationData.csv",
+    "data": "data/observationData.csv",
     "cached": {
-        "study_moderators": "./data/moderators/study_moderators.csv",
-        "country_moderators": "./data/moderators/country_moderators.csv",
-        "simple_country_moderators": "./data/moderators/simple_country_moderators.csv",
-        "complex_country_moderators": "./data/moderators/complex_country_moderators.csv",
-        "variable_moderators": "./data/moderators/variable_moderators.csv"
+        "study_moderators": "data/moderators/study_moderators.csv",
+        "country_moderators": "data/moderators/country_moderators.csv",
+        "simple_country_moderators": "data/moderators/simple_country_moderators.csv",
+        "complex_country_moderators": "data/moderators/complex_country_moderators.csv",
+        "variable_moderators": "data/moderators/variable_moderators.csv"
     },
     "report_template": "report_template.html",
     "hypothesis": {

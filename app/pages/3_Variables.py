@@ -40,7 +40,7 @@ def get_variables(data):
        'country', 'studyAcademicDiscipline', 'yearOfDataCollection',
        'yearSource', 'treatmentValue1', 'treatmentValue2', 'paperName',
        'studyNameGeneral', 'paperYearDOI', 'substudy', 'paper_ID',
-       'paperTitle', 'citation', 'paperYear', 'authorNames', 'lang']
+       'paperTitle', 'citation', 'paperYear', 'authorNames', 'lang', 'dependentVariable']
     mr_variables = set(mr_variables).difference(set(filter_out))
 
     # sub_props = data[~data.treatmentSubproperties.isna()].treatmentSubproperties.values
@@ -83,6 +83,18 @@ def main():
             st.success("Variables added for the meta-review", icon="🔥")
             # data = add_var_info(data=DATA, variables=mr_variables)
             # st.write(data)
+    
+    with st.sidebar:
+        if st.session_state.get("hypotheses"):
+            st.write("You have chosen the following hypotheses:")
+            for hypothesis in st.session_state["hypotheses"]:
+                st.write(hypothesis)
+        if st.session_state.get("inclusion_criteria"):
+            st.write("You have chosen the following inclusion criteria:")
+            st.write(st.session_state["inclusion_criteria"])
+        if st.session_state.get("mr_variables"):
+            st.write("You have chosen the following control variables:")
+            st.write(st.session_state["mr_variables"])
 
 
 if __name__ == '__main__':

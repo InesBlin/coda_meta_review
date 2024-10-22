@@ -6,6 +6,7 @@ TYPE_RMA_TO_K = {"simple": "uni"}#, "multilevel": "mv"}
 ES_MEASURE_TO_K = {
     "Cohen's standardized mean difference (d)": "d",
     "Pearson's correlation coefficient (r)": "r"}
+K_TO_ES_MEASURE = {v: k for k, v in ES_MEASURE_TO_K.items()}
 METHODS = {
     "uni": ["EE", "DL", "HE", "HS", "HSk", "SJ",
             "ML", "REML", "EB", "PM", "GENQ", "PMM", "GENQM"],
@@ -52,9 +53,25 @@ def main():
 
     if st.session_state["submit_as"] and st.session_state["method_mv"] \
         and st.session_state["es_measure"]:
-        if st.button("Save Analytic Strategy"):
-            st.session_state["submit_as_whole"] = True
-            st.success("Analytic strategy saved for the meta-review", icon="🔥")
+        # if st.button("Save Analytic Strategy"):
+            # st.session_state["submit_as_whole"] = True
+        st.success("Analytic strategy saved for the meta-review", icon="🔥")
+    
+    with st.sidebar:
+        if st.session_state.get("hypotheses"):
+            st.write("You have chosen the following hypotheses:")
+            for hypothesis in st.session_state["hypotheses"]:
+                st.write(hypothesis)
+        if st.session_state.get("inclusion_criteria"):
+            st.write("You have chosen the following inclusion criteria:")
+            st.write(st.session_state["inclusion_criteria"])
+        if st.session_state.get("mr_variables"):
+            st.write("You have chosen the following control variables:")
+            st.write(st.session_state["mr_variables"])
+        if st.session_state["submit_as"] and st.session_state["method_mv"] \
+        and st.session_state["es_measure"]:
+            st.write("You have chosen the following analytic strategy:")
+            st.write(f'Effect size {K_TO_ES_MEASURE[st.session_state["es_measure"]]} with {st.session_state["method_mv"]} model')
 
 
 if __name__ == '__main__':

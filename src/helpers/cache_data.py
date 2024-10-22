@@ -60,7 +60,7 @@ def main(type_cache, save_folder):
 
 
 if __name__ == '__main__':
-    # python src/cache_data.py study_moderator ./data/moderators
-    # python src/cache_data.py country_moderator ./data/moderators
-    # python src/cache_data.py variable_moderator ./data/moderators
+    # python src/cache_data.py study_moderator data/moderators
+    # python src/cache_data.py country_moderator data/moderators
+    # python src/cache_data.py variable_moderator data/moderators
     main()

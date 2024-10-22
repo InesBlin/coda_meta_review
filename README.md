@@ -39,7 +39,7 @@ unzip data.zip
 
 Then you can run the app from the root directory:
 ```bash
-streamlt run app/Home.py
+streamlit run app/Home.py
 ```
 
 ## Data

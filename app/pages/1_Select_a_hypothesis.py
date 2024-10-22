@@ -12,7 +12,7 @@ from src.settings import ROOT_PATH
 # Only keeping comparison where there is at least one study
 DATA_T = pd.read_csv(
     os.path.join(ROOT_PATH, "data/same_gv_different_and_same_gv_treat_1_2.csv"), index_col=0)
-DATA_T = DATA_T[DATA_T.nb > 0]
+DATA_T = DATA_T[DATA_T.nb > 3]
 
 def reinit_t1_t2_var():
     """ Init treatment 1 vs. treatment 2 session state variables """
@@ -52,26 +52,42 @@ def main():
     st.title("Select a hypothesis")
     st.write("#")
 
-    with st.form("form_how_select_hypothesis"):
-        hs_diy_vs_assistant = st.radio(
-            "How would you like to select your hypothesis?",
-            ["Select my own hypotheses", "Please help me find some interesting hypotheses"],
-            index=0)
-        if st.form_submit_button("Confirm method"):
-            st.session_state["submit_fhsh"] = True
-            st.session_state["hs_diy_vs_assistant"] = hs_diy_vs_assistant
+    # For later: suggest hypotheses automatically
+    # with st.form("form_how_select_hypothesis"):
+    #     hs_diy_vs_assistant = st.radio(
+    #         "How would you like to select your hypothesis?",
+    #         ["Select my own hypotheses", "Please help me find some interesting hypotheses"],
+    #         index=0)
+    #     if st.form_submit_button("Confirm method"):
+    #         st.session_state["submit_fhsh"] = True
+    #         st.session_state["hs_diy_vs_assistant"] = hs_diy_vs_assistant
+    
+    # For now: only one option
+    st.session_state["hs_diy_vs_assistant"] = "Select my own hypotheses"
 
     if st.session_state["hs_diy_vs_assistant"] == "Select my own hypotheses":
         st.write("Please choose parameters for Treatment 1")
 
         # GIV1
-        with st.form("hs_dva_f_giv1"):
-            giv1 = st.selectbox(
+        data = DATA_T
+        giv1 = st.selectbox(
                 "GIV1", st.session_state["data_t1_t2"].generic1.unique(),
                 index=None)
-            if st.form_submit_button("Save GIV1"):
-                st.session_state["giv1"] = giv1
-                st.session_state["submit_hs_dva_f_giv1"] = True
+        if giv1:
+            st.session_state["giv1"] = giv1
+            data = data[data.generic1 == st.session_state["giv1"]]
+            siv1 = st.selectbox(
+                    "SIV1", st.session_state["data_t1_t2"].siv1.unique(),
+                    index=None)
+        st.write(st.session_state.get("giv1"))
+
+        # with st.form("hs_dva_f_giv1"):
+        #     giv1 = st.selectbox(
+        #         "GIV1", st.session_state["data_t1_t2"].generic1.unique(),
+        #         index=None)
+        #     if st.form_submit_button("Save GIV1"):
+        #         st.session_state["giv1"] = giv1
+        #         st.session_state["submit_hs_dva_f_giv1"] = True
 
         # SIV1
         if st.session_state.get("giv1") and st.session_state.get("submit_hs_dva_f_giv1"):
@@ -135,6 +151,8 @@ def main():
 
         # Comparative
         if st.session_state.get("sivv2") and st.session_state.get('submit_hs_dva_f_sivv2'):
+            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
+                [st.session_state["data_t1_t2"].sivv2 == st.session_state["sivv2"]]
             with st.form("hs_dva_f_comparative"):
                 comparative = st.selectbox(
                     "Choose your comparative (treatment 1 vs. treatment 2)", ["higher", "lower"],
@@ -222,9 +240,10 @@ def main():
                                 readable_to_dict[hypothesis_selector])
 
     with st.sidebar:
-        st.write("You have chosen the following hypotheses:")
-        for h in st.session_state["hypotheses"]:
-            st.write(h)
+        if st.session_state["hypotheses"]:
+            st.write("You have chosen the following hypotheses:")
+            for h in st.session_state["hypotheses"]:
+                st.write(h)
 
 
 if __name__ == "__main__":

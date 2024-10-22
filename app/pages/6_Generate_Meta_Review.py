@@ -8,6 +8,11 @@ import streamlit as st
 from src.meta_review import load_json_file
 from src.settings import ROOT_PATH
 
+ES_MEASURE_TO_K = {
+    "Cohen's standardized mean difference (d)": "d",
+    "Pearson's correlation coefficient (r)": "r"}
+K_TO_ES_MEASURE = {v: k for k, v in ES_MEASURE_TO_K.items()}
+
 
 def save_json(filepath, data):
     """ self explanatory """
@@ -18,8 +23,8 @@ def save_json(filepath, data):
 def build_config(hypothesis):
     """ Build config file to generate meta-analysis """
     folder_name = str(datetime.now())
-    folder_name = folder_name[:10]+ "_" + folder_name[11:19]
-    folder_name = os.path.join("app", "meta_review", folder_name)
+    folder_name = folder_name[:10]+ "_" + folder_name[11:19].replace(":", "-")
+    folder_name = os.path.join(ROOT_PATH, "app", "meta_review", folder_name)
     os.makedirs(folder_name)
     config = load_json_file(filename=os.path.join(ROOT_PATH, "src/configs/meta_review_base.json"))
     for k in ["template_folder", "label_des", "references", "data"]:
@@ -98,7 +103,29 @@ def main():
 
         if st.button("Generate Meta-Review"):
             subprocess.call(f"python src/meta_review.py {json_path} {folder_name}", shell=True)
-            st.success("The meta-review was successfully generated")
+            if os.path.exists(os.path.join(folder_name, 'report.html')):
+                st.success("The meta-review was successfully generated")
+            else:
+                st.error("It looks like the meta-review was not generated, please change hypothesis.")
+
+    with st.sidebar:
+        if st.session_state.get("hypotheses"):
+            st.write("You have chosen the following hypotheses:")
+            for hypothesis in st.session_state["hypotheses"]:
+                st.write(hypothesis)
+        if st.session_state.get("inclusion_criteria"):
+            st.write("You have chosen the following inclusion criteria:")
+            st.write(st.session_state["inclusion_criteria"])
+        if st.session_state.get("mr_variables"):
+            st.write("You have chosen the following control variables:")
+            st.write(st.session_state["mr_variables"])
+        if st.session_state.get("submit_as") and st.session_state["method_mv"] \
+        and st.session_state["es_measure"]:
+            st.write("You have chosen the following analytic strategy:")
+            st.write(f'Effect size {K_TO_ES_MEASURE[st.session_state["es_measure"]]} with {st.session_state["method_mv"]} model')
+        if st.session_state.get("custom_content"):
+            st.write("You have added the following custom content:")
+            st.write({k: v for k, v in st.session_state["custom_content"].items() if v})
 
 
 if __name__ == "__main__":
