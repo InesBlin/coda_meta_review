@@ -4,6 +4,7 @@ import os
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
 from src.settings import ROOT_PATH
+from src.helpers.interface import display_sidebar
 
 def main():
     """ Main """
@@ -68,10 +69,7 @@ def main():
         """
     )
 
-    with st.sidebar:
-        st.write("You have chosen the following hypotheses:")
-        for h in st.session_state["hypotheses"]:
-            st.write(h)
+    display_sidebar()
 
 if __name__ == '__main__':
     main()

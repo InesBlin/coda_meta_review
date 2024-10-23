@@ -7,7 +7,7 @@ from src.data_selection import DataSelector
 from src.data_prep import DataPrep
 from src.inclusion_criteria import InclusionCriteria
 from src.settings import ROOT_PATH
-from src.moderator import define_moderators
+from src.helpers.interface import display_sidebar
 
 DATA = pd.read_csv(os.path.join(ROOT_PATH, "data/observationData.csv"), index_col=0)
 
@@ -48,15 +48,6 @@ def get_variables(data):
     # mr_variables = set(mr_variables).union(sub_prop)
     return mr_variables
 
-# @st.cache_data
-# def add_var_info(data, variables):
-#     """ Add info related to control variables """
-#     f_vars = [x for x in variables if x not in data.columns]
-#     for x in f_vars:
-#         mod_def = define_moderators(x, data['treatmentValue1'], data['treatmentValue2'])
-#         data = pd.concat([data, mod_def], axis=1)
-#     return data
-
 
 
 def main():
@@ -65,36 +56,23 @@ def main():
         st.session_state["mr_variables"] = []
     if "submit_mr_variables" not in st.session_state:
         st.session_state["submit_mr_variables"] = False
-    st.title("Variables")
+    st.title("Control Variables")
     st.title("#")
 
     st.write("Choose your variables for the meta-review")
 
     variables = get_variables(data=DATA)
 
-    with st.form("form_mr_variables"):
-        mr_variables = st.multiselect(
-            'Choose your variables for the meta-review',
-            options=variables
-        )
-        if st.form_submit_button("Save variables"):
-            st.session_state["submit_mr_variables"] = True
-            st.session_state["mr_variables"] = mr_variables
-            st.success("Variables added for the meta-review", icon="🔥")
-            # data = add_var_info(data=DATA, variables=mr_variables)
-            # st.write(data)
+    mr_variables = st.multiselect(
+        'Choose your variables for the meta-review',
+        options=variables
+    )
+    if st.button("Save variables"):
+        st.session_state["submit_mr_variables"] = True
+        st.session_state["mr_variables"] = mr_variables
+        st.success("Variables added for the meta-review", icon="🔥")
     
-    with st.sidebar:
-        if st.session_state.get("hypotheses"):
-            st.write("You have chosen the following hypotheses:")
-            for hypothesis in st.session_state["hypotheses"]:
-                st.write(hypothesis)
-        if st.session_state.get("inclusion_criteria"):
-            st.write("You have chosen the following inclusion criteria:")
-            st.write(st.session_state["inclusion_criteria"])
-        if st.session_state.get("mr_variables"):
-            st.write("You have chosen the following control variables:")
-            st.write(st.session_state["mr_variables"])
+    display_sidebar()
 
 
 if __name__ == '__main__':

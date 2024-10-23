@@ -45,7 +45,7 @@ def generate_hypothesis(h, th):
     matches = re.findall(pattern, template)
     for col in matches:
         template = template.replace("{" + col + "}", h[col])
-    return template.capitalize()
+    return template.capitalize().strip()
 
 
 def custom_enumerate(iterable, start=1):

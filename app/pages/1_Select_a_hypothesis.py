@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 """ Expert's recommendation """
 import os
-import json
 import pandas as pd
 import streamlit as st
 from src.hg.literature import LiteratureHypothesisGenerator
 from src.knowledge import generate_hypothesis
-# from src.hg.llm import LLMHypothesisGenerator
 from src.settings import ROOT_PATH
+from src.helpers.interface import display_sidebar
 
-# Only keeping comparison where there is at least one study
+# Only keeping comparison where there is at least three studies
 DATA_T = pd.read_csv(
     os.path.join(ROOT_PATH, "data/same_gv_different_and_same_gv_treat_1_2.csv"), index_col=0)
 DATA_T = DATA_T[DATA_T.nb > 3]
@@ -52,17 +51,7 @@ def main():
     st.title("Select a hypothesis")
     st.write("#")
 
-    # For later: suggest hypotheses automatically
-    # with st.form("form_how_select_hypothesis"):
-    #     hs_diy_vs_assistant = st.radio(
-    #         "How would you like to select your hypothesis?",
-    #         ["Select my own hypotheses", "Please help me find some interesting hypotheses"],
-    #         index=0)
-    #     if st.form_submit_button("Confirm method"):
-    #         st.session_state["submit_fhsh"] = True
-    #         st.session_state["hs_diy_vs_assistant"] = hs_diy_vs_assistant
-    
-    # For now: only one option
+    # For now: only one option = select your hypothesis
     st.session_state["hs_diy_vs_assistant"] = "Select my own hypotheses"
 
     if st.session_state["hs_diy_vs_assistant"] == "Select my own hypotheses":
@@ -73,95 +62,59 @@ def main():
         giv1 = st.selectbox(
                 "GIV1", st.session_state["data_t1_t2"].generic1.unique(),
                 index=None)
+        # SIV1
         if giv1:
             st.session_state["giv1"] = giv1
             data = data[data.generic1 == st.session_state["giv1"]]
             siv1 = st.selectbox(
-                    "SIV1", st.session_state["data_t1_t2"].siv1.unique(),
+                    "SIV1", data.siv1.unique(),
                     index=None)
-        st.write(st.session_state.get("giv1"))
-
-        # with st.form("hs_dva_f_giv1"):
-        #     giv1 = st.selectbox(
-        #         "GIV1", st.session_state["data_t1_t2"].generic1.unique(),
-        #         index=None)
-        #     if st.form_submit_button("Save GIV1"):
-        #         st.session_state["giv1"] = giv1
-        #         st.session_state["submit_hs_dva_f_giv1"] = True
-
-        # SIV1
-        if st.session_state.get("giv1") and st.session_state.get("submit_hs_dva_f_giv1"):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].generic1 == st.session_state["giv1"]]
-            with st.form("hs_dva_f_siv1"):
-                siv1 = st.selectbox(
-                    "SIV1", st.session_state["data_t1_t2"].siv1.unique(),
-                    index=None)
-                if st.form_submit_button("Save SIV1"):
-                    st.session_state["siv1"] = siv1
-                    st.session_state["submit_hs_dva_f_siv1"] = True
-
-        # SIVV1
-        if st.session_state.get("siv1") and st.session_state.get("submit_hs_dva_f_siv1"):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].siv1 == st.session_state["siv1"]]
-            with st.form("hs_dva_f_sivv1"):
+            # SIVV1
+            if siv1:
+                st.session_state["siv1"] = siv1
+                data = data[data.siv1 == st.session_state["siv1"]]
                 sivv1 = st.selectbox(
-                    "SIVV1", st.session_state["data_t1_t2"].sivv1.unique(),
+                    "SIVV1", data.sivv1.unique(),
                     index=None)
-                if st.form_submit_button("Save SIVV1"):
+                
+                # GIV2
+                if sivv1:
                     st.session_state["sivv1"] = sivv1
-                    st.session_state["submit_hs_dva_f_sivv1"] = True
+                    data = data[data.sivv1 == st.session_state["sivv1"]]
+                    giv2 = st.selectbox(
+                        "GIV2", data.generic2.unique(),
+                        index=None)
 
-        # GIV2
-        if st.session_state.get("sivv1") and st.session_state.get("submit_hs_dva_f_sivv1"):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].sivv1 == st.session_state["sivv1"]]
-            with st.form("hs_dva_f_giv2"):
-                giv2 = st.selectbox(
-                    "GIV2", st.session_state["data_t1_t2"].generic2.unique(),
-                    index=None)
-                if st.form_submit_button("Save GIV2"):
-                    st.session_state["giv2"] = giv2
-                    st.session_state["submit_hs_dva_f_giv2"] = True
+                    # SIV2
+                    if giv2:
+                        st.session_state["giv2"] = giv2
+                        data = data[data.generic2 == st.session_state["giv2"]]
+                        siv2 = st.selectbox(
+                                "SIV2", data.siv2.unique(),
+                                index=None)
 
-        # SIV2
-        if st.session_state.get("giv2") and st.session_state.get("submit_hs_dva_f_giv2"):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].generic2 == st.session_state["giv2"]]
-            with st.form("hs_dva_f_siv2"):
-                siv2 = st.selectbox(
-                    "SIV2", st.session_state["data_t1_t2"].siv2.unique(),
-                    index=None)
-                if st.form_submit_button("Save SIV2"):
-                    st.session_state["siv2"] = siv2
-                    st.session_state["submit_hs_dva_f_siv2"] = True
+                        # SIVV2
+                        if siv2:
+                            st.session_state["siv2"] = siv2
+                            data = data[data.siv2 == st.session_state["siv2"]]
+                            sivv2 = st.selectbox(
+                                    "SIVV2", data.sivv2.unique(),
+                                    index=None)
 
-        # SIVV2
-        if st.session_state.get("siv2") and st.session_state.get("submit_hs_dva_f_siv2"):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].siv2 == st.session_state["siv2"]]
-            with st.form("hs_dva_f_sivv2"):
-                sivv2 = st.selectbox(
-                    "SIVV2", st.session_state["data_t1_t2"].sivv2.unique(),
-                    index=None)
-                if st.form_submit_button("Save SIVV2"):
-                    st.session_state["sivv2"] = sivv2
-                    st.session_state["submit_hs_dva_f_sivv2"] = True
-
-        # Comparative
-        if st.session_state.get("sivv2") and st.session_state.get('submit_hs_dva_f_sivv2'):
-            st.session_state["data_t1_t2"] = st.session_state["data_t1_t2"] \
-                [st.session_state["data_t1_t2"].sivv2 == st.session_state["sivv2"]]
-            with st.form("hs_dva_f_comparative"):
-                comparative = st.selectbox(
-                    "Choose your comparative (treatment 1 vs. treatment 2)", ["higher", "lower"],
-                    index=None)
-                if st.form_submit_button("Save comparative"):
-                    st.session_state["comparative"] = comparative
-                    st.session_state["submit_hs_dva_f_comparative"] = True
+                            # Comparative
+                            if sivv2:
+                                st.session_state["sivv2"] = sivv2
+                                data = data[data.sivv2 == st.session_state["sivv2"]]
+                                comparative = st.selectbox(
+                                        "Choose your comparative (treatment 1 vs. treatment 2)", ["higher", "lower"],
+                                        index=None)
+                                
+                                # Submit
+                                if comparative:
+                                    st.session_state["comparative"] = comparative
 
         # Wrap up the hypothesis
+        st.write("---")
         if st.session_state.get("comparative"):
             hypothesis = {
                 "giv1": st.session_state["giv1"], "siv1": st.session_state["siv1"],
@@ -179,10 +132,6 @@ def main():
                     st.session_state["hypotheses"].append(hypothesis)
                 st.session_state["submit_h"] = True
                 st.success("Hypothesis added to hypotheses for meta-review", icon="🔥")
-
-            if st.button("Choose another hypothesis"):
-                reinit_t1_t2_var()
-                st.rerun()
 
 
     if st.session_state["hs_diy_vs_assistant"] == "Please help me find some interesting hypotheses":
@@ -239,11 +188,7 @@ def main():
                             st.session_state["hypotheses"].append(
                                 readable_to_dict[hypothesis_selector])
 
-    with st.sidebar:
-        if st.session_state["hypotheses"]:
-            st.write("You have chosen the following hypotheses:")
-            for h in st.session_state["hypotheses"]:
-                st.write(h)
+    display_sidebar()
 
 
 if __name__ == "__main__":

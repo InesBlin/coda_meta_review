@@ -7,11 +7,7 @@ from datetime import datetime
 import streamlit as st
 from src.meta_review import load_json_file
 from src.settings import ROOT_PATH
-
-ES_MEASURE_TO_K = {
-    "Cohen's standardized mean difference (d)": "d",
-    "Pearson's correlation coefficient (r)": "r"}
-K_TO_ES_MEASURE = {v: k for k, v in ES_MEASURE_TO_K.items()}
+from src.helpers.interface import display_sidebar
 
 
 def save_json(filepath, data):
@@ -108,24 +104,7 @@ def main():
             else:
                 st.error("It looks like the meta-review was not generated, please change hypothesis.")
 
-    with st.sidebar:
-        if st.session_state.get("hypotheses"):
-            st.write("You have chosen the following hypotheses:")
-            for hypothesis in st.session_state["hypotheses"]:
-                st.write(hypothesis)
-        if st.session_state.get("inclusion_criteria"):
-            st.write("You have chosen the following inclusion criteria:")
-            st.write(st.session_state["inclusion_criteria"])
-        if st.session_state.get("mr_variables"):
-            st.write("You have chosen the following control variables:")
-            st.write(st.session_state["mr_variables"])
-        if st.session_state.get("submit_as") and st.session_state["method_mv"] \
-        and st.session_state["es_measure"]:
-            st.write("You have chosen the following analytic strategy:")
-            st.write(f'Effect size {K_TO_ES_MEASURE[st.session_state["es_measure"]]} with {st.session_state["method_mv"]} model')
-        if st.session_state.get("custom_content"):
-            st.write("You have added the following custom content:")
-            st.write({k: v for k, v in st.session_state["custom_content"].items() if v})
+    display_sidebar()
 
 
 if __name__ == "__main__":
