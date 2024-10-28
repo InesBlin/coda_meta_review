@@ -97,12 +97,13 @@ def main():
                         )
 
             if st.form_submit_button("Save inclusion criteria"):
-                    st.session_state["submit_ic"] = True
+                st.session_state["submit_ic"] = True
 
         params_non_null = {}
         for k1, v1 in params.items():
             params_non_null[k1] = {k2: v2 for k2, v2 in v1.items() if \
-                (((k2 not in min_max) and v2) or ((k2 in min_max) and (list(v2) != list(min_max[k2]))))}
+                (((k2 not in min_max) and v2) or ((k2 in min_max) and \
+                    (list(v2) != list(min_max[k2]))))}
         params_non_null = {k1: v1 for k1, v1 in params_non_null.items() if v1}
         if st.session_state.get("submit_ic"):
             st.session_state["inclusion_criteria"] = params_non_null

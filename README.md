@@ -1,7 +1,7 @@
-# Automated Hypothesis Generation on Human Cooperation
+# CoDa Meta Reviews
 
-This is the code we submit together with the paper [TO-ADD], submitted to [TO-ADD]. The code contains the followings:
-- The core code in the `src` folder, for general usage
+This is the code to the interface that we submitted together with the paper "Living Meta-Review Generation for Social Scientists: An Interface and A Case Study on Human Cooperation", accepted as a demo paper to [EKAW 2024](https://event.cwi.nl/ekaw2024/index.html). The code contains the followings:
+- The core code in the `src` folder, for general usage;
 - An interface and templates for the meta-review automated generation, cf. folders `app` and `meta_review`.
 
 
@@ -76,3 +76,15 @@ To make the application more efficient, we first cached some data:
     - `meta_review.py`: meta review generation
     - `moderator.py`: all related to moderators
     - `pipeline.py`: end-to-end process
+
+## Acknowledgements
+
+If you use this work please cite the following paper:
+```bib
+{
+    to add when proceedings are published
+}
+```
+
+This work was partly funded by the European
+[MUHAI](https://muhai.org) project, grant no. 951846, and by the XS NWO Project, grant no. [406.XS.04.118](https://www.nwo.nl/en/projects/406xs04118). We also thank our reviewers for constructive comments.
