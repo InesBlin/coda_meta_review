@@ -20,18 +20,11 @@ Installing rpy2 can cause problems with conda, hence we recommend to first insta
 conda install rpy2
 pip install -r requirements.txt
 python setup.py install
+git clone git@github.com:SonyCSLParis/kglab.git
 cd kglab && python setup.py install
 ```
 
-## Adapting the R shiny app
-We have adapted code from the original R shiny app, and transferred it to Python: https://github.com/cooperationdatabank/rshiny-app. This includes the followings:
-* `src/get_obs_data.py`: retrieve observation data
-* `src/data_selection.py`: takes observation data as input, outputs subset of this data
-    * For now: based on comparison between two treatments (specific independent variables and their value)
-* `src/data_prep.py`: takes pre-selected data as input, and processes it for the meta-analysis
-* `src/meta_analysis.py`: takes processed data as input, and does the meta-analysis
-
-## Interface
+## Rune the Interface
 You first need to unzip the data that is cached for optimisation:
 ```bash
 unzip data.zip
@@ -41,6 +34,14 @@ Then you can run the app from the root directory:
 ```bash
 streamlit run app/Home.py
 ```
+
+## Adapting the R shiny app
+We have adapted code from the original R shiny app, and transferred it to Python: https://github.com/cooperationdatabank/rshiny-app. This includes the followings:
+* `src/get_obs_data.py`: retrieve observation data
+* `src/data_selection.py`: takes observation data as input, outputs subset of this data
+    * For now: based on comparison between two treatments (specific independent variables and their value)
+* `src/data_prep.py`: takes pre-selected data as input, and processes it for the meta-analysis
+* `src/meta_analysis.py`: takes processed data as input, and does the meta-analysis
 
 ## Data
 To make the app more easibly runnable, we make the data directly available.
