@@ -82,8 +82,11 @@ To make the application more efficient, we first cached some data:
 
 If you use this work please cite the following paper:
 ```bib
-{
-    to add when proceedings are published
+@inproceedings{blin2024living,
+  title={Living Meta-Review Generation for Social Scientists: An Interface and A Case Study on Human Cooperation},
+  author={Blin, Ines and Tiddi, Ilaria and Spadaro, Giuliana and ten Teije, Annette},
+  booktitle={24th International Conference on Knowledge Engineering and Knowledge Management, EKAW 2024},
+  year={2024}
 }
 ```
 
